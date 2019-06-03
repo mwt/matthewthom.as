@@ -1,6 +1,6 @@
 # main text of home
 name: Matthew Thomas
-bio: Economics Graduate Student at Northwestern University
+bio: Economics PhD Student at Northwestern University
 
 # twitter summary info
 description: Matthew Thomas' personal site
@@ -16,7 +16,7 @@ resume: true
 resume-external: flase
 resume-url: assets/resume.pdf
 
-url: https://mwt.me/greendigo
+url: https://mwt.me/bluedigo
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
