@@ -16,7 +16,7 @@ resume: true
 resume-external: flase
 resume-url: assets/resume.pdf
 
-url: https://mwt.me
+url: https://mwt.me/greendigo
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
