@@ -3,7 +3,6 @@
     margin: 0 auto
     text-align: center
     position: relative
-    z-index: 99
 
     > .link > .selfie
         width: 125px
@@ -14,12 +13,18 @@
         opacity: 1
 
         &:hover
-            box-shadow: 0 0px 4px 0 rgba(0,0,0,0.18), 0 0px 12px 0 rgba(0,0,0,0.15)
+            box-shadow: 0 0px 4px 0 rgba(0,0,0,0.4), 0 0px 12px 0 rgba(0,0,0,0.15)
             opacity: .8
 
     > .title
         font-size: 4rem
-        margin: 0 0 13px
+        margin: -20px 0px -5px
+        padding: 20px 0 18px
+        color: white
+        background-image: $highlightsvg
+        background-repeat: no-repeat
+        background-size: 12.5cm 225%
+        background-position: center center
 
     > .description
         font-size: 1.85rem
