@@ -9,16 +9,25 @@
             display: inline-block
 
         > .item > .link
+            color: #666
             display: inline-block
             font-weight: 300
             font-size: 1.4rem
             padding: 20px 10px
             text-decoration: none
 
+            &:hover
+                color: $delta
+
 .nav
-    position: absolute
+    position: fixed
     right: 0
     top: 0
+    background-color: white
+    width: 100%
+    z-index: 99
+    text-align: right
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.18)
 
     > .list
         padding: 0 13px 0
