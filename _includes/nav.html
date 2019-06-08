@@ -42,7 +42,11 @@
 
         {% if site.resume == true %}
             <li class="item">
+                {% if page.title == "Resume" %}
+                <a class="btn" href="{% if site.resume-external %}{{ site.resume-pdf }}{% else %}{{ site.url }}/{{ site.resume-pdf }}{% endif %}"> {% octicon arrow-down %} PDF</a>
+                {% else %}
                 <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}">Résumé</a>
+                {% endif %}
             </li>
         {% endif %}
     </ul>
