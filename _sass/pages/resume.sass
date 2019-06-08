@@ -1,0 +1,47 @@
+.resume
+    > h2
+        border-bottom: 1px solid $beta
+        padding-bottom: .3em
+
+    > h3
+        margin-bottom: 5px
+
+    > p
+        margin: 0
+
+    > p,h3
+        display: flex
+
+        > em
+            color: $alpha
+            font-size: 16px
+            letter-spacing: 0.4px
+            margin-left: auto
+       
+.btn
+    color: $alpha
+    -moz-appearance: none
+    -moz-user-select: none
+    -ms-user-select: none
+    -webkit-appearance: none
+    -webkit-user-select: none
+    border: 1px solid transparentize($alpha, 0.6)
+    border-radius: .25em
+    display: inline-block
+    font-size: 14px
+    font-weight: 600
+    line-height: 20px
+    padding: 6px 12px
+    user-select: none
+    vertical-align: middle
+    white-space: nowrap
+    text-decoration: none
+
+    &:hover
+        color: #fff
+        background-color: $delta
+    
+    > svg
+        vertical-align: text-bottom
+        display: inline-block
+        fill: currentColor
