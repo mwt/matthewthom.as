@@ -5,31 +5,27 @@
     position: relative
 
     > .link > .selfie
-        width: 125px
-        margin-bottom: 25px
-        border-radius: 100%
+        position: relative
+        z-index: 100
+        width: 200px
+        margin-bottom: 17px
+        border: 9px solid #fff
+        border-radius: 5%
         transition: all .2s
-        box-shadow: 0
+        box-shadow: unset
         opacity: 1
 
         &:hover
             box-shadow: 0 0px 4px 0 rgba(0,0,0,0.4), 0 0px 12px 0 rgba(0,0,0,0.15)
-            opacity: .8
 
     > .title
         font-size: 4rem
-        display: table
-        margin: -0.2em auto 11px
-        padding: 0.2em 1em
-        color: #fff
-        background-image: $highlightsvg
-        background-repeat: no-repeat
-        background-size: 100% 100%
+        margin: 0 0 13px
+        color: $beta
 
     > .description
+        font-weight: 400
         font-size: 1.85rem
-        font-weight: 300
-        font-style: normal
         color: $gama
         width: 70%
         margin: 0 auto 30px

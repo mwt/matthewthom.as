@@ -25,6 +25,7 @@ layout: compress
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
 
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
     <style>
     {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
     {{ scss_sheet | scssify }}
@@ -32,7 +33,7 @@ layout: compress
 
 </head>
 <body>
-
+    <div class="topblock"></div>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% if page.tag %}
             <div class="post">
