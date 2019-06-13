@@ -3,11 +3,11 @@ body, html
 
 body
 	line-height: 1
-	font: 16px $fontSans
+	font: 16px $fontP
 	color: $alpha
 
 h1, h2, h3, h4
-	font-family: $fontSans
+	font-family: $fontH
 	color: $beta
 	-webkit-font-smoothing: antialiased
 	text-rendering: optimizeLegibility
@@ -34,7 +34,7 @@ a
 p
 	line-height: 1.7
 	color: $alpha
-	font-weight: 300
+	font-weight: 400
 	margin-bottom: 20px
 	letter-spacing: 0.4px
 
@@ -114,11 +114,17 @@ pre
 	border: 1px solid $epsilon
 	border-radius: 2px
 
+.topblock
+	position: relative
+	width: 100%
+	padding-bottom: 250px
+	background-color: $delta
+
 .wrapper-normal,
 .wrapper-large
 	height: 100%
 	width: 96%
-	margin: 0 auto
+	margin: -254px auto 0
 
 	@media #{$mobile}
 		width: 88%
