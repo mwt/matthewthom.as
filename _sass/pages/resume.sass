@@ -18,7 +18,32 @@
             font-family: $fontP
             letter-spacing: 0.4px
             margin-left: auto
-       
+
+    > h3 > em
+        position: relative
+        top: 0.5em
+
+    > a.hover-download
+        position: -webkit-sticky
+        position: sticky
+        display: none
+        width: 50px
+        height: 80px
+        padding: 3px 18px
+        bottom: 25px
+        background-color: transparentize($delta,0.5)
+        border-radius: 5%
+        margin-top: -86px
+        margin-bottom: -1em
+        margin-left: auto
+
+        > .octicon
+            fill: #fff
+
+    &:hover > a.hover-download
+        @media #{$notmobile}
+            display: block
+
 .nav>.list>.item>.btn
     border: 1px solid currentColor
     border-radius: 5%
