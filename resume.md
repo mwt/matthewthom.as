@@ -1,21 +1,20 @@
 ---
-layout: page
+layout: resume
 title: Resume
 ---
-<div class="resume" markdown="1">
 
 Education
 ---------
 
 ### Northwestern Univeristy *Evanston, IL*
 
-**PhD in Economics** *June 2018 - Present*
+**PhD in Economics** *2018-Present*
 
-**MA in Economics** *Aug 2017 - June 2018*
+**MA in Economics** *2017-2018*
 
 ### Williams College *Williamstown, MA*
 
-**BA in Mathematics and Economics** *Aug 2013 - June 2017*
+**BA in Mathematics and Economics** *2013-2017*
 
 *   Awarded Carl Van Duyne Prize ($5,900) for thesis support based on excellence in economics and research
 *   Awarded Sentinels Fellowship ($5,300) to fund research on the effect of nonprofits on high school graduation
@@ -37,17 +36,17 @@ Professional Experience
 
 ### Williams College *Williamstown, MA*
 
-**Research Assistant** *Aug 2015 - Aug 2016* 
+**Research Assistant** *2015-2016* 
  
 *   Found effect of hours of sleep on fatal truck accidents with two regulation changes as policy experiments
 *   Wrote scripts to convert data frames and calendars between various formats in R and constructed 15 years worth of fatal truck collision data, temperatures, holidays, weather patterns, and vehicle safety features   
 
-**Technical Consultant Manager** *May 2014-June 2017*
+**Technical Consultant Manager** *2014-2017*
 
 *   Manage a team of 40 students who provide software and hardware support for students, staff, and faculty    
 *   Resolve technology and network problems while calming and reassuring panicked students
 
-**Teaching Assistant** *Sep 2015 - December 2016*      
+**Teaching Assistant** *2015-2016*      
 
 *   Provided lectures to students which made complex, graduate-level mathematics simple and approachable    
 *   Provided essential, actionable insights to leaders of developing countries to bring home
@@ -67,5 +66,3 @@ Professional Experience
 *   Ran reports on complaints and praise to identify trends and triage high-priority issues such as foreclosures    
 *   Troubleshot complaints and complements while guiding constituents to correct resources   
 *   Received a special award for exceptional service to the United States Congress
-
-</div>
