@@ -36,10 +36,11 @@ p
 	color: $alpha
 	font-weight: 400
 	margin-bottom: 20px
-	letter-spacing: 0.4px
+	letter-spacing: 0.2px
 
-	@media #{$mobile}
-		letter-spacing: 0.2px
+	@media #{$above}
+		letter-spacing: 0.4px
+		
 
 strong
 	font-weight: 600
@@ -69,12 +70,12 @@ figcaption
 	margin: 0 auto
 	width: 100%
 	text-align: center
-	font-size: 1.3rem
+	font-size: 1.2rem
 	color: $gama
 	font-weight: 300
 
-	@media #{$mobile}
-		font-size: 1.2rem
+	@media #{$above}
+		font-size: 1.3rem
 
 blockquote
 	padding-left: 15px
@@ -117,14 +118,10 @@ pre
 .wrapper-normal,
 .wrapper-large
 	height: 100%
-	width: 96%
+	width: 88%
 	margin: 0 auto 0
-
-	@media #{$mobile}
-		width: 88%
-
-	@media #{$tablet}
-		width: 88%
+	@media #{$above}
+		width: 96%
 
 .wrapper-normal
 	max-width: 560px
