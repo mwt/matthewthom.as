@@ -3,6 +3,7 @@ layout: page
 title: Projects
 category: home
 hidden: true
+permalink: /projects
 ---
 Some rough projects I am working on are listed below:
 <section class="list">

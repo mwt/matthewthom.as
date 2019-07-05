@@ -3,7 +3,7 @@ name: Matthew Thomas
 bio: Economics PhD Student at Northwestern University
 
 # twitter summary info
-description: Matthew Thomas' personal site
+description: Matthew Thomas is an Economics PhD Student at Northwestern Univeristy
 
 # if it's an external image, update below for true
 # better with square images
@@ -55,19 +55,9 @@ github: MattWThomas
 # lanyrd: mylanyrd
 email: matthew@mwt.me
 
-authors:
-    matthew:
-        name: Matthew Thomas
-        bio: Economics Graduate Student at Northwestern University
-        external-image: false
-        picture: assets/images/profile.jpg
-        twitter: MatthewWThomas
-    jamesfoster:
-        name: James Foster
-        bio: A Man who develops software with coffee
-        external-image: false
-        picture: assets/images/james.jpg
-        twitter: jamesfoster
+author:
+       name: Matthew Thomas
+       twitter: MatthewWThomas
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -111,8 +101,8 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jemoji
-  - jekyll-admin
   - jekyll-octicons
+  - jekyll-sitemap
 
 jekyll-mentions:
     base_url: https://github.com
