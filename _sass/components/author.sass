@@ -20,7 +20,7 @@
         font-weight: 500
         margin: 6px 0 0
 
-        @media #{$mobile}
+        @media #{$below}
             width: 100%
             display: block
 
@@ -37,34 +37,24 @@
         line-height: 1.5
         margin: 0
 
-        @media #{$mobile}
-            width: 100%
-            display: block
-
-        @media #{$tablet}
+        @media #{$below}
             width: 100%
             display: block
 
     > .toleft
-        width: 10%
+        width: 20%
         display: inline-block
 
-        @media #{$mobile}
-            width: 20%
-
-        @media #{$tablet}
-            width: 20%
+        @media #{$above}
+            width: 10%
 
     > .toright
-        width: 89%
+        width: 78%
         display: inline-block
         vertical-align: top
 
-        @media #{$mobile}
-            width: 78%
-
-        @media #{$tablet}
-            width: 78%
+        @media #{$above}
+            width: 89%
 
 .no-disqus
     border-bottom: none

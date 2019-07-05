@@ -1,11 +1,10 @@
 .side-by-side
+    width: 100%
+    margin: 4rem 0
+    
     @media #{$above}
         width: 130%
         margin: 6rem 0 6rem -15%
-
-    @media #{$below}
-        width: 100%
-        margin: 4rem 0
 
     > .toleft,
     > .toright
@@ -37,7 +36,7 @@
 
     > .toleft > p,
     > .toright > p
-        margin: 0 0 4rem 0
+        margin: 0
 
-        @media #{$below}
-            margin: 0
+        @media #{$above}
+            margin: 0 0 4rem 0
