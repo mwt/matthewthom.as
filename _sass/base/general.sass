@@ -31,7 +31,7 @@ a
 	color: $delta
 	text-decoration: underline
 
-p
+p, form
 	line-height: 1.7
 	color: $alpha
 	font-weight: 400
@@ -57,6 +57,8 @@ img,
 pre,
 iframe
 	max-width: 100%
+	border: 1px solid transparentize($alpha,0.6)
+	border-radius: 0.4%
 
 img,
 pre
@@ -126,3 +128,19 @@ pre
 
 .wrapper-large
 	max-width: 810px
+
+.btn
+	border: 1px solid currentColor
+	border-radius: 5%
+	padding: 4px 8px !important
+	user-select: none
+	white-space: nowrap
+
+	&:hover
+		color: $yellow
+		background-color: $delta
+
+	> svg
+		vertical-align: text-top
+		display: inline-block
+		fill: currentColor
