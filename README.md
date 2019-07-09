@@ -1,1 +1,0 @@
-This is my personal website. It is built in [Jekyll](https://jekyllrb.com/) and is based off [indigo](https://github.com/sergiokopplin/indigo). The PDF version of my resume can be generated from [resume.md](resume.md) by running the bash script in [_latex/pandoc.bash](_latex/pandoc.bash).
