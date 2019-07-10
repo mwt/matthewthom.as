@@ -1,9 +1,15 @@
 ---
-layout: page
+layout: minimal
 title: Econ Ipsum
+category: nav
+head:
+- <link rel="prefetch" href="https://econ-ipsum.appspot.com/warmup"> 
 ---
 
-<p>This is a Lorem Ipsum generator that uses words from various economic papers.</p>
+## Econ Ipsum
+
+This is a Lorem Ipsum generator that uses words from the abstracts of various economic papers.
+
 <form action="https://econ-ipsum.appspot.com/" method="post" target="my_iframe">
   Number of paragraphs: <input type="number" class="nimput" name="np" value="5" min="0" max="100">
   <button type="submit" class="btn">Generate</button>
@@ -11,4 +17,3 @@ title: Econ Ipsum
 
 <!-- when the form is submitted, the server response will appear in this iframe -->
 <iframe name="my_iframe" src="{{ site.url }}/econ-ipsum-static" width="100%" height="600px"></iframe>
-
