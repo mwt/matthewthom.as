@@ -37,6 +37,13 @@
                     <a class="link" href="{{ site.url }}/#{{ page.title | slugify }}">{{ page.title }}</a>
                 </li>
 			{% endif %}
+        {% endif %}
+		{% if page.category == 'nav' %}
+            {% if page.hidden != true %}
+                <li class="item">
+                    <a class="link" href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
+                </li>
+			{% endif %}
 		{% endif %}
 	    {% endfor %}
 
