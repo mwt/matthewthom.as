@@ -1,7 +1,6 @@
 ---
 layout: minimal
 title: Econ Ipsum
-category: nav
 head:
 - <link rel="prefetch" href="https://econ-ipsum.appspot.com/warmup"> 
 ---
