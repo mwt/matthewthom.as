@@ -3,7 +3,7 @@ title: Matthew Thomas
 bio: Economics PhD Student at Northwestern University
 
 # twitter summary info
-description: Matthew Thomas is an Economics PhD Student at Northwestern Univeristy
+description: An Economics PhD Student at Northwestern Univeristy
 
 # if it's an external image, update below for true
 # better with square images
@@ -119,4 +119,4 @@ compress_html:
 sass:
     style: compressed
 
-exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "econ-ipsum*","01projects.md"]
