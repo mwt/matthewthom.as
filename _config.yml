@@ -20,7 +20,7 @@ resume-external: false
 resume-url: resume
 resume-pdf: assets/resume.pdf
 
-url: https://mwt.me
+url: https://mattwthomas.com
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
