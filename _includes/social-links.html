@@ -17,7 +17,7 @@
     </a>
     {% endif %}
 
-{% if site.gscholar %}
+    {% if site.gscholar %}
     <a class="link" data-title="scholar.google.com/citations?user={{ site.gscholar }}" href="//scholar.google.com/citations?user={{ site.gscholar }}" target="_blank" rel="noreferrer">
         <svg class="icon icon-gscholar"><use xlink:href="#icon-gscholar"></use></svg>
     </a>
@@ -108,8 +108,11 @@
     {% endif %}
 
     {% if site.email %}
-        <a class="link" data-title="{{ site.email }}" href="mailto:{{ site.email }}">
+        <a id="mlink" class="link" data-title="{{ site.email }}" href="mailto:{{ site.email }}">
             <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
         </a>
     {% endif %}
 </div>
+<script>
+    {% include email-obs.js %}
+</script>
