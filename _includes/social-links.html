@@ -35,6 +35,14 @@
         </a>
     {% endif %}
 
+    {%- for mst in site.mastodon -%}
+    {% if mst.username and mst.instance %}
+    <a class="link"  rel="me" data-title="{{ mst.username | escape }}@{{ mst.instance | escape}}" href="//{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" target="_blank" rel="noreferrer">
+        <svg class="icon icon-mastodon"><use xlink:href="#icon-mastodon"></use></svg>
+    </a>
+    {% endif %}
+    {%- endfor -%}
+
     {% if site.instagram %}
         <a class="link" data-title="instagram.com/{{ site.instagram }}" href="//instagram.com/{{ site.instagram }}" target="_blank" rel="noreferrer">
             <svg class="icon icon-instagram"><use xlink:href="#icon-instagram"></use></svg>

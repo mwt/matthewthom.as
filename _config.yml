@@ -58,6 +58,13 @@ github: mwt
 # lanyrd: mylanyrd
 email: 6adegxtzp@relay.firefox.com
 
+# Mastodon instances
+mastodon:
+- username: mwt
+  instance: mathstodon.xyz
+# - username: jekyll2
+#   instance: example.com
+
 author:
   name: Matthew Thomas
   twitter: MatthewWThomas
