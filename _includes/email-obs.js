@@ -1,6 +1,6 @@
 /* trivial email obfuscation */
-var me = "matthew";
-var place = "mwt.me";
+var me = "matthew.thomas";
+var place = "northwestern.edu";
 
 /* replace social link a with string s  */
 function changesocial(a, s) {
