@@ -14,13 +14,6 @@ picture: //avatars.githubusercontent.com/mwt?v=4&s=400
 #share picture
 spicture: assets/screen-shot.png
 
-# If you want to include your resume, set to true
-# and specify source (external or local).
-resume: true
-resume-external: false
-resume-url: resume
-resume-pdf: assets/resume.pdf
-
 url: https://mattwthomas.com
 # your url: http://USERNAME.github.io
 
