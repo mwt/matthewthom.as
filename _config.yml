@@ -4,7 +4,7 @@ tagline: Economist
 bio: Economics Ph.D. Candidate at Northwestern University
 
 # twitter summary info
-description: An Economics Ph.D. Candidate at Northwestern University
+description: Homepage of Matthew Wildrick Thomas, an Economics Ph.D. Candidate at Northwestern University
 
 # if it's an external image, update below for true
 # better with square images
@@ -34,9 +34,9 @@ permalink: /:title/
 # analytics-piwik-id: 1
 
 # if you don't want comments in your posts, leave categories empty
-disqus:
-  shortname: mydisqus # enter this from your disqus account
-  categories: [] # only show disqus for posts that have these categories
+#disqus:
+#  shortname: mydisqus # enter this from your disqus account
+#  categories: [] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
@@ -148,4 +148,4 @@ compress_html:
 sass:
     style: compressed
 
-exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "econ-ipsum*","01projects.md"]
+exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md"]

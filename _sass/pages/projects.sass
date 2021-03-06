@@ -1,0 +1,69 @@
+.projects > .list
+    > .item
+        display: block
+        position: relative
+        width: 95%
+        margin: 0 auto
+        padding: 20px 0
+
+    > .item > .url
+        position: absolute
+        top:    0
+        right:  0
+        bottom: 0
+        left:   0
+        display: block
+        text-decoration: none
+        overflow: hidden
+        text-indent: 100%
+        white-space: nowrap
+        z-index: 0
+
+    > .item > .title
+        display: inline
+        margin: 0
+        font-weight: 400
+        font-family: $fontP
+        transition: all ease-in-out .2s
+
+    > .item:hover > .title
+        color: $delta
+    
+    > .item > .social-link
+        display: inline
+        position: relative
+        margin-left: 0.2em
+        z-index: 1
+        &:hover::after
+            display: none
+        > .icon
+            margin: 0
+            vertical-align: text-bottom
+
+    aside
+        position: relative
+        display: block
+        z-index: -1
+        top: 2px
+        margin: 0
+        font-weight: 300
+        color: $gama
+        transition: all ease-in-out .2s
+
+    .item:hover aside
+        color: $alpha
+
+.projects > .list > .item > .url
+    > .title
+        display: inline
+
+    > .emoji
+        display: inline
+        position: relative
+        top: -4px
+        margin-right: 10px
+
+@media #{$above}
+    .projects > .list aside
+        float: right
+    
