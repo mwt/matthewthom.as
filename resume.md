@@ -1,6 +1,7 @@
 ---
 layout: resume
 title: Resume
+pdf: "/assets/resume.pdf"
 ---
 
 Education

@@ -1,59 +1,16 @@
 <nav class="{% if page.title == "Home" and site.navonhome %}nav-home{% else %}nav{% endif %} {% if site.animation %}animated{% endif %}">
     <ul class="list">
-        {% if page.title != "Home" or site.navonhome != true %}
-            <li class="item">
-                <a class="link" href="{{ site.url }}/#">Home</a>
-            </li>
+        {% for link in site.data.nav %}
+        {% if page.url != link.url %}
+        <li class="item">
+            <a class="link" href="{% if link.external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}">{{ link.title }}</a>
+        </li>
         {% endif %}
-
-        {% if site.blog == true %}
-            {% if page.title != "Blog" %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/blog">Blog</a>
-                </li>
-            {% endif %}
-        {% endif %}
-
-        {% if site.projects == true %}
-            {% if page.title != "Projects" %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/projects">Projects</a>
-                </li>
-            {% endif %}
-        {% endif %}
-
-        {% if site.about == true %}
-            {% if page.title != "About" %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/about">About</a>
-                </li>
-            {% endif %}
-        {% endif %}
-
-        {% for page in site.pages %}
-		{% if page.category == 'home' %}
-            {% if page.hidden != true %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}/#{{ page.title | slugify }}">{{ page.title }}</a>
-                </li>
-			{% endif %}
-        {% endif %}
-		{% if page.category == 'nav' %}
-            {% if page.hidden != true %}
-                <li class="item">
-                    <a class="link" href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
-                </li>
-			{% endif %}
-		{% endif %}
         {% endfor %}
-        {% if site.resume == true %}
-            <li class="item">
-                {% if page.title == "Resume" %}
-                <a class="btn link" href="{% if site.resume-external %}{{ site.resume-pdf }}{% else %}{{ site.url }}/{{ site.resume-pdf }}{% endif %}"> {% octicon arrow-down %} PDF</a>
-                {% else %}
-                <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}">Resume</a>
-                {% endif %}
-            </li>
+        {% if page.pdf %}
+        <li class="item">
+            <a class="btn link" href="{{ page.pdf }}">{% octicon arrow-down %} PDF</a>
+        </li>
         {% endif %}
     </ul>
 </nav>
