@@ -132,12 +132,6 @@ plugins:
 jekyll-mentions:
     base_url: https://github.com
 
-compress_html:
-    ignore:
-        envs:
-        - development
-        - stage
-
 sass:
     style: compressed
 
