@@ -141,4 +141,4 @@ compress_html:
 sass:
     style: compressed
 
-exclude: ["README.md", "Gemfile", "Gemfile.lock", "FAQ.md"]
+exclude: ["vendor", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md"]
