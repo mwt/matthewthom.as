@@ -1,5 +1,5 @@
 - name: "Crowdmark Labeler"
-  url: "https://github.com/mwt/crowdmark-labeler/archive/master.zip"
+  url: "https://pypi.org/project/clabeler/1.0.0/"
   description: "Add student names to Crowdmark PDFs"
   github: "https://github.com/mwt/crowdmark-labeler"
 - name: "Jekyll Citations"
