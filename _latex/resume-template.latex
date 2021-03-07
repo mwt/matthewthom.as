@@ -27,6 +27,7 @@
 }
 
 % Make it easier for resume scanners
+\usepackage{lmodern}
 \input{glyphtounicode}
 \pdfgentounicode=1
 
