@@ -1,3 +1,7 @@
+- name: "vTeX"
+  url: "https://github.com/mwt/vtex"
+  description: "Mini LaTeX/pandoc bundle for CI"
+  github: "https://github.com/mwt/vtex"
 - name: "Hash Viewer"
   url: "https://hash.mwt.me"
   description: "Share math without storing it"
