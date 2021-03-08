@@ -3,9 +3,9 @@
 echo "Install wget"
 yum install wget
 
-VTEX_VERSION=0.1
+VTEX_VERSION=1.0
 
 echo "Download vtex"
-wget -O vtex.tar.gz -nv "https://github.com/mwt/vtex/releases/download/v0.1/vtex.tar.gz"
+wget -O vtex.tar.gz -nv "https://github.com/mwt/vtex/releases/download/v$VTEX_VERSION/vtex.tar.gz"
 echo "Extract vtex"
 tar xzf vtex.tar.gz
