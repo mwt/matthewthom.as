@@ -2,7 +2,6 @@
 title: "The Real Induction"
 author: "Matthew Wildrick Thomas"
 layout: "post"
-category: "blog"
 tag: ["math", "induction"]
 date: "2021-03-08"
 use_math: true
