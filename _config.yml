@@ -19,6 +19,24 @@ url: https://mattwthomas.com
 
 permalink: /:title/
 
+markdown: kramdown
+kramdown:
+  auto_id_stripping: false
+  auto_ids: true
+  entity_output: as_char
+  footnote_nr: 1
+  hard_wrap: false
+  header_offset: 0
+  html_to_native: false
+  input: GFM
+  line_width: 72
+  parse_block_html: false
+  parse_span_html: true
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter: rouge
+  show_warnings: true
+  math_engine: mathjax
+
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-142538765-1'
 
@@ -60,7 +78,7 @@ mastodon:
 #   instance: example.com
 
 author:
-  name: Matthew Thomas
+  name: Matthew Wildrick Thomas
   twitter: MatthewWThomas
 
 social:
@@ -104,7 +122,7 @@ width: large
 # read-time: true
 
 # do you want to show the "tags" inside the posts?
-# show-tags: true
+#show-tags: true
 
 # related posts inside a post?
 # related: true
@@ -124,7 +142,6 @@ animation: true
 plugins:
   - jekyll-seo-tag
   - jekyll-gist
-  - jekyll-feed
   - jemoji
   - jekyll-octicons
   - jekyll-sitemap

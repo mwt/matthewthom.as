@@ -1,4 +1,5 @@
 ---
+layout: none
 ---
 @import "base/variables";
 @import "base/normalize";
@@ -6,10 +7,10 @@
 @import "base/general";
 @import "base/helpers";
 
-//@import "pages/home-blog-projects";
+@import "pages/home-blog-projects";
 @import "pages/projects";
 @import "pages/page";
-//@import "pages/post";
+@import "pages/post";
 //@import "pages/tags";
 @import "pages/resume";
 
@@ -19,7 +20,7 @@
 @import "components/header";
 @import "components/nav";
 @import "components/others";
-//@import "components/pagination";
+@import "components/pagination";
 //@import "components/related";
 //@import "components/share";
 //@import "components/side-by-side";
