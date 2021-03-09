@@ -4,7 +4,7 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css?build={{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
 
     {% if site.analytics-google %}
         {% include analytics-google.html %}
