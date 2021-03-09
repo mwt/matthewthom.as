@@ -19,6 +19,11 @@ url: https://mattwthomas.com
 
 permalink: /:title/
 
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title
+
 markdown: kramdown
 kramdown:
   math_engine: mathjax
