@@ -1,18 +1,24 @@
-<h2 id="personal-projects">{{ include.title }}</h2>
-<div class="projects">
+<h2>{{ include.title }}</h2>
+<div class="{{ include.class | default: "projects" }}">
 <section class="list">
     {%- for project in include.data -%}
     <div class="item {%- if project.star -%}
         star
     {%- endif -%}">
         <a class="url" href="{{ project.url }}"></a>
-        <h3 class="title">{{ project.name }}</h3>
+        <h3 class="title">{{ project.title }}</h3>
         {% if project.github %}
         <a class="social-link" data-title="GitHub" href="{{ project.github }}" target="_blank">
             <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
         </a>
         {% endif %}
-        <aside>{{ project.description }}</aside>
+        <aside>
+        {%- if project.description -%}
+        {{ project.description }}
+        {%- elsif project.date -%}
+        <time datetime="{{ project.date | date:"%d-%m-%Y" }}">{{ project.date | date: "%b %d %Y" }}</time>
+        {%- endif -%}
+        </aside>
     </div>
     {%- endfor -%}
 </section>
