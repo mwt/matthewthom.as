@@ -14,7 +14,7 @@ Conventional proof by induction allows you to prove that a statement applies to 
 
 [A PDF I found online](https://arxiv.org/abs/1208.0973) showed me that there is an analogous version to proof by induction that can apply to uncountable sets like the Real numbers. Conventional induction cannot work on uncountable set because, by definition, you cannot reach all elements by iteratively stepping through them.
 
-In the real induction, we get around this issue by breaking the space into intervals. Formally, let $$a < b$$ be real numbers. We want to show that $$[a, b] = S$$. That is, we want all elements of the interval to "satisfy" property $$S$$. We define the subset $$S \subseteq [a,b]$$ to be *inductive* if:
+In the real induction, we get around this issue by breaking the space into countably many intervals. Formally, let $$a < b$$ be real numbers. We want to show that $$[a, b] = S$$. That is, we want all elements of the interval to "satisfy" property $$S$$. We define the subset $$S \subseteq [a,b]$$ to be *inductive* if:
 
 1. $$a \in S$$.
 2. If $$a \leq x < b$$, then $$x \in S \implies [x,y] \subset S$$ for some 
@@ -56,7 +56,7 @@ $$v(s; s) > 0$$
 
 **Lemma (Probability density)** *The solution, $$g(s)$$, to*
 
-$$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) \\| g(y) \\| dy \right)$$
+$$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) \lvert g(y) \rvert dy \right)$$
 
 *is a probability density on some interval $$[0, \bar{s}]$$.*
 
@@ -64,9 +64,9 @@ $$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) \\| g(y) \\| dy \
 
 The finite definite integral cannot diverge because the function is continuous and $$g(0) = \frac{c'(0)}{v(0; 0)} > 0$$.
     
-We still need to confirm that $$g(s) > 0$$ on the relevant interval $$ \{ s : \int_0^s \\| g(y) \\| dy \leq 1 \}$$. We will define the probability density to be zero outside this interval so that it integrates to one.
+We still need to confirm that $$g(s) > 0$$ on the relevant interval $$ \{ s : \int_0^s \lvert g(y) \rvert dy \leq 1 \}$$. We will define the probability density to be zero outside this interval so that it integrates to one.
 
-We show this by real induction on the interval $$[0,T]$$ where $$T$$ can be any value such that $$\int_0^T \\| g(y) \\| dy \leq 1$$. We must prove the following statements:
+We show this by real induction on the interval $$[0,T]$$ where $$T$$ can be any value such that $$\int_0^T \lvert g(y) \rvert dy \leq 1$$. We must prove the following statements:
 
 1. $$g(0) > 0$$.
 2. For any $$s \in [0,T]$$, if $$g(y) > 0$$ for all $$y \in [0,s]$$, then there exists a $$z > s$$ such that $$g(y) > 0$$ for all $$y \in [s,z)$$.
@@ -74,16 +74,16 @@ We show this by real induction on the interval $$[0,T]$$ where $$T$$ can be any 
 
 The first statement is true because $$g(0) = \frac{c'(0)}{v(0; 0)} > 0$$. The second statement proceeds by continuity of $$g$$ (A1). The third statement comes from:
 
-$$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) \\| g(y) \\| dy \right)$$
+$$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) \lvert g(y) \rvert dy \right)$$
 
-$$g(s) \geq \frac{1}{v(s; s)} \bigg[ c'(s) - \left| \max_{y\in[0,s]} v'(s; y) \right| \underbrace{\left( \int_0^{s} \\| g(y) \\| dy \right)}_{\leq 1} \bigg]$$
+$$g(s) \geq \frac{1}{v(s; s)} \bigg[ c'(s) - \lvert \max_{y\in[0,s]} v'(s; y) \rvert \underbrace{\left( \int_0^{s} \lvert g(y) \rvert dy \right)}_{\leq 1} \bigg]$$
 
-$$g(s) \geq \frac{1}{v(s; s)} \underbrace{\left[c'(s) - \left| \max_y v'(s; y) \right|  \right]}_{>0 \text{(A2)}} > 0.$$
+$$g(s) \geq \frac{1}{v(s; s)} \underbrace{\left[c'(s) - \lvert \max_y v'(s; y) \rvert  \right]}_{>0 \text{(A2)}} > 0.$$
 
-Therefore, $$g(s) > 0$$ for any $$s$$ such that $$\int_0^s \\| g(y) \\| dy \leq 1$$. 
+Therefore, $$g(s) > 0$$ for any $$s$$ such that $$\int_0^s \lvert g(y) \rvert dy \leq 1$$. 
 
-To complete the lemma, we must show that it is not possible for $$\int_0^\infty \\| g(y) \\| dy \leq 1$$. We can do this in one step with Holder's inequality.
+To complete the lemma, we must show that it is not possible for $$\int_0^\infty \lvert g(y) \rvert dy \leq 1$$. We can do this in one step with Holder's inequality.
 
-$$c(s) = \int_0^s v(s; y) g (y) dy \leq \left(\int_0^s \\| g(y) \\| dy\right) \left( \max_{y \in [0,s]} v(s; y) \right)$$
+$$c(s) = \int_0^s v(s; y) g (y) dy \leq \left(\int_0^s \lvert g(y) \rvert dy\right) \left( \max_{y \in [0,s]} v(s; y) \right)$$
 
-so $$\int_0^s \\| g(y) \\| dy \geq \frac{c(s)}{\max v(s; y)}$$ which is assumed to be greater than one as $$s$$ approaches infinity (A3). By continuity, there exists an $$\bar{s}$$ such that $$\int_0^{\bar{s}} \\|g (y) \\| dy = 1$$ (A1).
+so $$\int_0^s \lvert g(y) \rvert dy \geq \frac{c(s)}{\max v(s; y)}$$ which is assumed to be greater than one as $$s$$ approaches infinity (A3). By continuity, there exists an $$\bar{s}$$ such that $$\int_0^{\bar{s}} \lvert g (y) \rvert dy = 1$$ (A1).
