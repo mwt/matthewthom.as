@@ -10,17 +10,9 @@ enabled: true
     {% if site.posts.size == 0 %}
     <p class="text-center">Nothing published yet!</p>
     {% elsif site.pagination.enabled %}
-        {% for post in paginator.posts %}
-            {% if post.hidden != true %}
-            {% include blog-post.html %}
-            {% endif %}
-        {% endfor %}
+        {% include projects.html data=paginator.posts title="Blog" class="blog" %}
         {% include pagination.html%}
     {% else %}
-        {% for post in site.posts %}
-            {% if post.hidden != true %}
-            {% include blog-post.html %}
-            {% endif %}
-        {% endfor %}
+        {% include projects.html data=site.posts title="Blog" class="blog" %}
     {% endif %}
 </section>

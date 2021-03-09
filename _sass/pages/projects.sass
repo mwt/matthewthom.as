@@ -1,4 +1,5 @@
-.projects > .list
+.projects > .list,
+.blog > .list
     > .item
         display: block
         position: relative
@@ -18,6 +19,14 @@
         text-indent: 100%
         white-space: nowrap
         z-index: 0
+        > .title
+            display: inline
+
+        > .emoji
+            display: inline
+            position: relative
+            top: -4px
+            margin-right: 10px
 
     > .item > .title
         display: inline
@@ -49,21 +58,14 @@
         font-weight: 300
         color: $gama
         transition: all ease-in-out .2s
+        @media #{$above}
+            float: right
 
     .item:hover aside
         color: $alpha
 
-.projects > .list > .item > .url
-    > .title
-        display: inline
-
-    > .emoji
-        display: inline
-        position: relative
-        top: -4px
-        margin-right: 10px
-
-@media #{$above}
-    .projects > .list aside
-        float: right
+.blog > .list aside
+    display: none
+    @media #{$above}
+        display: block
     
