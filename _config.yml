@@ -22,7 +22,7 @@ permalink: /:title/
 collections:
   posts:
     output: true
-    permalink: /blog/:title
+    permalink: /blog/:title/
 
 markdown: kramdown
 kramdown:
