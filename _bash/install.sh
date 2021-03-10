@@ -2,9 +2,15 @@
 
 VTEX_VERSION=1.0
 
-FILE="vtex-v$VTEX_VERSION.tar.gz"
+# Hack: stuff vtex into bundler cache
+DIR="vendor/bin"
+FILE="$DIR/vtex-v$VTEX_VERSION.tar.gz"
+
+mkdir -p ${DIR}
+
 if [ -f "$FILE" ]
 then
+    echo "vTeX cache hit!"
     echo "Clean"
     rm -rf vtex
     echo "Extract vtex"
@@ -21,3 +27,4 @@ else
 fi
 
 bundle install
+bundle package
