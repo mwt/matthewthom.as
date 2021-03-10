@@ -41,6 +41,12 @@ kramdown:
 #  shortname: mydisqus # enter this from your disqus account
 #  categories: [] # only show disqus for posts that have these categories
 
+utterances:
+  repo: "mwt/mattwthomas.com"
+  issue-term: "pathname"
+  label: "utteranc.es"
+  theme: "github-light"
+
 # if you don't have any of social below, comment the line
 # facebook: myfacebook
 # twitter: MatthewWThomas
