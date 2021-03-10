@@ -1,5 +1,5 @@
 ---
-title: "The Real Induction"
+title: "Real Induction"
 author: "Matthew Wildrick Thomas"
 layout: "post"
 tag: ["math", "induction"]
@@ -47,7 +47,7 @@ holds a.e., where we define $$v'(s; {y}) := \frac{\partial v(s; {y})}{\partial s
 $$v(0, 0) > c(0) = 0$$ and $$\lim_{s \to \infty} \sup_{y \leq s} v(s; {y}) < \lim_{s \to \infty} c(s).$$
 
 
-**Assumption 3** (A3, Positive value on the margin)
+**Assumption 4** (A4, Positive value on the margin)
 
 $$v(s; s) > 0$$
 
