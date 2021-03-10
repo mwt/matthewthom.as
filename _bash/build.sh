@@ -13,4 +13,4 @@ echo "Build resume"
 ./vtex/bin/x86_64-linux/pandoc resume.md -t latex --template="./_latex/resume-template.latex" --pdf-engine="./vtex/bin/x86_64-linux/pdflatex" -V title="$title" -V bio="$bio" -V email="$email" -V github="$github" -V linkedin="$linkedin" -o "./assets/resume.pdf"
 
 echo "Build website"
-jekyll build
+bundle exec jekyll build
