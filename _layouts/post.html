@@ -45,5 +45,6 @@ layout: minimal
 {% endif %}
 
 {% if site.utterances %}
-    {% include utterances.html %}
+    {%- assign issue-term = page.title | prepend: 'Comments: ' -%}
+    {% include utterances.html issue-term=issue-term %}
 {% endif %}
