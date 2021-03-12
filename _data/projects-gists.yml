@@ -1,3 +1,6 @@
+- title: "Jekyll utterances"
+  url: "https://gist.github.com/mwt/7b747b45d5e28e7a943490d7a3b8a4ff"
+  description: "Enables comments on my blog"
 - title: "CUDA Theil-Sen"
   url: "https://gist.github.com/mwt/25f69988105de9a801f6b7fae5e6375d"
   description: "GPU accelerated regression for censored data"
