@@ -1,4 +1,6 @@
+{% if include.title %}
 <h2>{{ include.title }}</h2>
+{% endif %}
 <div class="{{ include.class | default: "projects" }}">
 <section class="list">
     {%- for project in include.data -%}
@@ -12,13 +14,11 @@
             <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
         </a>
         {% endif %}
-        <aside>
         {%- if project.description -%}
-        {{ project.description }}
+        <aside>{{ project.description }}</aside>
         {%- elsif project.date -%}
-        <time datetime="{{ project.date | date:"%d-%m-%Y" }}">{{ project.date | date: "%b %d %Y" }}</time>
+        <aside><time datetime="{{ project.date | date:"%d-%m-%Y" }}">{{ project.date | date: "%b %d %Y" }}</time></aside>
         {%- endif -%}
-        </aside>
     </div>
     {%- endfor -%}
 </section>
