@@ -21,6 +21,8 @@ layout: compress
     
     {% include favicon.html %}
 
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
+
     {% for html in page.head %}
         {{ html }}
     {% endfor %}
