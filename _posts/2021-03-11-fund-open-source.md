@@ -5,6 +5,7 @@ layout: "post"
 tag: ["math", "economics", "mechanism design"]
 date: "2021-03-11"
 use_math: true
+star: true
 ---
 
 I recently came across [an interesting paper](https://arxiv.org/abs/1809.06421v2) published in Management Science that proposes Quadratic Finance (QF), a mechanism to fund public goods such as open source software. This has generated an understandable amount of excitement and there are already several cases in which it has been implemented.
@@ -22,7 +23,7 @@ The basic problem with funding a public good is that people do not pay if they c
 
 > How can we efficiently allocate resources to public goods given that we have *unlimited* access to resources.
 
-Note that this is about allocation. QF was not designed to have the greatest revenue of any mechanism. It doesn't tell you how to raise money. It instead tells you where you should put it once it is raised.
+Note that this is not a fundraising problem. It is a *voting* problem. QF was not designed to have the greatest revenue of any mechanism. It doesn't tell you how to raise money. It instead tells you where you should put it once it is raised. QF is a system where people "vote with their wallets" to allocate resources. Yes, it raises funds as part of the process, but this is not the point.
 
 This is a classic Economic problem that was technically solved by Vickrey, Clarke, and Groves in [three](https://scholar.archive.org/search?q=key:work_fsr6vuy2g5gihnp3znw4xmvqnu) [separate](https://scholar.archive.org/search?q=key:work_jqeqfsyhpzc5vp44oky4czop6y) [papers](https://scholar.archive.org/search?q=key:work_roir55hgbze27pqsfuxehnyvky). A quick summary of their mechanism (VCG) is essential for understanding what QF is about.
 
@@ -42,7 +43,13 @@ However, people only care about their own value -- not the value of others. So, 
 
 When they add their own $$v_i(x)$$ to the transfer, their personal payoff is exactly the same as society's (Equation 1). Because of this, they want $$x^\star$$ to be calculated correctly. So, they have no reason to lie about their value, $$v_i$$.
 
-The transfers noted above are very expensive. However, they can be made much cheaper because you can subtract any constant from these transfers. In fact, you can subtract any function that does not depend on $$v_i$$.[^2] When the ideal function is chosen,[^3] the assumptions we made ensure the VCG mechanism raises funds. In fact, there is no incentive compatible efficient mechanism that raises more funds [(Krishna and Perry 1998)](https://scholar.archive.org/search?q=key:work_5qnsclqtdvfgvo5o7iwr2bpl6i).
+The transfers noted above are very expensive. However, they can be made much cheaper because you can subtract any constant from these transfers. In fact, you can subtract any function that does not depend on $$v_i$$.[^2] When the ideal function is chosen,[^3] the assumptions we made ensure the VCG mechanism raises funds from each person. The amount raised from person $i$ is.
+
+$$
+\max_x \left( \left[ \sum_{j \neq i} v_j( x ) \right] - x \right) - \left( \left[ \sum_{j \neq i} v_j( x^\star ) \right] - x^\star \right) > 0
+$$
+
+There is no incentive compatible efficient mechanism that raises more total funds [(Krishna and Perry 1998)](https://scholar.archive.org/search?q=key:work_5qnsclqtdvfgvo5o7iwr2bpl6i).
 
 ### Issues
 
@@ -50,7 +57,7 @@ There are two major issues with the VCG mechanism:
 
 1. It requires too much information
 2. It fails if bidders can work together (i.e. collude)
-3. It raises less than $$ x^\star $$ and thus requires subsidization
+3. It can raise less than $$ x^\star $$ and thus requires subsidization
 
 VCG requires that each participant know their exact valuation for each level of total funding for every open source project. This is typically unreasonable. Issue 2 is somewhat overblown as the ways to cheat in VCG are generally NP-hard to compute. However, there are interesting restricted cases where the optimal collusion scheme can be computed in polynomial time.
 
@@ -66,28 +73,42 @@ $$
 x^\star = \left( \sum_i \sqrt{c_i} \right)^2 \tag{2}
 $$
 
-where $$ c_i $$ is an individual contribution made by each participant. So, participants no longer need to send their value for every level of funding. They instead just need to choose a contribution. This is both more reasonable and more private as less information is surrendered. The central point of the paper is that, in equilibrium, this $$ x^\star $$ is the same as the one we considered in the VCG section.
+where $$ c_i $$ is an individual contribution made by each participant. So, participants no longer need to send their value for every level of funding. They just need to choose a contribution. This requires less information on the part of the contributors. It is also more private because less information is surrendered. The main point of the paper is that, in equilibrium, this $$ x^\star $$ is the same as the one we considered in the VCG section.
 
 The goal of QF is not to maximize $$ \sum_i c_i $$, but to instead find a function that achieves the socially optimal resource allocation, $$ x^\star $$.
+
+The deficit of QR is
+
+$$
+D_{QF} = x^\star - \sum_i c_i = \left( \sum_i \sqrt{c_i} \right)^2 - \sum_i c_i
+$$
+
+which is positive when there is more than one contributor by [Jensen's inequality](https://en.wikipedia.org/wiki/Jensen%27s_inequality). Therefore, outside funding is always required for QR. 
 
 ### Issues
 
 The issues with QF are similar to VCG.
 
 1. It fails if bidders can work together (i.e. collude)
-2. The deficit is typically larger than with VCG
+2. There is always a deficit and it is typically larger than with VCG
 
 Collusion in QF is particularly easy. If you want to contribute $$ c_i $$ and have friends who want to contribute nothing, then you can do better by contributing less and dividing your contributions amongst your friends. 
 
 The second problem is a big problem for applying both QF and VCG because the deficit is can be difficult to predict. Therefore, unlimited resources are needed guarantee that the costs are covered. This is somewhat reasonable for governments who can tax their citizens.[^4]
 
-It is not reasonable when the funds are raised by a foundation or philanthropist. However, the authors note this problem and propose an approximate solution called CQF (also known as CLR)
+It is not reasonable when the funds are raised by a foundation or philanthropist. What do you do if $$D_{QF}$$ is larger than your grant funding, $$G$$? However, the authors note this problem and propose an approximate solution called CQF (also known as CLR)
 
 $$
 x^\circ = \alpha \left( \sum_i \sqrt{c_i} \right)^2 + (1 - \alpha) \sum_i c_i
 $$
 
-where $$ 0 \leq \alpha \leq 1 $$. When $$ \alpha = 0 $$, CQF is the standard donation model with no subsidies. When $$ \alpha = 1 $$, CQF is the same as QF and thus achieves the optimal allocation. At every $$ \alpha $$ in between, CQF is a mix of the two. That is, CQF has a smaller deficit than QF and results in a better[^5] allocation than private donations. However, CQF does not yield the efficient allocation unless $$ \alpha = 1 $$.
+where $$ 0 \leq \alpha \leq 1 $$. When $$ \alpha = 0 $$, CQF is the standard donation model with no subsidies. When $$ \alpha = 1 $$, CQF is the same as QF and thus achieves the optimal allocation. At every $$ \alpha $$ in between, CQF is a mix of the two. The deficit of CQF is
+
+$$
+D_{CQF} = x^\circ - \sum_i c_i = \alpha \left( \sum_i \sqrt{c_i} \right)^2 - \sum_i c_i = \alpha D_{QF}.
+$$
+
+So, CQF has a smaller deficit than QF. It results in a better[^5] allocation than private donations. However, CQF does not yield the efficient allocation unless $$ \alpha = 1 $$.
 
 ## Implementations
 
@@ -97,13 +118,23 @@ $$
 \tilde{x}^p = \left[ \sum_i c_i^p \right] + G \frac{\left( \sum_i \sqrt{c_i^p} \right)^2}{ \sum_p \left( \sum_i \sqrt{c_i^p} \right)^2}  
 $$
 
-where $$ G $$ is the size of some outside grant and $$ p $$ is an index for the open source project. A [calculator for NQF](https://wtfisqf.com/) is available with [source code](https://github.com/anish-agnihotri/quadratic-funding). This formulation guarantees that the deficit of the mechanism is exactly $$ G $$. This is a desirable property because it ensures that the round never goes over budget and that all of $$ G $$ is used. However, this convenience comes at a cost.
+where $$ G $$ is the size of an outside grant and $$ p $$ is an index for the open source project. A [calculator for NQF](https://wtfisqf.com/) is available with [source code](https://github.com/anish-agnihotri/quadratic-funding). This formulation guarantees that the deficit of the mechanism is exactly $$ D_{NQF} = G $$. This is a desirable property because it ensures that the round never goes over budget and that all of $$ G $$ is used. However, this model is not ideal. In the next section, I'll show a better way.
 
-In NQF, funds allocated to project $$p$$ are decreasing in the funds to all other projects. For example, when you donate to WebPack, you are taking funds away from all other projects. This is a major deviation from QF and fundamentally changes its properties.
+**NQF lacks the desirable properties of QF and CQF.** It is a completely different mechanism.
 
-This reduces contributions from people who have high values for multiple open source projects and does not necessarily even beat private contributions. In fact, we show an example where $$ G $$ is wasted entirely.
+The first thing to note is that a private good still gets a subsidy under NQF. Under VCG, QF, and CQF, any project with one contributor gets no subsidy. You can see in the equation above that this is not true for NQF because the subsidy for each project
 
-**Example** Suppose there are two contributors and two projects. Contributor 1 likes both projects equally while Contributor 2 only likes Project 1. More concretely, assume
+$$
+G \frac{\left( \sum_i \sqrt{c_i^p} \right)^2}{ \sum_p \left( \sum_i \sqrt{c_i^p} \right)^2}
+$$
+
+is always positive. This means that any individual who can list a project can commit profitable fraud. 
+
+The second thing to note about NQF is funds allocated to project $$p$$ are decreasing in the contributions to all other projects. For example, when you donate to WebPack, you are taking funds away from all other projects. This generates inefficiency and is a major deviation from QF and CQF.
+
+NQF does not necessarily beat private contributions. In fact, we show an example where $$ G $$ is wasted entirely.
+
+**Example:** Suppose there are two contributors and two projects. Contributor 1 likes both projects equally while Contributor 2 only likes Project 1. More concretely, assume
 
 $$
 v_1^1(x) = v_1^2(x) = v_2^1(x) = 2 \sqrt{x}
@@ -124,6 +155,18 @@ The above table shows the contributions to Project 1 and Project 2 by each playe
 
 This points to a general issue with this mechanism. People who like both popular and unpopular projects have an incentive to divert resources to the unpopular ones. This is a classic voting issue and is exactly the sort of behavior that QF was designed to prevent.
 
+## A better way
+
+NQF has the nice property that the deficit is exactly equal to your grant funding. So you can never generate more deficit than you have funding for. However, it lacks all other nice properties of QF or CQF. It does not result in an approximately efficient allocation and it can be defrauded by a single agent. However, it is possible to get the one advantage of NQF ($$ D = G $$) without losing any of these properties. You just have to stop the mechanism when $$ D = G $$.
+
+That is:
+
+1. Run QF or CQF with your preferred choice of $$ \alpha $$.
+2. Compute your deficit $$ D $$ after every donation.
+3. End the donation matching once $$ D = G $$.
+
+This last step could be achieved by cutting off donations completely or by putting a "donation matching is currently disabled" message on the screens of potential donors. The choice of $$ \alpha $$ would determine how long you can run the match.
+
 ---
 
 [^1]: These assumptions are from the QF/LR papers. VCG doesn't need all of these assumptions.
@@ -131,7 +174,7 @@ This points to a general issue with this mechanism. People who like both popular
 [^3]: This ideal function is $$ \max_x \left[ \sum_{j \neq i} v_j( x ) \right] - x $$.
 [^4]: As the paper points out, efficiency is lost when people consider how their choices affect their taxes. Though this goes away as the number of participants becomes large. It's hard to see this as an issue if the mechanism played out on a national scale.
 [^5]: 'Better' in that it is closer to the efficient allocation
-[^6]: The assumption that $$ G=1 $$ isn't terribly important. It does not affect total contributions. Naturally, it's possible to get above $$ (1,1) $$ when $$ G > 2 $$. However, agents give nothing in this case. So, it is not terribly interesting.
+[^6]: The assumption that $$ G=1 $$ isn't terribly important. It does not affect total contributions. Naturally, it's possible to get above $$ (1,1) $$ when $$ G > 2 $$. However, contributors give nothing in this case. So, it is not terribly interesting.
 
 *[VCG]: Vickrey-Clarke-Groves (after its three creators)
 *[QF]: Quadratic Finance
