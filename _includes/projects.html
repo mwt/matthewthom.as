@@ -4,9 +4,7 @@
 <div class="{{ include.class | default: "projects" }}">
 <section class="list">
     {%- for project in include.data -%}
-    <div class="item {%- if project.star -%}
-        star
-    {%- endif -%}">
+    <div class="item{% if project.star %} star{% endif %}">
         <a class="url" href="{{ project.url }}"></a>
         <h3 class="title">{{ project.title }}</h3>
         {% if project.github %}
