@@ -59,7 +59,7 @@ There are two major issues with the VCG mechanism:
 2. It fails if bidders can work together (i.e. collude)
 3. It can raise less than $$ x^\star $$ and thus requires subsidization
 
-VCG requires that each participant know their exact valuation for each level of total funding for every open source project. This is typically unreasonable. Issue 2 is somewhat overblown as the ways to cheat in VCG are generally NP-hard to compute. However, there are interesting restricted cases where the optimal collusion scheme can be computed in polynomial time.
+VCG requires each participant to submit their exact valuation for each level of total funding for every open source project. This imposes a preparation cost for most participants as they likely do not know these valuations offhand. Issue 2 is somewhat overblown as the ways to cheat in VCG are generally NP-hard to compute. However, there are interesting restricted cases where the optimal collusion scheme can be computed in polynomial time.
 
 The third issue is an important one that cannot be easily solved. Remember that there is no incentive compatible efficient mechanism that collects more revenue than VCG. So, collecting more funds requires sacrificing efficiency -- an issue not dealt with here.
 
