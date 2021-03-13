@@ -105,7 +105,7 @@ $$
 where $$ 0 \leq \alpha \leq 1 $$. When $$ \alpha = 0 $$, CQF is the standard donation model with no subsidies. When $$ \alpha = 1 $$, CQF is the same as QF and thus achieves the optimal allocation. At every $$ \alpha $$ in between, CQF is a mix of the two. The deficit of CQF is
 
 $$
-D_{CQF} = x^\circ - \sum_i c_i = \alpha \left( \sum_i \sqrt{c_i} \right)^2 - \sum_i c_i = \alpha D_{QF}.
+D_{CQF} = x^\circ - \sum_i c_i = \alpha D_{QF}.
 $$
 
 So, CQF has a smaller deficit than QF. It results in a better[^5] allocation than private donations. However, CQF does not yield the efficient allocation unless $$ \alpha = 1 $$.
