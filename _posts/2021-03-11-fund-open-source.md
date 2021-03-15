@@ -6,6 +6,7 @@ tag: ["math", "economics", "mechanism design"]
 date: "2021-03-11"
 use_math: true
 star: true
+last_modified_at: "2021-03-15"
 ---
 
 I recently came across [an interesting paper](https://arxiv.org/abs/1809.06421v2) published in Management Science that proposes Quadratic Finance (QF), a mechanism to fund public goods such as open source software. This has generated an understandable amount of excitement and there are already several cases in which it has been implemented.
@@ -43,7 +44,7 @@ However, people only care about their own value -- not the value of others. So, 
 
 When they add their own $$v_i(x)$$ to the transfer, their personal payoff is exactly the same as society's (Equation 1). Because of this, they want $$x^\star$$ to be calculated correctly. So, they have no reason to lie about their value, $$v_i$$.
 
-The transfers noted above are very expensive. However, they can be made much cheaper because you can subtract any constant from these transfers. In fact, you can subtract any function that does not depend on $$v_i$$.[^2] When the ideal function is chosen,[^3] the assumptions we made ensure the VCG mechanism raises funds from each person. The amount raised from person $i$ is.
+The transfers noted above are very expensive. However, they can be made much cheaper because you can subtract any constant from these transfers. In fact, you can subtract any function that does not depend on $$v_i$$.[^2] When the ideal function is chosen,[^3] the assumptions we made ensure the VCG mechanism raises funds from each person. The amount raised from person $$i$$ is.
 
 $$
 \max_x \left( \left[ \sum_{j \neq i} v_j( x ) \right] - x \right) - \left( \left[ \sum_{j \neq i} v_j( x^\star ) \right] - x^\star \right) > 0
