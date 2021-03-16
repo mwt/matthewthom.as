@@ -1,0 +1,66 @@
+#mc_embed_signup
+
+    form 
+        text-align: center
+        padding: 10px 0 10px 0
+
+    label
+        display: block
+        font-size: 16px
+        padding-bottom: 10px
+        font-weight: bold
+
+    /* positions input field horizontally */
+    input.email 
+        font-size: 15px
+        border: 1px solid $gama
+        border-radius: 3px
+        background-color: #fff
+        box-sizing: border-box
+        height: 32px
+        padding: 0px 0.4em
+        display: inline-block
+        margin: 0
+        width: 350px
+        vertical-align: top
+
+        @media #{$below}
+            width: 100%
+            margin-bottom: 5px
+
+    .clear 
+        display: inline-block
+
+        @media #{$below}
+            display: block
+            width: 100%
+
+    /* positions button horizontally in line with input */
+    .button 
+        font-size: 13px
+        border: none
+        -webkit-border-radius: 3px
+        -moz-border-radius: 3px
+        border-radius: 3px
+        letter-spacing: 0.03em
+        color: #fff
+        font-weight: 700
+        background-color: #000
+        box-sizing: border-box
+        height: 32px
+        line-height: 32px
+        padding: 0 18px
+        display: inline-block
+        margin: 0
+        transition: all 0.23s ease-in-out 0s
+    
+        &:hover 
+            background-color: $delta
+            color: $yellow
+            cursor: pointer
+
+        @media #{$below}
+            width: 100%
+            margin: 0
+    
+
