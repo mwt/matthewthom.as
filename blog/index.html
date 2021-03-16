@@ -4,16 +4,20 @@
 layout: page
 title: Blog
 pagination:
-enabled: true
+  enabled: true
 ---
+
 <hr>
 <section class="list">
     {% if site.posts.size == 0 %}
     <p class="text-center">Nothing published yet!</p>
     {% elsif site.pagination.enabled %}
         {% include projects.html data=paginator.posts title="Blog" class="blog" %}
-        {% include pagination.html%}
+        {% include pagination.html %}
     {% else %}
         {% include projects.html data=site.posts title="Blog" class="blog" %}
     {% endif %}
 </section>
+
+<hr>
+{% include mailchimp.html %}
