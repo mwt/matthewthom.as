@@ -1,24 +1,34 @@
 {
-    "name": "mattwthomas-com",
-    "trailingSlash": true,
-    "headers": [
+  "name": "mattwthomas-com",
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
         {
-          "source": "/assets/(.*)",
-          "headers" : [
-            {
-              "key" : "Cache-Control",
-              "value" : "public, max-age=2629746"
-            }
-          ]
-        },
-        {
-          "source": "/(.*)",
-          "headers" : [
-            {
-              "key" : "Cache-Control",
-              "value" : "public, max-age=14400"
-            }
-          ]
+          "key": "Cache-Control",
+          "value": "public, max-age=2629746"
         }
-    ]
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=14400"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/gh/:match*/",
+      "destination": "https://mwt.github.io/:match*/index.html"
+    },
+    {
+      "source": "/gh/:match*",
+      "destination": "https://mwt.github.io/:match*"
+    }
+  ]
 }
