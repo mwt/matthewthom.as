@@ -6,3 +6,5 @@ Gemfile.lock
 vendor/
 vtex*
 *.secret.*
+
+.vercel
