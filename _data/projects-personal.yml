@@ -10,3 +10,7 @@
   url: "https://ipsum.mwt.me"
   description: "Generate academic-sounding filler"
   github: "https://github.com/mwt/econ-ipsum"
+- title: "MathJaX Bookmarklet"
+  url: "https://mattwthomas.com/gh/mathjax-bookmarklet/"
+  github: "https://github.com/mwt/mathjax-bookmarklet"
+  description: "Display math on any webpage"
