@@ -9,7 +9,7 @@ star: true
 last_modified_at: "2021-03-15"
 ---
 
-I recently came across [an interesting paper](https://arxiv.org/abs/1809.06421v2) published in Management Science that proposes Quadratic Finance (QF), a mechanism to fund public goods such as open source software. This has generated an understandable amount of excitement and there are already several cases in which it has been implemented.
+I recently came across [an interesting paper](https://econpapers.repec.org/RePEc:inm:ormnsc:v:65:y:2019:i:11:p:5171-5187) published in Management Science that proposes Quadratic Finance (QF), a mechanism to fund public goods such as open source software. This has generated an understandable amount of excitement and there are already several cases in which it has been implemented.
 
 * [FundOSS](https://fundoss.org/)
 * [Gitcoin Grants](https://gitcoin.co/grants/)
@@ -26,7 +26,7 @@ The basic problem with funding a public good is that people do not pay if they c
 
 Note that this is not a fundraising problem. It is a *voting* problem. QF was not designed to have the greatest revenue of any mechanism. It doesn't tell you how to raise money. It instead tells you where you should put it once it is raised. QF is a system where people "vote with their wallets" to allocate resources. Yes, it raises funds as part of the process, but this is not the point.
 
-This is a classic Economic problem that was technically solved by Vickrey, Clarke, and Groves in [three](https://scholar.archive.org/search?q=key:work_fsr6vuy2g5gihnp3znw4xmvqnu) [separate](https://scholar.archive.org/search?q=key:work_jqeqfsyhpzc5vp44oky4czop6y) [papers](https://scholar.archive.org/search?q=key:work_roir55hgbze27pqsfuxehnyvky). A quick summary of their mechanism (VCG) is essential for understanding what QF is about.
+This is a classic Economic problem that was technically solved by Vickrey, Clarke, and Groves in [three](https://econpapers.repec.org/RePEc:bla:jfinan:v:16:y:1961:i:1:p:8-37) [separate](https://econpapers.repec.org/RePEc:kap:pubcho:v:11:y:1971:i:1:p:17-33) [papers](https://econpapers.repec.org/RePEc:ecm:emetrp:v:41:y:1973:i:4:p:617-31). A quick summary of their mechanism (VCG) is essential for understanding what QF is about.
 
 ## Classic VCG
 
@@ -50,7 +50,7 @@ $$
 \max_x \left( \left[ \sum_{j \neq i} v_j( x ) \right] - x \right) - \left( \left[ \sum_{j \neq i} v_j( x^\star ) \right] - x^\star \right) > 0
 $$
 
-There is no incentive compatible efficient mechanism that raises more total funds [(Krishna and Perry 1998)](https://scholar.archive.org/search?q=key:work_5qnsclqtdvfgvo5o7iwr2bpl6i).
+There is no incentive compatible efficient mechanism that raises more total funds [(Krishna and Perry 1998)](https://econpapers.repec.org/RePEc:wpa:wuwpga:9703010).
 
 ### Issues
 
