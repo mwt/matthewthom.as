@@ -31,7 +31,7 @@ $$
 
 where $$ \ell_i $$ is the payoff of losing, $$ s_i $$ is the payoff of a tie, and $$ f_i $$ is the payoff of the winner. Note that the two players can have entirely different payoffs. In the most common formulation, $$ \ell_i(t) = -t $$ and $$ f_i(t) = V_i - t $$.
 
-We make one regularity assumption and another assumption which characterizes the War of Attrition.
+We make one regularity assumption and another assumption which characterizes the war of attrition.
 
 **Assumption 1:** The function $$ f_i(t) $$ is continuous and $$ \ell_i(t) $$ is continuously differentiable.
 
