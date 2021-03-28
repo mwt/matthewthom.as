@@ -29,6 +29,7 @@ layout: compress
 </head>
 <body>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+        {% include nav.html %}
         {% if page.tag %}
             <div class="post">
         {% else %}
@@ -39,8 +40,10 @@ layout: compress
             {% endif %}
         {% endif %}
 
-            {{ content }}
+        {{ content }}
+
         </div>
+        {% include footer.html %}
     </div>
 
     {% include icons.html %}
