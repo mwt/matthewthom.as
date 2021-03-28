@@ -25,21 +25,12 @@
     > .copyright
         padding-left: 10px
 
-    > .link
-        display: inline
-        vertical-align: middle
+    > .link > .octicon
+        color: $gama
+        transition: ease-in-out all .3s
 
-        > .icon
-            width: 15px !important
-            fill: $gama !important
-            transition: ease-in-out all .3s
-            position: relative
-            top: 3px
-            display: inherit
-            margin: 0
-
-            &:hover
-                fill: $delta !important
+        &:hover
+            color: $delta
 
     > .extra
         color: $gama
