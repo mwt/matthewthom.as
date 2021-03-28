@@ -1,5 +1,5 @@
 ---
-layout: minimal
+layout: default
 ---
 
 {% if page.image and page.headerImage %}
@@ -21,7 +21,9 @@ layout: minimal
     </div>
 {% endif %}
 
+<div class="content">
 {{content}}
+</div>
 
 {% if site.post-advance-links contains page.category %}
     <div class="blog-navigation">
