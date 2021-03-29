@@ -1,10 +1,12 @@
 body, html
-	font-size: 62.5%
+	font-size: 100%
 
 body
 	line-height: 1
-	font: 1.6rem $fontP
+	font: 1em $fontP
 	color: $alpha
+	@media #{$notmd}
+		font-size: (20em / 16)
 
 h1, h2, h3, h4
 	font-family: $fontH
@@ -13,28 +15,28 @@ h1, h2, h3, h4
 	text-rendering: optimizeLegibility
 
 h1
-	font-size: 3rem
+	font-size: 2em
 	color: $beta
 	font-weight: 700
 
 h2
-	font-size: 2.2rem
+	font-size: 1.6em
 
 h3
-	font-size: 2rem
+	font-size: 1.2em
 
 h4
-	font-size: 1.6rem
+	font-size: 1em
 
 a
 	color: $delta
 	text-decoration: underline
 
 p, form
-	line-height: 1.5
+	line-height: 1.6em
 	color: $alpha
 	font-weight: 400
-	margin-bottom: 20px
+	margin-bottom: (20em / 16)
 
 strong
 	font-weight: 600
@@ -43,7 +45,7 @@ strong
 ul,
 ol
 	li
-		line-height: 2.4rem
+		line-height: 1.5em
 		color: $alpha
 
 img,
@@ -65,12 +67,12 @@ figcaption
 	margin: 0 auto
 	width: 100%
 	text-align: center
-	font-size: 1.2rem
+	font-size: 0.75em
 	color: $gama
 	font-weight: 300
 
-	@media #{$above}
-		font-size: 1.3rem
+	@media #{$notmd}
+		font-size: 0.8em
 
 blockquote
 	padding-left: 15px
@@ -91,8 +93,8 @@ code,
 tt
 	padding: 1px 0
 	font-family: $fontMonospace
-	font-size: 1.2rem
-	line-height: 2rem
+	font-size: (12em / 16)
+	line-height: (20em /12)
 	background: #fff
 	border-radius: 2px
 	border-radius: 2px
@@ -103,8 +105,8 @@ pre
 	width: 100%
 	padding: 5px 10px
 	font-family: $fontMonospace
-	font-size: 1.2rem
-	line-height: 2rem
+	font-size: (12em / 16)
+	line-height: (20em /12)
 	overflow: auto
 	background: #fff
 	border: 1px solid $epsilon

@@ -1,4 +1,4 @@
-<nav class="{% if page.title == "Home" and site.navonhome %}nav-home{% else %}nav{% endif %} {% if site.animation %}animated{% endif %}">
+<nav class="nav {% if site.animation %}animated{% endif %}">
     <ul class="list">
         {% for link in site.data.nav %}
         {% if page.url != link.url %}

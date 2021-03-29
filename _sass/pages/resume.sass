@@ -16,13 +16,13 @@
             display: block
             color: $alpha
             font-family: $fontP
-            @media #{$above}
+            @media #{$notmd}
                 float: right
 
 
     > h3 > em
         display: none
-        @media #{$above}
+        @media #{$notmd}
             display: block
 
     > a.hover-download
@@ -45,5 +45,5 @@
             width: 100%
 
     &:hover > a.hover-download
-        @media #{$above}
+        @media #{$notmd}
             display: block

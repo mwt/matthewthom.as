@@ -6,13 +6,12 @@
 
     label
         display: block
-        font-size: 1.6rem
         padding-bottom: 10px
         font-weight: bold
 
     /* positions input field horizontally */
     input.email 
-        font-size: 1.5rem
+        font-size: (15em / 16)
         border: 1px solid $gama
         border-radius: 3px
         background-color: #fff
@@ -20,24 +19,30 @@
         height: 32px
         padding: 0px 0.4em
         display: inline-block
-        margin: 0
-        width: 350px
+        margin: 
+            top: 0
+            left: 0
+            right: 0
+            bottom: 5px
+        width: 100%
         vertical-align: top
 
-        @media #{$below}
-            width: 100%
-            margin-bottom: 5px
+        @media #{$notxs}
+            width: 350px
+            margin-bottom: 0
 
-    .clear 
-        display: inline-block
+    .clear
+        display: block
+        width: 100%
 
-        @media #{$below}
-            display: block
-            width: 100%
+        @media #{$notxs}
+            display: inline-block
+            width: unset
 
     /* positions button horizontally in line with input */
     .button 
-        font-size: 1.3rem
+        font-size: (13em / 16)
+        width: 100%
         border: none
         -webkit-border-radius: 3px
         -moz-border-radius: 3px
@@ -58,8 +63,7 @@
             color: $yellow
             cursor: pointer
 
-        @media #{$below}
-            width: 100%
-            margin: 0
+        @media #{$notxs}
+            width: unset
     
 
