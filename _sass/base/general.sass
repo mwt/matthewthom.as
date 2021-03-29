@@ -3,7 +3,7 @@ body, html
 
 body
 	line-height: 1
-	font: 16px $fontP
+	font: 1.6rem $fontP
 	color: $alpha
 
 h1, h2, h3, h4
@@ -14,7 +14,6 @@ h1, h2, h3, h4
 
 h1
 	font-size: 3rem
-	letter-spacing: -1px
 	color: $beta
 	font-weight: 700
 
@@ -32,15 +31,10 @@ a
 	text-decoration: underline
 
 p, form
-	line-height: 1.7
+	line-height: 1.5
 	color: $alpha
 	font-weight: 400
 	margin-bottom: 20px
-	letter-spacing: 0.2px
-
-	@media #{$above}
-		letter-spacing: 0.4px
-		
 
 strong
 	font-weight: 600
@@ -97,8 +91,8 @@ code,
 tt
 	padding: 1px 0
 	font-family: $fontMonospace
-	font-size: 12px
-	line-height: 20px
+	font-size: 1.2rem
+	line-height: 2rem
 	background: #fff
 	border-radius: 2px
 	border-radius: 2px
@@ -130,6 +124,8 @@ pre
 
 .content
 	font-family: $fontC
+	word-wrap: break-word
+	hyphens: auto
 
 .btn
 	border: 1px solid currentColor
