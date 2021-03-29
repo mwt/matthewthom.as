@@ -14,8 +14,6 @@
         {% endif %}
         {%- if project.description -%}
         <aside>{{ project.description }}</aside>
-        {%- elsif project.date -%}
-        <aside><time datetime="{{ project.date | date:"%d-%m-%Y" }}">{{ project.date | date: "%b %d %Y" }}</time></aside>
         {%- endif -%}
     </div>
     {%- endfor -%}
