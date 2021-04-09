@@ -1,22 +1,21 @@
 {
-  "name": "mattwthomas-com",
   "trailingSlash": true,
   "headers": [
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2629746"
-        }
-      ]
-    },
     {
       "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=14400"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2629746"
         }
       ]
     }
