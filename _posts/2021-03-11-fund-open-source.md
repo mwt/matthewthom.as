@@ -5,11 +5,10 @@ layout: "post"
 tag: ["math", "economics", "mechanism design"]
 date: "2021-03-11"
 use_math: true
-star: true
-last_modified_at: "2021-03-15"
+last_modified_at: "2021-04-10"
 ---
 
-I recently came across [an interesting paper](https://econpapers.repec.org/RePEc:inm:ormnsc:v:65:y:2019:i:11:p:5171-5187) published in Management Science that proposes Quadratic Finance (QF), a mechanism to fund public goods such as open source software. This has generated an understandable amount of excitement and there are already several cases in which it has been implemented.
+I recently came across [a paper](https://econpapers.repec.org/RePEc:inm:ormnsc:v:65:y:2019:i:11:p:5171-5187) published in Management Science that proposes Quadratic Finance (QF), a a quadratic voting mechanism to allocate funds to public goods such as open source software. This has generated an understandable amount of excitement and there are already several cases in which it has been implemented.
 
 * [FundOSS](https://fundoss.org/)
 * [Gitcoin Grants](https://gitcoin.co/grants/)
@@ -121,7 +120,7 @@ $$
 
 where $$ G $$ is the size of an outside grant and $$ p $$ is an index for the open source project. A [calculator for NQF](https://wtfisqf.com/) is available with [source code](https://github.com/anish-agnihotri/quadratic-funding). This formulation guarantees that the deficit of the mechanism is exactly $$ D_{NQF} = G $$. This is a desirable property because it ensures that the round never goes over budget and that all of $$ G $$ is used. However, this model is not ideal. In the next section, I'll show a better way.
 
-**NQF lacks the desirable properties of QF and CQF.** It is a completely different mechanism.
+**NQF lacks the desirable properties of QF and CQF.** It not not efficient. It is a completely different mechanism.
 
 The first thing to note is that a private good still gets a subsidy under NQF. Under VCG, QF, and CQF, any project with one contributor gets no subsidy. You can see in the equation above that this is not true for NQF because the subsidy for each project
 
@@ -129,7 +128,7 @@ $$
 G \frac{\left( \sum_i \sqrt{c_i^p} \right)^2}{ \sum_p \left( \sum_i \sqrt{c_i^p} \right)^2}
 $$
 
-is always positive. This means that any individual who can list a project can commit profitable fraud. 
+is always positive. This means that any individual who can list a project can fraudulently profit from the mechanism. 
 
 The second thing to note about NQF is funds allocated to project $$p$$ are decreasing in the contributions to all other projects. For example, when you donate to WebPack, you are taking funds away from all other projects. This generates inefficiency and is a major deviation from QF and CQF.
 
@@ -154,7 +153,7 @@ while $$ v_2^2(x) = 0 $$. Contributor 1 has no reason to contribute to Project 1
 
 The above table shows the contributions to Project 1 and Project 2 by each player and the grants. As you can see, the total contributions are the same between NQF and private contributions. So, in our example, NQF does not outperform private contributions even though a grant has been collected. Of course, both are outperformed by matching contributions or performing QF with any $$ \alpha > 0 $$.
 
-This points to a general issue with this mechanism. People who like both popular and unpopular projects have an incentive to divert resources to the unpopular ones. This is a classic voting issue and is exactly the sort of behavior that QF was designed to prevent.
+This points to a general issue with this mechanism. People who like both popular and unpopular projects have an incentive to divert resources to the unpopular ones. This is a classic voting issue and is exactly the sort of behavior that quadratic voting mechanisms were designed to prevent.
 
 ## A better way
 
