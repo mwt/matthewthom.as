@@ -1,18 +1,38 @@
 ---
 layout: page
+title: "Home"
 ---
 <hr>
 <p>
     I'm Matthew Wildrick Thomas, an Economics PhD candidate at Northwestern University. I am currently interested in
     applied microeconomic theory including information in financial markets, contests, and lobbying. This page is here
-    to share my academic and non-academic projects.
+    to share my <a href="#academic">academic</a> and  <a href="#non-academic">non-academic</a> projects.
 </p>
 
-<div id="projects">
+{% assign notes=site.posts | where:"tag","notes" %}
+
+<div id="academic" class="anchor">
     <hr>
-    {%- include projects.html title="Academic Projects" data=site.data.projects-academic -%}
+    {%- include projects.html 
+        title="Notes" 
+        description="Public notes on established results" 
+        data=notes -%}
     <hr>
-    {%- include projects.html title="Personal Projects" data=site.data.projects-personal -%}
+</div>
+
+<div id="non-academic" class="anchor">
+    {%- include projects.html 
+        title="Professional Projects"
+        description="Non-academic code written in my capacity as a TA or RA"
+        data=site.data.projects-professional -%}
     <hr>
-    {%- include projects.html title="Code Snippets" data=site.data.projects-gists -%}
+    {%- include projects.html 
+        title="Personal Projects"
+        description="Non-academic open source projects I maintain" 
+        data=site.data.projects-personal -%}
+    <hr>
+    {%- include projects.html 
+        title="Code Snippets"
+        description="Bits and pieces that don't constitute a full project or package"
+        data=site.data.projects-gists -%}
 </div>

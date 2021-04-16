@@ -2,7 +2,7 @@
 title: "Nonlinear War of Attrition with Complete Information"
 author: "Matthew Wildrick Thomas"
 layout: "post"
-tag: ["math", "economics", "game theory"]
+tag: ["math", "economics", "game theory", "notes"]
 date: "2021-03-22"
 use_math: true
 last_modified_at: "2021-04-15"
