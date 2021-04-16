@@ -9,6 +9,9 @@
 .text-center
 	text-align: center
 
+.thin
+	font-weight: 200
+
 .clearfix:before,
 .clearfix:after
 	content: ""
@@ -21,11 +24,12 @@
  * offset for anchor links on headers due to fixed navbar
  */
 
+.anchor:target:before,
 h2:target:before
 	content: ""
 	display: block
-	height: 100px
-	margin: -100px 0 0
+	height: 70px
+	margin: -70px 0 0
 
 /*
  * animations

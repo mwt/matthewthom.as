@@ -1,6 +1,9 @@
 {% if include.title %}
 <h2>{{ include.title }}</h2>
 {% endif %}
+{% if include.description %}
+<p class="thin">{{ include.description }}</p>
+{% endif %}
 <div class="{{ include.class | default: "projects" }}">
 <section class="list">
     {%- for project in include.data -%}
