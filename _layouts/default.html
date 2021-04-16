@@ -4,7 +4,7 @@ layout: compress
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css?build={{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?build={{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
 
     {%- if page.use_math -%}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" crossorigin="anonymous">
@@ -18,14 +18,14 @@ layout: compress
     <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
     <meta name=viewport content="width=device-width, initial-scale=1">
     
-    <meta property="og:image" content="{{ site.url }}/{{ site.spicture }}">
+    <meta property="og:image" content="{{ site.spicture | relative_url }}">
     <meta property="og:type" content="WebSite">
 
     {% seo %}
     
     {% include favicon.html %}
 
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />
 
     {% for html in page.head %}
         {{ html }}
