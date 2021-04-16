@@ -2,7 +2,7 @@
     <span class="copyright">
         {{ site.title }} © {{ site.time | date: '%Y' }}
     </span>
-    <a class="link" href="{{ site.url }}/feed.xml" target="_blank">
+    <a class="link" href="{{ '/feed.xml' | relative_url }}" target="_blank">
         {% octicon rss %}
     </a>
 </footer>
