@@ -121,13 +121,13 @@ This maximum is obtained at $$ \delta^\star = k $$.
 
 In this case, the revenue is
 
-<div markdown="false">
-\begin{align*}
+$$
+\begin{aligned}
 s_1 + s_2 &= \left( 1 + \frac{1}{k} \right) s_1 \\
           &= \left( 1 + \frac{1}{k} \right) \frac{k^2}{( 2 k )^2} \\
           &= \frac{1 + k}{4 k}
-\end{align*}
-</div>
+\end{aligned}
+$$
 
 If we allow $$ \alpha $$ to take any positive value, then the optimal delta will still be $$ \delta^\star = k $$. This result comes from the optimization problem
 

@@ -6,6 +6,10 @@ layout: compress
 <head>
     <link rel="stylesheet" href="{{ site.url }}/assets/css/style.css?build={{ site.time | date: "%Y%m%d%H%M" }}" type="text/css">
 
+    {%- if page.use_math -%}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" crossorigin="anonymous">
+    {%- endif -%}
+
     {% if site.analytics-google %}
         {% include analytics-google.html %}
     {% endif %}
@@ -48,9 +52,5 @@ layout: compress
 
     {% include icons.html %}
 
-    {%- if page.use_math -%}
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    {%- endif -%}
 </body>
 </html>

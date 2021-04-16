@@ -5,7 +5,7 @@ layout: "post"
 tag: ["math", "economics", "game theory"]
 date: "2021-03-22"
 use_math: true
-last_modified_at: "2021-03-25"
+last_modified_at: "2021-04-15"
 ---
 
 These notes are about nonlinear war of attrition models with two players. The formulation we consider is a simplified version of [Hendricks, Weiss, and Wilson (1988)](https://EconPapers.repec.org/RePEc:ier:iecrev:v:29:y:1988:i:4:p:663-80). These models are popular for modeling conflict that occurs in continuous time including wars, filibusters, bribes, and competition for standards and monopolies.
@@ -104,13 +104,13 @@ The solution is somewhat difficult to work with. So, in most applications, the p
 If we assume $$ f_i(z) = V_i + \ell_i(y) $$, where $$ V_i $$ is a constant prize, then 
 
 So, the strategy reduces to
-<div markdown="false">
-\begin{align*}
+$$
+\begin{aligned}
 G_{-i}(t) &= 1 - \exp \left( \int _0^t \frac{ \ell'_i(z) }{ f_i(z) - \ell_i(z) } dz \right) \\
           &= 1 - \exp \left( \int _0^t \frac{ \ell'_i(z) }{ V_i } dz \right) \\
           &= 1 - \exp \left( \frac{ \ell_i(t) }{ V_i } \right).
-\end{align*}
-</div>
+\end{aligned}
+$$
 
-This equation is about as simple as the equilibrium of the linear war of attrition (where $$ \ell_i(x) = -x $$). So, it is pretty popular. You can try other assumptions in the general equation to to get other expressions. For example, the equilibrium where players only pay a fraction of *l* when they win is also relatively simple.
+This equation is about as simple as the equilibrium of the linear war of attrition (where $$ \ell_i(x) = -x $$). So, it is pretty popular. You can try other assumptions in the general equation to to get other expressions. For example, the equilibrium where players only pay a fraction of $$ \ell_i $$ when they win is also relatively simple.
 

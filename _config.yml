@@ -26,7 +26,7 @@ collections:
 
 markdown: kramdown
 kramdown:
-  math_engine: mathjax
+  math_engine: katex
   input: kramdown
 
 # To enable google analytics, supply your token below
