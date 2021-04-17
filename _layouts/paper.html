@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h1 class="title">{{ page.title }}</h1>
+<div class="author text-center">
+{%- for author in page.authors -%}
+    <author>{{ author.name }}</author>
+    {%- unless forloop.last -%}
+        {{' '}}and{{' '}}
+    {%- endunless -%}
+{%- endfor -%}
+</div>
+
+<div class="content">
+<h2>Abstract</h2>
+{{content}}
+</div>
+

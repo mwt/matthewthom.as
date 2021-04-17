@@ -23,6 +23,20 @@ collections:
   posts:
     output: true
     permalink: /blog/:title/
+  papers:
+    output: true
+    permalink: /papers/:title/
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+- scope:
+    path: ''
+    type: papers
+  values:
+    layout: paper
 
 markdown: kramdown
 kramdown:
