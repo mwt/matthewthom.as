@@ -34,8 +34,10 @@ layout: compress
 <body>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% include nav.html %}
-        {% if page.tag %}
+        {% if page.layout == "post" %}
             <div class="post">
+        {% elsif page.layout == "paper" %}
+            <div class="paper">
         {% else %}
             {% if showHeader != true %}
                 <div class="page {{ page.title | downcase }}">

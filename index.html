@@ -8,10 +8,19 @@ title: "Home"
     applied microeconomic theory including information in financial markets, contests, and lobbying. This page is here
     to share my <a href="#academic">academic</a> and  <a href="#non-academic">non-academic</a> projects.
 </p>
+<hr>
 
 {% assign notes=site.posts | where:"tag","notes" %}
 
 <div id="academic" class="anchor">
+    <h2>Working Papers</h2>
+    {%- for paper in site.papers -%}
+    <a href="{{ paper.pdf | relative_url }}">
+        <h3>{{paper.title}}</h3>
+    </a>
+    {{ paper.content | markdownify }}
+    {%- endfor -%}
+
     <hr>
     {%- include projects.html 
         title="Notes" 
