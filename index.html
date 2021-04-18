@@ -22,7 +22,7 @@ title: "Home"
     {%- endfor -%}
 
     <hr>
-    {%- include projects.html 
+    {%- include list.html 
         title="Notes" 
         description="Public notes on established results" 
         data=notes -%}
@@ -30,17 +30,17 @@ title: "Home"
 </div>
 
 <div id="non-academic" class="anchor">
-    {%- include projects.html 
+    {%- include list.html 
         title="Professional Projects"
         description="Non-academic code written in my capacity as a TA or RA"
         data=site.data.projects-professional -%}
     <hr>
-    {%- include projects.html 
+    {%- include list.html 
         title="Personal Projects"
         description="Non-academic open source projects I maintain" 
         data=site.data.projects-personal -%}
     <hr>
-    {%- include projects.html 
+    {%- include list.html 
         title="Code Snippets"
         description="Bits and pieces that don't constitute a full project or package"
         data=site.data.projects-gists -%}
