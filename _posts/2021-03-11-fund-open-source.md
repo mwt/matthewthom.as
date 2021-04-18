@@ -5,7 +5,8 @@ layout: "post"
 tag: ["math", "economics", "mechanism design", "notes"]
 date: "2021-03-11"
 use_math: true
-last_modified_at: "2021-04-16"
+description: "Notes on VCG and issues with current applications of quadratic voting"
+last_modified_at: "2021-04-18"
 ---
 
 I recently came across [a paper](https://econpapers.repec.org/RePEc:inm:ormnsc:v:65:y:2019:i:11:p:5171-5187) published in Management Science that proposes Quadratic Finance (QF), a a quadratic voting mechanism to allocate funds to public goods such as open source software. This has generated an understandable amount of excitement and there are already several cases in which it has been implemented.
