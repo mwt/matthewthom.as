@@ -9,7 +9,13 @@
     {%- for project in include.data -%}
     <div class="item{% if project.star %} star{% endif %}">
         <h3>
-            <a class="title" href="{{ project.url }}">{{ project.title }}</a>
+            <a class="title" href="
+            {%- if project.url_is_pdf -%}
+                {{ project.pdf }}
+            {%- else -%}
+                {{ project.url }}
+            {%- endif -%}
+            ">{{ project.title }}</a>
             {% if project.authors.size > 1 %}
                 {%- assign coauthors = project.authors | where_exp: "author", "author.name != site.title" -%}
                 (with 
