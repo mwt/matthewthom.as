@@ -13,13 +13,10 @@ title: "Home"
 {% assign notes=site.posts | where:"tag","notes" %}
 
 <div id="academic" class="anchor">
-    <h2>Working Papers</h2>
-    {%- for paper in site.papers -%}
-    <a href="{{ paper.pdf | relative_url }}">
-        <h3>{{paper.title}}</h3>
-    </a>
-    {{ paper.content | markdownify }}
-    {%- endfor -%}
+    {%- include list.html 
+        title="Working Papers" 
+        class="papers" 
+        data=site.papers -%}
 
     <hr>
     {%- include list.html 
