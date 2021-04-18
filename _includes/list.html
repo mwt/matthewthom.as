@@ -49,7 +49,13 @@
         </a>
         {%- endif -%}
         {% if include.class == "papers" and project.content %}
-        {{ project.content | markdownify }}
+        <div class="atoggle">
+            <input type="checkbox" id="toggle" name="abstract-toggle" />
+            <label for="toggle">Abstract</label>
+            <div class = "abstract">
+                {{ project.content | markdownify }}
+            </div>
+        </div>
         {% endif %}
     </div>
     {%- endfor -%}
