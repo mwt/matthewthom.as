@@ -2,7 +2,9 @@
 title: "Asymmetric All-Pay Contests with Spillovers"
 authors:
  - name: "Maria Betto"
+   url: "https://mariabetto.com"
  - name: "Matthew Wildrick Thomas"
+description: "What happens when the prize in an all-pay auction depends on players' bids?"
 pdf: "/assets/pdfs/asymmetric-all-pay-contests-with-spillovers.pdf"
 ---
 

@@ -8,16 +8,49 @@
 <section class="list">
     {%- for project in include.data -%}
     <div class="item{% if project.star %} star{% endif %}">
-        <a class="url" href="{{ project.url }}"></a>
-        <h3 class="title">{{ project.title }}</h3>
-        {% if project.github %}
-        <a class="social-link" data-title="GitHub" href="{{ project.github }}" target="_blank">
-            <svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg>
-        </a>
-        {% endif %}
+        <h3>
+            <a class="title" href="{{ project.url }}">{{ project.title }}</a>
+            {% if project.authors.size > 1 %}
+                {%- assign coauthors = project.authors | where_exp: "author", "author.name != site.title" -%}
+                (with 
+                {%- for coauthor in coauthors -%}
+                {%- if coauthor.url -%}
+                    {{' '}}<a href="{{ coauthor.url }}" class="coauthor">{{ coauthor.name }}</a>
+                {%- else -%}
+                    {{' '}}{{ coauthor.name }}
+                {%- endif -%}
+                {%- unless forloop.last -%}
+                    {{' '}}and
+                {%- endunless -%}
+                {%- endfor -%}
+                )
+            {% endif %}
+        </h3>
         {%- if project.description -%}
-        <aside>{{ project.description }}</aside>
+        <p class="description">{{ project.description }}</p>
         {%- endif -%}
+        
+        {%- if project.github -%}
+        <a class="icon-link" href="{{ project.github }}" target="_blank">
+            <svg class="octicon octicon-github"><use xlink:href="#icon-github"></use></svg>
+            Source
+        </a>
+        {%- endif -%}
+        {%- if project.pdf -%}
+        <a class="icon-link" href="{{ project.pdf }}">
+            <svg class="octicon octicon-file"><use xlink:href="#icon-pdf"></use></svg>
+            Paper
+        </a>
+        {%- endif -%}
+        {%- if project.slides -%}
+        <a class="icon-link" href="{{ project.slides }}">
+            <svg class="octicon octicon-file"><use xlink:href="#icon-slides"></use></svg>
+            Slides
+        </a>
+        {%- endif -%}
+        {% if include.class == "papers" and project.content %}
+        {{ project.content | markdownify }}
+        {% endif %}
     </div>
     {%- endfor -%}
 </section>
