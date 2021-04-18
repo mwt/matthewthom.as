@@ -12,4 +12,4 @@ This is a list I compiled of other blogs about Economics. If you would like to a
 ---
 
 {%- assign sorted_econ_blogs = site.data.econ-blogs | sort_natural: "title" -%}
-{%- include projects.html data=sorted_econ_blogs -%}
+{%- include list.html data=sorted_econ_blogs -%}

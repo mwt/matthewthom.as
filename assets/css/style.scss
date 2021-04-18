@@ -10,7 +10,6 @@ layout: none
 @import "base/tables";
 @import "base/helpers";
 
-@import "pages/projects";
 @import "pages/page";
 @import "pages/post";
 //@import "pages/tags";
@@ -19,6 +18,7 @@ layout: none
 @import "components/footer";
 @import "components/header";
 @import "components/nav";
+@import "components/list";
 @import "components/others";
 @import "components/pagination";
 @import "components/social-links";

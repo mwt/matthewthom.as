@@ -12,10 +12,10 @@ pagination:
     {% if site.posts.size == 0 %}
     <p class="text-center">Nothing published yet!</p>
     {% elsif site.pagination.enabled %}
-        {% include projects.html data=paginator.posts title="Blog" class="blog" %}
+        {% include list.html data=paginator.posts title="Blog" class="blog" %}
         {% include pagination.html %}
     {% else %}
-        {% include projects.html data=site.posts title="Blog" class="blog" %}
+        {% include list.html data=site.posts title="Blog" class="blog" %}
     {% endif %}
 </section>
 
