@@ -1,0 +1,4 @@
+- title: "All-Pay Contests in Python (allpy)"
+  url: "https://pypi.org/project/allpy/"
+  description: "Python package to estimate the equilibria of all-pay contests with spillovers"
+  github: "https://github.com/mwt/allpy"
