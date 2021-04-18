@@ -17,11 +17,13 @@ title: "Home"
         title="Working Papers" 
         class="papers" 
         data=site.papers -%}
-
+    <hr>
+    {%- include list.html 
+        title="Academic Code" 
+        data=site.data.projects-academic -%}
     <hr>
     {%- include list.html 
         title="Notes" 
-        description="Public notes on established results" 
         data=notes -%}
     <hr>
 </div>
@@ -29,16 +31,13 @@ title: "Home"
 <div id="non-academic" class="anchor">
     {%- include list.html 
         title="Professional Projects"
-        description="Non-academic code written in my capacity as a TA or RA"
         data=site.data.projects-professional -%}
     <hr>
     {%- include list.html 
         title="Personal Projects"
-        description="Non-academic open source projects I maintain" 
         data=site.data.projects-personal -%}
     <hr>
     {%- include list.html 
         title="Code Snippets"
-        description="Bits and pieces that don't constitute a full project or package"
         data=site.data.projects-gists -%}
 </div>
