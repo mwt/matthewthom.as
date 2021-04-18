@@ -8,7 +8,7 @@ use_math: true
 last_modified_at: "2021-04-15"
 ---
 
-These notes summarize concepts introduced in [Nti (1999)](https://econpapers.repec.org/RePEc:kap:pubcho:v:98:y:1999:i:3-4:p:415-30), [Fang (2002)](https://econpapers.repec.org/RePEc:kap:pubcho:v:112:y:2002:i:3-4:p:351-71), [Nti (2004)](https://econpapers.repec.org/RePEc:eee:poleco:v:20:y:2004:i:4:p:1059-1066), and [Epstein et al (2013)](https://econpapers.repec.org/RePEc:iza:izadps:dp7032) about revenue maximization in Tullock lottery contests.
+These notes summarize concepts introduced in [Nti (1999)](https://econpapers.repec.org/RePEc:kap:pubcho:v:98:y:1999:i:3-4:p:415-30), [Fang (2002)](https://econpapers.repec.org/RePEc:kap:pubcho:v:112:y:2002:i:3-4:p:351-71), [Nti (2004)](https://econpapers.repec.org/RePEc:eee:poleco:v:20:y:2004:i:4:p:1059-1066), and [Epstein et al (2013)](https://econpapers.repec.org/RePEc:bla:ecopol:v:25:y:2013:i:1:p:48-60) about revenue maximization in Tullock lottery contests.
 
 
 ## Introduction
