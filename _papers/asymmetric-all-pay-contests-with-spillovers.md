@@ -5,7 +5,7 @@ authors:
    url: "https://mariabetto.com"
  - name: "Matthew Wildrick Thomas"
 description: "What happens when the prize in an all-pay auction depends on players' bids?"
-pdf: "/assets/pdfs/asymmetric-all-pay-contests-with-spillovers.pdf"
+pdf: "/assets/pdfs/papers/asymmetric-all-pay-contests-with-spillovers.pdf"
 url_is_pdf: true
 ---
 
