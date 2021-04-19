@@ -5,6 +5,7 @@ layout: "post"
 tag: ["tech", "R"]
 date: "2021-04-16"
 use_math: false
+description: "If you sync your Documents folder with OneDrive, R can have issues"
 ---
 
 This is a quick post about how to fix an annoying R bug on Windows 10 caused by OneDrive. Many users use OneDrive to sync their Documents folder. Unfortunately, R stores libraries in the Documents folder, and OneDrive creates sync locks that interfere with the installation and updating of packages.

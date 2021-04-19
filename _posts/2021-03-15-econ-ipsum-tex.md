@@ -5,6 +5,7 @@ layout: "post"
 tag: ["tech", "webdev"]
 date: "2021-03-15"
 use_math: false
+description: "Someone made a TeX version of my Econ Ipsum website"
 ---
 
 About two years ago, [Maria Betto](https://mariabetto.com) and I made [Econ Ipsum](https://ipsum.mwt.me), a Lorem Ipsum generator that uses words from Econometrica abstracts to produce Economic sounding nonsense. We never put any sort of tracking or analytics on the page. So, I don't know how many people use it. However, I can tell from the number of api calls that it is more than originally expected.[^1]
