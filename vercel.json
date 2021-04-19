@@ -20,11 +20,11 @@
       ]
     },
     {
-      "source": "/assets/pdfs/(.*)/(.*)\\.pdf",
+      "source": "/assets/pdfs/(.*)\\.pdf",
       "headers": [
         {
           "key": "Link",
-          "value": "<https://mattwthomas.com/$1/$2/>; rel=\"canonical\""
+          "value": "<https://mattwthomas.com/$1/>; rel=\"canonical\""
         }
       ]
     }
