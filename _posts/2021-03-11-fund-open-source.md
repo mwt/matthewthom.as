@@ -1,5 +1,5 @@
 ---
-title: "Mechanisms to to Fund Open Source"
+title: "Mechanisms to Fund Open Source"
 author: "Matthew Wildrick Thomas"
 layout: "post"
 tag: ["math", "economics", "mechanism design", "notes"]
