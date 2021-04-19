@@ -5,6 +5,7 @@ layout: "post"
 tag: ["tech", "webdev"]
 date: "2021-03-10"
 use_math: false
+description: "Tricks to stop email scraping without affecting human users"
 ---
 
 If put your email in plaintext on your website, you will get spam from people trying to sell you SEO, development services, ghostwriting, etc. Emails get on spam lists through website scraping. The way that this works is simple. Scrapers typically look for strings like `user@host.tld` or `mailto:user@host.tld` in your HTML.

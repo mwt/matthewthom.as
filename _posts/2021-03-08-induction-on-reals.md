@@ -5,13 +5,15 @@ layout: "post"
 tag: ["math", "induction"]
 date: "2021-03-08"
 use_math: true
+description: "A research example of induction on the real numbers"
+last_modified_at: "2021-04-19"
 ---
 
 Conventional proof by induction allows you to prove that a statement applies to an infinite sequence. The argument is that if a property holds on the first element, and always holds on the next element, then it must hold on all elements.
 
 > But what do you do when there is no next element?
 
-[A PDF I found online](https://arxiv.org/abs/1208.0973) showed me that there is an analogous version to proof by induction that can apply to uncountable sets like the Real numbers. Conventional induction cannot work on uncountable set because, by definition, you cannot reach all elements by iteratively stepping through them.
+[Some notes on the arXiv](https://arxiv.org/abs/1208.0973) show that there is an analogous version to proof by induction that can apply to uncountable sets like the Real numbers. Conventional induction cannot work on uncountable set because, by definition, you cannot reach all elements by iteratively stepping through them.
 
 In the real induction, we get around this issue by breaking the space into countably many intervals. Formally, let $$a < b$$ be real numbers. We want to show that $$[a, b] = S$$. That is, we want all elements of the interval to "satisfy" property $$S$$. We define the subset $$S \subseteq [a,b]$$ to be *inductive* if:
 
@@ -24,7 +26,7 @@ The result is that a subset $$S \subset [a,b]$$ is inductive if and only if $$S 
 
 # Example
 
-As an example, we will apply this method to prove a lemma in my current working paper. The proof in the paper does not use this method, but the method can be applied nonetheless.
+As an example, we will apply this method to prove a lemma in [my current working paper](/papers/asymmetric-all-pay-contests-with-spillovers/). The proof in the paper does not use this method, but the method can be applied nonetheless.
 
 In this paper, we show that a particular candidate probability density is the distribution for the Nash equilibrium for a class of auctions. In this lemma, we want to prove that this candidate can be a probability density -- i.e. it's positive and integrates to one.
 
