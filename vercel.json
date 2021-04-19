@@ -18,6 +18,15 @@
           "value": "public, max-age=2629746"
         }
       ]
+    },
+    {
+      "source": "/assets/pdfs/(.*)/(.*)\\.pdf",
+      "headers": [
+        {
+          "key": "Link",
+          "value": "<https://mattwthomas.com/$1/$2/>; rel=\"canonical\""
+        }
+      ]
     }
   ],
   "rewrites": [
