@@ -12,3 +12,7 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-paginate-v2'
 end
+
+install_if -> { RUBY_PLATFORM =~ /linux/ } do
+  gem "mini_racer"
+end
