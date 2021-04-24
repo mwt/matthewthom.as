@@ -14,13 +14,19 @@ GEM
     em-websocket (0.5.2)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+    eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
     execjs (2.7.0)
-    faraday (1.3.0)
+    faraday (1.4.1)
+      faraday-excon (~> 1.1)
       faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
       multipart-post (>= 1.2, < 3)
-      ruby2_keywords
+      ruby2_keywords (>= 0.0.4)
+    faraday-excon (1.1.0)
     faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.1.0)
+    ffi (1.15.0)
     ffi (1.15.0-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
@@ -75,14 +81,20 @@ GEM
       kramdown (~> 2.0)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    libv8-node (15.14.0.0)
+    libv8-node (15.14.0.0-x86_64-linux)
     liquid (4.0.3)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    mini_racer (0.4.0)
+      libv8-node (~> 15.14.0.0)
     minitest (5.14.4)
     multipart-post (2.1.1)
     nokogiri (1.11.3-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.11.3-x86_64-linux)
       racc (~> 1.4)
     octicons (13.0.0)
       nokogiri (>= 1.6.3.1)
@@ -100,6 +112,8 @@ GEM
     rouge (3.26.0)
     ruby2_keywords (0.0.4)
     safe_yaml (1.0.5)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     sassc (2.4.0-x64-mingw32)
       ffi (~> 1.9)
     sawyer (0.8.2)
@@ -114,6 +128,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   jekyll (~> 4.2)
@@ -125,6 +140,7 @@ DEPENDENCIES
   jekyll-sitemap
   jemoji
   kramdown-math-katex
+  mini_racer
 
 BUNDLED WITH
-   2.2.9
+   2.2.16
