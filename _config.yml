@@ -8,8 +8,16 @@ description: Homepage of Matthew Wildrick Thomas, an Economics Ph.D. Candidate a
 
 # if it's an external image, update below for true
 # better with square images
-external-image: true
-picture: //avatars.githubusercontent.com/mwt?v=4&s=400
+external-image: false
+picture:
+- size: "268w"
+  url: "/assets/images/headshot/mwt268.jpg"
+- size: "200w"
+  url: "/assets/images/headshot/mwt200.jpg"
+- size: "400w"
+  url: "/assets/images/headshot/mwt400.jpg"
+- size: "800w"
+  url: "/assets/images/headshot/mwt800.jpg"
 
 #share picture
 spicture: assets/screen-shot.png
