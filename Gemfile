@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'jekyll', '~> 4.2'
+gem 'katex', github: 'mwt/katex-ruby'
 gem 'kramdown-math-katex'
 
 group :jekyll_plugins do
