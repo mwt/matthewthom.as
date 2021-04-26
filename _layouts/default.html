@@ -27,6 +27,10 @@ layout: compress
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />
 
+    {% if page.pdf %}
+        <link rel="alternate" type="application/pdf" title="{{ site.title }}" href="{{ page.pdf | relative_url }}" />
+    {% endif %}
+
     {% for html in page.head %}
         {{ html }}
     {% endfor %}
