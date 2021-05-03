@@ -8,7 +8,7 @@
 <section class="list">
     {%- for project in include.data -%}
     <div class="item{% if project.star %} star{% endif %}">
-        <h3>
+        <h4>
             <a class="title" href="
             {%- if project.url_is_pdf -%}
                 {{ project.pdf }}
@@ -31,7 +31,7 @@
                 {%- endfor -%}
                 )
             {% endif %}
-        </h3>
+        </h4>
         {%- if project.description -%}
         <p class="description">{{ project.description }}</p>
         {%- endif -%}
