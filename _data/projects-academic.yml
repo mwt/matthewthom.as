@@ -1,3 +1,7 @@
+- title: "Integral Equations (inteq)"
+  url: "https://pypi.org/project/inteq/"
+  description: "Python package to numerically solve common integral equations"
+  github: "https://github.com/mwt/inteq"
 - title: "All-Pay Contests in Python (allpy)"
   url: "https://pypi.org/project/allpy/"
   description: "Python package to estimate the equilibria of all-pay contests with spillovers"
