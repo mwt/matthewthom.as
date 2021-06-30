@@ -40,3 +40,16 @@
 
 .lost-container
     text-align: center
+
+.proof
+    position: relative
+
+    &:after
+        content: '◾️'
+        position: absolute
+        right: -12px
+        bottom: -2px
+
+    > p:first-child::before
+        content: 'Proof. ' attr(title)
+        font-style: italic
