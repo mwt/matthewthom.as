@@ -73,7 +73,7 @@ $$v(s; s) > 0$$
 
 **Lemma (Probability density)** *The solution, $$g(s)$$, to*
 
-$$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) \lvert g(y) \rvert dy \right)$$
+$$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) g(y) dy \right)$$
 
 *is a probability density on some interval $$[0, \bar{s}]$$.*
 
