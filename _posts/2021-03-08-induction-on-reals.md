@@ -6,7 +6,7 @@ tag: ["math", "induction"]
 date: "2021-03-08"
 use_math: true
 description: "A research example of induction on the real numbers"
-last_modified_at: "2021-04-19"
+last_modified_at: "2021-06-30"
 ---
 
 Conventional proof by induction allows you to prove that a statement applies to an infinite sequence. The argument is that if a property holds on the first element, and always holds on the next element, then it must hold on all elements.
@@ -22,11 +22,27 @@ In the real induction, we get around this issue by breaking the space into count
 $$y > x$$. 
 3. If $$a < x \leq b$$ and $$[a,x) \subset S$$, then $$x \in S$$.  
 
-The result is that a subset $$S \subset [a,b]$$ is inductive if and only if $$S = [a,b]$$.
+The result is that a subset $$S \subset [a,b]$$ is inductive if and only if $$S = [a,b]$$. So, if conditions 1-3 hold, then property $$S$$ is satisfied on $$[a,b]$$
 
-# Example
+## Intuition and alternative
 
-As an example, we will apply this method to prove a lemma in [my current working paper](/papers/asymmetric-all-pay-contests-with-spillovers/). The proof in the paper does not use this method, but the method can be applied nonetheless.
+Most people do not know what real induction is. However, the logic behind it is very easy to understand. So, applying real induction directly is usually not the clearest way to write a proof. The underlying idea behind real induction can be found in many proofs. However, it is rarely referred to as real induction. Typically, people use a proof by contradiction that goes something like this:
+
+<div class="proof" markdown=1> 
+Suppose, by way of contradiction, that there exists an element in $$[a,b]$$ that is not in $$ S $$. Then, there must be a *first switching point*. That is, there must be a minimal $$x$$ such that either $$x \notin S$$ or $$ (x,z] \notin S $$ for some $$ z > x $$. Then, we need to prove
+
+1. $$ x > a $$ (using 1 and 2 from real induction). Therefore, $$[a, x) \in S$$ because $$x$$ is the first switching point.
+2. If $$ [a, x) \in S $$ then, $$ x \in S $$ (using 3 from real induction). Therefore, $$ (x,z] \notin S $$ for some $$ z > x $$.
+3. There exists a $$ y > x $$ such that $$ [x,y] \in S $$ (using 2 from real induction). 
+
+Therefore, any point $$ w $$ such that $$ w > x $$, $$ w \leq z $$, and $$ w \leq y $$ is both in $$ S $$ and not in $$ S $$. This is a contradiction.
+</div>
+
+Proving statements directly in this way is clearer to people unfamiliar with real induction. This is especially true when you express the above argument in terms of your problem.
+
+## Example
+
+As an example, we will apply this method to prove a lemma in [my current working paper](/papers/asymmetric-all-pay-contests-with-spillovers/). The proof in the paper does not use real induction directly. It instead uses the direct argument expressed in the previous section. In this section, we will apply real induction in order to demonstrate the method.
 
 In this paper, we show that a particular candidate probability density is the distribution for the Nash equilibrium for a class of auctions. In this lemma, we want to prove that this candidate can be a probability density -- i.e. it's positive and integrates to one.
 
