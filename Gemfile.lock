@@ -87,16 +87,19 @@ GEM
       kramdown (~> 2.0)
     libv8-node (15.14.0.1)
     libv8-node (15.14.0.1-x86_64-linux)
-    libv8-node (15.14.0.1-x86_64-linux-musl)
     liquid (4.0.3)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    mini_portile2 (2.5.3)
     mini_racer (0.4.0)
       libv8-node (~> 15.14.0.0)
     minitest (5.14.4)
     multipart-post (2.1.1)
+    nokogiri (1.11.7)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.7-x64-mingw32)
       racc (~> 1.4)
     nokogiri (1.11.7-x86_64-linux)
@@ -131,6 +134,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  ruby
   x64-mingw32
   x86_64-linux
 
