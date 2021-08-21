@@ -5,12 +5,12 @@ layout: "post"
 tag: ["math", "economics", "game theory", "notes"]
 date: "2021-04-15"
 use_math: true
-last_modified_at: "2021-08-21"
+last_modified_at: "2021-08-22"
 description: "Summary of existing results on the design of asymmetric Tullock contests"
 pdf: "/assets/pdfs/blog/covert-discrimination-tullock.pdf"
 ---
 
-These notes summarize concepts introduced in [Nti (1999)](https://econpapers.repec.org/RePEc:kap:pubcho:v:98:y:1999:i:3-4:p:415-30), [Fang (2002)](https://econpapers.repec.org/RePEc:kap:pubcho:v:112:y:2002:i:3-4:p:351-71), [Nti (2004)](https://econpapers.repec.org/RePEc:eee:poleco:v:20:y:2004:i:4:p:1059-1066), [Epstein et al (2013)](https://econpapers.repec.org/RePEc:bla:ecopol:v:25:y:2013:i:1:p:48-60), and [Ewerhart (2017)](https://econpapers.repec.org/RePEc:eee:gamebe:v:105:y:2017:i:c:p:195-211) about revenue maximization in Tullock lottery contests.
+These notes summarize concepts introduced in [Nti (1999)](https://econpapers.repec.org/RePEc:kap:pubcho:v:98:y:1999:i:3-4:p:415-30), [Fang (2002)](https://econpapers.repec.org/RePEc:kap:pubcho:v:112:y:2002:i:3-4:p:351-71), [Nti (2004)](https://econpapers.repec.org/RePEc:eee:poleco:v:20:y:2004:i:4:p:1059-1066), [Epstein et al (2013)](https://econpapers.repec.org/RePEc:bla:ecopol:v:25:y:2013:i:1:p:48-60), and [Ewerhart (2017a)](https://econpapers.repec.org/RePEc:eee:ecolet:v:157:y:2017:i:c:p:167-170) about revenue maximization in Tullock lottery contests.
 
 
 ## Introduction
@@ -189,14 +189,17 @@ $$
 \end{aligned}
 $$
 
-Symmetry implies that that each player's expected probability of winning is one half. Therefore, $$ E[s_1] = \frac{1}{2} $$, $$ E[s_2] = \frac{1}{2 k} $$, and $$ E[s_1 + s_2] = \frac{1 + k}{2 k}$$. This is the same maximum revenue as in the overall optimum in pure strategies. However, it is not obvious that this is the best possible outcome. For example, it would be better if payoffs could remain zero and Player 1 could win more frequently.
+Symmetry implies that that each player's expected probability of winning is one half. Therefore, $$ E[s_1] = \frac{1}{2} $$, $$ E[s_2] = \frac{1}{2 k} $$, and $$ E[s_1 + s_2] = \frac{1 + k}{2 k}$$. This is the same maximum revenue as in the overall optimum in pure strategies. It's not obvious that this is the maximum revenue. For example, one might imagine that the principal could ensure zero payoffs but have Player 1 win with probability greater than one half. In order to confirm that Assumption 2 is without loss of optimality, we need to answer a few questions.
 
-[Ewerhart (2017)](https://econpapers.repec.org/RePEc:eee:gamebe:v:105:y:2017:i:c:p:195-211) shows that this is, in fact, the overall optimum. Moreover, this study shows that revenue is always decreasing in $$ r $$ on the interval $$ r \in \left(\bar{r} \left(\frac{\delta}{k} \right) , 2 \right] $$ and equal to $$ \left( \frac{\delta}{k} \right) \frac{1 + k}{2 k} $$ for $$ r > 2 $$.
+1. **Are equilibria revenue equivalent?** Yes. [Ewerhart (2017a)](https://econpapers.repec.org/RePEc:eee:ecolet:v:157:y:2017:i:c:p:167-170) shows that the equilibrium is unique when $$ r \leq 2 $$ and [Ewerhart (2017b)](https://econpapers.repec.org/RePEc:eee:gamebe:v:105:y:2017:i:c:p:195-211) shows that equilibria are revenue and payoff equivalent when $$ r > 2 $$.
+2. **Is $$ r \in (\bar{r}( \delta / k ), 2] $$ ever optimal** No. [Wang (2010)](https://econpapers.repec.org/RePEc:bpj:bejtec:v:10:y:2010:i:1:n:13) shows that revenue is weakly decreasing on this interval. Therefore, $$ r  = \bar{r}( \delta / k ) $$ yields weakly greater revenue.
+3. **Is $$ r > 2 $$ ever optimal?** No. [Alcade and Dahm (2010)](https://econpapers.repec.org/RePEc:eee:pubeco:v:94:y:2010:i:1-2:p:1-7) show that if $$ r > 2 $$, the Tullock contest is revenue and payoff equivalent to an all-pay auction. Revenue in this auction is $$ \left( \frac{\delta}{k} \right) \frac{1 + k}{2 k} $$. This is the same revenue as when $$ r = 2 $$.
+4. **If $$ r \geq 2$$, is $$ \delta < k $$ ever optimal?** No. Note that the revenue in the last point is increasing in $$ \delta $$.
 
 ![revenue for at each r for k = 1.5](/assets/images/posts/2021/tullock-covert-revenue.svg){: width="600px"}
 {: .text-center}
 
-The above figure is based on those in [Chowdhury et al. (2020)](https://econpapers.repec.org/RePEc:oxf:wpaper:915).
+The above shows how revenue depends on $$ r $$. Note that the maximum is reached before $$ \bar{r}(\delta / k) $$. More figures like the above can be found in [Chowdhury et al. (2020)](https://econpapers.repec.org/RePEc:oxf:wpaper:915).
 
 ## Conclusion
 
@@ -217,4 +220,3 @@ The case of covert discrimination demonstrates an important precision tradeoff. 
 [^d]: The papers mentioned give different prize values instead of different costs. The two are equivalent. I prefer to say that one player is more skilled than to say that one player values the prize more.
 [^apa]: In this case, it is not a lottery contest. It converges to the all-pay auction -- the main deterministic contest.
 [^sce]: The symmetric equilibrium is characterized in [Ewerhart (2015)](https://econpapers.repec.org/RePEc:spr:joecth:v:60:y:2015:i:1:p:59-71).
-
