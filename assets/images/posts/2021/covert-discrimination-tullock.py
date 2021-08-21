@@ -11,10 +11,10 @@ import matplotlib.pyplot as plt
 from scipy.special import lambertw
 from scipy import optimize
 
-path = os.path.expanduser(
-    "~\\Documents\\Git\\mattwthomas.com\\assets\\images\\posts\\2021\\"
-)
-os.chdir(path)
+# path = os.path.expanduser(
+#     "~\\Documents\\Git\\mattwthomas.com\\assets\\images\\posts\\2021\\"
+# )
+# os.chdir(path)
 
 #%% alpha plot
 
@@ -35,13 +35,13 @@ figure = plt.figure()
 plt.plot(x, y)
 plt.fill_between(x, y, alpha=0.2)
 plt.axis([xmin, xmax, 0, 2])
-plt.ylabel(r"$\bar{\alpha}(\delta / k)$")
+plt.ylabel(r"$\bar{r}(\delta / k)$")
 plt.xlabel(r"$\delta / k$")
 plt.xticks([0, 0.25, 0.5, 0.75, 1], [0, 0.25, 0.5, 0.75, 1])
 plt.yticks([0, 1, 2])
 figure.set_dpi(100)
-figure.set_size_inches(8, 5)
-figure.savefig("tullock-maximum-alpha.svg", optimize=True, bbox_inches="tight")
+figure.set_size_inches(4, 2.5)
+figure.savefig("tullock-maximum-r.svg", optimize=True, bbox_inches="tight")
 
 
 # %% direct discrimination
@@ -66,14 +66,14 @@ plt.xlabel(r"$\delta$")
 plt.xticks([0, 1, 2], ["0", "1", "k"])
 plt.yticks([0])
 figure.set_dpi(100)
-figure.set_size_inches(8, 5)
-figure.savefig("tullock-direct-discrimination.svg", optimize=True, bbox_inches="tight")
+figure.set_size_inches(4, 2.5)
+figure.savefig("tullock-direct-discrimination.svg", bbox_inches="tight")
 
 # %% covert discrimination
 
 nn = 1000  # resolution of plot
-xmin = 3.5
-xmax = 3.6
+xmin = 1
+xmax = 10
 
 x = np.linspace(xmin + 1/nn, xmax, nn)
 
@@ -93,13 +93,36 @@ figure = plt.figure()
 plt.plot(x, y.x)
 plt.plot(x, alphabar(1/x))
 plt.axis([xmin, xmax, 0, 2])
-plt.ylabel(r"$\alpha$")
+plt.ylabel(r"$r$")
 plt.xlabel(r"$k$")
 plt.xticks(np.linspace(1, xmax, xmax))
 plt.yticks([0,1,2])
-plt.legend([r"$\alpha^\star(k)$", r"$\bar{\alpha}(1/k)$"])
+plt.legend([r"$r^\star(k)$", r"$\bar{r}(1/k)$"])
 figure.set_dpi(100)
-figure.set_size_inches(8, 5)
-figure.savefig("tullock-covert-discrimination.svg", optimize=True, bbox_inches="tight")
+figure.set_size_inches(4, 2.5)
+figure.savefig("tullock-covert-discrimination.svg", bbox_inches="tight")
 
+# %% revenue graph
+
+nn = 1000  # resolution of plot
+xmin = 1
+xmax = 3
+
+
+def revenue(r, k=1.5, d=1):
+    return (r <= alphabar(d/k))*(1 + 1/k)*((r*(k*d)**r)/(k**r+d**r)**2) + (r > alphabar(d/k))*(r <= 2)*(2/r)*(r-1)**((r-1)/r)*(d/k)*((1+k)/(2*k))+(r>2)*(d/k)*((1+k)/(2*k))
+x = np.linspace(xmin, xmax, nn)
+y = revenue(x, k=2) 
+
+figure = plt.figure()
+plt.plot(x, y)
+#plt.axis([xmin, xmax, 0, 0.42])
+plt.ylabel("Revenue")
+plt.xlabel(r"$r$")
+plt.xticks([1, alphabar(1/1.5), 2], ["1", r"$\bar{r}$", "2"])
+plt.vlines([alphabar(1/1.5),2], ymin=min(y), ymax=max(y), color="grey", linestyle="dashed")
+plt.yticks([])
+figure.set_dpi(100)
+figure.set_size_inches(4, 2.5)
+figure.savefig("tullock-covert-revenue.svg", bbox_inches="tight")
 # %%
