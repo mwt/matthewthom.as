@@ -22,9 +22,10 @@ nn = 50  # resolution of plot
 xmin = 0
 xmax = 1
 
+
 def alphabar(dk):
     logdk = np.log(dk)
-    W = lambertw( -dk * logdk )
+    W = lambertw(-dk * logdk)
     return 1 - W / logdk
 
 
@@ -75,28 +76,29 @@ nn = 1000  # resolution of plot
 xmin = 1
 xmax = 10
 
-x = np.linspace(xmin + 1/nn, xmax, nn)
+x = np.linspace(xmin + 1 / nn, xmax, nn)
 
 # Create inner loop
 def alphainner(a, k):
     f1 = 1 / np.log(k)
-    f2 = 1 - (2 / (1 + k ** a) )
-    return a - f1/f2
+    f2 = 1 - (2 / (1 + k ** a))
+    return a - f1 / f2
+
 
 # make an initial guess
 f10 = 1 / np.log(x)
-f20 = 1 - (2 / (1 + x) )
+f20 = 1 - (2 / (1 + x))
 
-y = optimize.root(alphainner, x0 = (f10/f20), args=(x))
+y = optimize.root(alphainner, x0=(f10 / f20), args=(x))
 
 figure = plt.figure()
 plt.plot(x, y.x)
-plt.plot(x, alphabar(1/x))
+plt.plot(x, alphabar(1 / x))
 plt.axis([xmin, xmax, 0, 2])
 plt.ylabel(r"$r$")
 plt.xlabel(r"$k$")
 plt.xticks(np.linspace(1, xmax, xmax))
-plt.yticks([0,1,2])
+plt.yticks([0, 1, 2])
 plt.legend([r"$r^\star(k)$", r"$\bar{r}(1/k)$"])
 figure.set_dpi(100)
 figure.set_size_inches(4, 2.5)
@@ -105,23 +107,33 @@ figure.savefig("tullock-covert-discrimination.svg", bbox_inches="tight")
 # %% revenue graph
 
 nn = 1000  # resolution of plot
-xmin = 1
+xmin = 0
 xmax = 3
 
-
+@np.vectorize
 def revenue(r, k=1.5, d=1):
-    return (r <= alphabar(d/k))*(1 + 1/k)*((r*(k*d)**r)/(k**r+d**r)**2) + (r > alphabar(d/k))*(r <= 2)*(2/r)*(r-1)**((r-1)/r)*(d/k)*((1+k)/(2*k))+(r>2)*(d/k)*((1+k)/(2*k))
+    if r <= alphabar(d / k):
+        return (1 + 1 / k) * ((r * (k * d) ** r) / (k ** r + d ** r) ** 2)
+    elif r > 2:
+        return (d / k) * ((1 + k) / (2 * k))
+    else:
+        alphar = (2 / r) * (r - 1) ** ((r - 1) / r)
+        return alphar * (d / k) * ((1 + k) / (2 * k))
+
+
 x = np.linspace(xmin, xmax, nn)
-y = revenue(x, k=2) 
+y = revenue(x, k=2)
 
 figure = plt.figure()
 plt.plot(x, y)
-#plt.axis([xmin, xmax, 0, 0.42])
+# plt.axis([xmin, xmax, 0, 0.42])
 plt.ylabel("Revenue")
 plt.xlabel(r"$r$")
-plt.xticks([1, alphabar(1/1.5), 2], ["1", r"$\bar{r}$", "2"])
-plt.vlines([alphabar(1/1.5),2], ymin=min(y), ymax=max(y), color="grey", linestyle="dashed")
-plt.yticks([])
+plt.xticks([0, 1, alphabar(1 / 1.5), 2], ["0", "1", r"$\bar{r}$", "2"])
+plt.vlines(
+    [alphabar(1 / 1.5), 2], ymin=min(y), ymax=max(y), color="grey", linestyle="dashed"
+)
+plt.yticks([0])
 figure.set_dpi(100)
 figure.set_size_inches(4, 2.5)
 figure.savefig("tullock-covert-revenue.svg", bbox_inches="tight")
