@@ -206,7 +206,7 @@ on this interval which is weakly decreasing in $$ r $$. Therefore, $$ r  = \bar{
 ![revenue for at each r for k = 1.5](/assets/images/posts/2021/tullock-covert-revenue.svg){: width="600px"}
 {: .text-center}
 
-The above shows an example of how revenue depends on $$ r $$. Note that the maximum is reached before $$ \bar{r}(\delta / k) $$ when the players are very heterogeneous (orange) and at the upper bound when players are more homogenous (blue).[^sur]
+The above shows an example of how revenue depends on $$ r $$. Note that the maximum is reached before $$ \bar{r}(\delta / k) $$ when the players are very heterogeneous (orange) and at the upper bound when players are more homogeneous (blue).[^sur]
 
 ## Conclusion
 
