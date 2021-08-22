@@ -110,8 +110,9 @@ nn = 1000  # resolution of plot
 xmin = 0
 xmax = 3
 
+
 @np.vectorize
-def revenue(r, k=1.5, d=1):
+def revenue(r, k=2, d=1):
     if r <= alphabar(d / k):
         return (1 + 1 / k) * ((r * (k * d) ** r) / (k ** r + d ** r) ** 2)
     elif r > 2:
@@ -122,18 +123,24 @@ def revenue(r, k=1.5, d=1):
 
 
 x = np.linspace(xmin, xmax, nn)
-y = revenue(x, k=2)
+y2 = revenue(x, k=1.5)
+y6 = revenue(x, k=8)
 
 figure = plt.figure()
-plt.plot(x, y)
+plt.plot(x, y2)
+plt.plot(x, y6)
 # plt.axis([xmin, xmax, 0, 0.42])
 plt.ylabel("Revenue")
 plt.xlabel(r"$r$")
-plt.xticks([0, 1, alphabar(1 / 1.5), 2], ["0", "1", r"$\bar{r}$", "2"])
-plt.vlines(
-    [alphabar(1 / 1.5), 2], ymin=min(y), ymax=max(y), color="grey", linestyle="dashed"
+plt.xticks(
+    [0, alphabar(1 / 8), alphabar(1 / 1.5), 2],
+    ["0", r"$\bar{r}(1/8)$", r"$\bar{r}(2/3)$", "2"],
 )
+plt.vlines(alphabar(1 / 1.5), ymin=0, ymax=max(y2), color="C0", linestyle="dashed")
+plt.vlines(alphabar(1 / 8), ymin=0, ymax=max(y2), color="C1", linestyle="dashed")
+plt.vlines(2, ymin=0, ymax=max(y2), color="grey", linestyle="dashed")
 plt.yticks([0])
+plt.legend([r"$\delta/k = 2/3$", r"$\delta/k = 1/8$"], loc="upper left")
 figure.set_dpi(100)
 figure.set_size_inches(4, 2.5)
 figure.savefig("tullock-covert-revenue.svg", bbox_inches="tight")

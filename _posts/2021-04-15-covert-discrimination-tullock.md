@@ -191,15 +191,22 @@ $$
 
 Symmetry implies that that each player's expected probability of winning is one half. Therefore, $$ E[s_1] = \frac{1}{2} $$, $$ E[s_2] = \frac{1}{2 k} $$, and $$ E[s_1 + s_2] = \frac{1 + k}{2 k}$$. This is the same maximum revenue as in the overall optimum in pure strategies. It's not obvious that this is the maximum revenue. For example, one might imagine that the principal could ensure zero payoffs but have Player 1 win with probability greater than one half. In order to confirm that Assumption 2 is without loss of optimality, we need to answer a few questions.
 
-1. **Are equilibria revenue equivalent?** Yes. [Ewerhart (2017a)](https://econpapers.repec.org/RePEc:eee:ecolet:v:157:y:2017:i:c:p:167-170) shows that the equilibrium is unique when $$ r \leq 2 $$ and [Ewerhart (2017b)](https://econpapers.repec.org/RePEc:eee:gamebe:v:105:y:2017:i:c:p:195-211) shows that equilibria are revenue and payoff equivalent when $$ r > 2 $$.
-2. **Is $$ r \in (\bar{r}( \delta / k ), 2] $$ ever optimal** No. [Wang (2010)](https://econpapers.repec.org/RePEc:bpj:bejtec:v:10:y:2010:i:1:n:13) shows that revenue is weakly decreasing on this interval. Therefore, $$ r  = \bar{r}( \delta / k ) $$ yields weakly greater revenue.
-3. **Is $$ r > 2 $$ ever optimal?** No. [Alcade and Dahm (2010)](https://econpapers.repec.org/RePEc:eee:pubeco:v:94:y:2010:i:1-2:p:1-7) show that if $$ r > 2 $$, the Tullock contest is revenue and payoff equivalent to an all-pay auction. Revenue in this auction is $$ \left( \frac{\delta}{k} \right) \frac{1 + k}{2 k} $$. This is the same revenue as when $$ r = 2 $$.
-4. **If $$ r \geq 2$$, is $$ \delta < k $$ ever optimal?** No. Note that the revenue in the last point is increasing in $$ \delta $$.
+**Are equilibria revenue equivalent?** Yes. [Ewerhart (2017a)](https://econpapers.repec.org/RePEc:eee:ecolet:v:157:y:2017:i:c:p:167-170) shows that the equilibrium is unique when $$r \leq 2$$ and [Ewerhart (2017b)](https://econpapers.repec.org/RePEc:eee:gamebe:v:105:y:2017:i:c:p:195-211) shows that equilibria are revenue and payoff equivalent when $$ r > 2 $$.
+
+**Is $$ r \in (\bar{r}( \delta / k ), 2] $$ ever optimal** No. [Wang (2010)](https://econpapers.repec.org/RePEc:bpj:bejtec:v:10:y:2010:i:1:n:13) shows that revenue is 
+
+$$ \frac{2 \delta}{r k} \left( \frac{1 + k}{2 k} \right) (r - 1)^{(r - 1)/r} $$
+
+on this interval which is weakly decreasing in $$ r $$. Therefore, $$ r  = \bar{r}( \delta / k ) $$ yields weakly greater revenue.
+
+**Is $$r > 2$$ ever optimal?** No. [Alcade and Dahm (2010)](https://econpapers.repec.org/RePEc:eee:pubeco:v:94:y:2010:i:1-2:p:1-7) show that if $$ r > 2 $$, the Tullock contest is revenue and payoff equivalent to an all-pay auction. Revenue in this auction is $$ \left( \frac{\delta}{k} \right) \frac{1 + k}{2 k} $$. This is the same revenue as when $$r = 2$$.
+
+**Is $$\delta < k$$ ever optimal?** No. Note that the revenue in the last two points is increasing in $$\delta$$.
 
 ![revenue for at each r for k = 1.5](/assets/images/posts/2021/tullock-covert-revenue.svg){: width="600px"}
 {: .text-center}
 
-The above shows how revenue depends on $$ r $$. Note that the maximum is reached before $$ \bar{r}(\delta / k) $$. More figures like the above can be found in [Chowdhury et al. (2020)](https://econpapers.repec.org/RePEc:oxf:wpaper:915).
+The above shows an example of how revenue depends on $$ r $$. Note that the maximum is reached before $$ \bar{r}(\delta / k) $$ when the players are very heterogeneous (orange) and at the upper bound when players are more homogenous (blue).[^sur]
 
 ## Conclusion
 
@@ -220,3 +227,4 @@ The case of covert discrimination demonstrates an important precision tradeoff. 
 [^d]: The papers mentioned give different prize values instead of different costs. The two are equivalent. I prefer to say that one player is more skilled than to say that one player values the prize more.
 [^apa]: In this case, it is not a lottery contest. It converges to the all-pay auction -- the main deterministic contest.
 [^sce]: The symmetric equilibrium is characterized in [Ewerhart (2015)](https://econpapers.repec.org/RePEc:spr:joecth:v:60:y:2015:i:1:p:59-71).
+[^sur]: More figures like the above can be found in [Chowdhury et al. (2020)](https://econpapers.repec.org/RePEc:oxf:wpaper:915).
