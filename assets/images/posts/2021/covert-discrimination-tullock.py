@@ -137,7 +137,7 @@ plt.xticks(
     ["0", r"$\bar{r}(1/8)$", r"$\bar{r}(2/3)$", "2"],
 )
 plt.vlines(alphabar(1 / 1.5), ymin=0, ymax=max(y2), color="C0", linestyle="dashed")
-plt.vlines(alphabar(1 / 8), ymin=0, ymax=max(y2), color="C1", linestyle="dashed")
+plt.vlines(alphabar(1 / 8), ymin=0, ymax=revenue(alphabar(1 / 8), k=8), color="C1", linestyle="dashed")
 plt.vlines(2, ymin=0, ymax=max(y2), color="grey", linestyle="dashed")
 plt.yticks([0])
 plt.legend([r"$\delta/k = 2/3$", r"$\delta/k = 1/8$"], loc="upper left")
