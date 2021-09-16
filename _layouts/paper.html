@@ -17,3 +17,34 @@ layout: default
 {{content}}
 </div>
 
+<section class="downloads">
+    <strong class="mr1">Downloads:</strong>
+    {%- if page.pdf -%}
+    <a class="icon-link" href="{{ page.pdf }}">
+        <svg class="octicon octicon-file"><use xlink:href="#icon-pdf"></use></svg>
+        PDF
+    </a>
+    {%- endif -%}
+    {%- if page.slides -%}
+    <a class="icon-link" href="{{ page.slides }}">
+        <svg class="octicon octicon-file"><use xlink:href="#icon-slides"></use></svg>
+        Slides
+    </a>
+    {%- endif -%}
+</section>
+
+<hr>
+<h2>BibTeX</h2>
+<section class="bibtex">
+<pre><code>@article{% raw %}{{% endraw %}mwt{{page.year}}{{page.id_key}},
+    title     = "{{ page.title }}",
+    author    = "{{ page.authors | map: "name" | join: " and "}}"{% if page.journal %},
+    journal   = "{{ page.journal }}"{% endif %}{% if page.vol %},
+    volume    = "{{ page.vol }}"{% endif %}{% if page.num %},
+    number    = "{{ page.num }}"{% endif %}{% if page.pages %},
+    pages     = "{{ page.pages }}"{% endif %}{% if page.year %},
+    year      = "{{ page.year }}"{% endif %}{% if page.pub %},
+    publisher = "{{ page.pub }}"{% endif %}
+{% raw %}}{% endraw %}</code></pre>
+</section>
+

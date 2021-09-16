@@ -1,9 +1,11 @@
 ---
 title: "Covert Discrimination in All-pay Contests"
+id_key: "covertapa"
 authors:
  - name: "Maria Betto"
    url: "https://mariabetto.com"
  - name: "Matthew Wildrick Thomas"
+year: 2021
 description: "Can you design a symmetric contest such that one player is favored?"
 pdf: "/assets/pdfs/papers/covert-discrimination-in-all-pay-contests.pdf"
 slides: "/assets/pdfs/papers/covert-discrimination-in-all-pay-contests-slides.pdf"
