@@ -21,14 +21,24 @@ layout: default
     <strong class="mr1">Downloads:</strong>
     {%- if page.pdf -%}
     <a class="icon-link" href="{{ page.pdf }}">
-        <svg class="octicon octicon-file"><use xlink:href="#icon-pdf"></use></svg>
+        <svg class="octicon octicon-file" width="1.2em" height="1.2em" aria-hidden="true">
+            <use xlink:href="#icon-pdf"></use>
+        </svg>
         PDF
     </a>
     {%- endif -%}
     {%- if page.slides -%}
     <a class="icon-link" href="{{ page.slides }}">
-        <svg class="octicon octicon-file"><use xlink:href="#icon-slides"></use></svg>
+        <svg class="octicon octicon-file" width="1.2em" height="1.2em" aria-hidden="true">
+            <use xlink:href="#icon-slides"></use>
+        </svg>
         Slides
+    </a>
+    {%- endif -%}
+    {%- if page.shortlink -%}
+    <a class="icon-link" href="{{ page.shortlink }}">
+        {% octicon link width:1.2em height:1.2em %}
+        Link
     </a>
     {%- endif -%}
 </section>

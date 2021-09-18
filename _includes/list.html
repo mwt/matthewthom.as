@@ -38,19 +38,25 @@
         
         {%- if project.github -%}
         <a class="icon-link" href="{{ project.github }}" target="_blank">
-            <svg class="octicon octicon-github"><use xlink:href="#icon-github"></use></svg>
+            <svg class="octicon octicon-github" width="1.2em" height="1.2em" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+            </svg>
             Source
         </a>
         {%- endif -%}
         {%- if project.pdf -%}
         <a class="icon-link" href="{{ project.pdf }}">
-            <svg class="octicon octicon-file"><use xlink:href="#icon-pdf"></use></svg>
+            <svg class="octicon octicon-file" width="1.2em" height="1.2em" aria-hidden="true">
+                <use xlink:href="#icon-pdf"></use>
+            </svg>
             PDF
         </a>
         {%- endif -%}
         {%- if project.slides -%}
         <a class="icon-link" href="{{ project.slides }}">
-            <svg class="octicon octicon-file"><use xlink:href="#icon-slides"></use></svg>
+            <svg class="octicon octicon-file" width="1.2em" height="1.2em" aria-hidden="true">
+                <use xlink:href="#icon-slides"></use>
+            </svg>
             Slides
         </a>
         {%- endif -%}
