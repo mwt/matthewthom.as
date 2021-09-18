@@ -36,9 +36,9 @@ layout: default
     </a>
     {%- endif -%}
     {%- if page.shortlink -%}
-    <a class="icon-link" href="{{ page.shortlink }}">
+    <a class="icon-link" href="{{ page.shortlink }}" rel="shortlink">
         {% octicon link width:1.2em height:1.2em %}
-        Link
+        ShortLink
     </a>
     {%- endif -%}
 </section>
