@@ -141,12 +141,17 @@ which can be further bounded by
 $$
     s_1 + s_2 \leq
     \begin{cases}
-        \frac{1}{k} \text{if } k < 2 \\
-        \frac{1}{2} \text{if } k \geq 2.
+        \frac{1}{k} &\text{if } k < 2 \\
+        \frac{1}{2} &\text{if } k \geq 2.
     \end{cases}
 $$
 
-Where the second bound comes from the fact that $$s_2 \leq \frac{1}{2k}$$ because Player 2 cannot win with probability more than one half. To see this, consider that the following two conditions must hold in equilibrium
+I show by construction that this upper bound is tight. That is, there exist optimal contests which achieve these bounds. The following plot shows how these optimal contests compare to other common contests.
+
+![plot of optimal revenue vs Tullock contests](/assets/images/posts/2021/pure-covert-discrimination.svg){: width="600px"}
+{: .text-center}
+
+The second bound comes from the fact that $$s_2 \leq \frac{1}{2k}$$ because Player 2 cannot win with probability more than one half. To see this, consider that the following two conditions must hold in equilibrium
 
 $$
     \begin{aligned}
@@ -164,7 +169,7 @@ $$
     \end{aligned}
 $$
 
-which imply $$p(s_2, s_1) \leq \frac{1}{2}$$. We show by construction that this upper bound is tight. 
+which imply $$p(s_2, s_1) \leq \frac{1}{2}$$. 
 
 *Case 1:* $$k < 2$$. This means that revenue cannot exceed $$\frac{1}{k}$$. We can reach this upper bound with an all-pay auction with a bid cap. That is
 
