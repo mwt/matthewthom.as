@@ -171,7 +171,7 @@ $$
 
 which imply $$p(s_2, s_1) \leq \frac{1}{2}$$. 
 
-*Case 1:* $$k < 2$$. This means that revenue cannot exceed $$\frac{1}{k}$$. We can reach this upper bound with an all-pay auction with a bid cap. That is
+*Case 1:* $$k < 2$$. This means that revenue cannot exceed $$\frac{1}{k}$$. We can reach this upper bound with an all-pay auction with a bid cap at $$\frac{1}{2k}$$. That is
 
 $$
     p(x,y) =
@@ -192,7 +192,7 @@ $$
         1           &\text{if } x-y > \frac{1}{2} \\
         2(x-y)      &\text{if } x-y \in(0,1] \\
         \frac{1}{2} &\text{if } x=y \\
-        1+x-y       &\text{if } x-y <0.
+        1+2(x-y)       &\text{if } x-y <0.
     \end{cases}
 $$
 
