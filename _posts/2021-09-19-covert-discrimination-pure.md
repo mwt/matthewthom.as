@@ -21,7 +21,7 @@ We consider an alternative way of maximizing revenue -- covert discrimination. T
 
 ## Model
 
-Suppose that the prize of contest is worth one to both players. So, the two players have the same value. However, their scores have different costs. In particular, we will say that the score is $$k > 1$$ times more costly for Player 2 than for Player 1.[^d] You can interpret this as saying that Player 1 is more skilled. So, it takes less effort for her to produce a high score.
+Suppose that the prize of contest is worth one to both players. So, the two players have the same value. However, their scores have different costs. In particular, we will say that the score is $$k > 1$$ times more costly for Player 2 than for Player 1. You can interpret this as saying that Player 1 is more skilled. So, it takes less effort for her to produce a high score.
 
 The probability of Player $$i$$ winning the prize in a contest when she chooses score $$s_i$$ and her opponent chooses score $$s_{-i}$$ is:
 
@@ -55,7 +55,7 @@ $$
     s_1 + k s_2 \leq p_1 (s_1, s_2) + p_2 (s_2, s_1) \leq 1.
 $$
 
-Therefore, revenue is bound above by $$1 - (k - 1) s_2$$ and the first best is achieved iff $$s_1 = 1$$ and $$s_2 = 0$$. We can immedietly see that no contest that satisfies no minimum requirement and no direct discrimination will achieve the first best because both players receive a payoff of zero in the first best, but Player 1 can choose zero instead of one to receive a payoff of $$p(0,0) = \frac{1}{2}$$ .
+Therefore, revenue is bound above by $$1 - (k - 1) s_2$$ and the first best is achieved iff $$s_1 = 1$$ and $$s_2 = 0$$. We can immedietly see that no contest that satisfies no minimum requirement and no direct discrimination will achieve the first best because both players receive a payoff of zero in the first best, but Player 1 can choose zero instead of one to receive a payoff of $$p(0,0) = 0.5$$ .
 
 ### Minimum requirement
 
@@ -125,7 +125,6 @@ Together with $$ U_2(s_1, s_2) \geq 0$$ this implies
 $$
     \begin{aligned}
         \frac{1}{2} - s_2 &\leq U_1(s_1, s_2) + U_2(s_1, s_2) \\
-        \frac{1}{2} - s_2 &\leq p(s_1, s_2) + p(s_2,s_1) - s_1 - k s_2 \\
         \frac{1}{2} - s_2 &\leq 1 - s_1 - k s_2
     \end{aligned}
 $$
