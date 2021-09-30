@@ -7,17 +7,47 @@ pagination:
   enabled: true
 ---
 
-<hr>
-<section class="list">
-    {% if site.posts.size == 0 %}
-    <p class="text-center">Nothing published yet!</p>
-    {% elsif site.pagination.enabled %}
-        {% include list.html data=paginator.posts title="Blog" class="blog" %}
-        {% include pagination.html %}
-    {% else %}
-        {% include list.html data=site.posts title="Blog" class="blog" %}
-    {% endif %}
-</section>
+{%- assign MathEconPosts = "" | split: "/" -%}
+{%- assign TechPosts = "" | split: "/" -%}
+{%- assign OtherPosts = "" | split: "/" -%}
+
+{%- for post in site.posts -%}
+    {%- if post.tag contains 'math' or post.tag contains 'economics' -%}
+        {%- assign MathEconPosts = MathEconPosts | push: post -%}
+    {%- elsif post.tag contains 'tech' -%}
+        {%- assign TechPosts = TechPosts | push: post -%}
+    {%- else -%}
+        {%- assign OtherPosts = OtherPosts | push: post -%}
+    {%- endif -%}
+{%- endfor -%}
+    
 
 <hr>
+
+{%- if site.posts.size == 0 -%}
+<section class="list">
+    <p class="text-center">Nothing published yet!</p>
+</section>
+<hr>
+{%- else -%}
+    {%- if MathEconPosts.size > 0 -%}
+    <section class="list">
+        {% include list.html data=MathEconPosts title="Math/Econ" class="blog" %}
+    </section>
+    <hr>
+    {%- endif -%}
+    {%- if TechPosts.size > 0 -%}
+    <section class="list">
+        {% include list.html data=TechPosts title="Technology" class="blog" %}
+    </section>
+    <hr>
+    {%- endif -%}
+    {%- if OtherPosts.size > 0 -%}
+    <section class="list">
+        {% include list.html data=OtherPosts title="Other" class="blog" %}
+    </section>
+    <hr>
+    {%- endif -%}
+{%- endif -%}
+
 {% include mailchimp.html %}
