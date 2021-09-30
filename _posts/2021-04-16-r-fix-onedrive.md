@@ -11,7 +11,7 @@ pdf: "/assets/pdfs/blog/r-fix-onedrive.pdf"
 
 This is a quick post about how to fix an annoying R bug on Windows 10 caused by OneDrive. Many users use OneDrive to sync their Documents folder. Unfortunately, R stores libraries in the Documents folder, and OneDrive creates sync locks that interfere with the installation and updating of packages.
 
-The solution is to set the `R_LIBS_USER` environment variable to a folder that is not synced by OneDrive. This can be done by following these steps:
+The solution is to set the `R_LIBS_USER` environment variable to a folder that is not synced by OneDrive. This can be done by running [this script](/gh/scripts/r_fix/r_fix.ps1) or by following these steps:
 
 1. Open the Run window (<kbd>Win</kbd> + <kbd>R</kbd>)
 2. Paste `rundll32 sysdm.cpl,EditEnvironmentVariables` and hit OK.
