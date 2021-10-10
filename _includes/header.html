@@ -2,8 +2,7 @@
 <img height="200px" width="200px" class="headshot" alt="{{ site.title }}"
     {%- if site.external-image -%}
     src="{{ site.picture }}"
-    {%- elsif site.picture.first -%}
-    srcset="
+    {%- elsif site.picture.first %} srcset="
         {%- for img in site.picture -%}
         {{ img.url | relative_url }} {{ img.size }},
         {%- endfor -%}
