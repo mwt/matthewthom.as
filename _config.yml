@@ -90,6 +90,7 @@ github: mwt
 # lanyrd: mylanyrd
 email: 6adegxtzp@relay.firefox.com
 xmpp: true
+pgp: 12E711999B101F6F7C0AEDBB2F3EB8E26FE75E85
 
 # Mastodon instances
 mastodon:
