@@ -1,10 +1,12 @@
 /* trivial email obfuscation */
-var me = "matthew.thomas";
-var place = "northwestern.edu";
+var eme = "matthew";
+var eplace = "mwt.me";
+var xme = "matthew";
+var xplace = "mwt.me";
 
 /* replace social link a with string s  */
-function changesocial(a, s) {
-    a.href = `mailto:${s}`;
+function changesocial(a, s, pro) {
+    a.href = `${pro}:${s}`;
     a.dataset['title'] = s;
 };
 
@@ -12,4 +14,5 @@ function changesocial(a, s) {
 var elink = document.getElementById("mlink");
 
 /* replace email */
-changesocial(elink, `${me}@${place}`);
+changesocial(elink, `${eme}@${eplace}`, 'mailto');
+changesocial(xlink, `${xme}@${xplace}`, 'xmpp');

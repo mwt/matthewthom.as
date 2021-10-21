@@ -89,6 +89,7 @@ github: mwt
 # vimeo: myvimeo
 # lanyrd: mylanyrd
 email: 6adegxtzp@relay.firefox.com
+xmpp: true
 
 # Mastodon instances
 mastodon:

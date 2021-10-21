@@ -115,6 +115,12 @@
         </a>
     {% endif %}
 
+    {% if site.xmpp %}
+        <a id="xlink" class="social-link" data-title="#" href="xmpp:#">
+            <svg class="icon icon-xmpp"><use xlink:href="#icon-xmpp"></use></svg>
+        </a>
+    {% endif %}
+
     {% if site.email %}
         <a id="mlink" class="social-link" data-title="{{ site.email }}" href="mailto:{{ site.email }}">
             <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>
