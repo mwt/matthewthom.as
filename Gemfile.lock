@@ -65,9 +65,6 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-gist (1.5.0)
       octokit (~> 4.2)
-    jekyll-octicons (9.6.0)
-      jekyll (>= 3.6, < 5.0)
-      octicons (= 9.6.0)
     jekyll-paginate-v2 (3.0.0)
       jekyll (>= 3.0, < 5.0)
     jekyll-sass-converter (2.1.0)
@@ -106,15 +103,13 @@ GEM
       racc (~> 1.4)
     nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
-    octicons (9.6.0)
-      nokogiri (>= 1.6.3.1)
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
-    racc (1.5.2)
+    racc (1.6.0)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -134,7 +129,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   x64-mingw32
@@ -144,7 +139,6 @@ DEPENDENCIES
   jekyll (~> 4.2.1)
   jekyll-feed
   jekyll-gist
-  jekyll-octicons (~> 9.6.0)
   jekyll-paginate-v2
   jekyll-seo-tag
   jekyll-sitemap

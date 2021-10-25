@@ -21,7 +21,7 @@ layout: default
     <strong class="mr1">Downloads:</strong>
     {%- if page.pdf -%}
     <a class="icon-link" href="{{ page.pdf }}">
-        <svg class="octicon octicon-file" width="1.2em" height="1.2em" aria-hidden="true">
+        <svg class="icon icon-file" width="1.2em" height="1.2em" aria-hidden="true">
             <use xlink:href="#icon-pdf"></use>
         </svg>
         PDF
@@ -29,7 +29,7 @@ layout: default
     {%- endif -%}
     {%- if page.slides -%}
     <a class="icon-link" href="{{ page.slides }}">
-        <svg class="octicon octicon-file" width="1.2em" height="1.2em" aria-hidden="true">
+        <svg class="icon icon-file" width="1.2em" height="1.2em" aria-hidden="true">
             <use xlink:href="#icon-slides"></use>
         </svg>
         Slides
@@ -37,7 +37,9 @@ layout: default
     {%- endif -%}
     {%- if page.shortlink -%}
     <a class="icon-link" href="{{ page.shortlink }}" rel="shortlink">
-        {% octicon link width:1.2em height:1.2em %}
+        <svg class="icon icon-slink" width="1.2em" height="1.2em" aria-hidden="true">
+            <use xlink:href="#icon-slink"></use>
+        </svg>
         ShortLink
     </a>
     {%- endif -%}

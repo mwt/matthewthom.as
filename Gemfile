@@ -8,7 +8,6 @@ group :jekyll_plugins do
   gem 'jekyll-gist'
   gem 'jekyll-feed'
   gem 'jemoji'
-  gem 'jekyll-octicons', '~> 9.6.0'
   gem 'jekyll-sitemap'
   gem 'jekyll-paginate-v2'
 end

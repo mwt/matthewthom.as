@@ -2,11 +2,10 @@
     display: inline-block
     width: (19em / 16)
     height: (19em / 16)
-    fill: #000
     text-align: center
-    color: #000
-    margin: 5px auto
-    
+    vertical-align: text-bottom
+    fill: currentColor
+
 .icon-link
     text-decoration: none
     color: $alpha
@@ -16,8 +15,10 @@
         top: 0.4em
         right: 0.6em
     z-index: 1
+    transition: ease-in-out all .1s
     &:hover
-        color: $delta
+        color: $delta !important
+
     > .icon
         margin: 0
         vertical-align: text-bottom

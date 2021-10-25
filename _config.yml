@@ -170,7 +170,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-gist
   - jemoji
-  - jekyll-octicons
   - jekyll-sitemap
   - jekyll-paginate-v2
 
