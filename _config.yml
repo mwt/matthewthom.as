@@ -94,7 +94,7 @@ xmpp: true
 # Mastodon instances
 mastodon:
 - username: mwt
-  instance: mathstodon.xyz
+  instance: econresearch.org
 # - username: jekyll2
 #   instance: example.com
 
