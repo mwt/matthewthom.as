@@ -8,5 +8,5 @@ _site/
 vendor/
 vtex*
 *.secret.*
-
+.vscode
 .vercel
