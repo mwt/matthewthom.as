@@ -1,3 +1,7 @@
+- title: "MWT's Share"
+  url: "https://mwt.sh"
+  description: "Send files and shorten links"
+  github: "https://github.com/mwt/Apache-0x0"
 - title: "vTeX"
   url: "https://github.com/mwt/vtex"
   description: "Mini LaTeX/pandoc bundle for CI"
