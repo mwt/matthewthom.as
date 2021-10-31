@@ -92,11 +92,16 @@ email: 6adegxtzp@relay.firefox.com
 xmpp: true
 
 # Mastodon instances
-mastodon:
-- username: mwt
-  instance: econresearch.org
+# mastodon:
+# - username: mwt
+#   instance: mathstodon.xyz
 # - username: jekyll2
 #   instance: example.com
+
+# pleroma treated like mastodon
+pleroma:
+- username: mwt
+  instance: econresearch.org
 
 author:
   name: Matthew Wildrick Thomas
