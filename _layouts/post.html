@@ -8,10 +8,12 @@ layout: default
 
 <h1 class="title">{{ page.title }}</h1>
 
+{% if page.date %}
 <span class="date description">
     <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %B %d, %Y" }}</time>
     {% if site.read-time %} - {% include read-time.html %}{% endif %}
 </span>
+{% endif %}
 
 {% if site.show-tags %}
     <div class="post-tags">
@@ -47,6 +49,8 @@ layout: default
 {% endif %}
 
 {% if site.utterances %}
+{%- unless page.nocomments -%}
     {%- assign issue-term = page.title | prepend: 'Comments: ' -%}
     {% include utterances.html issue-term=issue-term %}
+{%- endunless -%}
 {% endif %}
