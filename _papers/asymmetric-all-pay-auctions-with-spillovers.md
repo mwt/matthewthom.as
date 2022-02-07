@@ -5,8 +5,10 @@ authors:
  - name: "Maria Betto"
    url: "https://mariabetto.com"
  - name: "Matthew Wildrick Thomas"
-year: 2021
+year: 2022
 description: "What happens when the prize in an all-pay auction depends on players' bids?"
+journal: "Theoretical Economics"
+rnr: true
 pdf: "/assets/pdfs/papers/asymmetric-all-pay-auctions-with-spillovers.pdf"
 shortlink: "https://mwt.me/spilloverapa"
 ---
