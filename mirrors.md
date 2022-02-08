@@ -23,20 +23,6 @@ I have a complete registered [CTAN](https://mirror.ctan.org) mirror for download
 |[X11](https://mirror.mwt.me/termux/x11)        |`deb https://mirror.mwt.me/termux/x11 x11 main`|
 
 
-### Linux Lite
-
-[Linux Lite](https://www.linuxliteos.com/) is a lightweight Linux distribution intended to be easy to use and intuitive for newcomers. I have a [mirror for iso downloads](https://mirror.mwt.me/linuxlite/isos/) as well as a mirror for packages which can be changed by replacing the contests of `/etc/apt/sources.list.d/linuxlite.list` with:
-
-|Version                                                           |sources.list entry                                  |
-|:-----------------------------------------------------------------|:---------------------------------------------------|
-|[Emerald (5.x)](https://mirror.mwt.me/linuxlite/dists/emerald/)   |`deb https://mirror.mwt.me/linuxlite/ emerald main` |
-|[Diamond (4.x)](https://mirror.mwt.me/linuxlite/dists/diamond/)   |`deb https://mirror.mwt.me/linuxlite/ diamond main` |
-|[Citrine (3.x)](https://mirror.mwt.me/linuxlite/dists/citrine/)   |`deb https://mirror.mwt.me/linuxlite/ citrine main` |
-|[Beryl (2.x)](https://mirror.mwt.me/linuxlite/dists/beryl/)       |`deb https://mirror.mwt.me/linuxlite/ beryl main`   |
-
-There is more complete documentation in the [Linux Lite manual](https://www.linuxliteos.com/manual/software.html#literepos).
-
-
 ### GitHub Desktop
 
 There is an [unofficial Linux version](https://github.com/shiftkey/desktop) of the [official GitHub Desktop client](https://desktop.github.com/). My mirror uses the same original signature as the developer. The following commands can be used to install the repository mirrors.
