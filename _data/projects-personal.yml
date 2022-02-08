@@ -18,3 +18,6 @@
   url: "https://mattwthomas.com/gh/mathjax-bookmarklet/"
   github: "https://github.com/mwt/mathjax-bookmarklet"
   description: "Display math on any webpage"
+- title: "MWT's Mirrors"
+  url: "https://mattwthomas.com/mirrors/"
+  description: "Mirrors for open source software"
