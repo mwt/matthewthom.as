@@ -23,11 +23,22 @@ I have a complete registered [CTAN](https://mirror.ctan.org) mirror for download
 |[X11](https://mirror.mwt.me/termux/x11)        |`deb https://mirror.mwt.me/termux/x11 x11 main`|
 
 
+### Zotero
+
+I have a mirror of the Debian/Ubuntu repository for the [Zotero citation manager](https://www.zotero.org). My mirror uses the same original signature as the developer. The mirror url is <https://mirror.mwt.me/zotero/deb/>. You can change this in your sources manually, or by running the following command:
+
+~~~sh
+$ sudo wget -O /usr/share/keyrings/zotero-archive-keyring.gpg "https://apt.retorque.re/file/zotero-apt/zotero-archive-keyring.gpg"
+$ sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/zotero-archive-keyring.gpg by-hash=force] https://mirror.mwt.me/zotero/deb/ ./" > /etc/apt/sources.list.d/zotero.list'
+$ sudo apt-get update
+~~~
+
+
 ### GitHub Desktop
 
 There is an [unofficial Linux version](https://github.com/shiftkey/desktop) of the [official GitHub Desktop client](https://desktop.github.com/). My mirror uses the same original signature as the developer. The following commands can be used to install the repository mirrors.
 
-**Debian/Ubuntu**
+##### Debian/Ubuntu
 
 The mirror url is <https://mirror.mwt.me/ghd/deb/>. You can change this in your sources manually, or by running the following command:
 
@@ -37,7 +48,7 @@ $ sudo sh -c 'echo "deb [arch=amd64] https://mirror.mwt.me/ghd/deb any main" > /
 $ sudo apt-get update
 ~~~
 
-**Red Hat/CentOS/Fedora**
+##### Red Hat/CentOS/Fedora
 
 The mirror url is <https://mirror.mwt.me/ghd/rpm/>. You can change this in your sources manually, or by running the following command:
 
@@ -46,7 +57,7 @@ $ sudo rpm --import https://packagecloud.io/shiftkey/desktop/gpgkey
 $ sudo sh -c 'echo -e "[shiftkey]\nname=GitHub Desktop\nbaseurl=https://mirror.mwt.me/ghd/rpm\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/shiftkey/desktop/gpgkey" > /etc/yum.repos.d/shiftkey-desktop.repo'
 ~~~
 
-**OpenSUSE distribution**
+##### OpenSUSE distribution
 
 The mirror url is <https://mirror.mwt.me/ghd/rpm/>. You can change this in your sources manually, or by running the following command:
 
