@@ -1,12 +1,11 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (6.1.5)
+    activesupport (7.0.2.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
@@ -94,7 +93,6 @@ GEM
       kramdown (~> 2.0)
     libv8-node (16.10.0.0)
     libv8-node (16.10.0.0-x86_64-linux)
-    libv8-node (16.10.0.0-x86_64-linux-musl)
     liquid (4.0.3)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -134,7 +132,6 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
-    zeitwerk (2.5.4)
 
 PLATFORMS
   x64-mingw32
@@ -152,4 +149,4 @@ DEPENDENCIES
   mini_racer
 
 BUNDLED WITH
-   2.2.26
+   2.3.9
