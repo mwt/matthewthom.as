@@ -6,3 +6,7 @@
   url: "https://pypi.org/project/allpy/"
   description: "Python package to estimate the equilibria of all-pay contests with spillovers"
   github: "https://github.com/mwt/allpy"
+- title: "Approximate Randomization Tests in R (rART)"
+  url: "https://sites.northwestern.edu/iac879/2021/10/01/rart-package/"
+  description: "R package for Approximate Randomization Tests with a Small Number of Clusters"
+  github: "https://github.com/mwt/rART"
