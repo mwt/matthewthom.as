@@ -5,7 +5,9 @@ permalink: /mirrors/
 nocomments: true
 ---
 
-I maintain a few public repository mirrors for free software projects that I make frequent use of. These mirrors are hosted on server hardware with a 1Gb/s connection near New York City. Contact me if you have other projects that you'd like to see mirrored. Every mirror supports both IPv4 and IPv6 as well as http and https. You can also change the hostname from `mirror.mwt.me` to `mirror-cf.mwt.me` to use the mirror over Cloudflare.
+I maintain a few public repository mirrors for free software projects that I make frequent use of. [Fastly CDN](https://fastly.com/) has generously donated their CDN network to serve and cache content from their [extensive edge network](https://www.fastly.com/network-map/) to serve the files. Each edge node connects to the closest of three distributed origins. There is one origin in Europe and two origins in the US, one on the East coast (near NYC) and another on the West coast. This ensures quick delivery of all files globally and extremely low latency for the most popular files in each region. The mirror supports both IPv4 and IPv6 as well as http and https.
+
+Contact me if you have other projects that you'd like to see mirrored. You can help support the financial sustainability of the project through [GitHub Sponsors](https://github.com/sponsors/mwt/). Anything you can pitch in helps keep the service up and running. Contributors will be listed on this page.
 
 The following software is hosted here:
 
@@ -21,7 +23,7 @@ The following software is hosted here:
 ### TeX/CTAN
 {: .anchor}
 
-I have an official registered [CTAN](https://mirror.ctan.org) mirror for downloading LaTeX. The mirror is updated every 12 hours and can be accessed using [`mirror.mwt.me/ctan/`](https://mirror.mwt.me/ctan/) or [`mirror-cf.mwt.me/ctan/`](https://mirror-cf.mwt.me/ctan/) to use over Cloudflare. The mirror can be selected in TeXLive, MikTeX, MacTeX, and others.
+I have an official registered [CTAN](https://mirror.ctan.org) mirror for downloading LaTeX. The mirror is updated every 12 hours and can be accessed using [`mirror.mwt.me/ctan/`](https://mirror.mwt.me/ctan/). The mirror can be selected in TeXLive, MikTeX, MacTeX, and others.
 
 ### Termux
 {: .anchor}
