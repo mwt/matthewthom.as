@@ -29,6 +29,7 @@ I have an official registered [CTAN](https://mirror.ctan.org) mirror for downloa
 {: .anchor}
 
 [Termux](https://termux.com/) is a terminal emulator and Linux environment for Android. I have an official registered repository which is updated every 6 hours and contains all Termux packages. The repository can be selected by running `apt edit-sources` in Termux and adding one or more of the following lines to your configuration.
+
 |Repository|sources.list entry                                               |
 |:---------|:----------------------------------------------------------------|
 |[Main](https://mirror.mwt.me/termux/main)      |`deb https://mirror.mwt.me/termux/main stable main`|
