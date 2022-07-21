@@ -69,8 +69,8 @@
         {%- endif -%}
         {% if include.class == "papers" and project.content %}
         <div class="atoggle">
-            <input type="checkbox" id="toggle" name="abstract-toggle" />
-            <label for="toggle">Abstract</label>
+            <input type="checkbox" id="toggle-{{ forloop.index }}" name="abstract-toggle" />
+            <label for="toggle-{{ forloop.index }}">Abstract</label>
             <div class = "abstract content">
                 {{ project.content | markdownify }}
             </div>
