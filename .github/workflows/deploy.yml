@@ -15,22 +15,23 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6
-    - name: install ImageMagick
-      run: |
-        sudo apt install -y imagemagick
-    - name: Cache dependencies
-      id: cache-deps
-      uses: actions/cache@v1
-      with:
-        path: vendor/cache
-        key: bundle-use-ubuntu-latest-jekyll-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          bundle-use-ubuntu-latest-jekyll-
-    - name: Install dependencies
-      run: |
-        bundle install
-        bundle package
+        ruby-version: 3.1
+        bundler-cache: true
+#    - name: install ImageMagick
+#      run: |
+#        sudo apt install -y imagemagick
+#    - name: Cache dependencies
+#      id: cache-deps
+#      uses: actions/cache@v1
+#      with:
+#        path: vendor/cache
+#        key: bundle-use-ubuntu-latest-jekyll-${{ hashFiles('**/Gemfile.lock') }}
+#        restore-keys: |
+#          bundle-use-ubuntu-latest-jekyll-
+#    - name: Install dependencies
+#      run: |
+#        bundle install
+#        bundle package
     - name: Build site
       run: |
         JEKYLL_ENV=production bundle exec jekyll build
