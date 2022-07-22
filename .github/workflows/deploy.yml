@@ -12,6 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_KEY }}
+        name: id_ed25519
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+        config: ${{ secrets.CONFIG }}
+        if_key_exists: replace
     - uses: actions/checkout@v2
     - uses: ruby/setup-ruby@v1
       with:
@@ -35,3 +43,6 @@ jobs:
     - name: Build site
       run: |
         JEKYLL_ENV=production bundle exec jekyll build
+    - name: Push to endpoint
+      run: | 
+        rsync -rvlc --delete _site/ endpoint:/
