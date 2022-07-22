@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Add masks
+      run: |
+        echo "::add-mask::${{ secrets.ENDPOINT_IP }}"
     - name: Install SSH key
       uses: shimataro/ssh-key-action@v2
       with:
@@ -44,5 +47,5 @@ jobs:
       run: |
         JEKYLL_ENV=production bundle exec jekyll build
     - name: Push to endpoint
-      run: | 
+      run: |
         rsync -rvlc --delete _site/ endpoint:/
