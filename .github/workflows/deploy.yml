@@ -12,9 +12,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the site in the jekyll/builder container
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - name: install ImageMagick
       run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+        sudo apt install -y imagemagick
+    - name: Cache dependencies
+      id: cache-deps
+      uses: actions/cache@v1
+      with:
+        path: vendor/cache
+        key: bundle-use-ubuntu-latest-jekyll-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          bundle-use-ubuntu-latest-jekyll-
+    - name: Install dependencies
+      run: |
+        bundle install
+        bundle package
+    - name: Build site
+      run: |
+        JEKYLL_ENV=production bundle exec jekyll build
