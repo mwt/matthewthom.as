@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'jekyll', '~> 4.2.2'
 gem 'kramdown-math-katex'
+gem 'katex', '~> 0.9.0'
 
 group :jekyll_plugins do
   gem 'jekyll-seo-tag'

@@ -126,6 +126,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   jemoji
+  katex (~> 0.9.0)
   kramdown-math-katex
   mini_racer
   webrick (~> 1.7)
