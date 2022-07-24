@@ -184,4 +184,4 @@ jekyll-mentions:
 sass:
     style: compressed
 
-exclude: ["vendor", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vtex"]
+exclude: ["vendor", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vtex", "LICENSE", "CNAME"]
