@@ -174,5 +174,6 @@ jekyll-mentions:
 
 sass:
     style: compressed
+    sourcemap: never
 
 exclude: ["vendor", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vtex", "LICENSE", "CNAME", "*.py"]
