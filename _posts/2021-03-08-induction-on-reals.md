@@ -42,7 +42,7 @@ Proving statements directly in this way is clearer to people unfamiliar with rea
 
 ## Example
 
-As an example, we will apply this method to prove a lemma in [my current working paper](/papers/asymmetric-all-pay-contests-with-spillovers/). The proof in the paper does not use real induction directly. It instead uses the direct argument expressed in the previous section. In this section, we will apply real induction in order to demonstrate the method.
+As an example, we will apply this method to prove a lemma in [my current working paper](/papers/asymmetric-all-pay-auctions-with-spillovers/). The proof in the paper does not use real induction directly. It instead uses the direct argument expressed in the previous section. In this section, we will apply real induction in order to demonstrate the method.
 
 In this paper, we show that a particular candidate probability density is the distribution for the Nash equilibrium for a class of auctions. In this lemma, we want to prove that this candidate can be a probability density -- i.e. it's positive and integrates to one.
 
