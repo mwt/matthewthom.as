@@ -1,51 +1,58 @@
 name: Jekyll site CI
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    push:
+        branches: ["master"]
+    pull_request:
+        branches: ["master"]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Add masks
-      run: |
-        echo "::add-mask::${{ secrets.ENDPOINT_IP }}"
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_KEY }}
-        name: id_ed25519
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
-        config: ${{ secrets.CONFIG }}
-        if_key_exists: replace
-    - uses: actions/checkout@v2
-    - uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 3.1
-        bundler-cache: true
-#    - name: install ImageMagick
-#      run: |
-#        sudo apt install -y imagemagick
-#    - name: Cache dependencies
-#      id: cache-deps
-#      uses: actions/cache@v1
-#      with:
-#        path: vendor/cache
-#        key: bundle-use-ubuntu-latest-jekyll-${{ hashFiles('**/Gemfile.lock') }}
-#        restore-keys: |
-#          bundle-use-ubuntu-latest-jekyll-
-#    - name: Install dependencies
-#      run: |
-#        bundle install
-#        bundle package
-    - name: Build site
-      run: |
-        JEKYLL_ENV=production bundle exec jekyll build
-    - name: Push to endpoint
-      run: |
-        rsync -rvlc --delete _site/ endpoint:/
+        steps:
+            - name: Add masks
+              run: |
+                  echo "::add-mask::${{ secrets.ENDPOINT_IP }}"
+            - name: Install SSH key
+              uses: shimataro/ssh-key-action@v2
+              with:
+                  key: ${{ secrets.SSH_KEY }}
+                  name: id_ed25519
+                  known_hosts: ${{ secrets.KNOWN_HOSTS }}
+                  config: ${{ secrets.CONFIG }}
+                  if_key_exists: replace
+            - name: Setup rclone
+              run: |
+                  sudo apt install rclone
+                  mkdir -p ~/.config/rclone
+                  echo "${{ secrets.RCLONE_CONF }}" > ~/.config/rclone/rclone.conf
+            - uses: actions/checkout@v2
+            - uses: ruby/setup-ruby@v1
+              with:
+                  ruby-version: 3.1
+                  bundler-cache: true
+            #    - name: install ImageMagick
+            #      run: |
+            #        sudo apt install -y imagemagick
+            #    - name: Cache dependencies
+            #      id: cache-deps
+            #      uses: actions/cache@v1
+            #      with:
+            #        path: vendor/cache
+            #        key: bundle-use-ubuntu-latest-jekyll-${{ hashFiles('**/Gemfile.lock') }}
+            #        restore-keys: |
+            #          bundle-use-ubuntu-latest-jekyll-
+            #    - name: Install dependencies
+            #      run: |
+            #        bundle install
+            #        bundle package
+            - name: Build site
+              run: |
+                  JEKYLL_ENV=production bundle exec jekyll build
+            - name: Push to endpoint
+              run: |
+                  rsync -rvlc --delete _site/ endpoint:/
+            - name: Push to Bunny
+              run: |
+                  rclone sync _site/ bunny:/matthewthomas/
