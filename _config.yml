@@ -11,13 +11,13 @@ description: Homepage of Matthew Wildrick Thomas, an Economics Ph.D. Candidate a
 external-image: false
 picture:
 - size: "268w"
-  url: "/assets/images/profile.png?width=268"
+  url: "/assets/images/headshot/mwt268.jpg"
 - size: "200w"
-  url: "/assets/images/profile.png?width=200"
+  url: "/assets/images/headshot/mwt200.jpg"
 - size: "400w"
-  url: "/assets/images/profile.png?width=400"
+  url: "/assets/images/headshot/mwt400.jpg"
 - size: "800w"
-  url: "/assets/images/profile.png?width=800"
+  url: "/assets/images/headshot/mwt800.jpg"
 
 #share picture
 spicture: assets/screen-shot.png
@@ -176,4 +176,4 @@ sass:
     style: compressed
     sourcemap: never
 
-exclude: ["vendor", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vtex", "LICENSE", "CNAME", "*.py"]
+exclude: ["vendor", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vtex", "LICENSE", "CNAME"]
