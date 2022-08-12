@@ -50,6 +50,7 @@ jobs:
             - name: Build site
               run: |
                   JEKYLL_ENV=production bundle exec jekyll build
+                  wget -qO- "${{ secrets.NOT_IN_REPO }}" | tar -xzC _site
             - name: Push to endpoint
               run: |
                   rsync -rvlc --delete _site/ endpoint:/
