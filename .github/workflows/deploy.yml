@@ -24,7 +24,7 @@ jobs:
           if_key_exists: replace
       - name: Setup rclone
         run: |
-          sudo apt install rclone
+          sudo apt-get install -y rclone
           mkdir -p ~/.config/rclone
           echo "${{ secrets.RCLONE_CONF }}" > ~/.config/rclone/rclone.conf
       - uses: actions/checkout@v2
