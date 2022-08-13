@@ -40,7 +40,7 @@
         </p>
         {%- endif -%}
         {%- if project.description -%}
-        <p class="description">{{ project.description }}</p>
+        <p class="description">{{ project.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
         {%- endif -%}
         
         {%- if project.github -%}
