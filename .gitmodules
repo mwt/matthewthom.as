@@ -1,0 +1,3 @@
+[submodule ".github/scripts/gemini-site"]
+	path = .github/scripts/gemini-site
+	url = https://github.com/mwt/gemini-site

@@ -12,10 +12,12 @@ TMPFILE=$(mktemp /tmp/deploy.XXXXXX)
 
 # Deploy
 #
-# to endpoint
-rsync -rlci --log-file=$TMPFILE --delete _site/ endpoint:/www/
+# to endpoint for www (log is for CDN cache purge)
+rsync -rlci --log-file=$TMPFILE --delete _site/www/ endpoint:/www/
+# to endpoint for gemini (no cdn)
+rsync -rlci --delete _site/gemini/ endpoint:/gemini/
 # to bunny
-rclone sync _site/ bunny:/matthewthomas/
+rclone sync _site/www/ bunny:/matthewthomas/
 
 # Purge the CDN using values from rsync log
 cat $TMPFILE | grep -E '\] (<fc)' | cut -d \  -f 5 | sed -e 's/index.html$//' | while read -r filename; do
