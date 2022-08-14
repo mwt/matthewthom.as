@@ -1,5 +1,7 @@
 ---
 title: "Covert Discrimination in All-pay Contests"
+date: "2021-08-14"
+last_modified_at: "2021-08-14"
 id_key: "covertapa"
 authors:
  - name: "Maria Betto"

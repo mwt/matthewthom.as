@@ -1,5 +1,7 @@
 ---
 title: "Asymmetric All-Pay Auctions with Spillovers"
+date: "2021-11-06"
+last_modified_at: "2021-11-06"
 id_key: "spilloverapa"
 authors:
  - name: "Maria Betto"
