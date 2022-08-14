@@ -48,6 +48,6 @@ jobs:
       #        bundle install
       #        bundle package
       - name: Build site
-        run: _bash/build.sh "${{ secrets.NOT_IN_REPO }}"
+        run: .github/scripts/build.sh "${{ secrets.NOT_IN_REPO }}"
       - name: Deploy
-        run: _bash/deploy.sh "${{ secrets.BUNNY_API_KEY }}"
+        run: .github/scripts/deploy.sh "${{ secrets.BUNNY_API_KEY }}"

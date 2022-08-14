@@ -13,7 +13,7 @@ TMPFILE=$(mktemp /tmp/deploy.XXXXXX)
 # Deploy
 #
 # to endpoint
-rsync -rlci --log-file=$TMPFILE --delete _site/ endpoint:/
+rsync -rlci --log-file=$TMPFILE --delete _site/ endpoint:/www/
 # to bunny
 rclone sync _site/ bunny:/matthewthomas/
 
