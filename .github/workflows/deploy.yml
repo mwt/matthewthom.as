@@ -28,6 +28,8 @@ jobs:
           mkdir -p ~/.config/rclone
           echo "${{ secrets.RCLONE_CONF }}" > ~/.config/rclone/rclone.conf
       - uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1
