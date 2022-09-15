@@ -20,7 +20,7 @@ echo "Copying gemini files to endpoint"
 rsync -rlci --delete _site/gemini/ endpoint:/gemini/
 # to bunny
 echo "Copying www files to Bunny Edge Storage"
-rclone sync _site/www/ bunny:/matthewthomas/
+rclone sync _site/www/ bunny:
 
 # Purge the CDN using values from rsync log
 echo ""
