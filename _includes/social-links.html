@@ -37,7 +37,7 @@
 
     {%- for mst in site.mastodon -%}
     {% if mst.username and mst.instance %}
-    <a class="social-link" data-title="{{ mst.username | escape }}@{{ mst.instance | escape}}" href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" target="_blank" rel="me noopener noreferrer">
+    <a class="social-link" data-title="{{ mst.username | escape }}@{{ mst.instance | escape}}" href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" target="_blank" rel="me">
         <svg class="icon icon-mastodon"><use xlink:href="#icon-mastodon"></use></svg>
     </a>
     {% endif %}
