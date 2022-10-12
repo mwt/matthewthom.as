@@ -44,7 +44,7 @@ We make one regularity assumption and another assumption which characterizes the
 3. *War is costly when losing:* $$ \ell'_i(t) < 0$$.
 4. *Costs are relevant:* $$ \int_0^\infty \frac{-\ell'_i(z)}{f_i(z) - \ell_i(z)} dz = \infty $$.
 
-Without loss of generality, we will say that $$ \ell_i(0) = 0 $$. The second assumption guarantees that ties occur with probability zero in equilibrium. So, I will not mention them again. The last two points of Assumption 2 (4 and 5) prevent pathological behavior around infinity. Without these assumptions, it is possible that the players would never exit. In particular, 5 guarantees that the benefit of winning is not so large relative to the cost of the war.
+Without loss of generality, we will say that $$ \ell_i(0) = 0 $$. The second assumption guarantees that ties occur with probability zero in equilibrium. So, I will not mention them again. The last point of Assumption 2 prevents pathological behavior around infinity. Without this, it is possible that the players would never exit. It can be interpreted as a guarantee that the benefit of winning is not so large relative to the cost of the war.
 
 ## Pure strategy Equilibria
 
@@ -93,7 +93,7 @@ $$
 G_{-i}(t) = 1 - \exp \left( \int _0^t \frac{ \ell'_i(z) }{ f_i(z) - \ell_i(z) } dz \right).
 $$
 
-One might be concerned that the above expression may not satisfy the properties of a distribution function. For example, it may be decreasing or $$ \lim_{t \to \infty} G_{-i}(t) \neq 1 $$. This is not the case. The function is strictly increasing because the term inside the integral is negative. Assumption 2.5 guarantees that the distribution approaches one. However, it never reaches one at any time. So, the support is unbounded. Another way to see this is to note that the survival function is
+One might be concerned that the above expression may not satisfy the properties of a distribution function. For example, it may be decreasing or $$ \lim_{t \to \infty} G_{-i}(t) \neq 1 $$. This is not the case. The function is strictly increasing because the term inside the integral is negative. Assumption 2.4 guarantees that the distribution approaches one. However, it never reaches one at any time. So, the support is unbounded. Another way to see this is to note that the survival function is
 
 $$
 S_{-i}(t) = \exp \left( \int _0^t \frac{ \ell'_i(z) }{ f_i(z) - \ell_i(z) } dz \right) > 0.
