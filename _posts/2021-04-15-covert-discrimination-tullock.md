@@ -1,6 +1,6 @@
 ---
 title: "Tullock Lottery Contests with Direct and Covert Discrimination"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["math", "economics", "game theory", "notes"]
 date: "2021-04-15"

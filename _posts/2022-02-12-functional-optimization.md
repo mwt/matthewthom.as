@@ -1,6 +1,6 @@
 ---
 title: "Optimization of Functionals and the Calculus of Variations"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["math", "economics", "notes"]
 date: "2022-02-12"

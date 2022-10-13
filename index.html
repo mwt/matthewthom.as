@@ -7,16 +7,18 @@ title: "Home"
     I'm Matthew W. Thomas, an Economics PhD candidate at Northwestern University. I am currently interested in
     microeconomic theory including contests, lobbying, and labor. This page is here
     to share my <a href="#academic">academic</a> and  <a href="#non-academic">non-academic</a> projects.
+    My <a href="https://sites.northwestern.edu/mtp3384/">job market site is here</a>.
 </p>
 <hr>
 
-{% assign notes=site.posts | where:"tag","notes" %}
+{%- assign working_papers=site.papers | sort: "order", "last" -%}
+{%- assign notes=site.posts | where:"tag","notes" -%}
 
 <div id="academic" class="anchor">
     {%- include list.html 
         title="Working Papers" 
         class="papers" 
-        data=site.papers -%}
+        data=working_papers -%}
     <hr>
     {%- include list.html 
         title="Academic Code" 

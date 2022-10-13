@@ -1,6 +1,6 @@
 ---
 title: "List of Econ Blogs"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["economics"]
 date: "2021-03-12"

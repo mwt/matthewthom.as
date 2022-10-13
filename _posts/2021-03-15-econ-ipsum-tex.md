@@ -1,6 +1,6 @@
 ---
 title: "Econ Ipsum Now Available in TeX"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["tech", "webdev"]
 date: "2021-03-15"

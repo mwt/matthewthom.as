@@ -1,6 +1,6 @@
 ---
 title: "Real Induction"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["math", "induction"]
 date: "2021-03-08"

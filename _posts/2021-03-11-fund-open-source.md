@@ -1,6 +1,6 @@
 ---
 title: "Mechanisms to Fund Open Source"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["math", "economics", "mechanism design", "notes"]
 date: "2021-03-11"

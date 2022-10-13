@@ -7,7 +7,7 @@
 JEKYLL_ENV=production
 
 # echo "Fetch variables from _config.yml"
-# title="Matthew Wildrick Thomas"
+# title="Matthew W. Thomas"
 # bio=$(grep 'bio:' _config.yml | tail -n1); bio=${bio#*: }
 # email=$(grep 'email:' _config.yml | tail -n1); email=${email#*: }
 # github=$(grep 'github:' _config.yml | tail -n1); github=${github#*: }

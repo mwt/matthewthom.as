@@ -1,6 +1,6 @@
 ---
 title: "Fix the R Library Bug on Windows 10"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["tech", "R"]
 date: "2021-04-16"

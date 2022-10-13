@@ -1,6 +1,6 @@
 ---
 title: "Optimal Fair Contests"
-author: "Matthew Wildrick Thomas"
+author: "Matthew W. Thomas"
 layout: "post"
 tag: ["math", "economics", "notes"]
 date: "2021-09-30"
