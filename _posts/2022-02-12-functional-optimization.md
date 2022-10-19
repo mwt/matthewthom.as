@@ -5,7 +5,7 @@ layout: "post"
 tag: ["math", "economics", "notes"]
 date: "2022-02-12"
 use_math: true
-last_modified_at: "2022-02-12"
+last_modified_at: "2022-10-19"
 description: "Notes about how to optimize over a space of functions instead of numbers"
 ---
 
@@ -110,6 +110,6 @@ $$
     \int_a^b g(x) \psi(x) \, dx = 0
 $$
 
-*for all continuous functions* $$\psi$$ *such that* $$\psi(a)=\psi(b)=0$$*, then* $$f(x) = 0$$ *for all* $$x \in [a,b]$$.
+*for all continuous functions* $$\psi$$ *such that* $$\psi(a)=\psi(b)=0$$*, then* $$g(x) = 0$$ *for all* $$x \in [a,b]$$.
 
 This means that $$dL_{\psi}[f]=0$$ if and only if $$ 2 (f(x) - \phi(x)) = 0 $$ for all $$x \in [0,1]$$. So, $$f = \phi$$ as anticipated.
