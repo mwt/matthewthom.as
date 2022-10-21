@@ -22,6 +22,6 @@
   url: "https://www.matthewthom.as/mirrors/"
   description: "Mirrors for open source software"
 - title: "certbot-dns-bunny"
-  url: "https://pypi.org/project/certbot-dns-bunny/"
+  url: "https://certbot-dns-bunny.readthedocs.io/en/latest/"
   github: "https://github.com/mwt/certbot-dns-bunny"
   description: "Certbot plugin for [BunnyDNS](https://bunny.net/?ref=e174a06f0l)"
