@@ -14,10 +14,10 @@ TMPFILE=$(mktemp /tmp/deploy.XXXXXX)
 #
 # to endpoint for www (log is for CDN cache purge)
 echo "Copying www files to endpoint"
-rsync -rlci --log-file=$TMPFILE --delete _site/www/ endpoint:/www/
+rsync -rlci --log-file=$TMPFILE --delete --rsh=ssh _site/www/ endpoint::matthewthomas/www/
 # to endpoint for gemini (no cdn)
 echo "Copying gemini files to endpoint"
-rsync -rlci --delete _site/gemini/ endpoint:/gemini/
+rsync -rlci --delete _site/gemini/ --rsh=ssh endpoint::matthewthomas/gemini/
 # to bunny
 echo "Copying www files to Bunny Edge Storage"
 rclone --ignore-times sync _site/www/ bunny:
