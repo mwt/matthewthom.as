@@ -1,10 +1,11 @@
 #!/bin/sh
 ##
 # $1: Api key for Bunny.net
+# $2: FTP password for Bunny.net
 #
 ##
 
-PULL_ZONE="matthewthomas.b-cdn.net"
+#PULL_ZONE="matthewthomas.b-cdn.net"
 
 # Create a tempfile
 #
@@ -20,7 +21,11 @@ echo "Copying gemini files to endpoint"
 rsync -rlci --delete _site/gemini/ --rsh=ssh endpoint::matthewthomas/gemini/
 # to bunny
 echo "Copying www files to Bunny Edge Storage"
-rclone --ignore-times sync _site/www/ bunny:
+lftp ftp://storage.bunnycdn.com << EOF
+user matthewthomas "$2"
+mirror --reverse --parallel=10 --delete --no-perms --transfer-all _site/www/ /matthewthomas/
+exit
+EOF
 
 # Purge the CDN using values from rsync log
 echo ""

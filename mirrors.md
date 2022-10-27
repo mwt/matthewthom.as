@@ -5,13 +5,7 @@ permalink: /mirrors/
 nocomments: true
 ---
 
-I maintain a few public repository mirrors for free software projects that I make frequent use of. [Fastly CDN](https://fastly.com/) has generously donated their CDN network to serve and cache content from their [extensive edge network](https://www.fastly.com/network-map/) to serve the files. Each edge node connects to the closest of three distributed origins. There is one origin in Europe and two origins in the US, one on the East coast (near NYC) and another on the West coast. This ensures quick delivery of all files globally and extremely low latency for the most popular files in each region. The mirror supports both IPv4 and IPv6 as well as http and https.
-
----
-
-<iframe scrolling="no" height="380px" width="100%" src="https://chart-embed.service.newrelic.com/herald/a20ba51a-c5ad-4eb0-b094-ed6c980988eb?height=360px&timepicker=false"></iframe>
-
----
+I maintain a few public repository mirrors for free software projects that I make frequent use of. This mirror was previously sponsored by Fastly CDN. However, the bandwidth costs exceeded the $1000/month that was made available to us. The mirror is now hosted behind a Cloudflare pro plan. Each edge node connects to one of four redundant origins. There is one server pair in Western Europe and another pair in New York. Files are served from the region closest to you. This ensures quick delivery of all files globally. You can [check your assigned origin using this link](https://mirror.mwt.me/mirror-heartbeat.txt). The mirror supports both IPv4 and IPv6 as well as http and https. Each of the four servers has an independent 10Gb/s connection.
 
 Contact me if you have other projects that you'd like to see mirrored. You can help maintain the financial sustainability of the project by [making a tax deductible donation to Think Tutor](https://github.com/sponsors/thinktutor/). Anything you can pitch in helps keep the service up and running. Contributors will get a shout out on this page.
 

@@ -22,11 +22,8 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
           config: ${{ secrets.CONFIG }}
           if_key_exists: replace
-      - name: Setup rclone
-        run: |
-          sudo apt-get install -y rclone
-          mkdir -p ~/.config/rclone
-          echo "${{ secrets.RCLONE_CONF }}" > ~/.config/rclone/rclone.conf
+      - name: Setup lftp
+        run: sudo apt-get install -y lftp
       - uses: actions/checkout@v2
         with:
           submodules: recursive
@@ -56,4 +53,4 @@ jobs:
       - name: Build site
         run: .github/scripts/build.sh "${{ secrets.NOT_IN_REPO }}"
       - name: Deploy
-        run: .github/scripts/deploy.sh "${{ secrets.BUNNY_API_KEY }}"
+        run: .github/scripts/deploy.sh "${{ secrets.BUNNY_API_KEY }}" "${{ secrets.BUNNY_FTP_PASS }}"
