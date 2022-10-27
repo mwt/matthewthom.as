@@ -5,7 +5,7 @@
 #
 ##
 
-#PULL_ZONE="matthewthomas.b-cdn.net"
+PULL_ZONE="matthewthomas.b-cdn.net"
 
 # Create a tempfile
 #
