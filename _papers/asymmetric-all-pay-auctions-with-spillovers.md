@@ -13,6 +13,7 @@ journal: "Theoretical Economics"
 rnr: true
 pdf: "/assets/pdfs/papers/asymmetric-all-pay-auctions-with-spillovers.pdf"
 shortlink: "https://mwt.me/spilloverapa"
+jmp: true
 order: 2
 ---
 

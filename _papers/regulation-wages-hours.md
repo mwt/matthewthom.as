@@ -8,7 +8,8 @@ authors:
 year: 2022
 description: "How does the determination of labor hours affect optimal regulation?"
 shortlink: "https://mwt.me/jmp"
+jmp: true
 order: 1
 ---
 
-When workers' hours and wages are bargained jointly, workers may not receive their preferred hours for their wage. This paper studies labor market regulation when it is known that workers prefer to work fewer hours (are overworked), but specific knowledge of production, labor disutility, and bargaining protocol is absent. We show that for a large class of bargaining protocols, there is regulation that robustly increases worker utility without sacrificing total surplus. We use this model to motivate the overtime pay provision of 1938 Fair Labor Standards Act as a robust Pareto improvement over a simple cap on hours.
+When hours and wages are bargained jointly, workers may not receive their preferred hours. This paper studies labor market regulation when it is known that workers prefer to work fewer hours at their wage, but specific knowledge of production, labor disutility, and bargaining protocol is absent. We show that for a large class of bargaining protocols, there is regulation that increases worker utility without sacrificing total surplus. We derive the optimality of overtime pay in a novel robust regulatory setting where the regulator has neither a prior nor exogenous bounds on model parameters.

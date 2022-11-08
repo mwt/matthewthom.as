@@ -11,12 +11,18 @@ title: "Home"
 </p>
 <hr>
 
-{%- assign working_papers=site.papers | sort: "order", "last" -%}
+{%- assign job_mkt_papers=site.papers | where:"jmp",true | sort: "order", "last" -%}
+{%- assign working_papers=site.papers | where:"jmp",nil | sort: "order", "last" -%}
 {%- assign notes=site.posts | where:"tag","notes" -%}
 
 <div id="academic" class="anchor">
     {%- include list.html 
-        title="Working Papers" 
+        title="Job Market Papers" 
+        class="papers" 
+        data=job_mkt_papers -%}
+    <hr>
+    {%- include list.html 
+        title="Works in Progress" 
         class="papers" 
         data=working_papers -%}
     <hr>
