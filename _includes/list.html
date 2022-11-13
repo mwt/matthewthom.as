@@ -8,7 +8,7 @@
 <section class="list">
     {%- for project in include.data -%}
     <div class="item{% if project.star %} star{% endif %}">
-        <h4>
+        <h3>
             <a class="title" href="
             {%- if project.url_is_pdf -%}
                 {{ project.pdf }}
@@ -31,7 +31,7 @@
                 {%- endfor -%}
                 )
             {% endif %}
-        </h4>
+        </h3>
         {%- if project.journal -%}
         <p class="meta">
             {%- if project.rnr -%}R&R at {% endif -%}
@@ -68,9 +68,10 @@
         </a>
         {%- endif -%}
         {% if include.class == "papers" and project.content %}
+        {% capture abstract_id %}{% increment paper_section_number %}{% endcapture %}
         <div class="atoggle">
-            <input type="checkbox" id="toggle-{{ forloop.index }}" name="abstract-toggle" />
-            <label for="toggle-{{ forloop.index }}">Abstract</label>
+            <input type="checkbox" id="toggle-{{ abstract_id }}" name="abstract-toggle" />
+            <label for="toggle-{{ abstract_id }}">Abstract</label>
             <div class = "abstract content">
                 {{ project.content | markdownify }}
             </div>
