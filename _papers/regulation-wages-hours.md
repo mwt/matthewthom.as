@@ -9,6 +9,7 @@ year: 2022
 description: "How does the determination of labor hours affect optimal regulation?"
 shortlink: "https://mwt.me/jmp"
 pdf: "/assets/pdfs/papers/regulation-wages-hours.pdf"
+slides: "/assets/pdfs/slides/regulation-wages-hours-slides.pdf"
 jmp: true
 order: 1
 ---
