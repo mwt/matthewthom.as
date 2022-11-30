@@ -4,10 +4,11 @@ title: "Home"
 ---
 <hr>
 <p class="content">
-    I'm Matthew W. Thomas, an Economics PhD candidate at Northwestern University. I am currently interested in
-    microeconomic theory including contests, lobbying, and labor. This page is here
-    to share my <a href="#academic">academic</a> and  <a href="#non-academic">non-academic</a> projects.
-    My <a href="https://sites.northwestern.edu/mtp3384/">job market site is here</a>.
+    I'm Matthew W. Thomas, an Economics PhD candidate at Northwestern University. My research covers a broad
+    range of topics in microeconomic theory including auctions, robust design, discrimination, contests, and
+    financial markets. This page is here to share my <a href="#academic">academic</a> and
+    <a href="#non-academic">non-academic</a> projects. My <a href="https://sites.northwestern.edu/mtp3384/">
+        job market site is here</a>.
 </p>
 <hr>
 
@@ -16,36 +17,36 @@ title: "Home"
 {%- assign notes=site.posts | where:"tag","notes" -%}
 
 <div id="academic" class="anchor">
-    {%- include list.html 
-        title="Job Market Papers" 
-        class="papers" 
+    {%- include list.html
+        title="Job Market Papers"
+        class="papers"
         data=job_mkt_papers -%}
     <hr>
-    {%- include list.html 
-        title="Works in Progress" 
-        class="papers" 
+    {%- include list.html
+        title="Works in Progress"
+        class="papers"
         data=working_papers -%}
     <hr>
-    {%- include list.html 
-        title="Academic Code" 
+    {%- include list.html
+        title="Academic Code"
         data=site.data.projects-academic -%}
     <hr>
-    {%- include list.html 
-        title="Informal Notes" 
+    {%- include list.html
+        title="Informal Notes"
         data=notes -%}
     <hr>
 </div>
 
 <div id="non-academic" class="anchor">
-    {%- include list.html 
+    {%- include list.html
         title="Professional Projects"
         data=site.data.projects-professional -%}
     <hr>
-    {%- include list.html 
+    {%- include list.html
         title="Personal Projects"
         data=site.data.projects-personal -%}
     <hr>
-    {%- include list.html 
+    {%- include list.html
         title="Code Snippets"
         data=site.data.projects-gists -%}
 </div>

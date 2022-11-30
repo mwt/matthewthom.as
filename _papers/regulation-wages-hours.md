@@ -14,4 +14,4 @@ jmp: true
 order: 1
 ---
 
-This paper studies labor market regulation when it is known that workers prefer to work fewer hours at their current wage, but specific knowledge of production, labor disutility, and bargaining protocol is absent. We show that for a large class of bargaining protocols, regulation can increase worker utility without sacrificing total surplus. We derive the optimality of overtime pay in a novel robust regulatory setting where the regulator has neither a prior nor exogenous bounds on model parameters.
+This paper studies the problem of a labor market regulator who knows that workers prefer to work fewer hours at their current wage, but lacks specific knowledge of production, labor disutility, and the bargaining protocol. We show that for a large class of bargaining protocols, moderate regulation (such as a small minimum wage) is counterproductive in that it results in hours that exceed the efficient quantity. We find that a combination of the minimum wage, overtime pay, and a cap on hours is optimal in a novel robust regulatory setting where the regulator has neither a prior nor exogenous bounds on model parameters.
