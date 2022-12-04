@@ -23,8 +23,8 @@
       "source": "/assets/pdfs/(.*)\\.pdf",
       "headers": [
         {
-          "key": "Link",
-          "value": "<https://mattwthomas.com/$1/>; rel=\"canonical\""
+          "key": "Cache-Control",
+          "value": "public, max-age=0"
         }
       ]
     }
@@ -37,6 +37,10 @@
     {
       "source": "/gh/:match*",
       "destination": "https://mwt.github.io/:match*"
+    },
+    {
+      "source": "/assets/:match*/",
+      "destination": "https://nocdn.matthewthom.as/assets/:match*/"
     }
   ]
 }
