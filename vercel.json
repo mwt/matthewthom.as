@@ -11,15 +11,6 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2629746"
-        }
-      ]
-    },
-    {
       "source": "/assets/pdfs/(.*)\\.pdf",
       "headers": [
         {
