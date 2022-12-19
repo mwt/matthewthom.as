@@ -2,55 +2,61 @@
 layout: default
 ---
 
-{% if page.image and page.headerImage %}
-    <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
-{% endif %}
+<article class="h-entry">
 
-<h1 class="title">{{ page.title }}</h1>
+    {% if page.image and page.headerImage %}
+        <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+    {% endif %}
 
-{% if page.date %}
-<span class="date description">
-    <time datetime="{{ page.date | date:"%d-%m-%Y" }}">{{ page.date | date: "%A. %B %d, %Y" }}</time>
-    {% if site.read-time %} - {% include read-time.html %}{% endif %}
-</span>
-{% endif %}
+    <h1 class="title p-name">{{ page.title }}</h1>
 
-{% if site.show-tags %}
-    <div class="post-tags">
-        {% for tag in page.tags %}
-            <a class="item" href="{{ tag | slugify | prepend: '/tags/#' | relative_url }}">{{ tag }}</a>
-        {% endfor %}
+    {% if page.date %}
+    <span class="date description">
+        <time class="dt-published" datetime="{{ page.date | date:'%d-%m-%Y' }}">{{ page.date | date: '%A. %B %d, %Y' }}</time>
+        {% if site.read-time %} - {% include read-time.html %}{% endif %}
+    </span>
+    {% endif %}
+
+    {% if site.show-tags %}
+        <div class="post-tags">
+            {% for tag in page.tags %}
+                <a class="item" href="{{ tag | slugify | prepend: '/tags/#' | relative_url }}">{{ tag }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="content e-content">
+    {{content}}
     </div>
-{% endif %}
 
-<div class="content">
-{{content}}
-</div>
+    {% if site.post-advance-links contains page.category %}
+        <div class="blog-navigation">
+            {% if page.previous.hidden == false and page.previous.url %}
+                <a class="prev" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>
+            {% else %}
+                <a class="prev"></a>
+            {% endif %}
+            {% if page.next.hidden == false and page.next.url %}
+                <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &raquo;</a>
+            {% endif %}
+        </div>
+    {% endif %}
 
-{% if site.post-advance-links contains page.category %}
-    <div class="blog-navigation">
-        {% if page.previous.hidden == false and page.previous.url %}
-            <a class="prev" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>
-        {% else %}
-            <a class="prev"></a>
-        {% endif %}
-        {% if page.next.hidden == false and page.next.url %}
-            <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &raquo;</a>
-        {% endif %}
-    </div>
-{% endif %}
+    {% if site.related %}
+        {% include related.html %}
+    {% endif %}
 
-{% if site.related %}
-    {% include related.html %}
-{% endif %}
+    {% if site.show-author %}
+        {% include author.html %}
+    {% endif %}
 
-{% if site.show-author %}
-    {% include author.html %}
-{% endif %}
+    <a class="u-bridgy-fed d-none" href="https://fed.brid.gy/"></a>
 
-{% if site.utterances %}
-{%- unless page.nocomments -%}
-    {%- assign issue-term = page.title | prepend: 'Comments: ' -%}
-    {% include utterances.html issue-term=issue-term %}
-{%- endunless -%}
-{% endif %}
+    {% if site.utterances %}
+    {%- unless page.nocomments -%}
+        {%- assign issue-term = page.title | prepend: 'Comments: ' -%}
+        {% include utterances.html issue-term=issue-term %}
+    {%- endunless -%}
+    {% endif %}
+
+</article>
