@@ -9,6 +9,8 @@ layout: default
     {% endif %}
 
     <h1 class="title p-name">{{ page.title }}</h1>
+    <a rel="author" class="p-author d-none" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
+    <a class="u-url d-none" href="{{ page.url | absolute_url }}">{{ page.title }}</a>
 
     {% if page.date %}
     <span class="date description">
