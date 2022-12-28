@@ -13,21 +13,21 @@
 
 .caption
     position: relative
-    top: (10em / 16)
+    top: math.div(10em,16)
     left: 0
     right: 0
     margin: 0 auto
     width: 100%
     text-align: center
-    font-size: (13em / 16)
+    font-size: math.div(13em,16)
 
 .bigger-image
     min-width: 130%
-    margin: (50em / 16) 0 (50em / 16) -15%
+    margin: math.div(50em,16) 0 math.div(50em,16) -15%
 
     @media #{$notmd}
         min-width: 114%
-        margin: (20em / 16) 0 (20em / 16) -7%
+        margin: math.div(20em,16) 0 math.div(20em,16) -7%
 
 .lost-container
     text-align: center

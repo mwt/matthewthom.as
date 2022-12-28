@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'jekyll', '~> 4.2.2'
+gem 'jekyll', '~> 4.3.1'
 gem 'kramdown-math-katex'
 gem 'katex', '~> 0.9.0'
 
@@ -17,4 +17,4 @@ install_if -> { RUBY_PLATFORM =~ /linux/ } do
   gem "mini_racer"
 end
 
-gem "webrick", "~> 1.7"
+gem "webrick"
