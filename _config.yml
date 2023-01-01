@@ -55,7 +55,7 @@ kramdown:
 # analytics-google: 'UA-142538765-1'
 
 utterances:
-    repo: "mwt/mattwthomas.com"
+    repo: "mwt/matthewthom.as"
     issue-term: "pathname"
     label: "utteranc.es"
     theme: "github-light"
