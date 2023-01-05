@@ -1,6 +1,40 @@
 ---
-layout: default
+layout: compress
 ---
+
+{%- comment -%}
+    We are not using the default template for this one because we want custom meta tags for the papers.
+{%- endcomment -%}
+
+{%- capture header_html -%}
+    <meta name="citation_title" content="{{ page.title }}">
+    {%- for author in page.authors -%}
+        <meta name="citation_author" content="{{ author.name }}">
+    {%- endfor -%}
+    {%- if page.pdf -%}
+        <meta name="citation_pdf_url" content="{{ page.pdf | absolute_url }}">
+    {%- endif -%}
+    {%- if page.journal -%}
+        {%- unless page.rnr -%}
+            <meta name="citation_journal_title" content="{{ page.journal }}">
+        {%- endunless -%}
+    {%- endif -%}
+    {%- if page.vol -%}
+        <meta name="citation_volume" content="{{ page.vol }}">
+    {%- endif -%}
+    {%- if page.num -%}
+        <meta name="citation_issue" content="{{ page.num }}">
+    {%- endif -%}
+    {%- if page.year -%}
+        <meta name="citation_publication_date" content="{{ page.date | date: '%Y/%m/%d' }}">
+    {%- endif -%}
+    {%- if page.pages -%}
+        <meta name="citation_firstpage" content="{{ page.pages[0] }}">
+        <meta name="citation_lastpage" content="{{ page.pages[1] }}">
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- include default-before.html header_html=header_html -%}
 
 <h1 class="title">{{ page.title }}</h1>
 <div class="author text-center">
@@ -55,9 +89,10 @@ layout: default
     journal   = "Working Paper"{% endif %}{% if page.vol %},
     volume    = "{{ page.vol }}"{% endif %}{% if page.num %},
     number    = "{{ page.num }}"{% endif %}{% if page.pages %},
-    pages     = "{{ page.pages }}"{% endif %}{% if page.year %},
+    pages     = "{{ page.pages[0] }}--{{ page.pages[1] }}"{% endif %}{% if page.year %},
     year      = "{{ page.year }}"{% endif %}{% if page.pub %},
     publisher = "{{ page.pub }}"{% endif %}
 {% raw %}}{% endraw %}</code></pre>
 </section>
 
+{%- include default-after.html -%}
