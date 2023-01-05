@@ -1,11 +1,8 @@
 ---
 layout: compress
 ---
-{%- capture header_html -%}
-{%- for html in page.head -%}{{ html }}{%- endfor -%}
-{%- endcapture -%}
 
-{%- include default-before.html header_html=header_html -%}
+{%- include default-before.html -%}
 
     {{ content }}
 
