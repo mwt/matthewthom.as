@@ -1,16 +1,16 @@
 ---
 title: "Asymmetric All-Pay Auctions with Spillovers"
-date: "2021-11-06"
-last_modified_at: "2022-10-18"
+date: "2023-01-06"
+last_modified_at: "2023-01-06"
 id_key: "spilloverapa"
 authors:
  - name: "Maria Betto"
    url: "https://mariabetto.com"
  - name: "Matthew W. Thomas"
-year: 2022
+year: 2023
 description: "What happens when the prize in an all-pay auction depends on players' bids?"
 journal: "Theoretical Economics"
-rnr: true
+accepted: true
 pdf: "/assets/pdfs/papers/asymmetric-all-pay-auctions-with-spillovers.pdf"
 shortlink: "https://mwt.me/spilloverapa"
 jmp: true

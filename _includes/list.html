@@ -34,7 +34,11 @@
         </h3>
         {%- if project.journal -%}
         <p class="meta">
-            {%- if project.rnr -%}R&R at {% endif -%}
+            {%- if project.rnr -%}
+                R&R at{{ ' ' }}
+            {%- elsif project.accepted -%}
+                Accepted at{{ ' ' }}
+            {%- endif -%}
             <em class="journal">{{ project.journal }}</em>
             {%- if project.year -%}, <span class="year">{{ project.year }}</span>{%- endif -%}
         </p>
