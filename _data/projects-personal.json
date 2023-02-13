@@ -1,0 +1,43 @@
+[
+  {
+    "title": "MWT's Share",
+    "url": "https://mwt.sh",
+    "description": "Send files and shorten links",
+    "github": "https://github.com/mwt/Apache-0x0"
+  },
+  {
+    "title": "vTeX",
+    "url": "https://github.com/mwt/vtex",
+    "description": "Mini LaTeX/pandoc bundle for CI",
+    "github": "https://github.com/mwt/vtex"
+  },
+  {
+    "title": "Hash Viewer",
+    "url": "https://hash.mwt.me",
+    "description": "Share math and text without storing it",
+    "github": "https://github.com/mwt/hash-viewer"
+  },
+  {
+    "title": "Econ Ipsum",
+    "url": "https://ipsum.mwt.me",
+    "description": "Generate academic-sounding filler text",
+    "github": "https://github.com/mwt/econ-ipsum"
+  },
+  {
+    "title": "MathJaX Bookmarklet",
+    "url": "https://www.matthewthom.as/gh/mathjax-bookmarklet/",
+    "github": "https://github.com/mwt/mathjax-bookmarklet",
+    "description": "Display math on any webpage"
+  },
+  {
+    "title": "MWT's Mirrors",
+    "url": "https://www.matthewthom.as/mirrors/",
+    "description": "Mirrors for open source software"
+  },
+  {
+    "title": "ActivityPub Follow",
+    "url": "https://apfollow.mwt.me",
+    "github": "https://github.com/mwt/apfollow",
+    "description": "Public follow service for ActivityPub"
+  }
+]

@@ -1,0 +1,110 @@
+{% if include-title %}
+  <h2>{{ include-title }}</h2>
+{% endif %}
+{% if include-description %}
+  <p class="thin">{{ include-description }}</p>
+{% endif %}
+<div class="{{ include-class | default: "projects" }}">
+  <section class="list">
+    {%- for project in list-data -%}
+      <div class="item{% if project.star %} star{% endif %}">
+        <h3>
+          <a
+            class="title"
+            href="
+            {%- if project.url_is_pdf -%}
+              {{ project.pdf }}
+            {%- else -%}
+              {{ project.url }}
+            {%- endif -%}">
+            {{ project.title }}</a>
+          {% if project.authors.size > 1 %}
+            {%- assign coauthors = project.authors | where_not: "author", site.title -%}
+            (with
+            {%- for coauthor in coauthors -%}
+              {%- if coauthor.url -%}
+                {{ ' ' }}<a href="{{ coauthor.url }}" class="coauthor">{{ coauthor.name }}</a>
+              {%- else -%}
+                {{ ' ' }}{{ coauthor.name }}
+              {%- endif -%}
+              {%- unless forloop.last -%}
+                {{ ' ' }}and
+              {%- endunless -%}
+            {%- endfor -%}
+            )
+          {% endif %}
+        </h3>
+        {%- if project.journal -%}
+          <p class="meta">
+            {%- if project.rnr -%}
+              R&R at{{ ' ' }}
+            {%- elsif project.accepted -%}
+              Accepted at{{ ' ' }}
+            {%- endif -%}
+            <em class="journal">{{ project.journal }}</em>
+            {%- if project.year -%},
+              <span class="year">{{ project.year }}</span>
+            {%- endif -%}
+          </p>
+        {%- endif -%}
+        {%- if project.description -%}
+          <p class="description">{{ project.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        {%- endif -%}
+
+        {%- if project.github -%}
+          <a
+            class="icon-link"
+            href="{{ project.github }}"
+            target="_blank">
+            <svg
+              class="icon icon-github"
+              width="1.2em"
+              height="1.2em"
+              aria-hidden="true">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+            Source
+          </a>
+        {%- endif -%}
+        {%- if project.pdf -%}
+          <a class="icon-link" href="{{ project.pdf }}">
+            <svg
+              class="icon icon-file"
+              width="1.2em"
+              height="1.2em"
+              aria-hidden="true">
+              <use xlink:href="#icon-pdf"></use>
+            </svg>
+            PDF
+          </a>
+        {%- endif -%}
+        {%- if project.slides -%}
+          <a class="icon-link" href="{{ project.slides }}">
+            <svg
+              class="icon icon-file"
+              width="1.2em"
+              height="1.2em"
+              aria-hidden="true">
+              <use xlink:href="#icon-slides"></use>
+            </svg>
+            Slides
+          </a>
+        {%- endif -%}
+        {% if include-class == "papers" and project.content %}
+          {% capture abstract_id %}
+            {% increment paper_section_number %}{% endcapture %}
+          <div class="atoggle">
+            <input
+              type="checkbox"
+              id="toggle-{{ abstract_id }}"
+              name="abstract-toggle" />
+            <label for="toggle-{{ abstract_id }}">Abstract</label>
+            <div class="abstract content">
+              {{ project.content | markdownify }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {%- endfor -%}
+  </section>
+</div>

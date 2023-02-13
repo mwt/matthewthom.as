@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<article class="h-entry">
+
+    {% if page.image and page.headerImage %}
+        <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+    {% endif %}
+
+    <h1 class="title p-name">{{ page.title }}</h1>
+    <a rel="author" class="p-author d-none" href="{{ '/' | url }}">{{ site.title }}</a>
+    <a class="u-url d-none" href="{{ page.url | url }}">{{ page.title }}</a>
+
+    {% if page.date %}
+    <span class="date description">
+        <time class="dt-published" datetime="{{ page.date | date:'%d-%m-%Y' }}">{{ page.date | date: '%A. %B %d, %Y' }}</time>
+        {% if site.read-time %} - {% include read-time.html %}{% endif %}
+    </span>
+    {% endif %}
+
+    {% if site.show-tags %}
+        <div class="post-tags">
+            {% for tag in page.tags %}
+                <a class="item" href="{{ tag | slugify | prepend: '/tags/#' | url }}">{{ tag }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="content e-content">
+    {{content}}
+    </div>
+
+    {% if site.post-advance-links contains page.category %}
+        <div class="blog-navigation">
+            {% if page.previous.hidden == false and page.previous.url %}
+                <a class="prev" href="{{ page.previous.url | url }}">&laquo; {{ page.previous.title }}</a>
+            {% else %}
+                <a class="prev"></a>
+            {% endif %}
+            {% if page.next.hidden == false and page.next.url %}
+                <a class="next" href="{{ page.next.url | url }}">{{ page.next.title }} &raquo;</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <a class="u-bridgy-fed d-none" href="https://fed.brid.gy/"></a>
+    <a class="u-bridgy-fed d-none" href="https://brid.gy/publish/mastodon"></a>
+
+    {% if site.utterances %}
+    {%- unless page.nocomments -%}
+        {%- assign issue-term = page.title | prepend: 'Comments: ' -%}
+        {% include "utterances", utterances-issue-term=issue-term %}
+    {%- endunless -%}
+    {% endif %}
+
+</article>

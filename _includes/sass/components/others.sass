@@ -1,0 +1,49 @@
+.evidence
+    background-color: $yellow
+    color: $beta
+
+.star
+    > .title
+        width: auto !important
+        display: inline
+        background-color: $yellow
+
+.twitter-tweet
+    margin: 10px auto
+
+.caption
+    position: relative
+    top: math.div(10em,16)
+    left: 0
+    right: 0
+    margin: 0 auto
+    width: 100%
+    text-align: center
+    font-size: math.div(13em,16)
+
+.bigger-image
+    min-width: 130%
+    margin: math.div(50em,16) 0 math.div(50em,16) -15%
+
+    @media #{$notmd}
+        min-width: 114%
+        margin: math.div(20em,16) 0 math.div(20em,16) -7%
+
+.lost-container
+    text-align: center
+
+.proof
+    position: relative
+
+    &:after
+        content: '◾️'
+        position: absolute
+        right: -12px
+        bottom: -2px
+
+    > p:first-child::before
+        content: 'Proof. ' attr(title)
+        font-style: italic
+
+.d-none
+    display: none

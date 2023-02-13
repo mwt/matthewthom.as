@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Crowdmark Labeler",
+    "url": "https://pypi.org/project/clabeler/",
+    "description": "Python package I made as a TA to add student names to Crowdmark PDFs",
+    "github": "https://github.com/mwt/crowdmark-labeler"
+  },
+  {
+    "title": "Jekyll Citations",
+    "url": "https://rubygems.org/gems/jekyll-citations/",
+    "description": "Ruby gem I made as an RA to generate bibliographies in Jekyll",
+    "github": "https://github.com/nucet/jekyll-citations"
+  },
+  {
+    "title": "Kellogg R Workshop Slides",
+    "url": "/assets/r-kellogg.pdf",
+    "description": "Slides I made for MBA workshops on R",
+    "github": "https://github.com/mwt/R-Workshop"
+  },
+  {
+    "title": "certbot-dns-bunny",
+    "url": "https://certbot-dns-bunny.readthedocs.io/en/latest/",
+    "github": "https://github.com/mwt/certbot-dns-bunny",
+    "description": "Certbot plugin for [BunnyDNS](https://bunny.net/?ref=e174a06f0l)"
+  }
+]

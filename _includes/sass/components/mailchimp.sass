@@ -1,0 +1,70 @@
+#mc_embed_signup
+
+    form 
+        text-align: center
+        padding: 10px 0 10px 0
+        line-height: unset
+
+    label
+        display: block
+        padding-bottom: 10px
+        font-weight: bold
+
+    /* positions input field horizontally */
+    input.email 
+        font-size: math.div(15em,16)
+        border: 1px solid $gama
+        border-radius: 3px
+        background-color: #fff
+        box-sizing: border-box
+        height: 32px
+        padding: 0px 0.4em
+        display: inline-block
+        margin: 
+            top: 0
+            left: 0
+            right: 0
+            bottom: 5px
+        width: 100%
+        vertical-align: top
+
+        @media #{$notxs}
+            width: 350px
+            margin-bottom: 0
+
+    .clear
+        display: block
+        width: 100%
+
+        @media #{$notxs}
+            display: inline-block
+            width: unset
+
+    /* positions button horizontally in line with input */
+    .button 
+        font-size: math.div(13em,16)
+        width: 100%
+        border: none
+        -webkit-border-radius: 3px
+        -moz-border-radius: 3px
+        border-radius: 3px
+        color: #fff
+        font-weight: 700
+        background-color: $beta
+        box-sizing: border-box
+        height: 32px
+        line-height: 32px
+        padding: 0 18px
+        display: inline-block
+        margin: 0
+        transition: all 0.23s ease-in-out 0s
+    
+        &:hover 
+            background-color: $delta
+            color: $yellow
+            cursor: pointer
+
+        @media #{$notxs}
+            width: unset
+    
+

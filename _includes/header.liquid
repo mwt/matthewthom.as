@@ -1,0 +1,32 @@
+{%- capture headshot -%}{%- endcapture -%}
+
+<div class="topblock"></div>
+<header class="header-home{% if page.url == '/' %} animated{% endif %} h-card">
+  <span class="link">
+    <img
+      height="200px"
+      width="200px"
+      class="headshot u-photo"
+      alt="{{ site.title }}"
+      {%- if site.external-image -%}
+      src="{{ site.picture }}"
+      {%- elsif site.picture.first %}
+      srcset="
+    {%- for img in site.picture -%}
+      {{ img.url | url }} {{ img.size }},
+    {%- endfor -%}
+    "
+    src="{{ site.picture.first.url | url }}"
+    sizes="(min-width: 800px) 268px, 200px"
+    {%- else -%}
+    src="{{ site.picture | url }}"
+    {%- endif -%}>
+  </span>
+  <h1 class="title p-name">{%- include "tools/namesep", namesep-content: site.title -%}</h1>
+  <h2 class="description p-note">{{ site.bio }}</h2>
+  <a
+    rel="me"
+    class="u-url d-none"
+    href="/"></a>
+  {% include "social-links" %}
+</header>

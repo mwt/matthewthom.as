@@ -1,0 +1,51 @@
+.resume
+    > h2
+        border-bottom: 1px solid $beta
+        padding-bottom: .3em
+
+    > h3
+        margin-bottom: 5px
+        line-height: 1.7
+
+    > p
+        margin: 0
+
+    > p,h3
+
+        > em
+            display: block
+            color: $alpha
+            font:
+                size: 1rem
+                family: $fontP
+            @media #{$notmd}
+                float: right
+
+
+    > h3 > em
+        display: none
+        @media #{$notmd}
+            display: block
+
+    > a.hover-download
+        position: -webkit-sticky
+        position: sticky
+        display: none
+        width: 50px
+        height: 80px
+        padding: 3px 18px
+        bottom: 25px
+        background-color: transparentize($delta,0.5)
+        border-radius: 5%
+        margin-top: -86px
+        margin-bottom: -1em
+        margin-left: auto
+
+        > .icon
+            fill: #fff
+            height: 100%
+            width: 100%
+
+    &:hover > a.hover-download
+        @media #{$notmd}
+            display: block

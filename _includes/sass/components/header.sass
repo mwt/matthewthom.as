@@ -1,0 +1,49 @@
+.topblock
+    position: absolute
+    right: 0
+    top: 0
+    width: 100%
+    padding-bottom: 250px
+    background-color: $delta
+
+.header-home
+    display: block
+    margin: 0 auto
+    text-align: center
+    position: relative
+
+    > .link > .headshot
+        position: relative
+        z-index: 100
+        width: math.div(200em,16)
+        height: math.div(200em,16)
+        margin-bottom: 17px
+        border: 0
+        padding: 9px
+        background-color: #fff
+        border-radius: 5%
+        transition: all .2s
+        box-shadow: unset
+        opacity: 1
+
+        &:hover
+            box-shadow: 0 0px 4px 0 rgba(0,0,0,0.4), 0 0px 12px 0 rgba(0,0,0,0.15)
+
+    > .title
+        font-size: 2.65em
+        margin: 0 0 13px
+        color: $beta
+
+        span
+            display: inline-block
+
+    > .description
+        font: 
+            family: $fontC
+            size: 1.15em
+        width: 80%
+        margin: 0 auto 30px
+
+        // if you put some links in your bio. ;)
+        a
+            font-weight: 200

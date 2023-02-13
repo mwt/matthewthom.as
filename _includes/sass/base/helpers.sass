@@ -1,0 +1,54 @@
+/*
+ * general helpers
+ */
+
+.center 
+    margin-left: auto
+    margin-right: auto
+
+.text-center
+    text-align: center
+
+.thin
+    font-weight: 200
+
+.clearfix:before,
+.clearfix:after
+    content: ""
+    display: table
+
+.clearfix:after
+    clear: both
+
+.mr1
+    margin:
+        right: 0.6em
+
+/*
+ * offset for anchor links on headers due to fixed navbar
+ */
+
+.anchor:target:before,
+h2:target:before
+    content: ""
+    display: block
+    height: 70px
+    margin: -70px 0 0
+
+/*
+ * animations
+ */
+
+.animated
+    animation: fade-in-down 0.6s
+    animation-delay: 0.3s
+    animation-fill-mode: both
+
+@keyframes fade-in-down
+    0%
+        opacity: 0.01
+        transform: translateY(-10px)
+
+    100%
+        opacity: 1
+        transform: translateY(0)

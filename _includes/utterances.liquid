@@ -1,0 +1,11 @@
+<hr>
+<script
+  src="https://utteranc.es/client.js"
+  repo="{{ utterances-repo | default: site.utterances.repo | default: site.github.repository_nwo }}"
+  issue-term="{{ utterances-issue-term | default: site.utterances.issue-term | default: 'pathname' }}"
+  {%- if utterances-label or site.utterances.label -%}
+  label="{{ utterances-label | default: site.utterances.label }}"
+  {%- endif -%}
+  theme="{{ utterances-theme | default: site.utterances.theme | default: 'github-light' }}"
+  crossorigin="anonymous"
+  async></script>

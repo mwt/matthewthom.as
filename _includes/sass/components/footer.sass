@@ -1,0 +1,30 @@
+.footer-main
+    border-top: 1px solid $epsilon
+    padding: 40px 0
+    margin: 40px 0 0
+    font-size: math.div(13em,16)
+    color: $gama
+    font-weight: 300
+    text-align: center
+    position: relative
+
+    &:before
+        display: block
+        content: " "
+        width: 7px
+        height: 7px
+        border: $epsilon 1px solid
+        position: absolute
+        top: -5px
+        left: 50%
+        margin-left: -5px
+        background: #FFF
+        box-shadow: #FFF 0 0 0 5px
+        border-radius: 3px
+    
+    > .copyright
+        padding-left: 10px
+
+    > .icon-link
+        color: $gama
+        margin-left: 0.4em
