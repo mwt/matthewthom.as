@@ -4,13 +4,20 @@ const mdOptions = {
   typographer: true,
 };
 
+// Markdown-It and plugins
 const markdownIt = require("markdown-it")(mdOptions);
 const markdownItKaTeX = require("@traptitech/markdown-it-katex");
 const markdownItAttrs = require("markdown-it-attrs");
 const markdownItFootnote = require("markdown-it-footnote");
 
+// 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const sass = require("eleventy-sass");
+const eleventySass = require("eleventy-sass");
+
+// Postprocessing
+const htmlmin = require("html-minifier");
+const postcss = require("postcss");
+const cssnano = require("cssnano");
 
 module.exports = function (eleventyConfig) {
   // Set passthrough folders
@@ -20,12 +27,29 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
 
   // Compile SASS
-  eleventyConfig.addPlugin(sass, {
+  eleventyConfig.addPlugin(eleventySass, {
     sass: {
       style: "expanded",
       sourceMap: false,
       includes: "_includes/sass",
     },
+    postcss: postcss([cssnano]),
+  });
+
+  // Minify HTML
+  eleventyConfig.addTransform("htmlmin", function (content) {
+    // Prior to Eleventy 2.0: use this.outputPath instead
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true,
+      });
+      return minified;
+    }
+
+    return content;
   });
 
   // Add a filter and a tag to parse content as Markdown in Liquid files
@@ -51,9 +75,15 @@ module.exports = function (eleventyConfig) {
   // RSS feed liquid filters
   eleventyConfig.addFilter("date_to_rfc3339", pluginRss.dateToRfc3339);
   eleventyConfig.addFilter("date_to_rfc822", pluginRss.dateToRfc822);
-  eleventyConfig.addFilter("get_newest_collection_item_date", pluginRss.getNewestCollectionItemDate);
+  eleventyConfig.addFilter(
+    "get_newest_collection_item_date",
+    pluginRss.getNewestCollectionItemDate
+  );
   eleventyConfig.addFilter("absolute_url", pluginRss.absoluteUrl);
-  eleventyConfig.addFilter("convert_html_to_absolute_urls", pluginRss.convertHtmlToAbsoluteUrls);
+  eleventyConfig.addFilter(
+    "convert_html_to_absolute_urls",
+    pluginRss.convertHtmlToAbsoluteUrls
+  );
 
   eleventyConfig.addCollection("posts", (collection) => {
     return collection.getFilteredByGlob("_posts/*.md");

@@ -24,9 +24,12 @@
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@traptitech/markdown-it-katex": "^3.6.0",
+    "cssnano": "^5.1.14",
     "eleventy-sass": "^2.1.7",
+    "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.6",
-    "markdown-it-footnote": "^3.0.3"
+    "markdown-it-footnote": "^3.0.3",
+    "postcss": "^8.4.21"
   }
 }

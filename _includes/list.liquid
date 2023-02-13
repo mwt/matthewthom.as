@@ -91,8 +91,7 @@
           </a>
         {%- endif -%}
         {% if list-class == "papers" and project.content %}
-          {% capture abstract_id %}
-            {% increment paper_section_number %}{% endcapture %}
+          {% capture abstract_id -%}{% increment paper_section_number %}{%- endcapture %}
           <div class="atoggle">
             <input
               type="checkbox"
