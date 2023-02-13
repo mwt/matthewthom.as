@@ -28,9 +28,9 @@ This work takes a similar approach to [Letina, Liu, and Netzer (2020)](https://e
 
 ## Model
 
-Suppose that the prize of contest is worth one to both players. So, the two players have the same value. However, their scores have different costs. In particular, we will say that the score is $$k > 1$$ times more costly for Player 2 than for Player 1. You can interpret this as saying that Player 1 is more skilled. So, it takes less effort for her to produce a high score.
+Suppose that the prize of contest is worth one to both players. So, the two players have the same value. However, their scores have different costs. In particular, we will say that the score is $k > 1$ times more costly for Player 2 than for Player 1. You can interpret this as saying that Player 1 is more skilled. So, it takes less effort for her to produce a high score.
 
-The probability of Player $$i$$ winning the prize in a contest when she chooses score $$s_i$$ and her opponent chooses score $$s_{-i}$$ is:
+The probability of Player $i$ winning the prize in a contest when she chooses score $s_i$ and her opponent chooses score $s_{-i}$ is:
 
 $$
     p_{i}(s_i, s_{-i}).
@@ -48,22 +48,22 @@ $$
 
 We define two notions of "fairness" that are central to our analysis:
 
-* A contest satisfies *efficiency* iff $$p_1 (x, y) + p_2 (y, x) = 1$$ for all $$x,y \geq 0$$.
-* A contest satisfies *symmetry* iff $$p_1 (x, y) = p_2 (x, y)$$ for all $$x,y \geq 0$$.
+* A contest satisfies *efficiency* iff $p_1 (x, y) + p_2 (y, x) = 1$ for all $x,y \geq 0$.
+* A contest satisfies *symmetry* iff $p_1 (x, y) = p_2 (x, y)$ for all $x,y \geq 0$.
 
 Efficiency means that someone is always a winner. Symmetry means that both players are treated the same by the designer. We will see that these conditions do not individually constrain the designer's revenue. However, when the two conditions are imposed together, the designer is meaningfully constrained. 
 
-Note that these conditions jointly imply $$p_i(x,x) = 0.5$$.
+Note that these conditions jointly imply $p_i(x,x) = 0.5$.
 
 ## Contest design
 
-Suppose that there is some contest designer who can choose $$p_1, p_2$$ in order to maximize the expected revenue, $$E[s_1 + s_2]$$ given the (possibly mixed) strategies of the players. If strategies are pure, then the revenue is deterministic. Note that incentive compatibility implies
+Suppose that there is some contest designer who can choose $p_1, p_2$ in order to maximize the expected revenue, $E[s_1 + s_2]$ given the (possibly mixed) strategies of the players. If strategies are pure, then the revenue is deterministic. Note that incentive compatibility implies
 
 $$
     E[s_1 + k s_2] \leq E[p_1 (s_1, s_2) + p_2 (s_2, s_1)] \leq 1.
 $$
 
-Therefore, expected revenue is bound above by $$1 - (k - 1) E[s_2]$$ and the first best is achieved iff $$s_1 = 1$$ and $$s_2 = 0$$.[^fbns] We can immediately see that no contest which satisfies both symmetry and efficiency will achieve the first best. This is because both players receive a payoff of zero in the first best, but Player 1 can choose zero instead of one to receive a payoff of $$p(0,0) = 0.5$$.
+Therefore, expected revenue is bound above by $1 - (k - 1) E[s_2]$ and the first best is achieved iff $s_1 = 1$ and $s_2 = 0$.[^fbns] We can immediately see that no contest which satisfies both symmetry and efficiency will achieve the first best. This is because both players receive a payoff of zero in the first best, but Player 1 can choose zero instead of one to receive a payoff of $p(0,0) = 0.5$.
 
 ### Reserve bid
 
@@ -80,7 +80,7 @@ $$
 
 This is because Player 1 is willing to meet the reserve bid of 1 and Player 2 is not.
 
-One might wonder if the designer can still extract the full surplus with a smaller reserve bid. The answer is yes. In fact, $$p(0,0) = 0$$ is sufficient for the first best to be attainable under symmetry. That is, the designer need only be able to withhold the prize when both players play zero. To see this, consider the following contest which satisfies both properties except at zero.
+One might wonder if the designer can still extract the full surplus with a smaller reserve bid. The answer is yes. In fact, $p(0,0) = 0$ is sufficient for the first best to be attainable under symmetry. That is, the designer need only be able to withhold the prize when both players play zero. To see this, consider the following contest which satisfies both properties except at zero.
 
 $$
     p(x,y) =
@@ -98,7 +98,7 @@ This contest has an equilibrium at the first best yet only denies the prize to p
 
 ### Direct discrimination
 
-Direct discrimination is similar to a reserve bid. It is possible to mimic any reserve bid through direct discrimination by promising the prize to the weaker player whenever the reserve is not met. In particular, take either example from the previous section and set $$p_1(x,y) = p(x,y)$$ and $$p_2(y,x) = 1 - p(x,y)$$. Such a contest is efficient and will be strategically equivalent to the original contest. For example, consider the aforementioned all-pay auction with a reserve bid. With this transformation,
+Direct discrimination is similar to a reserve bid. It is possible to mimic any reserve bid through direct discrimination by promising the prize to the weaker player whenever the reserve is not met. In particular, take either example from the previous section and set $p_1(x,y) = p(x,y)$ and $p_2(y,x) = 1 - p(x,y)$. Such a contest is efficient and will be strategically equivalent to the original contest. For example, consider the aforementioned all-pay auction with a reserve bid. With this transformation,
 
 $$
     p_1(x, y) = 
@@ -128,7 +128,7 @@ $$
     \frac{1}{2} - E[s_2] \leq E[U_1(s_1, s_2)].
 $$
 
-Together with $$E[U_2(s_1, s_2)] \geq 0$$ this implies
+Together with $E[U_2(s_1, s_2)] \geq 0$ this implies
 
 $$
     \begin{aligned}
@@ -155,7 +155,7 @@ $$
 
 I show by construction that this upper bound is tight. That is, there exist optimal contests which achieve these bounds.
 
-The second bound comes from the fact that $$E[s_2] \leq \frac{1}{2k}$$ because Player 2 cannot win with probability more than one half. To see this, consider that the following two conditions must hold in equilibrium
+The second bound comes from the fact that $E[s_2] \leq \frac{1}{2k}$ because Player 2 cannot win with probability more than one half. To see this, consider that the following two conditions must hold in equilibrium
 
 $$
     \begin{aligned}
@@ -173,9 +173,9 @@ $$
     \end{aligned}
 $$
 
-which imply $$E[p(s_2, s_1)] \leq \frac{1}{2}$$. 
+which imply $E[p(s_2, s_1)] \leq \frac{1}{2}$. 
 
-*Case 1:* $$k < 2$$. This means that revenue cannot exceed $$\frac{1}{k}$$. We can reach this upper bound with an all-pay auction with a bid cap at $$\frac{1}{2k}$$ as in [Che and Gale (1998)](https://econpapers.repec.org/RePEc:aea:aecrev:v:88:y:1998:i:3:p:643-51). That is
+*Case 1:* $k < 2$. This means that revenue cannot exceed $\frac{1}{k}$. We can reach this upper bound with an all-pay auction with a bid cap at $\frac{1}{2k}$ as in [Che and Gale (1998)](https://econpapers.repec.org/RePEc:aea:aecrev:v:88:y:1998:i:3:p:643-51). That is
 
 $$
     p(x,y) =
@@ -186,9 +186,9 @@ $$
     \end{cases}
 $$
 
-This has an equilibrium at $$s_1 = s_2 = \frac{1}{2k}$$ which achieves the upper bound for $$k < 2$$.
+This has an equilibrium at $s_1 = s_2 = \frac{1}{2k}$ which achieves the upper bound for $k < 2$.
 
-*Case 2:* $$k \geq 2$$. The above implies that revenue cannot exceed one half. Consider the following difference form contest as in [Che and Gale (2000)](https://econpapers.repec.org/RePEc:eee:gamebe:v:30:y:2000:i:1:p:22-43):
+*Case 2:* $k \geq 2$. The above implies that revenue cannot exceed one half. Consider the following difference form contest as in [Che and Gale (2000)](https://econpapers.repec.org/RePEc:eee:gamebe:v:30:y:2000:i:1:p:22-43):
 
 $$
     p(x,y) =
@@ -199,7 +199,7 @@ $$
     \end{cases}
 $$
 
-The above contest has an equilibrium at $$s_1 = \frac{1}{2}$$ and $$s_2 = 0$$ which achieves the upper bound for $$k \geq 2$$.
+The above contest has an equilibrium at $s_1 = \frac{1}{2}$ and $s_2 = 0$ which achieves the upper bound for $k \geq 2$.
 
 ---
 

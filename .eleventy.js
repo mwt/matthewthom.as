@@ -1,4 +1,11 @@
-const markdownIt = require("markdown-it");
+// Markdown-It options
+const mdOptions = {
+  html: true,
+  typographer: true,
+};
+
+const markdownIt = require("markdown-it")(mdOptions);
+const markdownItKaTeX = require("@traptitech/markdown-it-katex");
 const sass = require("eleventy-sass");
 
 module.exports = function (eleventyConfig) {
@@ -43,6 +50,12 @@ module.exports = function (eleventyConfig) {
     return collection.getFilteredByGlob("_papers/*.md");
   });
 
+  // Enable markdown KaTeX plugin and set options
+  eleventyConfig.amendLibrary("md", (mdLib) => {
+    mdLib.set(mdOptions);
+    mdLib.use(markdownItKaTeX);
+  });
+
   return {
     dir: {
       input: "./",
@@ -54,7 +67,7 @@ module.exports = function (eleventyConfig) {
 };
 
 function markdown(content, inline = false) {
-  const html = markdownIt({ html: true }).render(content);
+  const html = markdownIt.render(content);
 
   return inline ? html.replace("<p>", "").replace("</p>", "") : html;
 }

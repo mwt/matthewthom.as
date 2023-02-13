@@ -21,6 +21,7 @@
     "@11ty/eleventy": "^2.0.0"
   },
   "dependencies": {
+    "@traptitech/markdown-it-katex": "^3.6.0",
     "eleventy-sass": "^2.1.7",
     "markdown-it": "^13.0.1"
   }
