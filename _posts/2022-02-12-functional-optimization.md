@@ -2,7 +2,7 @@
 title: "Optimization of Functionals and the Calculus of Variations"
 author: "Matthew W. Thomas"
 layout: "post"
-tag: ["math", "economics", "notes"]
+tags: ["math", "economics", "notes"]
 date: "2022-02-12"
 use_math: true
 last_modified_at: "2022-10-19"

@@ -23,6 +23,9 @@ module.exports = function (eleventyConfig) {
   // Add a Liquid filter to format a date and wrap it in a <time> element
   eleventyConfig.addFilter("time", time);
 
+  // Simplify a collection so that it resembles jekyll or other data
+  eleventyConfig.addFilter("flatten_pages", flattenPages);
+
   // Reproduce some Liquid filters, sometimes losely
   eleventyConfig.addFilter("date_to_xmlschema", dateToXmlSchema);
   eleventyConfig.addFilter("date_to_rfc3339", dateToRFC3339);
@@ -58,6 +61,12 @@ function markdown(content, inline = false) {
 
 function numberOfWords(content) {
   return content.split(/\s+/g).length;
+}
+
+function flattenPages(array) {
+  return array.map((item) => {
+    return {...item.data, ...item.page, 'content': item.content};
+  });
 }
 
 // Define a function to use for filtering and reverse filtering

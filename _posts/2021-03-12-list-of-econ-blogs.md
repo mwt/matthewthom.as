@@ -2,7 +2,7 @@
 title: "List of Econ Blogs"
 author: "Matthew W. Thomas"
 layout: "post"
-tag: ["economics"]
+tags: ["economics"]
 date: "2021-03-12"
 use_math: false
 description: "I made a blogroll of Econ blogs that anyone can contribute to"

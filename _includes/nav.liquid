@@ -1,6 +1,6 @@
 <nav class="nav {% if site.animation %}animated{% endif %}">
   <ul class="list">
-    {% for link in site.data.nav %}
+    {% for link in nav %}
       {% assign pageurl = page.url | remove_first: 'index.html' %}
       {% if pageurl != link.url %}
         <li class="item">

@@ -12,9 +12,9 @@ list-title: "Home"
 </p>
 <hr>
 
-{%- assign job_mkt_papers=collections.papers | where:"jmp" | sort: "order", "last" -%}
-{%- assign working_papers=collections.papers | where_not:"jmp" | sort: "order", "last" -%}
-{%- assign notes=collections.posts | where:"tag","notes" -%}
+{%- assign job_mkt_papers=collections.papers | where:"jmp" | flatten_pages | sort: "order", "last" -%}
+{%- assign working_papers=collections.papers | where_not:"jmp" | flatten_pages | sort: "order", "last" -%}
+{%- assign notes=collections.notes | flatten_pages -%}
 
 <div id="academic" class="anchor">
     {%- include "list",

@@ -2,7 +2,7 @@
 title: "Econ Ipsum Now Available in TeX"
 author: "Matthew W. Thomas"
 layout: "post"
-tag: ["tech", "webdev"]
+tags: ["tech", "webdev"]
 date: "2021-03-15"
 use_math: false
 description: "Someone made a TeX version of my Econ Ipsum website"

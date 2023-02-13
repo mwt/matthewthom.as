@@ -2,7 +2,7 @@
 title: "Mechanisms to Fund Open Source"
 author: "Matthew W. Thomas"
 layout: "post"
-tag: ["math", "economics", "mechanism design", "notes"]
+tags: ["math", "economics", "mechanism design", "notes"]
 date: "2021-03-11"
 use_math: true
 description: "Notes on VCG and issues with current applications of quadratic voting"

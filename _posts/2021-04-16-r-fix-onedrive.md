@@ -2,7 +2,7 @@
 title: "Fix the R Library Bug on Windows 10"
 author: "Matthew W. Thomas"
 layout: "post"
-tag: ["tech", "R"]
+tags: ["tech", "R"]
 date: "2021-04-16"
 use_math: false
 description: "If you sync your Documents folder with OneDrive, R can have issues"

@@ -1,10 +1,10 @@
-{% if include-title %}
-  <h2>{{ include-title }}</h2>
+{% if list-title %}
+  <h2>{{ list-title }}</h2>
 {% endif %}
-{% if include-description %}
-  <p class="thin">{{ include-description }}</p>
+{% if list-description %}
+  <p class="thin">{{ list-description }}</p>
 {% endif %}
-<div class="{{ include-class | default: "projects" }}">
+<div class="{{ list-class | default: "projects" }}">
   <section class="list">
     {%- for project in list-data -%}
       <div class="item{% if project.star %} star{% endif %}">
@@ -90,7 +90,7 @@
             Slides
           </a>
         {%- endif -%}
-        {% if include-class == "papers" and project.content %}
+        {% if list-class == "papers" and project.content %}
           {% capture abstract_id %}
             {% increment paper_section_number %}{% endcapture %}
           <div class="atoggle">
