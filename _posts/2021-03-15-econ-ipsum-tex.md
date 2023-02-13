@@ -15,7 +15,7 @@ One long running joke on the page is that the randomized articles have zero cita
 Naturally, I was ecstatic that someone liked Econ Ipsum enough to make a spinoff. So, I'm happy to announce that you can now use Econ Ipsum paragraphs in TeX via the [econlipsum](https://ctan.org/pkg/econlipsum) package by Jack Coleman. So, Econ Ipsum's citation counter -- intended to remain forever at zero -- has now advanced to one.
 
 ![Econ Ipsum with one citation](/assets/images/posts/2021/econ-ipsum-citations1.png)
-{: .text-center}
+{.text-center}
 
 ---
 

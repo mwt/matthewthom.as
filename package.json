@@ -21,8 +21,11 @@
     "@11ty/eleventy": "^2.0.0"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@traptitech/markdown-it-katex": "^3.6.0",
     "eleventy-sass": "^2.1.7",
-    "markdown-it": "^13.0.1"
+    "markdown-it": "^13.0.1",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-footnote": "^3.0.3"
   }
 }

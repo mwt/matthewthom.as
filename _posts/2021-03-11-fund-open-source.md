@@ -150,7 +150,8 @@ while $v_2^2(x) = 0$. Contributor 1 has no reason to contribute to Project 1 thr
 | Grant    | (1/2, 1/2)      | (0, 0)               |
 | **Total**| **(1, 1)**      | **(1, 1)**           |
 | Optimal  | (4, 1)          | (4, 1)               |
-{: .center}
+
+{.center}
 
 The above table shows the contributions to Project 1 and Project 2 by each player and the grants. As you can see, the total contributions are the same between NQF and private contributions. So, in our example, NQF does not outperform private contributions even though a grant has been collected. Of course, both are outperformed by matching contributions or performing QF with any $\alpha > 0$.
 
@@ -176,10 +177,3 @@ This last step could be achieved by cutting off donations completely or by putti
 [^4]: As the paper points out, efficiency is lost when people consider how their choices affect their taxes. Though this goes away as the number of participants becomes large. It's hard to see this as an issue if the mechanism played out on a national scale.
 [^5]: 'Better' in that it is closer to the efficient allocation
 [^6]: The assumption that $G=1$ isn't terribly important. It does not affect total contributions. Naturally, it's possible to get above $(1,1)$ when $G > 2$. However, contributors give nothing in this case. So, it is not terribly interesting.
-
-*[VCG]: Vickrey-Clarke-Groves (after its three creators)
-*[QF]: Quadratic Finance
-*[LR]: Liberal Radicalism
-*[CQF]: Capital-constrained Quadratic Finance
-*[CLR]: Capital-constrained Liberal Radicalism
-*[NQF]: Not Quadratic Finance

@@ -6,11 +6,18 @@ const mdOptions = {
 
 const markdownIt = require("markdown-it")(mdOptions);
 const markdownItKaTeX = require("@traptitech/markdown-it-katex");
+const markdownItAttrs = require("markdown-it-attrs");
+const markdownItFootnote = require("markdown-it-footnote");
+
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const sass = require("eleventy-sass");
 
 module.exports = function (eleventyConfig) {
   // Set passthrough folders
   eleventyConfig.addPassthroughCopy("assets");
+
+  // Enable RSS plugin
+  eleventyConfig.addPlugin(pluginRss);
 
   // Compile SASS
   eleventyConfig.addPlugin(sass, {
@@ -35,12 +42,18 @@ module.exports = function (eleventyConfig) {
 
   // Reproduce some Liquid filters, sometimes losely
   eleventyConfig.addFilter("date_to_xmlschema", dateToXmlSchema);
-  eleventyConfig.addFilter("date_to_rfc3339", dateToRFC3339);
   eleventyConfig.addFilter("cgi_escape", cgiEscape);
   eleventyConfig.addFilter("number_of_words", numberOfWords);
   eleventyConfig.addFilter("sort_by", sortBy);
   eleventyConfig.addFilter("where", where);
   eleventyConfig.addFilter("where_not", whereNot);
+
+  // RSS feed liquid filters
+  eleventyConfig.addFilter("date_to_rfc3339", pluginRss.dateToRfc3339);
+  eleventyConfig.addFilter("date_to_rfc822", pluginRss.dateToRfc822);
+  eleventyConfig.addFilter("get_newest_collection_item_date", pluginRss.getNewestCollectionItemDate);
+  eleventyConfig.addFilter("absolute_url", pluginRss.absoluteUrl);
+  eleventyConfig.addFilter("convert_html_to_absolute_urls", pluginRss.convertHtmlToAbsoluteUrls);
 
   eleventyConfig.addCollection("posts", (collection) => {
     return collection.getFilteredByGlob("_posts/*.md");
@@ -54,6 +67,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.amendLibrary("md", (mdLib) => {
     mdLib.set(mdOptions);
     mdLib.use(markdownItKaTeX);
+    mdLib.use(markdownItAttrs);
+    mdLib.use(markdownItFootnote);
   });
 
   return {
@@ -121,14 +136,6 @@ function cgiEscape(value) {
 
 function dateToXmlSchema(value) {
   return new Date(value).toISOString();
-}
-
-function dateToRFC3339(value) {
-  let date = new Date(value).toISOString();
-  let chunks = date.split(".");
-  chunks.pop();
-
-  return chunks.join("") + "Z";
 }
 
 function dateToString(value) {
