@@ -1,7 +1,11 @@
-const markdownIt = require('markdown-it')
+const markdownIt = require("markdown-it");
 const sass = require("eleventy-sass");
 
 module.exports = function (eleventyConfig) {
+  // Set passthrough folders
+  eleventyConfig.addPassthroughCopy("assets");
+
+  // Compile SASS
   eleventyConfig.addPlugin(sass, {
     sass: {
       style: "expanded",
@@ -63,12 +67,12 @@ function filterWhere(item, key, value) {
 }
 function where(array, key, value) {
   return array.filter((item) => {
-    filterWhere(item, key, value);
+    return filterWhere(item, key, value);
   });
 }
 function whereNot(array, key, value) {
   return array.filter((item) => {
-    !filterWhere(item, key, value);
+    return !filterWhere(item, key, value);
   });
 }
 
