@@ -2,7 +2,7 @@
 title: "How to Prevent Email Scraping"
 author: "Matthew W. Thomas"
 layout: "post"
-tags: ["tech", "webdev"]
+override:tags: ["tech", "webdev"]
 date: "2021-03-10"
 use_math: false
 description: "Tricks to stop email scraping without affecting human users"

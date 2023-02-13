@@ -64,9 +64,13 @@ function numberOfWords(content) {
 }
 
 function flattenPages(array) {
-  return array.map((item) => {
-    return {...item.data, ...item.page, 'content': item.content};
-  });
+  if (array) {
+    return array.map((item) => {
+      return { ...item.data, ...item.page, content: item.content };
+    });
+  } else {
+    return undefined;
+  }
 }
 
 // Define a function to use for filtering and reverse filtering

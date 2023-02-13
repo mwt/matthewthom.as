@@ -2,7 +2,7 @@
 title: "Nonlinear War of Attrition with Complete Information"
 author: "Matthew W. Thomas"
 layout: "post"
-tags: ["math", "economics", "game theory", "notes"]
+override:tags: ["math", "economics", "game theory", "notes"]
 date: "2021-03-22"
 use_math: true
 description: "Simple derivation of equilibria in a general two player war of attrition"

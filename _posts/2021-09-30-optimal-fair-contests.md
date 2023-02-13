@@ -2,7 +2,7 @@
 title: "Optimal Fair Contests"
 author: "Matthew W. Thomas"
 layout: "post"
-tags: ["math", "economics", "notes"]
+override:tags: ["math", "economics", "notes"]
 date: "2021-09-30"
 use_math: true
 last_modified_at: "2021-09-30"

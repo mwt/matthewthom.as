@@ -2,7 +2,7 @@
 title: "Real Induction"
 author: "Matthew W. Thomas"
 layout: "post"
-tags: ["math", "induction"]
+override:tags: ["math", "induction"]
 date: "2021-03-08"
 use_math: true
 description: "A research example of induction on the real numbers"

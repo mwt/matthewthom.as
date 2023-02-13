@@ -1,4 +1,5 @@
 {
     "layout": "post",
-    "permalink": "/blog/{{ page.fileSlug }}/"
+    "permalink": "/blog/{{ page.fileSlug }}/",
+    "tags": ["other-posts"]
   }

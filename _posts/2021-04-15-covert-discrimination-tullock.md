@@ -2,7 +2,7 @@
 title: "Tullock Lottery Contests with Direct and Covert Discrimination"
 author: "Matthew W. Thomas"
 layout: "post"
-tags: ["math", "economics", "game theory", "notes"]
+override:tags: ["math", "economics", "game theory", "notes"]
 date: "2021-04-15"
 use_math: true
 last_modified_at: "2021-08-22"
