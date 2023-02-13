@@ -1,0 +1,4 @@
+{
+  "layout": "paper",
+  "permalink": "/papers/{{ title | slug }}/"
+}

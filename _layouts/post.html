@@ -4,24 +4,24 @@ layout: default
 
 <article class="h-entry">
 
-    {% if page.image and page.headerImage %}
-        <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
+    {% if image and headerImage %}
+        <img class="title-image" src="{{ image }}" alt="{{ title }}">
     {% endif %}
 
-    <h1 class="title p-name">{{ page.title }}</h1>
+    <h1 class="title p-name">{{ title }}</h1>
     <a rel="author" class="p-author d-none" href="{{ '/' | url }}">{{ site.title }}</a>
-    <a class="u-url d-none" href="{{ page.url | url }}">{{ page.title }}</a>
+    <a class="u-url d-none" href="{{ page.url | url }}">{{ title }}</a>
 
-    {% if page.date %}
+    {% if date %}
     <span class="date description">
-        <time class="dt-published" datetime="{{ page.date | date:'%d-%m-%Y' }}">{{ page.date | date: '%A. %B %d, %Y' }}</time>
+        <time class="dt-published" datetime="{{ date | date:'%d-%m-%Y' }}">{{ date | date: '%A. %B %d, %Y' }}</time>
         {% if site.read-time %} - {% include read-time.html %}{% endif %}
     </span>
     {% endif %}
 
     {% if site.show-tags %}
         <div class="post-tags">
-            {% for tag in page.tags %}
+            {% for tag in tags %}
                 <a class="item" href="{{ tag | slugify | prepend: '/tags/#' | url }}">{{ tag }}</a>
             {% endfor %}
         </div>
@@ -31,15 +31,15 @@ layout: default
     {{content}}
     </div>
 
-    {% if site.post-advance-links contains page.category %}
+    {% if site.post-advance-links contains category %}
         <div class="blog-navigation">
-            {% if page.previous.hidden == false and page.previous.url %}
-                <a class="prev" href="{{ page.previous.url | url }}">&laquo; {{ page.previous.title }}</a>
+            {% if previous.hidden == false and previous.url %}
+                <a class="prev" href="{{ previous.url | url }}">&laquo; {{ previous.title }}</a>
             {% else %}
                 <a class="prev"></a>
             {% endif %}
-            {% if page.next.hidden == false and page.next.url %}
-                <a class="next" href="{{ page.next.url | url }}">{{ page.next.title }} &raquo;</a>
+            {% if next.hidden == false and next.url %}
+                <a class="next" href="{{ next.url | url }}">{{ next.title }} &raquo;</a>
             {% endif %}
         </div>
     {% endif %}
@@ -48,8 +48,8 @@ layout: default
     <a class="u-bridgy-fed d-none" href="https://brid.gy/publish/mastodon"></a>
 
     {% if site.utterances %}
-    {%- unless page.nocomments -%}
-        {%- assign issue-term = page.title | prepend: 'Comments: ' -%}
+    {%- unless nocomments -%}
+        {%- assign issue-term = title | prepend: 'Comments: ' -%}
         {% include "utterances", utterances-issue-term=issue-term %}
     {%- endunless -%}
     {% endif %}

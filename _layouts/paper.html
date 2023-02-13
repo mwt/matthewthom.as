@@ -7,38 +7,38 @@ layout: compress
 {%- endcomment -%}
 
 {%- capture header_html -%}
-    <meta name="citation_title" content="{{ page.title }}">
-    {%- for author in page.authors -%}
+    <meta name="citation_title" content="{{ title }}">
+    {%- for author in authors -%}
         <meta name="citation_author" content="{{ author.name }}">
     {%- endfor -%}
-    {%- if page.pdf -%}
-        <meta name="citation_pdf_url" content="{{ page.pdf | url }}">
+    {%- if pdf -%}
+        <meta name="citation_pdf_url" content="{{ pdf | url }}">
     {%- endif -%}
-    {%- if page.journal -%}
-        {%- unless page.rnr -%}
-            <meta name="citation_journal_title" content="{{ page.journal }}">
+    {%- if journal -%}
+        {%- unless rnr -%}
+            <meta name="citation_journal_title" content="{{ journal }}">
         {%- endunless -%}
     {%- endif -%}
-    {%- if page.vol -%}
-        <meta name="citation_volume" content="{{ page.vol }}">
+    {%- if vol -%}
+        <meta name="citation_volume" content="{{ vol }}">
     {%- endif -%}
-    {%- if page.num -%}
-        <meta name="citation_issue" content="{{ page.num }}">
+    {%- if num -%}
+        <meta name="citation_issue" content="{{ num }}">
     {%- endif -%}
-    {%- if page.year -%}
-        <meta name="citation_publication_date" content="{{ page.date | date: '%Y/%m/%d' }}">
+    {%- if year -%}
+        <meta name="citation_publication_date" content="{{ date | date: '%Y/%m/%d' }}">
     {%- endif -%}
-    {%- if page.pages -%}
-        <meta name="citation_firstpage" content="{{ page.pages[0] }}">
-        <meta name="citation_lastpage" content="{{ page.pages[1] }}">
+    {%- if pages -%}
+        <meta name="citation_firstpage" content="{{ pages[0] }}">
+        <meta name="citation_lastpage" content="{{ pages[1] }}">
     {%- endif -%}
 {%- endcapture -%}
 
-{%- include default-before.html header_html=header_html -%}
+{%- include "default-before", header_html: header_html -%}
 
-<h1 class="title">{{ page.title }}</h1>
+<h1 class="title">{{ title }}</h1>
 <div class="author text-center">
-{%- for author in page.authors -%}
+{%- for author in authors -%}
     <author>{{ author.name }}</author>
     {%- unless forloop.last -%}
         {{' '}}and{{' '}}
@@ -53,24 +53,24 @@ layout: compress
 
 <section class="downloads">
     <strong class="mr1">Downloads:</strong>
-    {%- if page.pdf -%}
-    <a class="icon-link" href="{{ page.pdf }}">
+    {%- if pdf -%}
+    <a class="icon-link" href="{{ pdf }}">
         <svg class="icon icon-file" width="1.2em" height="1.2em" aria-hidden="true">
             <use xlink:href="#icon-pdf"></use>
         </svg>
         PDF
     </a>
     {%- endif -%}
-    {%- if page.slides -%}
-    <a class="icon-link" href="{{ page.slides }}">
+    {%- if slides -%}
+    <a class="icon-link" href="{{ slides }}">
         <svg class="icon icon-file" width="1.2em" height="1.2em" aria-hidden="true">
             <use xlink:href="#icon-slides"></use>
         </svg>
         Slides
     </a>
     {%- endif -%}
-    {%- if page.shortlink -%}
-    <a class="icon-link" href="{{ page.shortlink }}" rel="shortlink">
+    {%- if shortlink -%}
+    <a class="icon-link" href="{{ shortlink }}" rel="shortlink">
         <svg class="icon icon-slink" width="1.2em" height="1.2em" aria-hidden="true">
             <use xlink:href="#icon-slink"></use>
         </svg>
@@ -82,17 +82,17 @@ layout: compress
 <hr>
 <h2>BibTeX</h2>
 <section class="bibtex">
-<pre><code>@article{% raw %}{{% endraw %}mwt{{page.year}}{{page.id_key}},
-    title     = "{{ page.title }}",
-    author    = "{{ page.authors | map: "name" | join: " and "}}"{% if page.journal %}{% unless page.rnr %},
-    journal   = "{{ page.journal }}"{% endunless %}{% else %},
-    journal   = "Working Paper"{% endif %}{% if page.vol %},
-    volume    = "{{ page.vol }}"{% endif %}{% if page.num %},
-    number    = "{{ page.num }}"{% endif %}{% if page.pages %},
-    pages     = "{{ page.pages[0] }}--{{ page.pages[1] }}"{% endif %}{% if page.year %},
-    year      = "{{ page.year }}"{% endif %}{% if page.pub %},
-    publisher = "{{ page.pub }}"{% endif %}
+<pre><code>@article{% raw %}{{% endraw %}mwt{{year}}{{id_key}},
+    title     = "{{ title }}",
+    author    = "{{ authors | map: "name" | join: " and "}}"{% if journal %}{% unless rnr %},
+    journal   = "{{ journal }}"{% endunless %}{% else %},
+    journal   = "Working Paper"{% endif %}{% if vol %},
+    volume    = "{{ vol }}"{% endif %}{% if num %},
+    number    = "{{ num }}"{% endif %}{% if pages %},
+    pages     = "{{ pages[0] }}--{{ pages[1] }}"{% endif %}{% if year %},
+    year      = "{{ year }}"{% endif %}{% if pub %},
+    publisher = "{{ pub }}"{% endif %}
 {% raw %}}{% endraw %}</code></pre>
 </section>
 
-{%- include default-after.html -%}
+{%- include "default-after" -%}

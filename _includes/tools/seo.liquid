@@ -45,9 +45,9 @@
   {% endif %}
 {% endif %}
 
-{% if page.date %}
+{% if date %}
   <meta property="og:type" content="article" />
-  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+  <meta property="article:published_time" content="{{ date | date_to_xmlschema }}" />
 {% else %}
   <meta property="og:type" content="website" />
 {% endif %}
@@ -60,7 +60,7 @@
 {% endif %}
 
 {% if site.image %}
-  <meta name="twitter:card" content="{{ page.twitter.card | default: site.twitter.card | default: "summary_large_image" }}" />
+  <meta name="twitter:card" content="{{ twitter.card | default: site.twitter.card | default: "summary_large_image" }}" />
   <meta property="twitter:image" content="{{ site.image.path }}" />
 {% else %}
   <meta name="twitter:card" content="summary" />

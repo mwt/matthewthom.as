@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" type="text/css">
 
-    {%- if page.use_math -%}
+    {%- if use_math -%}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" crossorigin="anonymous">
     {%- endif -%}
 
@@ -24,8 +24,8 @@
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | url }}" />
 
-    {% if page.pdf %}
-        <link rel="alternate" type="application/pdf" title="{{ site.title }}" href="{{ page.pdf | url }}" />
+    {% if pdf %}
+        <link rel="alternate" type="application/pdf" title="{{ site.title }}" href="{{ pdf | url }}" />
     {% endif %}
 
     <link rel="webmention" href="https://webmention.io/www.matthewthom.as/webmention" />
@@ -36,14 +36,14 @@
 <body>
     <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
         {% include "nav" %}
-        {% if page.layout == "post" %}
+        {% if layout == "post" %}
             <div class="post">
-        {% elsif page.layout == "paper" %}
+        {% elsif layout == "paper" %}
             <div class="paper">
         {% else %}
             {% if showHeader != true %}
-                <div class="page {{ page.title | downcase }}">
+                <div class="page {{ title | downcase }}">
             {% else %}
-                <div class="{{ page.title | downcase }}">
+                <div class="{{ title | downcase }}">
             {% endif %}
         {% endif %}
