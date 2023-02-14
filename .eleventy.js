@@ -12,6 +12,7 @@ const markdownItFootnote = require("markdown-it-footnote");
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const eleventyImage = require("@11ty/eleventy-img");
 const eleventySass = require("eleventy-sass");
 
 // Postprocessing
@@ -64,7 +65,7 @@ module.exports = function (eleventyConfig) {
   // Simplify a collection so that it resembles jekyll or other data
   eleventyConfig.addFilter("flatten_pages", flattenPages);
 
-  // Reproduce some Liquid filters, sometimes losely
+  // Reproduce some Liquid filters, sometimes loosely
   eleventyConfig.addFilter("date_to_xmlschema", dateToXmlSchema);
   eleventyConfig.addFilter("cgi_escape", cgiEscape);
   eleventyConfig.addFilter("number_of_words", numberOfWords);
@@ -72,15 +73,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("where", where);
   eleventyConfig.addFilter("where_not", whereNot);
 
+  // Image library liquid filter
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
+
   // RSS feed liquid filters
-  eleventyConfig.addFilter("date_to_rfc3339", pluginRss.dateToRfc3339);
-  eleventyConfig.addFilter("date_to_rfc822", pluginRss.dateToRfc822);
-  eleventyConfig.addFilter(
+  eleventyConfig.addLiquidFilter("date_to_rfc3339", pluginRss.dateToRfc3339);
+  eleventyConfig.addLiquidFilter("date_to_rfc822", pluginRss.dateToRfc822);
+  eleventyConfig.addLiquidFilter(
     "get_newest_collection_item_date",
     pluginRss.getNewestCollectionItemDate
   );
-  eleventyConfig.addFilter("absolute_url", pluginRss.absoluteUrl);
-  eleventyConfig.addFilter(
+  eleventyConfig.addLiquidFilter("absolute_url", pluginRss.absoluteUrl);
+  eleventyConfig.addLiquidFilter(
     "convert_html_to_absolute_urls",
     pluginRss.convertHtmlToAbsoluteUrls
   );
@@ -115,6 +119,24 @@ function markdown(content, inline = false) {
   const html = markdownIt.render(content);
 
   return inline ? html.replace("<p>", "").replace("</p>", "") : html;
+}
+
+async function imageShortcode(src, alt, width="auto") {
+  let metadata = await eleventyImage(src, {
+    widths: [width],
+    formats: ["svg", "jpeg"],
+    urlPath: "/assets/images/dynamic/",
+    outputDir: "./_site/assets/images/dynamic/",
+  });
+
+  let imageAttributes = {
+    alt: alt,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return eleventyImage.generateHTML(metadata, imageAttributes);
 }
 
 function numberOfWords(content) {
