@@ -25,7 +25,7 @@ const fastGlob = require("fast-glob");
 
 module.exports = function (eleventyConfig) {
   // Set passthrough folders
-  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("src/assets");
 
   // Enable RSS plugin
   eleventyConfig.addPlugin(pluginRss);
