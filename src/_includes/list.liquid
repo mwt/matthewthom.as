@@ -19,7 +19,7 @@
             {%- endif -%}">
             {{ project.title }}</a>
           {% if project.authors.size > 1 %}
-            {%- assign coauthors = project.authors | where_not: "author", site.title -%}
+            {%- assign coauthors = project.authors | where_not: "name", site.title -%}
             (with
             {%- for coauthor in coauthors -%}
               {%- if coauthor.url -%}
@@ -91,7 +91,8 @@
           </a>
         {%- endif -%}
         {% if list-class == "papers" and project.content %}
-          {% capture abstract_id -%}{% increment paper_section_number %}{%- endcapture %}
+          {% capture abstract_id -%}
+            {% increment paper_section_number %}{%- endcapture %}
           <div class="atoggle">
             <input
               type="checkbox"
