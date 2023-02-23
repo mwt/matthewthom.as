@@ -3,36 +3,43 @@ layout: page
 title: Blog
 ---
 
-{%- assign MathEconPosts = collections.math | concat: collections.economics | flatten_pages -%}
-{%- assign TechPosts = collections.tech | flatten_pages -%}
-{%- assign OtherPosts = collections.other-posts | flatten_pages -%}
+{%- assign EconPosts = collections.economics | flatten_pages | reverse -%}
+{%- assign MathPosts = collections.math | flatten_pages | reverse -%}
+{%- assign TechPosts = collections.tech | flatten_pages | reverse -%}
+{%- assign OtherPosts = collections.other-posts | flatten_pages | reverse -%}
 
 <hr>
 
 {%- if site.posts.size == 0 -%}
-<section class="list">
+  <section class="list">
     <p class="text-center">Nothing published yet!</p>
-</section>
-<hr>
+  </section>
+  <hr>
 {%- else -%}
-    {%- if MathEconPosts.size > 0 -%}
+  {%- if EconPosts.size > 0 -%}
     <section class="list">
-        {% include "list", list-data:MathEconPosts, list-title:"Math/Econ", list-class:"blog" %}
+      {% include "list", list-data: EconPosts, list-title: "Econ", list-class: "blog" %}
     </section>
     <hr>
-    {%- endif -%}
-    {%- if TechPosts.size > 0 -%}
+  {%- endif -%}
+  {%- if MathPosts.size > 0 -%}
     <section class="list">
-        {% include "list", list-data:TechPosts, list-title:"Technology", list-class:"blog" %}
+      {% include "list", list-data: MathPosts, list-title: "Math", list-class: "blog" %}
     </section>
     <hr>
-    {%- endif -%}
-    {%- if OtherPosts.size > 0 -%}
+  {%- endif -%}
+  {%- if TechPosts.size > 0 -%}
     <section class="list">
-        {% include "list", list-data:OtherPosts, list-title:"Other", list-class:"blog" %}
+      {% include "list", list-data: TechPosts, list-title: "Technology", list-class: "blog" %}
     </section>
     <hr>
-    {%- endif -%}
+  {%- endif -%}
+  {%- if OtherPosts.size > 0 -%}
+    <section class="list">
+      {% include "list", list-data: OtherPosts, list-title: "Other", list-class: "blog" %}
+    </section>
+    <hr>
+  {%- endif -%}
 {%- endif -%}
 
 {% include "mailchimp" %}

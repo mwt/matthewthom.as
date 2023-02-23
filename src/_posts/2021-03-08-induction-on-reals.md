@@ -18,17 +18,17 @@ Conventional proof by induction allows you to prove that a statement applies to 
 In the real induction, we get around this issue by breaking the space into countably many intervals. Formally, let $a < b$ be real numbers. We want to show that $[a, b] = S$. That is, we want all elements of the interval to "satisfy" property $S$. We define the subset $S \subseteq [a,b]$ to be *inductive* if:
 
 1. $a \in S$.
-2. If $a \leq x < b$$, then $x \in S \implies [x,y] \subset S$ for some 
-$$y > x$. 
-3. If $a < x \leq b$ and $[a,x) \subset S$$, then $x \in S$.  
+2. If $a \leq x < b$, then $x \in S \implies [x,y] \subset S$ for some $y > x$. 
+3. If $a < x \leq b$ and $[a,x) \subset S$, then $x \in S$.  
 
-The result is that a subset $S \subset [a,b]$ is inductive if and only if $S = [a,b]$. So, if conditions 1-3 hold, then property $S$ is satisfied on $[a,b]$$
+The result is that a subset $S \subset [a,b]$ is inductive if and only if $S = [a,b]$. So, if conditions 1-3 hold, then property $S$ is satisfied on $[a,b]$.
 
 ## Intuition and alternative
 
 Most people do not know what real induction is. However, the logic behind it is very easy to understand. So, applying real induction directly is usually not the clearest way to write a proof. The underlying idea behind real induction can be found in many proofs. However, it is rarely referred to as real induction. Typically, people use a proof by contradiction that goes something like this:
 
-<div class="proof" markdown=1> 
+<div class="proof">
+
 Suppose, by way of contradiction, that there exists an element in $[a,b]$ that is not in $S$. Then, there must be a *first switching point*. That is, there must be a minimal $x$ such that either $x \notin S$ or $(x,z] \notin S$ for some $z > x$. Then, we need to prove
 
 1. $x > a$ (using 1 and 2 from real induction). Therefore, $[a, x) \in S$ because $x$ is the first switching point.
@@ -36,6 +36,7 @@ Suppose, by way of contradiction, that there exists an element in $[a,b]$ that i
 3. There exists a $y > x$ such that $[x,y] \in S$ (using 2 from real induction). 
 
 Therefore, any point $w$ such that $w > x$, $w \leq z$, and $w \leq y$ is both in $S$ and not in $S$. This is a contradiction.
+
 </div>
 
 Proving statements directly in this way is clearer to people unfamiliar with real induction. This is especially true when you express the above argument in terms of your problem.
@@ -62,7 +63,7 @@ holds a.e., where we define $v'(s; {y}) := \frac{\partial v(s; {y})}{\partial s}
 
 **Assumption 3** (A3, Interiority)
 
-$$v(0, 0) > c(0) = 0$ and $\lim_{s \to \infty} \sup_{y \leq s} v(s; {y}) < \lim_{s \to \infty} c(s).$$
+$v(0, 0) > c(0) = 0$ and $\lim_{s \to \infty} \sup_{y \leq s} v(s; {y}) < \lim_{s \to \infty} c(s).$
 
 
 **Assumption 4** (A4, Positive value on the margin)
@@ -71,7 +72,7 @@ $$v(s; s) > 0$$
 
 ### Statement of the lemma
 
-**Lemma (Probability density)** *The solution, $g(s)$$, to*
+**Lemma (Probability density)** *The solution, $g(s)$, to*
 
 $$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) g(y) dy \right)$$
 
