@@ -20,6 +20,9 @@ const htmlmin = require("html-minifier");
 const postcss = require("postcss");
 const cssnano = require("cssnano");
 
+// fast-glob (for PDFs)
+const fastGlob = require("fast-glob");
+
 module.exports = function (eleventyConfig) {
   // Set passthrough folders
   eleventyConfig.addPassthroughCopy("assets");
@@ -90,11 +93,24 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addCollection("posts", (collection) => {
-    return collection.getFilteredByGlob("_posts/*.md");
+    return collection.getFilteredByGlob("src/_posts/*.md");
   });
 
   eleventyConfig.addCollection("papers", (collection) => {
-    return collection.getFilteredByGlob("_papers/*.md");
+    return collection.getFilteredByGlob("src/_papers/*.md");
+  });
+
+  eleventyConfig.addCollection("pdfs", (collection) => {
+    pathList = fastGlob.sync("src/assets/pdfs/**/*.pdf");
+    return pathList.map((path) => {
+      return {
+        url: path.replace("src/", "/"),
+        date: new Date(),
+        data: {
+          title: path.split("/").pop().split(".")[0],
+        },
+      };
+    });
   });
 
   // Enable markdown KaTeX plugin and set options
@@ -107,8 +123,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: "./",
-      output: "./_site",
+      input: "./src",
+      output: "./dist",
       includes: "_includes",
       layouts: "_layouts",
     },
@@ -121,12 +137,12 @@ function markdown(content, inline = false) {
   return inline ? html.replace("<p>", "").replace("</p>", "") : html;
 }
 
-async function imageShortcode(src, alt, width="auto") {
+async function imageShortcode(src, alt, width = "auto") {
   let metadata = await eleventyImage(src, {
     widths: [width],
     formats: ["svg", "jpeg"],
     urlPath: "/assets/images/dynamic/",
-    outputDir: "./_site/assets/images/dynamic/",
+    outputDir: "./dist/assets/images/dynamic/",
   });
 
   let imageAttributes = {

@@ -61,7 +61,7 @@ $$
 
 where $W$ is the Lambert *W* function. The upper bound, $\bar{r}$ is a strictly increasing function.
 
-{% image "./assets/images/posts/2021/tullock-maximum-r.svg", "plot of r upper bound", 600 %}
+{% image "./src/assets/images/posts/2021/tullock-maximum-r.svg", "plot of r upper bound", 600 %}
 {.text-center}
 
 It is not obvious, but this condition is [also without loss of optimality](#bps).
@@ -120,7 +120,7 @@ $$
 
 This maximum is obtained at $\delta^\star = k$.
 
-{% image "./assets/images/posts/2021/tullock-direct-discrimination.svg", "plot of s1 that we maximize for delta", 600 %}
+{% image "./src/assets/images/posts/2021/tullock-direct-discrimination.svg", "plot of s1 that we maximize for delta", 600 %}
 {.text-center}
 
 In this case, the revenue is
@@ -161,7 +161,7 @@ $$
 
 which defines implicit function $r^\star(k)$. However, these values cannot be attained unless $k$ is sufficiently large. Recall that there is no pure strategy equilibrium if $r > \bar{r}$. So, there is no way to reach some of these values.
 
-{% image "./assets/images/posts/2021/tullock-covert-discrimination.svg", "plot of s1 that we maximize for delta", 600 %}
+{% image "./src/assets/images/posts/2021/tullock-covert-discrimination.svg", "plot of s1 that we maximize for delta", 600 %}
 {.text-center}
 
 If you set up a Lagrangian as in Proposition 3 of [Nti (2004)](https://econpapers.repec.org/RePEc:eee:poleco:v:20:y:2004:i:4:p:1059-1066), then you find that the constrained optimum is the minimum of the two pictured curves. No exact representation of the intersection is known. However, it is approximately $k = 3.509$.
@@ -203,7 +203,7 @@ on this interval which is weakly decreasing in $r$. Therefore, $r  = \bar{r}( \d
 
 **Is $\delta < k$ ever optimal?** No. Note that the revenue in the last two points is increasing in $\delta$.
 
-{% image "./assets/images/posts/2021/tullock-covert-revenue.svg", "revenue for at each r for k = 1.5", 600 %}
+{% image "./src/assets/images/posts/2021/tullock-covert-revenue.svg", "revenue for at each r for k = 1.5", 600 %}
 {.text-center}
 
 The above shows an example of how revenue depends on $r$. Note that the maximum is reached before $\bar{r}(\delta / k)$ when the players are very heterogeneous (orange) and at the upper bound when players are more homogeneous (blue).[^sur]
