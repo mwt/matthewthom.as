@@ -4,49 +4,49 @@ list-title: "Home"
 ---
 <hr>
 <p class="content">
-    I'm Matthew W. Thomas, an Economics PhD candidate at Northwestern University. My research covers a broad
-    range of topics in microeconomic theory including auctions, robust design, discrimination, contests, and
-    financial markets. This page is here to share my <a href="#academic">academic</a> and
-    <a href="#non-academic">non-academic</a> projects. My <a href="https://sites.northwestern.edu/mtp3384/">
-        job market site is here</a>.
+  I'm Matthew W. Thomas, an Economics PhD candidate at Northwestern University. My research covers a broad range of topics in microeconomic theory including auctions, robust design, discrimination, contests, and financial markets. This page is here to share my
+  <a href="#academic">academic</a>
+  and
+  <a href="#non-academic">non-academic</a>
+  projects.
 </p>
 <hr>
 
-{%- assign job_mkt_papers=collections.papers | where:"jmp" | flatten_pages | sort: "order", "last" -%}
-{%- assign working_papers=collections.papers | where_not:"jmp" | flatten_pages | sort: "order", "last" -%}
-{%- assign notes=collections.notes | flatten_pages -%}
+{%- assign published_papers = collections.papers | where: "accepted" | flatten_pages | sort: "order", "last" -%}
+{%- assign working_papers = collections.papers | where_not: "accepted" | flatten_pages | sort: "order", "last" -%}
+{%- assign notes = collections.notes | flatten_pages -%}
 
 <div id="academic" class="anchor">
-    {%- include "list",
-        list-title:"Job Market Papers",
-        list-class:"papers",
-        list-data:job_mkt_papers -%}
-    <hr>
-    {%- include "list",
-        list-title:"Works in Progress",
-        list-class:"papers",
-        list-data:working_papers -%}
-    <hr>
-    {%- include "list",
-        list-title:"Academic Code",
-        list-data:projects-academic -%}
-    <hr>
-    {%- include "list",
-        list-title:"Informal Notes",
-        list-data:notes -%}
-    <hr>
+  {%- include "list"
+    , list-title: "Publications",
+    list-class: "papers",
+    list-data: published_papers -%}
+  <hr>
+  {%- include "list"
+    , list-title: "Working Papers",
+    list-class: "papers",
+    list-data: working_papers -%}
+  <hr>
+  {%- include "list"
+    , list-title: "Academic Code",
+    list-data: projects-academic -%}
+  <hr>
+  {%- include "list"
+    , list-title: "Informal Notes",
+    list-data: notes -%}
+  <hr>
 </div>
 
 <div id="non-academic" class="anchor">
-    {%- include "list",
-        list-title:"Professional Projects",
-        list-data:projects-professional -%}
-    <hr>
-    {%- include "list",
-        list-title:"Personal Projects",
-        list-data:projects-personal -%}
-    <hr>
-    {%- include "list",
-        list-title:"Code Snippets",
-        list-data:projects-gists -%}
+  {%- include "list"
+    , list-title: "Professional Projects",
+    list-data: projects-professional -%}
+  <hr>
+  {%- include "list"
+    , list-title: "Personal Projects",
+    list-data: projects-personal -%}
+  <hr>
+  {%- include "list"
+    , list-title: "Code Snippets",
+    list-data: projects-gists -%}
 </div>
