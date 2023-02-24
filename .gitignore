@@ -105,4 +105,4 @@ dist
 
 # 11ty
 dist
-assets/fonts
+src/assets/fonts
