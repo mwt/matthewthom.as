@@ -25,7 +25,7 @@ const fastGlob = require("fast-glob");
 
 module.exports = function (eleventyConfig) {
   // Set passthrough folders
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("static");
 
   // Enable RSS plugin
   eleventyConfig.addPlugin(pluginRss);
@@ -80,6 +80,7 @@ module.exports = function (eleventyConfig) {
 
   // Image library liquid filter
   eleventyConfig.addAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addFilter("jpeg_width", jpegWidth);
 
   // RSS feed liquid filters
   eleventyConfig.addLiquidFilter("date_to_rfc3339", pluginRss.dateToRfc3339);
@@ -140,11 +141,23 @@ function markdown(content, inline = false) {
 }
 
 async function imageShortcode(src, alt, width = "auto") {
+  const extension = src.split(".").pop();
+  const outputFormats = (() => {
+    switch (extension) {
+      case "svg":
+        return ["svg", "jpeg"];
+      case "png":
+        return ["png", "jpeg"];
+      default:
+        return ["jpeg"];
+    }
+  })();
+
   let metadata = await eleventyImage(src, {
     widths: [width],
-    formats: ["svg", "jpeg"],
-    urlPath: "/assets/images/dynamic/",
-    outputDir: "./dist/assets/images/dynamic/",
+    formats: outputFormats,
+    urlPath: "/assets/images/",
+    outputDir: "./dist/assets/images/",
   });
 
   let imageAttributes = {
@@ -155,6 +168,18 @@ async function imageShortcode(src, alt, width = "auto") {
 
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
   return eleventyImage.generateHTML(metadata, imageAttributes);
+}
+
+async function jpegWidth(src, width = "auto") {
+  const widths = width.length > 1 ? width : [width];
+  let metadata = await eleventyImage(src, {
+    widths: widths,
+    formats: ["jpeg"],
+    urlPath: "/assets/images/",
+    outputDir: "./dist/assets/images/",
+  });
+  // relevant metadata is url, srcset
+  return metadata.jpeg.length > 1 ? metadata.jpeg : metadata.jpeg[0];
 }
 
 function numberOfWords(content) {
