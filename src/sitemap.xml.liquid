@@ -3,9 +3,9 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {%- assign all_plus_pdfs = collections.all | concat: collections.pdfs -%}
-  {%- for sitemap_page in all_plus_pdfs -%}
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for sitemap_page in collections.all -%}
     {%- if not sitemap_page.data.draft %}
       <url>
         <loc>{{ sitemap_page.url | absolute_url: site.url }}</loc>

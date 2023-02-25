@@ -20,12 +20,22 @@ const htmlmin = require("html-minifier");
 const postcss = require("postcss");
 const cssnano = require("cssnano");
 
-// fast-glob (for PDFs)
-const fastGlob = require("fast-glob");
-
 module.exports = function (eleventyConfig) {
   // Set passthrough folders
-  eleventyConfig.addPassthroughCopy("static");
+  eleventyConfig.addPassthroughCopy({ static: "assets/static" });
+  eleventyConfig.addPassthroughCopy("src/assets/pdfs");
+
+  // Process PDFs, but do absolutely nothing with them
+  eleventyConfig.addTemplateFormats("pdf");
+  eleventyConfig.addExtension("pdf", {
+    read: false,
+    outputFileExtension: "pdf",
+    compile: async (inputContent, inputPath) => {
+      return async () => {
+        return;
+      };
+    },
+  });
 
   // Enable RSS plugin
   eleventyConfig.addPlugin(pluginRss);
@@ -104,16 +114,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("pdfs", (collection) => {
-    pathList = fastGlob.sync("src/assets/pdfs/**/*.pdf");
-    return pathList.map((path) => {
-      return {
-        url: path.replace("src/", "/"),
-        date: new Date(),
-        data: {
-          title: path.split("/").pop().split(".")[0],
-        },
-      };
-    });
+    return collection.getFilteredByGlob("src/assets/pdfs/**/*.pdf");
   });
 
   // Enable markdown KaTeX plugin and set options

@@ -5,7 +5,7 @@
   "description": "Homepage of Matthew W. Thomas, an Economics Ph.D. Candidate at Northwestern University",
   "external-image": false,
   "picture": {
-    "file": "./src/assets/images/headshot/mwt800.jpg",
+    "file": "./src/assets/images/headshot.png",
     "sizes": [
       200,
       268,
