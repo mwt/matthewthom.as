@@ -1,0 +1,37 @@
+{
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=14400"
+        }
+      ]
+    },
+    {
+      "source": "/assets/pdfs/(.*)\\.pdf",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/gh/:match*/",
+      "destination": "https://mwt.github.io/:match*/index.html"
+    },
+    {
+      "source": "/gh/:match*",
+      "destination": "https://mwt.github.io/:match*"
+    },
+    {
+      "source": "/assets/:match*/",
+      "destination": "https://nocdn.matthewthom.as/assets/:match*/"
+    }
+  ]
+}
