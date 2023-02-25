@@ -1,4 +1,4 @@
-# matthewthomas-11ty
+![screen shot of www.matthewthom.as](static/screen-shot.png)
 
 This is the repository for my personal website, [matthewthom.as](https://www.matthewthom.as). It is built using [11ty](https://www.11ty.dev/).
 
