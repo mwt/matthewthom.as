@@ -13,7 +13,7 @@
       800
     ]
   },
-  "spicture": "assets/screen-shot.png",
+  "spicture": "assets/static/screen-shot.png",
   "url": "https://www.matthewthom.as",
   "permalink": "/:title/",
   "collections": {
