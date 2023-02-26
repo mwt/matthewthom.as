@@ -22,7 +22,7 @@
   ],
   "rewrites": [
     {
-      "source": "/citations",
+      "source": "/citations/",
       "destination": "/citations.txt"
     },
     {
