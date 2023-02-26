@@ -1,94 +1,94 @@
 {%- comment -%}
-    We are not using the default template for this one because we want custom meta tags for the papers.
+We are not using the default template for this one because we want custom meta tags for the papers.
 {%- endcomment -%}
 
 {%- capture header_html -%}
-    <meta name="citation_title" content="{{ title }}">
-    {%- for author in authors -%}
-        <meta name="citation_author" content="{{ author.name }}">
-    {%- endfor -%}
-    {%- if pdf -%}
-        <meta name="citation_pdf_url" content="{{ pdf | url }}">
-    {%- endif -%}
-    {%- if journal -%}
-        {%- unless rnr -%}
-            <meta name="citation_journal_title" content="{{ journal }}">
-        {%- endunless -%}
-    {%- endif -%}
-    {%- if vol -%}
-        <meta name="citation_volume" content="{{ vol }}">
-    {%- endif -%}
-    {%- if num -%}
-        <meta name="citation_issue" content="{{ num }}">
-    {%- endif -%}
-    {%- if year -%}
-        <meta name="citation_publication_date" content="{{ date | date: '%Y/%m/%d' }}">
-    {%- endif -%}
-    {%- if pages -%}
-        <meta name="citation_firstpage" content="{{ pages[0] }}">
-        <meta name="citation_lastpage" content="{{ pages[1] }}">
-    {%- endif -%}
+  <meta name="citation_title" content="{{ title }}">
+  {%- for author in authors -%}
+    <meta name="citation_author" content="{{ author.name }}">
+  {%- endfor -%}
+  {%- if pdf -%}
+    <meta name="citation_pdf_url" content="{{ pdf | absolute_url: site.url }}">
+  {%- endif -%}
+  {%- if journal -%}
+    {%- unless rnr -%}
+      <meta name="citation_journal_title" content="{{ journal }}">
+    {%- endunless -%}
+  {%- endif -%}
+  {%- if vol -%}
+    <meta name="citation_volume" content="{{ vol }}">
+  {%- endif -%}
+  {%- if num -%}
+    <meta name="citation_issue" content="{{ num }}">
+  {%- endif -%}
+  {%- if year -%}
+    <meta name="citation_publication_date" content="{{ date | date: '%Y/%m/%d' }}">
+  {%- endif -%}
+  {%- if pages -%}
+    <meta name="citation_firstpage" content="{{ pages[0] }}">
+    <meta name="citation_lastpage" content="{{ pages[1] }}">
+  {%- endif -%}
 {%- endcapture -%}
 
 {%- include "default-before", header_html: header_html -%}
 
 <h1 class="title">{{ title }}</h1>
 <div class="author text-center">
-{%- for author in authors -%}
-    <author>{{ author.name }}</author>
-    {%- unless forloop.last -%}
-        {{' '}}and{{' '}}
-    {%- endunless -%}
-{%- endfor -%}
+  <author>{{ authors | map: 'name' | join: '</author> and <author>' }}</author>
 </div>
 
 <div class="content">
-<h2>Abstract</h2>
-{{content}}
+  <h2>Abstract</h2>
+  {{ content }}
 </div>
 
 <section class="downloads">
-    <strong class="mr1">Downloads:</strong>
-    {%- if pdf -%}
+  <strong class="mr1">Downloads:</strong>
+  {%- if pdf -%}
     <a class="icon-link" href="{{ pdf }}">
-        <svg class="icon icon-file" width="1.2em" height="1.2em" aria-hidden="true">
-            <use xlink:href="#icon-pdf"></use>
-        </svg>
-        PDF
+      <svg
+        class="icon icon-file"
+        width="1.2em"
+        height="1.2em"
+        aria-hidden="true">
+        <use xlink:href="#icon-pdf"></use>
+      </svg>
+      PDF
     </a>
-    {%- endif -%}
-    {%- if slides -%}
+  {%- endif -%}
+  {%- if slides -%}
     <a class="icon-link" href="{{ slides }}">
-        <svg class="icon icon-file" width="1.2em" height="1.2em" aria-hidden="true">
-            <use xlink:href="#icon-slides"></use>
-        </svg>
-        Slides
+      <svg
+        class="icon icon-file"
+        width="1.2em"
+        height="1.2em"
+        aria-hidden="true">
+        <use xlink:href="#icon-slides"></use>
+      </svg>
+      Slides
     </a>
-    {%- endif -%}
-    {%- if shortlink -%}
-    <a class="icon-link" href="{{ shortlink }}" rel="shortlink">
-        <svg class="icon icon-slink" width="1.2em" height="1.2em" aria-hidden="true">
-            <use xlink:href="#icon-slink"></use>
-        </svg>
-        ShortLink
+  {%- endif -%}
+  {%- if shortlink -%}
+    <a
+      class="icon-link"
+      href="{{ shortlink }}"
+      rel="shortlink">
+      <svg
+        class="icon icon-slink"
+        width="1.2em"
+        height="1.2em"
+        aria-hidden="true">
+        <use xlink:href="#icon-slink"></use>
+      </svg>
+      ShortLink
     </a>
-    {%- endif -%}
+  {%- endif -%}
 </section>
 
 <hr>
 <h2>BibTeX</h2>
 <section class="bibtex">
-<pre><code>@article{% raw %}{{% endraw %}mwt{{year}}{{id_key}},
-    title     = "{{ title }}",
-    author    = "{{ authors | map: "name" | join: " and "}}"{% if journal %}{% unless rnr %},
-    journal   = "{{ journal }}"{% endunless %}{% else %},
-    journal   = "Working Paper"{% endif %}{% if vol %},
-    volume    = "{{ vol }}"{% endif %}{% if num %},
-    number    = "{{ num }}"{% endif %}{% if pages %},
-    pages     = "{{ pages[0] }}--{{ pages[1] }}"{% endif %}{% if year %},
-    year      = "{{ year }}"{% endif %}{% if pub %},
-    publisher = "{{ pub }}"{% endif %}
-{% raw %}}{% endraw %}</code></pre>
+  <pre><code>{{ collections.papers | getCollectionItem | bibtex }}</code></pre>
 </section>
 
 {%- include "default-after" -%}

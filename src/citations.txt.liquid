@@ -1,0 +1,7 @@
+---
+permalink: /citations.txt
+---
+{%- for paper in collections.papers -%}
+    {{ paper | bibtex }}
+
+{% endfor -%}

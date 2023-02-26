@@ -1,11 +1,11 @@
 ---
 title: "Regulation of Wages and Hours"
-date: "2022-10-12"
-last_modified_at: "2022-10-13"
+date: "2023-02-22"
+last_modified_at: "2023-02-22"
 id_key: "regwageshours"
 authors:
  - name: "Matthew W. Thomas"
-year: 2022
+year: 2023
 description: "How does the determination of labor hours affect optimal regulation?"
 shortlink: "https://mwt.me/jmp"
 pdf: "/assets/pdfs/papers/regulation-wages-hours.pdf"

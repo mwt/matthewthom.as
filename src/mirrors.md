@@ -28,37 +28,35 @@ I have an official registered [CTAN](https://mirror.ctan.org) mirror for downloa
 
 [Termux](https://termux.com/) is a terminal emulator and Linux environment for Android. I have an official registered repository which is updated every 6 hours and contains all Termux packages. The repository can be selected by running `apt edit-sources` in Termux and adding one or more of the following lines to your configuration.
 
-|Repository|sources.list entry                                               |
-|:---------|:----------------------------------------------------------------|
-|[Main](https://mirror.mwt.me/termux/main)      |`deb https://mirror.mwt.me/termux/main stable main`|
-|[Root](https://mirror.mwt.me/termux/root)      |`deb https://mirror.mwt.me/termux/root root stable`|
-|[X11](https://mirror.mwt.me/termux/x11)        |`deb https://mirror.mwt.me/termux/x11 x11 main`|
+| Repository                                | sources.list entry                                  |
+| :---------------------------------------- | :-------------------------------------------------- |
+| [Main](https://mirror.mwt.me/termux/main) | `deb https://mirror.mwt.me/termux/main stable main` |
+| [Root](https://mirror.mwt.me/termux/root) | `deb https://mirror.mwt.me/termux/root root stable` |
+| [X11](https://mirror.mwt.me/termux/x11)   | `deb https://mirror.mwt.me/termux/x11 x11 main`     |
 
 More instructions can be found on the [Termux wiki](https://github.com/termux/termux-packages/wiki/Mirrors#mirrors-by-mwt).
-
 
 ### Zotero {id="zotero" .anchor}
 
 I have a mirror of the Debian/Ubuntu repository for the [Zotero citation manager](https://www.zotero.org) as well as [Juris-M](https://juris-m.github.io/). My mirror uses the same original signature as the developer. The mirror url is <https://mirror.mwt.me/zotero/deb/>. You can install this by running the following script:
 
-~~~sh
+```sh
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash /dev/stdin "https://mirror.mwt.me/zotero/deb"
-~~~
+```
 
 Alternatively, you can do the steps manually by first installing the GPG key:
 
-~~~sh
+```sh
 sudo wget -O /usr/share/keyrings/zotero-archive-keyring.gpg "https://raw.githubusercontent.com/retorquere/zotero-deb/master/zotero-archive-keyring.gpg"
-~~~
+```
 
 and then adding the necessary source file:
 
-~~~sh
+```sh
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/zotero-archive-keyring.gpg by-hash=force] https://mirror.mwt.me/zotero/deb/ ./" > /etc/apt/sources.list.d/zotero.list'
-~~~
+```
 
 To install, run `sudo apt install zotero` or `sudo apt install jurism`.
-
 
 ### GitHub Desktop {id="github-desktop" .anchor}
 
@@ -66,31 +64,31 @@ There is an [unofficial Linux version](https://github.com/shiftkey/desktop) of t
 
 **Debian/Ubuntu:** First install our GPG certificate:
 
-~~~sh
+```sh
 wget -qO - https://mirror.mwt.me/shiftkey-desktop/gpgkey | gpg --dearmor | sudo tee /etc/apt/keyrings/mwt-desktop.gpg > /dev/null
-~~~
+```
 
 To setup the package repository, run:
 
-~~~sh
+```sh
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/mwt-desktop.gpg] https://mirror.mwt.me/shiftkey-desktop/deb/ any main" > /etc/apt/sources.list.d/mwt-desktop.list'
-~~~
+```
 
 Then install GitHub Desktop:
 
-~~~sh
+```sh
 sudo apt update && sudo apt install github-desktop
-~~~
+```
 
 **Red Hat/CentOS/Fedora distributions:** First install our GPG certificate:
 
-~~~sh
+```sh
 sudo rpm --import https://mirror.mwt.me/shiftkey-desktop/gpgkey
-~~~
+```
 
 To setup the package repository:
 
-~~~sh
+```sh
 cat << EOF | sudo tee /etc/yum.repos.d/mwt-packages.repo
 [mwt-packages]
 name=GitHub Desktop
@@ -100,27 +98,27 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirror.mwt.me/shiftkey-desktop/gpgkey
 EOF
-~~~
+```
 
 Then install GitHub Desktop:
 
-~~~sh
+```sh
 # if yum is your package manager
 sudo yum install github-desktop
 
 # if dnf is your package manager
 sudo dnf install github-desktop
-~~~
+```
 
 **OpenSUSE distribution:** First install our GPG certificate:
 
-~~~sh
+```sh
 sudo rpm --import https://mirror.mwt.me/shiftkey-desktop/gpgkey
-~~~
+```
 
 To setup the package repository:
 
-~~~sh
+```sh
 cat << EOF | sudo tee /etc/zypp/repos.d/mwt-packages.repo
 [mwt-packages]
 name=GitHub Desktop
@@ -130,44 +128,42 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirror.mwt.me/shiftkey-desktop/gpgkey
 EOF
-~~~
+```
 
 Then install GitHub Desktop:
 
-~~~sh
+```sh
 sudo zypper ref && sudo zypper in github-desktop
-~~~
-
+```
 
 ### RStudio {id="rstudio" .anchor}
 
 RStudio does not provide an official repository for Debian/Ubuntu. [This repository](https://github.com/mwt/rstudio-deb/) serves the latest official `.deb` from RStudio. All files are checked against the RStudio GPG keys and updated twice per day. The mirror url is <https://mirror.mwt.me/my/deb>. You can install the repo by installing my GPG key:
 
-~~~sh
+```sh
 sudo wget -O /usr/share/keyrings/mwt.asc "https://mirror.mwt.me/my/gpgkey"
-~~~
+```
 
 and adding the repo to apt:
 
-~~~sh
+```sh
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt.asc by-hash=force] https://mirror.mwt.me/my/deb any rstudio" | sudo tee /etc/apt/sources.list.d/mwt.list
-~~~
+```
 
 This repository is the same as my Zoom repo (below). So, you can replace `any rstudio` in the string above with `any main` to get both.
-
 
 ### Zoom {id="zoom" .anchor}
 
 Zoom does not provide an official repository for Debian/Ubuntu. [This repository](https://github.com/mwt/zoom-deb/) serves the latest official `.deb` from Zoom. All files are checked against the Zoom GPG keys and updated twice per day. The mirror url is <https://mirror.mwt.me/my/deb>. You can install the repo by installing my GPG key:
 
-~~~sh
+```sh
 sudo wget -O /usr/share/keyrings/mwt.asc "https://mirror.mwt.me/my/gpgkey"
-~~~
+```
 
 and adding the repo to apt:
 
-~~~sh
+```sh
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt.asc by-hash=force] https://mirror.mwt.me/my/deb any zoom" | sudo tee /etc/apt/sources.list.d/mwt.list
-~~~
+```
 
 This repository is the same as my RStudio repo (above). So, you can replace `any zoom` in the string above with `any main` to get both.

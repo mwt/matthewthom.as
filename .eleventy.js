@@ -80,6 +80,9 @@ module.exports = function (eleventyConfig) {
   // Simplify a collection so that it resembles jekyll or other data
   eleventyConfig.addFilter("flatten_pages", flattenPages);
 
+  // Add a Liquid filter to convert paper data to bibTeX string
+  eleventyConfig.addFilter("bibtex", bibTeX);
+
   // Reproduce some Liquid filters, sometimes loosely
   eleventyConfig.addFilter("date_to_xmlschema", dateToXmlSchema);
   eleventyConfig.addFilter("cgi_escape", cgiEscape);
@@ -254,4 +257,64 @@ function time(value) {
   return `<time datetime="${dateToXmlSchema(value)}">${dateToString(
     value
   )}</time>`;
+}
+
+// Create a function to generate a bibTeX entry for a paper
+function bibTeX(collectionItem) {
+  const paperData = collectionItem.data;
+
+  // Create an array of lines for the bibTeX entry
+  bibTeXArray = [];
+
+  // Title
+  bibTeXArray.push(`title     = "${paperData.title}"`);
+
+  // Authors
+  const authorString = paperData.authors
+    .map((author) => author.name)
+    .join(" and ");
+  bibTeXArray.push(`author    = "${authorString}"`);
+
+  // Journal
+  if (paperData.journal && !paperData.rnr) {
+    bibTeXArray.push(`journal   = "${paperData.journal}"`);
+  } else {
+    bibTeXArray.push(`journal   = "Working Paper"`);
+  }
+
+  // Volume
+  if (paperData.volume) {
+    bibTeXArray.push(`volume    = "${paperData.volume}"`);
+  }
+
+  // Number
+  if (paperData.number) {
+    bibTeXArray.push(`number    = "${paperData.number}"`);
+  }
+
+  // Pages
+  if (paperData.pages) {
+    bibTeXArray.push(
+      `pages     = "${paperData.pages[0]}--${paperData.pages[1]}"`
+    );
+  }
+
+  // Year (use date if year is not specified)
+  const paperYear = paperData.year
+    ? paperData.year
+    : collectionItem.date.getFullYear();
+  bibTeXArray.push(`year      = "${paperYear}"`);
+
+  // Publisher
+  if (paperData.pub) {
+    bibTeXArray.push(`publisher = "${paperData.pub}"`);
+  }
+
+  return `@article{mwt${paperYear}${
+    paperData.id_key
+      ? paperData.id_key
+      : collectionItem.fileSlug.split("-").pop()
+  },
+  ${bibTeXArray.join(",\n  ")}
+}`;
 }

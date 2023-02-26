@@ -22,6 +22,14 @@
   ],
   "rewrites": [
     {
+      "source": "/citations",
+      "destination": "/citations.txt"
+    },
+    {
+      "source": "/citations.bib",
+      "destination": "/citations.txt"
+    },
+    {
       "source": "/gh/:match*/",
       "destination": "https://mwt.github.io/:match*/index.html"
     },
