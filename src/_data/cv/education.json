@@ -1,0 +1,29 @@
+[
+    {
+        "school": "Northwestern University",
+        "location": "Evanston, IL",
+        "degrees": [
+            {
+                "title": "Ph.D. in Economics",
+                "start": "2017-09",
+                "end": "2023-06"
+            },
+            {
+                "title": "M.A. in Economics",
+                "start": "2017-09",
+                "end": "2018-06"
+            }
+        ]
+    },
+    {
+        "school": "Williams College",
+        "location": "Williamstown, MA",
+        "degrees": [
+            {
+                "title": "B.A. in Mathematics and Economics",
+                "start": "2013-09",
+                "end": "2017-06"
+            }
+        ]
+    }
+]
