@@ -7,6 +7,26 @@
         margin-bottom: 5px
         line-height: 1.7
 
+    #resume-presentations
+        p
+            display: inline
+            @media #{$notmd}
+                display: block
+
+            > em
+                display: none
+                @media #{$notmd}
+                    display: inline
+
+            > span::after
+                content: ', '
+                @media #{$notmd}
+                    content: ''
+
+        > p:last-child
+            > span::after
+                content: ''
+
     .resume-content
         width: 95%
         margin: 0 auto

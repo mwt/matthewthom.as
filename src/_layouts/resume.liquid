@@ -35,10 +35,10 @@ Papers section
 Presentations section
 {%- endcomment -%}<h2>Presentations</h2>
 {%- assign sorted_presentations = cv.presentations | sort: "date" | reverse -%}
-<div class="resume-content">
+<div id="resume-presentations" class="resume-content">
   {% for pres in sorted_presentations %}
     <p>
-      {{ pres.where }}
+      <span>{{ pres.where }}</span>
       <em>
         <date>{{ pres.date | date: "%b %Y" }}</date>
       </em>
