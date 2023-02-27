@@ -1,0 +1,15 @@
+{%- include "default-before" -%}
+
+{%- include "header" -%}
+
+<div
+  class="banner-page
+  {%- if layout == "banner-page" -%}
+    {{ title | slugify | downcase | prepend: " " }}
+  {%- else -%}
+    {{ layout | slugify | downcase | prepend: " " }}
+  {%- endif -%}">
+  {{ content }}
+</div>
+
+{%- include "default-after" -%}

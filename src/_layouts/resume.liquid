@@ -1,14 +1,14 @@
 ---
-layout: page
+layout: banner-page
 title: Resume
 ---
-
 {%- comment -%}
 Education section
 {%- endcomment -%}<h2>Education</h2>
 {% for edu in cv.education %}
   <h3>{{ edu.school }}</h3>
-  <div class="resume-content">
+  <div
+    class="resume-content">
     {% for degree in edu.degrees %}
       <p>
         <strong>{{ degree.title }}</strong>
@@ -35,7 +35,9 @@ Papers section
 Presentations section
 {%- endcomment -%}<h2>Presentations</h2>
 {%- assign sorted_presentations = cv.presentations | sort: "date" | reverse -%}
-<div id="resume-presentations" class="resume-content">
+<div
+  id="resume-presentations"
+  class="resume-content">
   {% for pres in sorted_presentations %}
     <p>
       <span>{{ pres.where }}</span>
@@ -49,7 +51,8 @@ Presentations section
 {%- comment -%}
 Refereeing section
 {%- endcomment -%}<h2>Refereeing</h2>
-<div class="resume-content">
+<div
+  class="resume-content">
   <p>
     {{ cv.refereeing | sort | join: ", " }}
   </p>
@@ -59,7 +62,8 @@ Refereeing section
 Awards Section
 {%- endcomment -%}<h2>Fellowships & Awards</h2>
 {%- assign sorted_awards = cv.awards | sort: "date" | reverse -%}
-<div class="resume-content">
+<div
+  class="resume-content">
   {% for award in cv.awards %}
     <p>
       {{ award.title }}, {{ award.from }}
@@ -73,7 +77,8 @@ Awards Section
 {%- comment -%}
 RA Section
 {%- endcomment -%}<h2>Research Experience</h2>
-<div class="resume-content">
+<div
+  class="resume-content">
   {% for job in cv.researchexp %}
     <p>
       {{ job.title }}, {{ job.for }}, {{ job.from }}

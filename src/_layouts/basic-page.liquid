@@ -1,0 +1,13 @@
+{%- include "default-before" -%}
+
+<div
+  class="basic-page
+  {%- if layout == "basic-page" -%}
+    {{ title | slugify | downcase | prepend: " " }}
+  {%- else -%}
+    {{ layout | slugify | downcase | prepend: " " }}
+  {%- endif -%}">
+  {{ content }}
+</div>
+
+{%- include "default-after" -%}

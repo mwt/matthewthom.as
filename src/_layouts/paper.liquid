@@ -1,7 +1,3 @@
-{%- comment -%}
-We are not using the default template for this one because we want custom meta tags for the papers.
-{%- endcomment -%}
-
 {%- capture header_html -%}
   <meta name="citation_title" content="{{ title }}">
   {%- for author in authors -%}
@@ -32,63 +28,67 @@ We are not using the default template for this one because we want custom meta t
 
 {%- include "default-before", header_html: header_html -%}
 
-<h1 class="title">{{ title }}</h1>
-<div class="author text-center">
-  <author>{{ authors | map: 'name' | join: '</author> and <author>' }}</author>
+<div class="paper">
+
+  <h1 class="title">{{ title }}</h1>
+  <div class="author text-center">
+    <author>{{ authors | map: 'name' | join: '</author> and <author>' }}</author>
+  </div>
+
+  <div class="content">
+    <h2>Abstract</h2>
+    {{ content }}
+  </div>
+
+  <section class="downloads">
+    <strong class="mr1">Downloads:</strong>
+    {%- if pdf -%}
+      <a class="icon-link" href="{{ pdf }}">
+        <svg
+          class="icon icon-file"
+          width="1.2em"
+          height="1.2em"
+          aria-hidden="true">
+          <use xlink:href="#icon-pdf"></use>
+        </svg>
+        PDF
+      </a>
+    {%- endif -%}
+    {%- if slides -%}
+      <a class="icon-link" href="{{ slides }}">
+        <svg
+          class="icon icon-file"
+          width="1.2em"
+          height="1.2em"
+          aria-hidden="true">
+          <use xlink:href="#icon-slides"></use>
+        </svg>
+        Slides
+      </a>
+    {%- endif -%}
+    {%- if shortlink -%}
+      <a
+        class="icon-link"
+        href="{{ shortlink }}"
+        rel="shortlink">
+        <svg
+          class="icon icon-slink"
+          width="1.2em"
+          height="1.2em"
+          aria-hidden="true">
+          <use xlink:href="#icon-slink"></use>
+        </svg>
+        ShortLink
+      </a>
+    {%- endif -%}
+  </section>
+
+  <hr>
+  <h2>BibTeX</h2>
+  <section class="bibtex">
+    <pre><code>{{ collections.papers | getCollectionItem | bibtex }}</code></pre>
+  </section>
+
 </div>
-
-<div class="content">
-  <h2>Abstract</h2>
-  {{ content }}
-</div>
-
-<section class="downloads">
-  <strong class="mr1">Downloads:</strong>
-  {%- if pdf -%}
-    <a class="icon-link" href="{{ pdf }}">
-      <svg
-        class="icon icon-file"
-        width="1.2em"
-        height="1.2em"
-        aria-hidden="true">
-        <use xlink:href="#icon-pdf"></use>
-      </svg>
-      PDF
-    </a>
-  {%- endif -%}
-  {%- if slides -%}
-    <a class="icon-link" href="{{ slides }}">
-      <svg
-        class="icon icon-file"
-        width="1.2em"
-        height="1.2em"
-        aria-hidden="true">
-        <use xlink:href="#icon-slides"></use>
-      </svg>
-      Slides
-    </a>
-  {%- endif -%}
-  {%- if shortlink -%}
-    <a
-      class="icon-link"
-      href="{{ shortlink }}"
-      rel="shortlink">
-      <svg
-        class="icon icon-slink"
-        width="1.2em"
-        height="1.2em"
-        aria-hidden="true">
-        <use xlink:href="#icon-slink"></use>
-      </svg>
-      ShortLink
-    </a>
-  {%- endif -%}
-</section>
-
-<hr>
-<h2>BibTeX</h2>
-<section class="bibtex">
-  <pre><code>{{ collections.papers | getCollectionItem | bibtex }}</code></pre>
-</section>
 
 {%- include "default-after" -%}

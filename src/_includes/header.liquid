@@ -1,11 +1,8 @@
 {% assign images = site.picture.file | jpeg_width: site.picture.sizes %}
 {% assign deafult_image = images | where: 'width', 268 %}
-<div
-  class="topblock"></div>
-<header
-  class="header-home{% if page.url == '/' %} animated{% endif %} h-card">
-  <span
-    class="link">
+<div class="topblock"></div>
+<header class="header{% if page.url == '/' %} animated{% endif %} h-card">
+  <span class="link">
     <img
       height="200px"
       width="200px"
@@ -19,10 +16,8 @@
     src="{{ deafult_image[0].url | url }}"
     sizes="(min-width: 800px) 268px, 200px">
   </span>
-  <h1
-    class="title p-name">{%- include "tools/namesep", namesep-content: site.title -%}</h1>
-  <h2
-    class="description p-note">{{ site.bio }}</h2>
+  <h1 class="title p-name">{%- include "tools/namesep", namesep-content: site.title -%}</h1>
+  <h2 class="description p-note">{{ site.bio }}</h2>
   <a
     rel="me"
     class="u-url d-none"
