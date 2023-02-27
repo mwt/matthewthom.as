@@ -1,12 +1,34 @@
 @media print
+    @page
+        margin-left: 2cm
+        margin-right: 2cm
+        margin-top: 1.5cm
+        margin-bottom: 1.5cm
+
     nav, footer, .utterances
         display: none !important
 
-    .basic-page, header
-        margin-top: 60px !important
+    .basic-page, .paper, .post
+        margin-top: 1.5cm !important
+
+    // Devide most of the margins by 3 in header
+    .header
+        margin-top: 0 !important
+
+        > span
+            display: none !important
+
+        > .title
+            margin-bottom: 4px !important
+
+        > .description
+            margin-bottom: 10px !important
+
+        > .social-links
+            margin-top: 6px !important
 
     .topblock
-        padding-bottom: 155px !important
+        display: none !important
 
     .list .item .atoggle
 
