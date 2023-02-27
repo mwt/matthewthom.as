@@ -66,6 +66,24 @@
             Source
           </a>
         {%- endif -%}
+        {%- if project.email -%}
+          <a
+            class='icon-link
+            {%- if project.email contains '..' -%}
+              {{ ' ' }}anti-bot-mail
+            {%- endif -%}'
+            href="mailto:{{ project.email }}"
+            target="_blank">
+            <svg
+              class="icon icon-mail"
+              width="1.2em"
+              height="1.2em"
+              aria-hidden="true">
+              <use xlink:href="#icon-mail"></use>
+            </svg>
+            Contact
+          </a>
+        {%- endif -%}
         {%- if project.pdf -%}
           <a class="icon-link" href="{{ project.pdf }}">
             <svg

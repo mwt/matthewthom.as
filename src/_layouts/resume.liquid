@@ -8,18 +8,19 @@ Education section
 {%- endcomment -%}<h2>Education</h2>
 {% for edu in cv.education %}
   <h3>{{ edu.school }}</h3>
-  {% for degree in edu.degrees %}
-    <p>
-      <strong>{{ degree.title }}</strong>
-      <em>
-        <date>{{ degree.start | date: "%Y" }}</date>
-        &ndash;
-        <date>{{ degree.end | date: "%Y" }}</date>
-      </em>
-    </p>
-  {% endfor %}
+  <div class="resume-content">
+    {% for degree in edu.degrees %}
+      <p>
+        <strong>{{ degree.title }}</strong>
+        <em>
+          <date>{{ degree.start | date: "%Y" }}</date>
+          &ndash;
+          <date>{{ degree.end | date: "%Y" }}</date>
+        </em>
+      </p>
+    {% endfor %}
+  </div>
 {% endfor %}
-
 
 {%- comment -%}
 Papers section
@@ -34,50 +35,78 @@ Papers section
 Presentations section
 {%- endcomment -%}<h2>Presentations</h2>
 {%- assign sorted_presentations = cv.presentations | sort: "date" | reverse -%}
-{% for pres in sorted_presentations %}
-  <p>
-    {{ pres.where }}
-    <em>
-      <date>{{ pres.date | date: "%b %Y" }}</date>
-    </em>
-  </p>
-{% endfor %}
+<div class="resume-content">
+  {% for pres in sorted_presentations %}
+    <p>
+      {{ pres.where }}
+      <em>
+        <date>{{ pres.date | date: "%b %Y" }}</date>
+      </em>
+    </p>
+  {% endfor %}
+</div>
 
 {%- comment -%}
 Refereeing section
-{%- endcomment -%}
-<h2>Refereeing</h2>
-<p>
-  {{ cv.refereeing | sort | join: ", " }}
-</p>
+{%- endcomment -%}<h2>Refereeing</h2>
+<div class="resume-content">
+  <p>
+    {{ cv.refereeing | sort | join: ", " }}
+  </p>
+</div>
 
 {%- comment -%}
 Awards Section
 {%- endcomment -%}<h2>Fellowships & Awards</h2>
 {%- assign sorted_awards = cv.awards | sort: "date" | reverse -%}
-{% for award in cv.awards %}
-  <p>
-    {{ award.title }}, {{ award.from }}
-    <em>
-      <date>{{ award.date | date: "%Y" }}</date>
-    </em>
-  </p>
-{% endfor %}
+<div class="resume-content">
+  {% for award in cv.awards %}
+    <p>
+      {{ award.title }}, {{ award.from }}
+      <em>
+        <date>{{ award.date | date: "%Y" }}</date>
+      </em>
+    </p>
+  {% endfor %}
+</div>
 
 {%- comment -%}
 RA Section
-{%- endcomment -%}
-<h2>Research Experience</h2>
-{% for job in cv.researchexp %}
-  <p>
-    {{ job.title }}, {{ job.for }}, {{ job.from }}
-    <em>
-      <date>{{ job.start | date: "%Y" }}</date>
-      &ndash;
-      <date>{{ job.end | date: "%Y" }}</date>
-    </em>
-  </p>
-{% endfor %}
+{%- endcomment -%}<h2>Research Experience</h2>
+<div class="resume-content">
+  {% for job in cv.researchexp %}
+    <p>
+      {{ job.title }}, {{ job.for }}, {{ job.from }}
+      <em>
+        <date>{{ job.start | date: "%Y" }}</date>
+        &ndash;
+        <date>{{ job.end | date: "%Y" }}</date>
+      </em>
+    </p>
+  {% endfor %}
+</div>
+
+{%- comment -%}
+Code Section
+{%- endcomment -%}<h2>Software</h2>
+<h3>Research Software Packages</h3>
+{%- include "list", list-data: projects-academic -%}
+
+<h3>Other Software & Projects</h3>
+{% assign other_software = projects-professional | concat: projects-personal | sort: "title" %}
+{%- include "list", list-data: other_software -%}
+
+{%- comment -%}
+References Section
+{%- endcomment -%}<h2>References</h2>
+{%- include "list", list-data: cv.references -%}
+
+<script>
+  const refEmails = document.getElementsByClassName("anti-bot-mail");
+  for (refEmail of refEmails) {
+    refEmail.href = refEmail.href.replace("..", "@");
+  }
+</script>
 
 {{ content }}
 

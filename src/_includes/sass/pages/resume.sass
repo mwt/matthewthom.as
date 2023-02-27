@@ -7,27 +7,23 @@
         margin-bottom: 5px
         line-height: 1.7
 
-    > p
-        margin: 0
+    .resume-content
+        width: 95%
+        margin: 0 auto
 
-    > p,h3
+        p
+            margin: 0
 
-        > em
-            display: block
-            color: $alpha
-            font:
-                size: 1rem
-                family: $fontP
-            @media #{$notmd}
-                float: right
+            > em
+                display: block
+                color: $alpha
+                font:
+                    size: 1rem
+                    family: $fontP
+                @media #{$notmd}
+                    float: right
 
-
-    > h3 > em
-        display: none
-        @media #{$notmd}
-            display: block
-
-    > a.hover-download
+    a.hover-download
         position: -webkit-sticky
         position: sticky
         display: none
