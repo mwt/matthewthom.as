@@ -6,7 +6,7 @@
     {% endif %}
 
     {% if site.linkedin %}
-    <a class="social-link u-url" aria-label="linkedin" data-title="linkedin.com/in/{{ site.linkedin }}" href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="me noopener noreferrer">
+    <a class="social-link u-url" aria-label="linkedin, opens in new tab" data-title="linkedin.com/in/{{ site.linkedin }}" href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="me noopener noreferrer">
         <svg class="icon icon-linkedin"><title>linkedin</title><use xlink:href="#icon-linkedin"></use></svg>
     </a>
     {% endif %}
@@ -18,13 +18,13 @@
     {% endif %}
 
     {% if site.gscholar %}
-    <a class="social-link u-url" aria-label="google scholar" data-title="scholar.google.com/citations?user={{ site.gscholar }}" href="https://scholar.google.com/citations?user={{ site.gscholar }}" target="_blank" rel="me noopener noreferrer">
+    <a class="social-link u-url" aria-label="google scholar, opens in new tab" data-title="scholar.google.com/citations?user={{ site.gscholar }}" href="https://scholar.google.com/citations?user={{ site.gscholar }}" target="_blank" rel="me noopener noreferrer">
         <svg class="icon icon-gscholar"><title>google scholar</title><use xlink:href="#icon-gscholar"></use></svg>
     </a>
     {% endif %}
 
     {% if site.github %}
-    <a class="social-link u-url" aria-label="github" data-title="github.com/{{ site.github }}" href="https://github.com/{{ site.github }}" target="_blank" rel="me noopener noreferrer">
+    <a class="social-link u-url" aria-label="github, opens in new tab" data-title="github.com/{{ site.github }}" href="https://github.com/{{ site.github }}" target="_blank" rel="me noopener noreferrer">
         <svg class="icon icon-github"><title>github</title><use xlink:href="#icon-github"></use></svg>
     </a>
     {% endif %}
@@ -37,7 +37,7 @@
 
     {%- for mst in site.mastodon -%}
     {% if mst.username and mst.instance %}
-    <a class="social-link u-url" aria-label="mastodon" data-title="{{ mst.username | escape }}@{{ mst.instance | escape}}" href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" target="_blank" rel="me">
+    <a class="social-link u-url" aria-label="mastodon, opens in new tab" data-title="{{ mst.username | escape }}@{{ mst.instance | escape}}" href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}" target="_blank" rel="me">
         <svg class="icon icon-mastodon"><title>mastodon</title><use xlink:href="#icon-mastodon"></use></svg>
     </a>
     {% endif %}
@@ -124,7 +124,7 @@
     {% endif %}
 
     {% if site.xmpp %}
-        <a id="xlink" class="social-link" data-title="#" href="xmpp:#">
+        <a id="xlink" aria-label="xmpp" class="social-link" data-title="#" href="xmpp:#">
             <svg class="icon icon-xmpp"><title>xmpp</title><use xlink:href="#icon-xmpp"></use></svg>
         </a>
     {% endif %}
