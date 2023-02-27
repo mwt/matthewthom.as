@@ -35,9 +35,9 @@ src
 
 ### `src/assets`
 
-This folder contains all of the assets that are used by the code of the site. 
+This folder contains all of the assets that are used by the code of the site.
 
-- The `css` folder contains the SASS import file that generates the CSS for the site. 
+- The `css` folder contains the SASS import file that generates the CSS for the site.
 - The `images` folder contains all of the images that are processed by [`eleventy-img`](https://www.11ty.dev/docs/plugins/image/).
 - The `pdfs` folder contains all of the PDFs used on the site. These are passed through to the site without any processing. However, they are still scanned by `eleventy` for inclusion in the sitemap with accurate `lastmod` dates.
 

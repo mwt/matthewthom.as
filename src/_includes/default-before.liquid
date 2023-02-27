@@ -1,40 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" type="text/css">
+<html
+  lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | url }}"
+      type="text/css">
 
     {%- if use_math -%}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" crossorigin="anonymous">
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
+        crossorigin="anonymous">
     {%- endif -%}
 
     {% if site.analytics-google %}
-        {% include "analytics-google" %}
+      {% include "analytics-google" %}
     {% endif %}
 
-    <meta charset="utf-8">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    
-    <meta property="og:image" content="{{ site.spicture | url }}">
-    <meta property="og:type" content="WebSite">
+    <meta
+      charset="utf-8">
+    <meta
+      http-equiv=X-UA-Compatible
+      content="IE=edge,chrome=1">
+    <meta
+      name=viewport
+      content="width=device-width, initial-scale=1">
+
+    <meta
+      property="og:image"
+      content="{{ site.spicture | url }}">
+    <meta
+      property="og:type"
+      content="WebSite">
 
     <title>{{ title }} | {{ site.title }}</title>
     {% include "tools/seo" %}
-    
+
     {% include "favicon" %}
 
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | url }}" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.title }}"
+      href="{{ '/feed.xml' | url }}" />
 
     {% if pdf %}
-        <link rel="alternate" type="application/pdf" title="{{ site.title }}" href="{{ pdf | url }}" />
+      <link
+        rel="alternate"
+        type="application/pdf"
+        title="{{ site.title }}"
+        href="{{ pdf | url }}" />
     {% endif %}
 
-    <link rel="webmention" href="https://webmention.io/www.matthewthom.as/webmention" />
-    <link rel="pingback" href="https://webmention.io/www.matthewthom.as/xmlrpc" />
+    <link
+      rel="webmention"
+      href="https://webmention.io/www.matthewthom.as/webmention" />
+    <link
+      rel="pingback"
+      href="https://webmention.io/www.matthewthom.as/xmlrpc" />
 
     {{ header_html }}
-</head>
-<body>
-    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
-        {% include "nav" %}
-
+  </head>
+  <body>
+    <div
+      class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+      {% include "nav" %}

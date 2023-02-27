@@ -1,7 +1,9 @@
 {%- include "default-before" -%}
 
-<div class="post">
-  <article class="h-entry">
+<div
+  class="post">
+  <article
+    class="h-entry">
 
     {% if image and headerImage %}
       <img
@@ -10,46 +12,66 @@
         alt="{{ title }}">
     {% endif %}
 
-    <h1 class="title p-name">{{ title }}</h1>
+    <h1
+      class="title p-name">{{ title }}</h1>
     <a
       rel="author"
       class="p-author d-none"
       href="{{ '/' | url }}">{{ site.title }}</a>
-    <a class="u-url d-none" href="{{ page.url | url }}">{{ title }}</a>
+    <a
+      class="u-url d-none"
+      href="{{ page.url | url }}">{{ title }}</a>
 
     {% if date %}
-      <span class="date description">
-        <time class="dt-published" datetime="{{ date | date:'%d-%m-%Y' }}">{{ date | date: '%A. %B %d, %Y' }}</time>
+      <span
+        class="date description">
+        <time
+          class="dt-published"
+          datetime="{{ date | date:'%d-%m-%Y' }}">{{ date | date: '%A. %B %d, %Y' }}</time>
       </span>
     {% endif %}
 
     {% if site.show-tags %}
-      <div class="post-tags">
+      <div
+        class="post-tags">
         {% for tag in tags %}
-          <a class="item" href="{{ tag | slugify | prepend: '/tags/#' | url }}">{{ tag }}</a>
+          <a
+            class="item"
+            href="{{ tag | slugify | prepend: '/tags/#' | url }}">{{ tag }}</a>
         {% endfor %}
       </div>
     {% endif %}
 
-    <div class="content e-content">
+    <div
+      class="content e-content">
       {{ content }}
     </div>
 
     {% if site.post-advance-links contains category %}
-      <div class="blog-navigation">
+      <div
+        class="blog-navigation">
         {% if previous.hidden == false and previous.url %}
-          <a class="prev" href="{{ previous.url | url }}">&laquo; {{ previous.title }}</a>
+          <a
+            class="prev"
+            href="{{ previous.url | url }}">&laquo; {{ previous.title }}</a>
         {% else %}
-          <a class="prev"></a>
+          <a
+            class="prev"></a>
         {% endif %}
         {% if next.hidden == false and next.url %}
-          <a class="next" href="{{ next.url | url }}">{{ next.title }} &raquo;</a>
+          <a
+            class="next"
+            href="{{ next.url | url }}">{{ next.title }} &raquo;</a>
         {% endif %}
       </div>
     {% endif %}
 
-    <a class="u-bridgy-fed d-none" href="https://fed.brid.gy/"></a>
-    <a class="u-bridgy-fed d-none" href="https://brid.gy/publish/mastodon"></a>
+    <a
+      class="u-bridgy-fed d-none"
+      href="https://fed.brid.gy/"></a>
+    <a
+      class="u-bridgy-fed d-none"
+      href="https://brid.gy/publish/mastodon"></a>
 
     {% if site.utterances %}
       {%- unless nocomments -%}

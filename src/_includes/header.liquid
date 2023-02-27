@@ -1,5 +1,5 @@
-{% assign images = site.picture.file | jpeg_width: site.picture.sizes %}
-{% assign deafult_image = images | where: 'width', 268 %}
+{%- assign images = site.picture.file | jpeg_width: site.picture.sizes -%}
+{%- assign deafult_image = images | where: 'width', 268 -%}
 <div class="topblock"></div>
 <header class="header{% if page.url == '/' %} animated{% endif %} h-card">
   <span class="link">
@@ -22,5 +22,5 @@
     rel="me"
     class="u-url d-none"
     href="/"></a>
-  {% include "social-links" %}
+  {%- include "social-links" -%}
 </header>

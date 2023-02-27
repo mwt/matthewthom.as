@@ -1,9 +1,9 @@
-{% if list-title %}
+{%- if list-title -%}
   <h2>{{ list-title }}</h2>
-{% endif %}
-{% if list-description %}
+{%- endif -%}
+{%- if list-description -%}
   <p class="thin">{{ list-description }}</p>
-{% endif %}
+{%- endif -%}
 <div class="{{ list-class | default: "projects" }}">
   <section class="list">
     {%- for project in list-data -%}
@@ -18,7 +18,7 @@
               {{ project.url }}
             {%- endif -%}">
             {{ project.title }}</a>
-          {% if project.authors.size > 1 %}
+          {% if project.authors.size > 1 -%}
             {%- assign coauthors = project.authors | where_not: "name", site.title -%}
             (with
             {%- for coauthor in coauthors -%}
@@ -32,7 +32,7 @@
               {%- endunless -%}
             {%- endfor -%}
             )
-          {% endif %}
+          {%- endif -%}
         </h3>
         {%- if project.journal -%}
           <p class="meta">
@@ -122,7 +122,7 @@
               {{ project.content | markdownify }}
             </div>
           </div>
-        {% endif %}
+        {%- endif -%}
       </div>
     {%- endfor -%}
   </section>

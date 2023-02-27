@@ -11,31 +11,37 @@ title: Blog
 <hr>
 
 {%- if site.posts.size == 0 -%}
-  <section class="list">
-    <p class="text-center">Nothing published yet!</p>
+  <section
+    class="list">
+    <p
+      class="text-center">Nothing published yet!</p>
   </section>
   <hr>
 {%- else -%}
   {%- if EconPosts.size > 0 -%}
-    <section class="list">
+    <section
+      class="list">
       {% include "list", list-data: EconPosts, list-title: "Econ", list-class: "blog" %}
     </section>
     <hr>
   {%- endif -%}
   {%- if MathPosts.size > 0 -%}
-    <section class="list">
+    <section
+      class="list">
       {% include "list", list-data: MathPosts, list-title: "Math", list-class: "blog" %}
     </section>
     <hr>
   {%- endif -%}
   {%- if TechPosts.size > 0 -%}
-    <section class="list">
+    <section
+      class="list">
       {% include "list", list-data: TechPosts, list-title: "Technology", list-class: "blog" %}
     </section>
     <hr>
   {%- endif -%}
   {%- if OtherPosts.size > 0 -%}
-    <section class="list">
+    <section
+      class="list">
       {% include "list", list-data: OtherPosts, list-title: "Other", list-class: "blog" %}
     </section>
     <hr>

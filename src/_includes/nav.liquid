@@ -1,22 +1,32 @@
-<nav class="nav {% if site.animation %}animated{% endif %}">
-  <ul class="list">
-    {% for link in nav %}
-      {% assign pageurl = page.url | remove_first: 'index.html' %}
-      {% if pageurl != link.url %}
-        <li class="item">
-          <a class="link" href="{% if link.external %}{{ link.url }}{% else %}{{ link.url | url }}{% endif %}">{{ link.title }}</a>
+<nav
+  class="nav {% if site.animation %}animated{% endif %}">
+  <ul
+    class="list">
+    {%- for link in nav -%}
+      {%- assign pageurl = page.url | remove_first: 'index.html' -%}
+      {%- if pageurl != link.url -%}
+        <li
+          class="item">
+          <a
+            class="link"
+            href="{% if link.external %}{{ link.url }}{% else %}{{ link.url | url }}{% endif %}">{{ link.title }}</a>
         </li>
-      {% endif %}
-    {% endfor %}
-    {% if pdf %}
-      <li class="item">
-        <a class="btn link" href="{{ pdf }}">
-          <svg class="icon icon-arrow">
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if pdf -%}
+      <li
+        class="item">
+        <a
+          class="btn link"
+          href="{{ pdf }}">
+          <svg
+            class="icon icon-arrow">
             <title>download</title>
-            <use xlink:href="#icon-arrow-down"></use>
+            <use
+              xlink:href="#icon-arrow-down"></use>
           </svg>
           PDF</a>
       </li>
-    {% endif %}
+    {%- endif -%}
   </ul>
 </nav>

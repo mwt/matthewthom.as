@@ -1,67 +1,97 @@
 {%- capture header_html -%}
-  <meta name="citation_title" content="{{ title }}">
+  <meta
+    name="citation_title"
+    content="{{ title }}">
   {%- for author in authors -%}
-    <meta name="citation_author" content="{{ author.name }}">
+    <meta
+      name="citation_author"
+      content="{{ author.name }}">
   {%- endfor -%}
   {%- if pdf -%}
-    <meta name="citation_pdf_url" content="{{ pdf | absolute_url: site.url }}">
+    <meta
+      name="citation_pdf_url"
+      content="{{ pdf | absolute_url: site.url }}">
   {%- endif -%}
   {%- if journal -%}
     {%- unless rnr -%}
-      <meta name="citation_journal_title" content="{{ journal }}">
+      <meta
+        name="citation_journal_title"
+        content="{{ journal }}">
     {%- endunless -%}
   {%- endif -%}
   {%- if vol -%}
-    <meta name="citation_volume" content="{{ vol }}">
+    <meta
+      name="citation_volume"
+      content="{{ vol }}">
   {%- endif -%}
   {%- if num -%}
-    <meta name="citation_issue" content="{{ num }}">
+    <meta
+      name="citation_issue"
+      content="{{ num }}">
   {%- endif -%}
   {%- if year -%}
-    <meta name="citation_publication_date" content="{{ date | date: '%Y/%m/%d' }}">
+    <meta
+      name="citation_publication_date"
+      content="{{ date | date: '%Y/%m/%d' }}">
   {%- endif -%}
   {%- if pages -%}
-    <meta name="citation_firstpage" content="{{ pages[0] }}">
-    <meta name="citation_lastpage" content="{{ pages[1] }}">
+    <meta
+      name="citation_firstpage"
+      content="{{ pages[0] }}">
+    <meta
+      name="citation_lastpage"
+      content="{{ pages[1] }}">
   {%- endif -%}
 {%- endcapture -%}
 
 {%- include "default-before", header_html: header_html -%}
 
-<div class="paper">
+<div
+  class="paper">
 
-  <h1 class="title">{{ title }}</h1>
-  <div class="author text-center">
+  <h1
+    class="title">{{ title }}</h1>
+  <div
+    class="author text-center">
     <author>{{ authors | map: 'name' | join: '</author> and <author>' }}</author>
   </div>
 
-  <div class="content">
+  <div
+    class="content">
     <h2>Abstract</h2>
     {{ content }}
   </div>
 
-  <section class="downloads">
-    <strong class="mr1">Downloads:</strong>
+  <section
+    class="downloads">
+    <strong
+      class="mr1">Downloads:</strong>
     {%- if pdf -%}
-      <a class="icon-link" href="{{ pdf }}">
+      <a
+        class="icon-link"
+        href="{{ pdf }}">
         <svg
           class="icon icon-file"
           width="1.2em"
           height="1.2em"
           aria-hidden="true">
-          <use xlink:href="#icon-pdf"></use>
+          <use
+            xlink:href="#icon-pdf"></use>
         </svg>
         PDF
       </a>
     {%- endif -%}
     {%- if slides -%}
-      <a class="icon-link" href="{{ slides }}">
+      <a
+        class="icon-link"
+        href="{{ slides }}">
         <svg
           class="icon icon-file"
           width="1.2em"
           height="1.2em"
           aria-hidden="true">
-          <use xlink:href="#icon-slides"></use>
+          <use
+            xlink:href="#icon-slides"></use>
         </svg>
         Slides
       </a>
@@ -76,7 +106,8 @@
           width="1.2em"
           height="1.2em"
           aria-hidden="true">
-          <use xlink:href="#icon-slink"></use>
+          <use
+            xlink:href="#icon-slink"></use>
         </svg>
         ShortLink
       </a>
@@ -85,7 +116,8 @@
 
   <hr>
   <h2>BibTeX</h2>
-  <section class="bibtex">
+  <section
+    class="bibtex">
     <pre><code>{{ collections.papers | getCollectionItem | bibtex }}</code></pre>
   </section>
 

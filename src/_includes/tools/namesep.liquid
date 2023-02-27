@@ -1,12 +1,11 @@
 {%- assign titlelist = namesep-content | split: " " -%}
 {%- for word in titlelist -%}
-    {%- if forloop.first -%}
-        <span>{{ word }}</span>
-        <span>
+  {%- if forloop.first -%}
+    <span>{{ word }}</span>
+    <span>
     {%- elsif forloop.last -%}
-        {{ word }}
+      {{ word }}
     {%- else -%}
-        {{ word | append: ' ' }} 
-    {%- endif -%}
-{%- endfor -%}
-        </span>
+      {{ word | append: ' ' }}
+  {%- endif -%}
+{%- endfor -%}</span>
