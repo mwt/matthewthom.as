@@ -1,0 +1,72 @@
+\documentclass[11pt, letterpaper]{article}
+
+%%% Define header vars
+\date{\today}
+
+% Reduce space between sections
+\usepackage{parskip}
+\setlength{\parskip}{0pt}
+
+% Deal with hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle={Matthew W. Thomas' CV},
+  pdfauthor={Matthew W. Thomas},
+  pdfsubject={},
+  pdfkeywords={},
+  colorlinks=true,
+  pdfnewwindow=true,
+  linkcolor=black,
+  urlcolor=[rgb]{0.31,0.16,0.52},
+}
+
+% Make it easier for resume scanners
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% Configure page margins with geometry
+\RequirePackage{geometry}
+\geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=1.5cm}
+
+% Remove Page Numbers
+\pagenumbering{gobble}
+
+% Custom section formatting
+\usepackage{sectsty}
+\sectionfont{\fontsize{14pt}{1em} \sectionrule{0pt}{0pt}{-0.6ex}{1pt}}
+
+% Adjust enumerate environments
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=4ex,nosep,noitemsep,before=\vspace{1ex}}
+
+% Import icons
+\usepackage{fontawesome}
+
+% Calculate font size of location and date
+\usepackage{calc}
+\newlength{\rightside}
+
+% Support markdown
+\usepackage{markdown}
+
+% Replace commands for all the markdown formatting
+% Replace commands for all the markdown formatting
+\newcommand{\cvsection}[1]{\vspace{-1.882ex}\section*{#1}\vspace{-2.618ex}}
+\newcommand{\cvsubsection}[1]{{\vspace{1.618ex}\fontsize{10.5pt}{1em}\bfseries #1}\vspace{0.618ex}}
+\newcommand{\cvsubsubsection}[1]{{\vspace{-0.618ex}\fontsize{9pt}{1em}\scshape #1}\vspace{0.618ex}}
+\newcommand{\dateright}[1]{{\setlength{\rightside}{0.5em+4.5pt}\fontsize{\rightside}{1em}\hfill\mdseries\slshape #1}}
+
+% ## Header Formatting
+% ### Header Font Options
+\newcommand*{\headernamestyle}[1]{{\fontsize{18pt}{1em}\bfseries #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\scshape #1}}
+\newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\itshape #1}}
+\newcommand*{\headerquotestyle}[1]{{\fontsize{10pt}{1em}\upshape #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}

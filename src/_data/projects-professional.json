@@ -13,7 +13,7 @@
   },
   {
     "title": "Kellogg R Workshop Slides",
-    "url": "/assets/r-kellogg.pdf",
+    "url": "https://mwt.me/assets/r-kellogg.pdf",
     "description": "Slides I made for MBA workshops on R",
     "github": "https://github.com/mwt/R-Workshop"
   },
