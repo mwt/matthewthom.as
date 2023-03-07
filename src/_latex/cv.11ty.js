@@ -1,19 +1,21 @@
-///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // Table of contents
-///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // 1. Import preamble and postamble from files
 // 2. Helper functions
 // 3. Section functions and strings
 // 4. Generate the tex file
-// 5. Export texCV class
-///////////////////////////////////////////////////////////////////////////
+// 5. Compile the tex file with LuaLaTeX
+// 6. Export texCV class
+///////////////////////////////////////////////////////////////////////////////
 
-var fs = require("fs").promises;
+const fs = require("fs");
+const spawn = require("child_process").spawn;
 
 class texCV {
   data() {
     return {
-      permalink: "/cv.txt",
+      permalink: "/cv.pdf",
     };
   }
 
@@ -22,8 +24,11 @@ class texCV {
     // 1. Import preamble and postamble from files
     ///////////////////////////////////////////////////////////////////////////
 
-    const texPreamble = await fs.readFile(`${__dirname}/_preamble.tex`, "utf8");
-    const texPostamble = await fs.readFile(
+    const texPreamble = fs.promises.readFile(
+      `${__dirname}/_preamble.tex`,
+      "utf8"
+    );
+    const texPostamble = fs.promises.readFile(
       `${__dirname}/_postamble.tex`,
       "utf8"
     );
@@ -70,7 +75,7 @@ class texCV {
       data.site.github
     }}`;
 
-    // Education
+    // Education function
     const texEducation = (education) => {
       return education
         .map(function (edu) {
@@ -84,7 +89,7 @@ class texCV {
           return `\\cvsubsection{${edu.school}}\n\n${degrees}`;
         })
         .join("\n\n");
-    }
+    };
 
     // Function to generate tex for papers
     // Relies on paper.template.frontMatter.content which is undocumented!
@@ -262,12 +267,47 @@ ${texList(
 ${texReferences(data.cv.references)}
 `;
 
-    return `${texPreamble}\n${texBody}\n${texPostamble}`;
+    ///////////////////////////////////////////////////////////////////////////
+    // 5. Compile the tex file with LuaLaTeX
+    ///////////////////////////////////////////////////////////////////////////
+
+    // Create a temporary directory if it doesn't exist
+    if (!fs.existsSync("./tmp")) {
+      fs.mkdirSync("./tmp");
+    }
+
+    // Run LuaLaTeX in the tmp directory
+    // We use LuaLaTeX because the markdown package is written in Lua
+    const lualatexProcess = spawn("lualatex", ["--jobname=cv"], {
+      cwd: "./tmp",
+    });
+
+    // Write the tex file to the stdin of the LuaLaTeX process
+    lualatexProcess.stdin.write(`${await texPreamble}\n${texBody}\n${await texPostamble}`);
+    lualatexProcess.stdin.end();
+
+    // When the process exits, move the PDF to the dist folder
+    lualatexProcess.on("close", (code) => {
+      if (code !== 0) {
+        console.log(`LuaLaTeX process exited with code ${code}.`);
+        return;
+      } else {
+        fs.rename("./tmp/cv.pdf", "./dist/cv.pdf", (err) => {
+          if (err) throw err;
+          console.log(
+            `CV moved to dist folder (LuaLaTeX exited with ${code}).`
+          );
+        });
+      }
+    });
+
+    // Don't actually return anything (LuaLaTeX generates the PDF)
+    return;
   }
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// 5. Export the texCV class
+// 6. Export the texCV class
 ///////////////////////////////////////////////////////////////////////////////
 
 module.exports = texCV;

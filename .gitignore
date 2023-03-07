@@ -106,3 +106,6 @@ dist
 # 11ty
 dist
 static/fonts
+
+# LaTeX
+/tmp/
