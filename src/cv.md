@@ -1,5 +1,5 @@
 ---
 layout: resume
 title: CV
-pdf: "javascript:window.print();"
+pdf: "/assets/pdfs/cv.pdf"
 ---
