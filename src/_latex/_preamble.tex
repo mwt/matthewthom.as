@@ -28,7 +28,7 @@
 \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=1.5cm}
 
 % Remove Page Numbers
-\pagenumbering{gobble}
+\pagestyle{empty}
 
 % Custom section formatting
 \usepackage{sectsty}
@@ -46,8 +46,8 @@
 \usepackage{calc}
 \newlength{\rightside}
 
-% Support markdown
-\usepackage{markdown}
+% Support markdown (plain ensures that soft dependencies are not loaded)
+\usepackage[plain]{markdown}
 
 % Replace commands for all the markdown formatting
 % Replace commands for all the markdown formatting

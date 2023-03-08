@@ -269,7 +269,24 @@ ${texReferences(data.cv.references)}
 `;
 
     ///////////////////////////////////////////////////////////////////////////
+    // 5. Dump tex file to disk
+    ///////////////////////////////////////////////////////////////////////////
+
+    // Create a temporary directory if it doesn't exist and write the tex file
+    // We rely on vercel-build.sh to run the LuaLaTeX compiler
+    // (this means that the CV pdf is not available in development mode, but
+    //  dev builds are faster as a result)
+    const texStrng = `${await texPreamble}\n${texBody}\n${await texPostamble}`;
+    fs.mkdir("./tmp", { recursive: true }, (err) => {
+      if (err) throw err;
+      fs.writeFile("./tmp/cv.tex", texStrng, (err) => {
+        if (err) throw err;
+      });
+    });
+
+    /*/////////////////////////////////////////////////////////////////////////
     // 5. Compile the tex file with LuaLaTeX
+    //   (below code works locally but not on Vercel; use vercel-build.sh)
     ///////////////////////////////////////////////////////////////////////////
 
     // Create a temporary directory if it doesn't exist
@@ -301,6 +318,7 @@ ${texReferences(data.cv.references)}
         });
       }
     });
+    /////////////////////////////////////////////////////////////////////////*/
 
     // Don't actually return anything (LuaLaTeX generates the PDF)
     return;
