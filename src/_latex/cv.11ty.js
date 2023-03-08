@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 const fs = require("fs");
+var path = require("path");
 const spawn = require("child_process").spawn;
 
 class texCV {
@@ -278,7 +279,7 @@ ${texReferences(data.cv.references)}
 
     // Run LuaLaTeX in the tmp directory
     // We use LuaLaTeX because the markdown package is written in Lua
-    const lualatexProcess = spawn("lualatex", ["--jobname=cv"], {
+    const lualatexProcess = spawn(path.resolve("./tmp/vtex/bin/x86_64-linux/lualatex"), ["--jobname=cv"], {
       cwd: "./tmp",
     });
 
