@@ -108,4 +108,4 @@ dist
 static/fonts
 
 # LaTeX
-/tmp/
+/latex-temp/

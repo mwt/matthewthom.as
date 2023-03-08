@@ -277,9 +277,9 @@ ${texReferences(data.cv.references)}
     // (this means that the CV pdf is not available in development mode, but
     //  dev builds are faster as a result)
     const texStrng = `${await texPreamble}\n${texBody}\n${await texPostamble}`;
-    fs.mkdir("./tmp", { recursive: true }, (err) => {
+    fs.mkdir("./latex-temp", { recursive: true }, (err) => {
       if (err) throw err;
-      fs.writeFile("./tmp/cv.tex", texStrng, (err) => {
+      fs.writeFile("./latex-temp/cv.tex", texStrng, (err) => {
         if (err) throw err;
       });
     });
@@ -290,14 +290,14 @@ ${texReferences(data.cv.references)}
     ///////////////////////////////////////////////////////////////////////////
 
     // Create a temporary directory if it doesn't exist
-    if (!fs.existsSync("./tmp")) {
-      fs.mkdirSync("./tmp");
+    if (!fs.existsSync("./latex-temp")) {
+      fs.mkdirSync("./latex-temp");
     }
 
     // Run LuaLaTeX in the tmp directory
     // We use LuaLaTeX because the markdown package is written in Lua
-    const lualatexProcess = spawn(path.resolve("./tmp/vtex/bin/x86_64-linux/lualatex"), ["--jobname=cv"], {
-      cwd: "./tmp",
+    const lualatexProcess = spawn(path.resolve("./latex-temp/vtex/bin/x86_64-linux/lualatex"), ["--jobname=cv"], {
+      cwd: "./latex-temp",
     });
 
     // Write the tex file to the stdin of the LuaLaTeX process
@@ -310,7 +310,7 @@ ${texReferences(data.cv.references)}
         console.log(`LuaLaTeX process exited with code ${code}.`);
         return;
       } else {
-        fs.rename("./tmp/cv.pdf", "./dist/cv.pdf", (err) => {
+        fs.rename("./latex-temp/cv.pdf", "./dist/cv.pdf", (err) => {
           if (err) throw err;
           console.log(
             `CV moved to dist folder (LuaLaTeX exited with ${code}).`
