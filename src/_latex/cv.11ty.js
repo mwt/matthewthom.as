@@ -62,9 +62,10 @@ class texCV {
     ///////////////////////////////////////////////////////////////////////////
 
     // The address line with social links and email
-    const texAddressLine = `\\href{mailto:${data.site.email}}{${
-      data.site.email
-    }}
+    const texAddressLine = `\\href{mailto:${data.site.email.replace(
+      "..",
+      "@"
+    )}}{${data.site.email.replace("..", "@")}}
     {\\hspace{0.1em}\\textbullet\\hspace{0.1em}}
     \\href{${data.site.url}}{${data.site.url.replace(/(^\w+:|^)\/\//, "")}} 
     {\\hspace{0.1em}\\textbullet\\hspace{0.1em}}

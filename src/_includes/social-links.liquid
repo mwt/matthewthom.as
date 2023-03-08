@@ -314,7 +314,9 @@
       </svg>
     </a>
     <script>
-        {%- include "email-obs.js" -%}
+      const refEmail = document.getElementById("mlink"); // find the email link
+      refEmail.href = refEmail.href.replace("..", "@"); // replace email link
+      refEmail.dataset["title"] = refEmail.dataset["title"].replace("..", "@"); // replace email hover
     </script>
   {% endif %}
 </div>
