@@ -11,7 +11,7 @@ curl -sS "https://docs.matthewthom.as/website-fonts.tar.gz" | tar -xzC "./" &&
 
 # Generate the cv.pdf
 cd "./latex-temp"
-./vtex/bin/x86_64-linux/lualatex -shell-escape -interaction nonstopmode -halt-on-error -file-line-error cv.tex
+../vtex/bin/x86_64-linux/lualatex -shell-escape -interaction nonstopmode -halt-on-error -file-line-error cv.tex
 cd -
 
 # Move the cv.pdf to the dist folder
