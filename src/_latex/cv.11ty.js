@@ -5,13 +5,13 @@
 // 2. Helper functions
 // 3. Section functions and strings
 // 4. Generate the tex file
-// 5. Compile the tex file with LuaLaTeX
+// 5. Dump tex file to disk
 // 6. Export texCV class
 ///////////////////////////////////////////////////////////////////////////////
 
 const fs = require("fs");
-var path = require("path");
-const spawn = require("child_process").spawn;
+// var path = require("path");
+// const spawn = require("child_process").spawn;
 
 class texCV {
   data() {
