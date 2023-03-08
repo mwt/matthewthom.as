@@ -16,7 +16,7 @@ const spawn = require("child_process").spawn;
 class texCV {
   data() {
     return {
-      permalink: "/cv.pdf",
+      permalink: "/assets/pdfs/cv.pdf",
     };
   }
 
