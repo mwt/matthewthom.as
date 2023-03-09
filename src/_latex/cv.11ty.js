@@ -5,13 +5,12 @@
 // 2. Helper functions
 // 3. Section functions and strings
 // 4. Generate the tex file
-// 5. Dump tex file to disk
+// 5. Compile the tex file with LuaLaTeX
 // 6. Export texCV class
 ///////////////////////////////////////////////////////////////////////////////
 
 const fs = require("fs");
-// var path = require("path");
-// const spawn = require("child_process").spawn;
+const exec = require("child_process").exec;
 
 class texCV {
   data() {
@@ -270,56 +269,50 @@ ${texReferences(data.cv.references)}
 `;
 
     ///////////////////////////////////////////////////////////////////////////
-    // 5. Dump tex file to disk
+    // 5. Compile the tex file with LuaLaTeX
     ///////////////////////////////////////////////////////////////////////////
+
+    // Final tex string
+    const texStrng = `${await texPreamble}\n${texBody}\n${await texPostamble}`;
 
     // Create a temporary directory if it doesn't exist and write the tex file
-    // We rely on vercel-build.sh to run the LuaLaTeX compiler
-    // (this means that the CV pdf is not available in development mode, but
-    //  dev builds are faster as a result)
-    const texStrng = `${await texPreamble}\n${texBody}\n${await texPostamble}`;
     fs.mkdir("./latex-temp", { recursive: true }, (err) => {
       if (err) throw err;
+
+      // Write the tex file to the temp directory (using stdin is unstable)
       fs.writeFile("./latex-temp/cv.tex", texStrng, (err) => {
         if (err) throw err;
+
+        // Run LuaLaTeX if the platform is Linux (Windows and Mac are not supported)
+        // If not Linux, there will be no pdf
+        if (process.platform === "linux") {
+          // Run LuaLaTeX in the tmp directory to generate the pdf in temp dir
+          exec(
+            "../vtex/bin/x86_64-linux/lualatex -shell-escape -interaction nonstopmode -halt-on-error -file-line-error cv.tex",
+            {
+              cwd: "./latex-temp",
+            },
+            (err, stdout, stderr) => {
+              if (err) {
+                console.log(stdout);
+                if (err) throw err;
+              }
+              console.log("[11ty] cv.pdf generated using LuaLaTeX");
+
+              // Move the pdf to the dist folder
+              fs.rename(
+                "./latex-temp/cv.pdf",
+                "./dist/assets/pdfs/cv.pdf",
+                (err) => {
+                  if (err) throw err;
+                  console.log("[11ty] cv.pdf moved to dist folder");
+                }
+              );
+            }
+          );
+        }
       });
     });
-
-    /*/////////////////////////////////////////////////////////////////////////
-    // 5. Compile the tex file with LuaLaTeX
-    //   (below code works locally but not on Vercel; use vercel-build.sh)
-    ///////////////////////////////////////////////////////////////////////////
-
-    // Create a temporary directory if it doesn't exist
-    if (!fs.existsSync("./latex-temp")) {
-      fs.mkdirSync("./latex-temp");
-    }
-
-    // Run LuaLaTeX in the tmp directory
-    // We use LuaLaTeX because the markdown package is written in Lua
-    const lualatexProcess = spawn(path.resolve("./latex-temp/vtex/bin/x86_64-linux/lualatex"), ["--jobname=cv"], {
-      cwd: "./latex-temp",
-    });
-
-    // Write the tex file to the stdin of the LuaLaTeX process
-    lualatexProcess.stdin.write(`${await texPreamble}\n${texBody}\n${await texPostamble}`);
-    lualatexProcess.stdin.end();
-
-    // When the process exits, move the PDF to the dist folder
-    lualatexProcess.on("close", (code) => {
-      if (code !== 0) {
-        console.log(`LuaLaTeX process exited with code ${code}.`);
-        return;
-      } else {
-        fs.rename("./latex-temp/cv.pdf", "./dist/cv.pdf", (err) => {
-          if (err) throw err;
-          console.log(
-            `CV moved to dist folder (LuaLaTeX exited with ${code}).`
-          );
-        });
-      }
-    });
-    /////////////////////////////////////////////////////////////////////////*/
 
     // Don't actually return anything (LuaLaTeX generates the PDF)
     return;
