@@ -15,42 +15,6 @@
   },
   "spicture": "assets/static/screen-shot.png",
   "url": "https://www.matthewthom.as",
-  "permalink": "/:title/",
-  "collections": {
-    "posts": {
-      "output": true,
-      "permalink": "/blog/:title/"
-    },
-    "papers": {
-      "output": true,
-      "permalink": "/papers/:title/"
-    }
-  },
-  "defaults": [
-    {
-      "scope": {
-        "path": "",
-        "type": "posts"
-      },
-      "values": {
-        "layout": "post"
-      }
-    },
-    {
-      "scope": {
-        "path": "",
-        "type": "papers"
-      },
-      "values": {
-        "layout": "paper"
-      }
-    }
-  ],
-  "markdown": "kramdown",
-  "kramdown": {
-    "math_engine": "katex",
-    "input": "kramdown"
-  },
   "utterances": {
     "repo": "mwt/matthewthom.as",
     "issue-term": "pathname",
@@ -86,50 +50,15 @@
       "https://scholar.social/@mwt",
       "https://maly.io/@mwt",
       "https://sites.northwestern.edu/mthomas/",
+      "https://sites.northwestern.edu/mtp3384/",
       "https://github.uconn.edu/pages/mwt11003/",
       "https://alternativeto.net/user/mwt/",
-      "https://learnawesome.org/users/7eab8e83-mwt3",
-      "https://www.quora.com/profile/Matthew-W.-Thomas",
-      "https://twitter.com/MatthewWThomas",
       "https://devmesh.intel.com/users/matthew-thomas"
     ]
   },
   "width": "large",
-  "pagination": {
-    "enabled": true,
-    "sort_reverse": true,
-    "title": ":title",
-    "per_page": 5,
-    "permalink": "/:num/"
-  },
   "post-advance-links": [
     "blog"
   ],
-  "animation": true,
-  "plugins": [
-    "jekyll-seo-tag",
-    "jekyll-gist",
-    "jemoji",
-    "jekyll-sitemap",
-    "jekyll-paginate-v2"
-  ],
-  "jekyll-mentions": {
-    "base_url": "https://github.com"
-  },
-  "sass": {
-    "style": "compressed",
-    "sourcemap": "never"
-  },
-  "exclude": [
-    "vendor",
-    "README.md",
-    "Gemfile",
-    "Gemfile.lock",
-    "FAQ.md",
-    "vtex",
-    "LICENSE",
-    "CNAME",
-    "*.py",
-    "vercel.json"
-  ]
+  "animation": true
 }
