@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/mwt/matthewthomas-11ty#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0"
+    "@11ty/eleventy": "^2.0.0",
+    "vercel": "^28.16.15"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^3.0.0",

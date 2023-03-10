@@ -30,6 +30,10 @@
       "destination": "/citations.txt"
     },
     {
+      "source": "/favicon.ico",
+      "destination": "/assets/static/favicon/favicon.ico"
+    },
+    {
       "source": "/gh/:match*/",
       "destination": "https://mwt.github.io/:match*/index.html"
     },

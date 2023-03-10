@@ -110,3 +110,4 @@ static/fonts
 # LaTeX
 /latex-temp/
 /vtex/
+.vercel
