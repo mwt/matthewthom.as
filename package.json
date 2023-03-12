@@ -25,6 +25,9 @@
   "dependencies": {
     "@11ty/eleventy-img": "^3.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@traptitech/markdown-it-katex": "^3.6.0",
     "cssnano": "^5.1.14",
     "eleventy-sass": "^2.1.7",

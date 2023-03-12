@@ -20,6 +20,14 @@ const htmlmin = require("html-minifier");
 const postcss = require("postcss");
 const cssnano = require("cssnano");
 
+// Font Awesome
+const fontawesome = require("@fortawesome/fontawesome-svg-core");
+const faBrands = require("@fortawesome/free-brands-svg-icons").fab;
+const faSolids = require("@fortawesome/free-solid-svg-icons").fas;
+
+// Load all brand icons for later use
+fontawesome.library.add(faBrands, faSolids);
+
 module.exports = function (eleventyConfig) {
   // Set passthrough folders
   eleventyConfig.addPassthroughCopy({ static: "assets/static" });
@@ -108,6 +116,36 @@ module.exports = function (eleventyConfig) {
     pluginRss.convertHtmlToAbsoluteUrls
   );
 
+  // Font Awesome single icon shortcode
+  eleventyConfig.addAsyncShortcode("fontawesome_icon", (prefix, iconName) => {
+    const icon = fontawesome.icon({ prefix, iconName });
+    return icon.html[0];
+  });
+
+  // Font Awesome filter for generating a sprite sheet
+  eleventyConfig.addFilter("fontawesome_sprites", (iconList) => {
+    // Get the first icon in the list
+    iconList = iconList.slice(0); // Make a copy of the list
+    firstIcon = iconList.shift();
+    var spritesAbstract = fontawesome.icon(
+      firstIcon,
+      { symbol: `icon-${firstIcon.iconName}` }
+    ).abstract;
+
+    // Add the rest of the icons (shifted list no longer has first icon)
+    iconList.forEach((subIcon) => {
+      const iconAbstract = fontawesome.icon(
+        subIcon,
+        { symbol: `icon-${subIcon.iconName}` }
+      ).abstract;
+      // We inject the "children" into the svg tag of the first icon
+      spritesAbstract[0].children.push(...iconAbstract[0].children);
+    });
+
+    return fontawesome.toHtml(spritesAbstract[0]);
+  });
+
+  // Add collections
   eleventyConfig.addCollection("posts", (collection) => {
     return collection.getFilteredByGlob("src/_posts/*.md");
   });

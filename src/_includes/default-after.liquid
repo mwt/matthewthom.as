@@ -1,7 +1,8 @@
       {% include "footer" %}
     </div>
 
-    {% include "icons" %}
+    {{ fontawesome-icons | fontawesome_sprites }}
+    {% include 'extra-icons' %}
 
   </body>
 </html>
