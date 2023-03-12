@@ -1,6 +1,6 @@
 [
     {
-        "school": "Northwestern University",
+        "name": "Northwestern University",
         "location": "Evanston, IL",
         "degrees": [
             {
@@ -16,7 +16,7 @@
         ]
     },
     {
-        "school": "Williams College",
+        "name": "Williams College",
         "location": "Williamstown, MA",
         "degrees": [
             {

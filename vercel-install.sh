@@ -6,7 +6,7 @@
 ###############################################################################
 
 # Install node modules (incl. 11ty)
-npm install
+NODE_ENV="production" npm install
 
 # Get and install vtex (for cv.pdf)
 curl -sSL "https://github.com/mwt/vtex/releases/download/v2.3/vtex.tar.gz" | tar -xzC "./"

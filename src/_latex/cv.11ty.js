@@ -40,7 +40,11 @@ class texCV {
 
     // Get year from date string
     function getYear(dateString) {
-      return new Date(dateString).getFullYear();
+      if (dateString === "Present") {
+        return dateString;
+      } else {
+        return new Date(dateString).getFullYear();
+      }
     }
 
     // Sort in reverse by date key (date can be a string)
@@ -77,18 +81,34 @@ class texCV {
       data.site.github
     }}`;
 
+    // Employment function
+    const texEmployment = (employment) => {
+      return employment
+        .map((employer) => {
+          const positions = employer.positions
+            .map((position) => {
+              return `\\cvsubsubsection{${position.title}} \\dateright{${getYear(
+                position.start
+              )}--${getYear(position.end)}}`;
+            })
+            .join("\n\n");
+          return `\\cvsubsection{${employer.name}}\n\n${positions}`;
+        })
+        .join("\n\n");
+    };
+
     // Education function
     const texEducation = (education) => {
       return education
-        .map(function (edu) {
-          const degrees = edu.degrees
-            .map(function (degree) {
-              return `\\cvsubsubsection{${
-                degree.title
-              }} \\dateright{${getYear(degree.start)}--${getYear(degree.end)}}`;
+        .map((school) => {
+          const degrees = school.degrees
+            .map((degree) => {
+              return `\\cvsubsubsection{${degree.title}} \\dateright{${getYear(
+                degree.start
+              )}--${getYear(degree.end)}}`;
             })
             .join("\n\n");
-          return `\\cvsubsection{${edu.school}}\n\n${degrees}`;
+          return `\\cvsubsection{${school.name}}\n\n${degrees}`;
         })
         .join("\n\n");
     };
@@ -211,6 +231,11 @@ class texCV {
   \\\\
   \\vspace{-1mm}
 \\end{center}
+
+%%% Employment
+\\cvsection{Employment}
+
+${texEmployment(data.cv.employment)}
 
 %%% Education
 \\cvsection{Education}
