@@ -58,10 +58,18 @@ module.exports = function (eleventyConfig) {
     postcss: postcss([cssnano]),
   });
 
-  // Minify HTML
-  eleventyConfig.addTransform("htmlmin", function (content) {
+  // Minify HTML and add table wrappers
+  eleventyConfig.addTransform("htmlpost", function (content) {
     // Prior to Eleventy 2.0: use this.outputPath instead
     if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+      // Add table wrappers
+      content = content.replaceAll(
+        /<table([^>]*)>/g,
+        '<div class="table-wrapper"><table$1>'
+      );
+      content = content.replaceAll("</table>", "</table></div>");
+
+      // Minify HTML
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
@@ -127,17 +135,15 @@ module.exports = function (eleventyConfig) {
     // Get the first icon in the list
     iconList = iconList.slice(0); // Make a copy of the list
     firstIcon = iconList.shift();
-    var spritesAbstract = fontawesome.icon(
-      firstIcon,
-      { symbol: `icon-${firstIcon.iconName}` }
-    ).abstract;
+    var spritesAbstract = fontawesome.icon(firstIcon, {
+      symbol: `icon-${firstIcon.iconName}`,
+    }).abstract;
 
     // Add the rest of the icons (shifted list no longer has first icon)
     iconList.forEach((subIcon) => {
-      const iconAbstract = fontawesome.icon(
-        subIcon,
-        { symbol: `icon-${subIcon.iconName}` }
-      ).abstract;
+      const iconAbstract = fontawesome.icon(subIcon, {
+        symbol: `icon-${subIcon.iconName}`,
+      }).abstract;
       // We inject the "children" into the svg tag of the first icon
       spritesAbstract[0].children.push(...iconAbstract[0].children);
     });
