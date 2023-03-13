@@ -1,0 +1,11 @@
+[
+    {"prefix": "fab", "iconName" : "mastodon"},
+    {"prefix": "fab", "iconName" : "linkedin"},
+    {"prefix": "fab", "iconName" : "github"},
+    {"prefix": "fas", "iconName" : "envelope"},
+    {"prefix": "fas", "iconName" : "file-pdf"},
+    {"prefix": "fas", "iconName" : "file-powerpoint"},
+    {"prefix": "fas", "iconName" : "link"},
+    {"prefix": "fas", "iconName" : "download"},
+    {"prefix": "fas", "iconName" : "rss"}
+]
