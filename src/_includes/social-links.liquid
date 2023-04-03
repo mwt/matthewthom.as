@@ -91,7 +91,7 @@
       <a
         class="social-link u-url"
         aria-label="mastodon, opens in new tab"
-        data-title="{{ mst.username | escape }}@{{ mst.instance | escape}}"
+        data-title="@{{ mst.username | escape }}@{{ mst.instance | escape}}"
         href="https://{{ mst.instance | cgi_escape | escape}}/@{{mst.username}}"
         target="_blank"
         rel="me">
@@ -287,13 +287,27 @@
     </a>
   {% endif %}
 
+  {% if site.phone %}
+    <a
+      id="xlink"
+      aria-label="phone"
+      class="social-link"
+      data-title="{{ site.phone }}"
+      href="tel:{{ site.phone }}">
+      <svg class="icon icon-phone">
+        <title>phone</title>
+        <use xlink:href="#icon-square-phone"></use>
+      </svg>
+    </a>
+  {% endif %}
+
   {% if site.xmpp %}
     <a
       id="xlink"
       aria-label="xmpp"
       class="social-link"
-      data-title="#"
-      href="xmpp:#">
+      data-title="{{ site.xmpp }}"
+      href="xmpp:{{ site.xmpp }}">
       <svg class="icon icon-xmpp">
         <title>xmpp</title>
         <use xlink:href="#icon-xmpp"></use>
