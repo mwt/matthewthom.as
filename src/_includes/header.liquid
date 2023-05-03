@@ -4,13 +4,16 @@
 <header class="header{% if page.url == '/' %} animated{% endif %} h-card">
   <span class="link">
     <img
-      height="200px"
-      width="200px"
+      height="200"
+      width="200"
       class="headshot u-photo"
       alt="{{ site.title }}"
       srcset="
     {%- for img in images -%}
-      {{ img.srcset }},
+      {{ img.srcset }}
+      {%- unless forloop.last -%}
+        ,
+      {%- endunless -%}
     {%- endfor -%}
     "
     src="{{ deafult_image[0].url | url }}"
