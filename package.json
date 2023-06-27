@@ -19,23 +19,23 @@
   },
   "homepage": "https://github.com/mwt/matthewthomas-11ty#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "vercel": "^28.20.0"
+    "vercel": "^24.2.4"
   },
   "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@traptitech/markdown-it-katex": "^3.6.0",
-    "cssnano": "^5.1.15",
-    "eleventy-sass": "^2.2.1",
+    "cssnano": "^6.0.1",
+    "eleventy-sass": "^2.2.3",
     "fast-glob": "^3.2.12",
     "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-footnote": "^3.0.3",
-    "postcss": "^8.4.23"
+    "postcss": "^8.4.24"
   }
 }
