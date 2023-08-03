@@ -120,11 +120,15 @@ References Section
 {%- endcomment -%}<h2>References</h2>
 {%- include "list", list-data: cv.references -%}
 
-<script>
-  const refEmails = document.getElementsByClassName("anti-bot-mail");
-  for (refEmail of refEmails) {
-    refEmail.href = refEmail.href.replace("..", "@");
-  }
+{%- comment -%}
+Script to replace .. with @ in mailto links
+{%- endcomment -%}<script>
+  (function() {
+    const antiBotMails = document.getElementsByClassName("anti-bot-mail");
+    for (let antiBotMail of antiBotMails) {
+      antiBotMail.href = antiBotMail.href.replace("..", "@");
+    }
+  })();
 </script>
 
 {{ content }}
