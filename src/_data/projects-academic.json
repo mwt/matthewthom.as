@@ -16,5 +16,11 @@
     "url": "https://sites.northwestern.edu/iac879/2021/10/01/rart-package/",
     "description": "R package for Approximate Randomization Tests with a Small Number of Clusters",
     "github": "https://github.com/mwt/rART"
+  },
+  {
+    "title": "Inference in Models Defined by Moment Inequalities",
+    "url": "https://mwt.github.io/guide-inequalities/",
+    "description": "R, Python and MATLAB code for for \"A User's Guide for Inference in Models Defined by Moment Inequalities\"",
+    "github": "https://github.com/mwt/guide-inequalities"
   }
 ]
