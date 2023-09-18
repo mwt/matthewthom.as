@@ -5,12 +5,14 @@ title: "Home"
 <hr>
 <p
   class="content">
-  I'm Matthew W. Thomas, an Economics PhD candidate at Northwestern University. My research covers a broad range of topics in microeconomic theory including auctions, robust design, discrimination, contests, and financial markets. This page is here to share my
+  I'm Matthew W. Thomas, an Economist at the Federal Trade Commission with a PhD in Economics from Northwestern University. My research covers a broad range of topics in microeconomic theory including auctions, robust design, discrimination, contests, and financial markets. This page is here to share my
   <a
-    href="#academic">academic</a>
+    href="#research">research</a>,
+  <a
+    href="#professional">professional</a>,
   and
   <a
-    href="#non-academic">non-academic</a>
+    href="#personal">personal</a>
   projects.
 </p>
 <hr>
@@ -20,7 +22,7 @@ title: "Home"
 {%- assign notes = collections.notes | flatten_pages -%}
 
 <div
-  id="academic"
+  id="research"
   class="anchor">
   {%- include "list", list-title: "Publications", list-class: "papers", list-data: published_papers -%}
   <hr>
@@ -33,10 +35,15 @@ title: "Home"
 </div>
 
 <div
-  id="non-academic"
+  id="professional"
   class="anchor">
   {%- include "list", list-title: "Professional Projects", list-data: projects-professional -%}
   <hr>
+</div>
+
+<div
+  id="personal"
+  class="anchor">
   {%- include "list", list-title: "Personal Projects", list-data: projects-personal -%}
   <hr>
   {%- include "list", list-title: "Code Snippets", list-data: projects-gists -%}
