@@ -1,11 +1,11 @@
 ---
 title: "Contest Design with Interim Types"
-date: "2021-08-18"
+date: "2024-01-04"
 last_modified_at: "2023-12-27"
 id_key: "anocon"
 authors:
  - name: "Matthew W. Thomas"
-year: 2023
+year: 2024
 description: "What is the revenue maximizing contest with heterogenous agents?"
 shortlink: "https://mwt.me/anocon"
 pdf: "/assets/pdfs/papers/contest-design-interim-types.pdf"
