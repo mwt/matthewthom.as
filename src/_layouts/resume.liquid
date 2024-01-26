@@ -44,7 +44,12 @@ Education section
 {%- comment -%}
 Papers section
 {%- endcomment -%}
-{%- assign published_papers = collections.papers | where: "accepted" | flatten_pages | sort: "order", "last" -%}
+{%- comment -%}
+Combine published and accepted papers into a single "published_papers" list.
+{%- endcomment -%}
+{%- assign accepted_papers = collections.papers | where: "accepted" | flatten_pages | sort: "order", "last" -%}
+{%- assign published_papers = collections.papers | where: "published" | flatten_pages | sort: "order", "last" | concat: accepted_papers -%}
+
 {%- assign working_papers = collections.papers | where_not: "accepted" | flatten_pages | sort: "order", "last" -%}
 
 {%- include "list", list-title: "Publications", list-class: "papers", list-data: published_papers -%}
