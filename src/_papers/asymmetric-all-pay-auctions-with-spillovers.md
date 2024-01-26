@@ -7,10 +7,13 @@ authors:
  - name: "Maria Betto"
    url: "https://mariabetto.com"
  - name: "Matthew W. Thomas"
-year: 2023
-description: "What happens when the prize in an all-pay auction depends on players' bids?"
+year: 2024
 journal: "Theoretical Economics"
-accepted: true
+volume: 19
+number: 1
+pages: [169, 206]
+description: "What happens when the prize in an all-pay auction depends on players' bids?"
+published: true
 pdf: "/assets/pdfs/papers/asymmetric-all-pay-auctions-with-spillovers.pdf"
 shortlink: "https://mwt.me/spilloverapa"
 jmp: true
