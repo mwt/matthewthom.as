@@ -87,9 +87,11 @@ class texCV {
         .map((employer) => {
           const positions = employer.positions
             .map((position) => {
-              return `\\cvsubsubsection{${position.title}} \\dateright{${getYear(
-                position.start
-              )}--${getYear(position.end)}}`;
+              return `\\cvsubsubsection{${
+                position.title
+              }} \\dateright{${getYear(position.start)}--${getYear(
+                position.end
+              )}}`;
             })
             .join("\n\n");
           return `\\cvsubsection{${employer.name}}\n\n${positions}`;
@@ -131,8 +133,7 @@ class texCV {
           const journalString = (() => {
             if (paper.data.journal && paper.data.published) {
               return `\n\n\\cvsubsubsection{${paper.data.journal} ${paper.data.year}}`;
-            }
-            if (paper.data.journal && paper.data.accepted) {
+            } else if (paper.data.journal && paper.data.accepted) {
               return `\n\n\\cvsubsubsection{Accepted at ${paper.data.journal}}`;
             } else if (paper.data.journal && paper.data.rnr) {
               return `\n\n\\cvsubsubsection{R\\&R at ${paper.data.journal}}`;
@@ -245,12 +246,21 @@ ${texEducation(data.cv.education)}
 %%% Publications
 \\cvsection{Publications}
 
-${texPapers(this.where(data.collections.papers, "accepted"))}
+${texPapers(
+  this.where(data.collections.papers, "published").concat(
+    this.where(data.collections.papers, "accepted")
+  )
+)}
 
 %%% Working papers
 \\cvsection{Working Papers}
 
-${texPapers(this.where_not(data.collections.papers, "accepted"))}
+${texPapers(
+  this.where_not(
+    this.where_not(data.collections.papers, "published"),
+    "accepted"
+  )
+)}
 
 %%% Presentations
 \\cvsection{Presentations}\\vspace{1.618ex}
