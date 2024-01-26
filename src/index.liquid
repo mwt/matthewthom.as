@@ -22,7 +22,7 @@ Combine published and accepted papers into a single "published_papers" list.
 {%- assign accepted_papers = collections.papers | where: "accepted" | flatten_pages | sort: "order", "last" -%}
 {%- assign published_papers = collections.papers | where: "published" | flatten_pages | sort: "order", "last" | concat: accepted_papers -%}
 
-{%- assign working_papers = collections.papers | where_not: "accepted" | flatten_pages | sort: "order", "last" -%}
+{%- assign working_papers = collections.papers | where_not: "accepted" | where_not: "published" | flatten_pages | sort: "order", "last" -%}
 {%- assign notes = collections.notes | flatten_pages -%}
 
 <div
