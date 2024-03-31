@@ -29,13 +29,13 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@traptitech/markdown-it-katex": "^3.6.0",
-    "cssnano": "^6.0.1",
+    "cssnano": "^6.1.2",
     "eleventy-sass": "^2.2.4",
     "fast-glob": "^3.3.2",
     "html-minifier": "^4.0.0",
     "markdown-it": "^13.0.2",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-footnote": "^3.0.3",
-    "postcss": "^8.4.32"
+    "postcss": "^8.4.38"
   }
 }
