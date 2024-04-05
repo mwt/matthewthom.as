@@ -169,7 +169,7 @@ and
 $$
     \begin{aligned}
         \frac{1}{2} - E[s_2]  &\leq E[p(s_1, s_2) - s_1] \\
-        E[s_2] &\geq E[s_1] + \left(E[p(s_2, s_1)] - \frac{1}{2}\right)
+        E[s_2] &\geq E[s_1] - \left(E[p(s_2, s_1)] - \frac{1}{2}\right)
     \end{aligned}
 $$
 
