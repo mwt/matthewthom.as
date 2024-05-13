@@ -1,9 +1,15 @@
 [
   {
+    "title": "Number Drop",
+    "url": "https://github.com/mwt/number-drop",
+    "description": "Minimal form to collect phone numbers",
+    "github": "https://github.com/mwt/number-drop"
+  },
+  {
     "title": "MWT's Share",
     "url": "https://mwt.sh",
     "description": "Send files and shorten links",
-    "github": "https://github.com/mwt/Apache-0x0"
+    "github": "https://github.com/mwt/mwt-share-php"
   },
   {
     "title": "vTeX",

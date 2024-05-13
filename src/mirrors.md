@@ -7,7 +7,7 @@ nocomments: true
 
 I maintain a few public repository mirrors for free software projects that I make frequent use of. This mirror was previously sponsored by Fastly CDN. However, the bandwidth costs exceeded the $1000/month that was made available to us. The mirror is now hosted behind a Cloudflare pro plan. Each edge node connects to one of four redundant origins. There is one server pair in Western Europe and another pair in New York. Files are served from the region closest to you. This ensures quick delivery of all files globally. You can [check your assigned origin using this link](https://mirror.mwt.me/mirror-heartbeat.txt). The mirror supports both IPv4 and IPv6 as well as http and https. Each of the four servers has an independent 10Gb/s connection.
 
-Contact me if you have other projects that you'd like to see mirrored. You can help maintain the financial sustainability of the project by [making a tax deductible donation](https://opencollective.com/mirrors). Anything you can pitch in helps keep the service up and running. Public contributors will get a shout out on this page.
+Contact me if you have other projects that you'd like to see mirrored. You can help maintain the financial sustainability of the project by [making a tax deductible donation](https://hcb.hackclub.com/donations/start/econ). Anything you can pitch in helps keep the service up and running. Public contributors will get a shout out on this page.
 
 The following software is hosted here:
 
