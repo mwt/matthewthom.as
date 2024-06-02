@@ -11,13 +11,15 @@ Contact me if you have other projects that you'd like to see mirrored. You can h
 
 The following software is hosted here:
 
-- [TeX/CTAN](#texctan)
-- [Termux](#termux)
-- [Zotero](#zotero)
-- [GitHub Desktop](#github-desktop)
-- [Rclone](#rclone)
-- [RStudio](#rstudio)
-- [Zoom](#zoom)
+| Usage section                     | Direct link to mirror                     |
+| --------------------------------- | ----------------------------------------- |
+| [TeX/CTAN](#texctan)              | <https://mirror.mwt.me/ctan/>             |
+| [Termux](#termux)                 | <https://mirror.mwt.me/termux/>           |
+| [Zotero](#zotero)                 | <https://mirror.mwt.me/zotero/>           |
+| [GitHub Desktop](#github-desktop) | <https://mirror.mwt.me/shiftkey-desktop/> |
+| [Rclone](#rclone)                 | <https://mirror.mwt.me/rclone/>           |
+| [RStudio](#rstudio)               | <https://mirror.mwt.me/rstudio/>          |
+| [Zoom](#zoom)                     | <https://mirror.mwt.me/zoom/>             |
 
 ---
 
@@ -30,7 +32,7 @@ I have an official registered [CTAN](https://mirror.ctan.org) mirror for downloa
 [Termux](https://termux.com/) is a terminal emulator and Linux environment for Android. I have an official registered repository which is updated every 6 hours and contains all Termux packages. The repository can be selected by running `apt edit-sources` in Termux and adding one or more of the following lines to your configuration.
 
 | Repository                                | sources.list entry                                  |
-| :---------------------------------------- | :-------------------------------------------------- |
+| ----------------------------------------- | --------------------------------------------------- |
 | [Main](https://mirror.mwt.me/termux/main) | `deb https://mirror.mwt.me/termux/main stable main` |
 | [Root](https://mirror.mwt.me/termux/root) | `deb https://mirror.mwt.me/termux/root root stable` |
 | [X11](https://mirror.mwt.me/termux/x11)   | `deb https://mirror.mwt.me/termux/x11 x11 main`     |
