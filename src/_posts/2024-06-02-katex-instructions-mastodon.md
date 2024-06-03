@@ -8,7 +8,7 @@ use_math: false
 description: "Guide for KaTeX math formatting in Mastodon"
 ---
 
-This is a short guide to document my experience in enabling TeX support in Mastodon by injecting KaTeX into the interface. I use this setup on <https://econtwitter.net>. This differs from my the [Mathsodon fork](/blog/mathstodon-instructions/) I used previously in that it does not require direct modification of the Mastodon code. I instead inject KaTeX into the interface using nginx at the proxy level. As a result, we can install usual Mastodon updates without breaking this feature. I do not cover the installation of Mastodon itself in this guide.
+This is a short guide to document my experience in enabling TeX support in Mastodon by injecting KaTeX into the interface. I use this setup on <https://econtwitter.net>. This differs from the [Mathsodon fork](/blog/mathstodon-instructions/) I used previously in that it does not require direct modification of the Mastodon code. I instead inject KaTeX into the interface using nginx at the proxy level. As a result, we can install Mastodon updates without breaking this feature. I do not cover the installation of Mastodon itself in this guide.
 
 You can think of this as similar to a userscript or browser extension, but automatically applied to all users of your instance.
 
