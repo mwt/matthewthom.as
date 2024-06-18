@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/mwt/matthewthomas-11ty#readme",
   "devDependencies": {
-    "vercel": "^34.1.13"
+    "vercel": "^34.2.7"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -29,7 +29,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@traptitech/markdown-it-katex": "^3.6.0",
-    "cssnano": "^7.0.1",
+    "cssnano": "^7.0.2",
     "eleventy-sass": "^2.2.4",
     "fast-glob": "^3.3.2",
     "html-minifier": "^4.0.0",
