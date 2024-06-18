@@ -76,7 +76,7 @@
     {% if site.utterances %}
       {%- unless nocomments -%}
         {%- assign issue-term = title | prepend: 'Comments: ' -%}
-        {% include "utterances", utterances-issue-term=issue-term %}
+        {% include "utterances", utterances-issue-term: issue-term %}
       {%- endunless -%}
     {% endif %}
 
