@@ -14,6 +14,7 @@ const markdownItFootnote = require("markdown-it-footnote");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const eleventyImage = require("@11ty/eleventy-img");
 const eleventySass = require("eleventy-sass");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // Postprocessing
 const htmlmin = require("html-minifier");
@@ -57,6 +58,9 @@ module.exports = function (eleventyConfig) {
     },
     postcss: postcss([cssnano]),
   });
+
+  // Syntax highlighting
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   // Minify HTML and add table wrappers
   eleventyConfig.addTransform("htmlpost", function (content) {
