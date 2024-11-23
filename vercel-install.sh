@@ -9,4 +9,4 @@
 NODE_ENV="production" npm install
 
 # Get and install vtex (for cv.pdf)
-curl -sSL "https://github.com/mwt/vtex/releases/download/v2.4/vtex.tar.gz" | tar -xzC "./"
+curl -sSL "https://github.com/mwt/vtex/releases/download/v3.0/vtex.tar.gz" | tar -xzC "./"
