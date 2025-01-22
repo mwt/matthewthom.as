@@ -5,7 +5,7 @@
 #
 ##
 
-ZONE_ID=""
+ZONE_ID="3243289"
 
 # Deploy
 #
