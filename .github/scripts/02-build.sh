@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 ###############################################################################
 # This script is used by Vercel build the website into the ./dist folder.

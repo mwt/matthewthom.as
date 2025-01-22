@@ -1,0 +1,29 @@
+name: BunnyCDN Deploy
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup lftp
+        run: sudo apt-get install -y lftp
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+      - name: Install dependencies
+        run: .github/scripts/01-install.sh
+      - name: Build site
+        run: .github/scripts/02-build.sh
+      - name: Deploy
+        run: .github/scripts/03-deploy.sh "${{ secrets.BUNNY_API_KEY }}" "${{ secrets.BUNNY_FTP_PASS }}"
