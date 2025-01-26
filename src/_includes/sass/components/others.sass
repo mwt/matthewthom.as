@@ -1,12 +1,15 @@
+@use "sass:math"
+@use "variables"
+
 .evidence
-    background-color: $yellow
-    color: $beta
+    background-color: variables.$yellow
+    color: variables.$beta
 
 .star
     > .title
         width: auto !important
         display: inline
-        background-color: $yellow
+        background-color: variables.$yellow
 
 .twitter-tweet
     margin: 10px auto
@@ -25,7 +28,7 @@
     min-width: 130%
     margin: math.div(50em,16) 0 math.div(50em,16) -15%
 
-    @media #{$notmd}
+    @media #{variables.$notmd}
         min-width: 114%
         margin: math.div(20em,16) 0 math.div(20em,16) -7%
 

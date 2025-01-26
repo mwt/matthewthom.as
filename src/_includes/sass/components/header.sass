@@ -1,10 +1,13 @@
+@use "sass:math"
+@use "variables"
+
 .topblock
     position: absolute
     right: 0
     top: 0
     width: 100%
     padding-bottom: 250px
-    background-color: $delta
+    background-color: variables.$delta
 
 .header
     display: block
@@ -32,14 +35,14 @@
     > .title
         font-size: 2.65em
         margin: 0 0 13px
-        color: $beta
+        color: variables.$beta
 
         span
             display: inline-block
 
     > .description
         font: 
-            family: $fontC
+            family: variables.$fontC
             size: 1.15em
         width: 80%
         margin: 0 auto 30px

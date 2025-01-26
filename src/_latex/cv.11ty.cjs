@@ -116,7 +116,7 @@ class texCV {
     };
 
     // Function to generate tex for papers
-    // Relies on paper.template.frontMatter.content which is undocumented!
+    // Can use paper.rawInput instead of undocumented (and removed) paper.template.frontMatter.content as of 3.0.0
     const texPapers = (papers) => {
       return papers
         .map((paper) => {
@@ -143,7 +143,7 @@ class texCV {
           })();
           return `\\cvsubsection{\\href{${data.site.url}${paper.url}}{\`\`${paper.data.title}''}}${withString}${journalString}
 
-\\begin{markdown}${paper.template.frontMatter.content}\\end{markdown}
+\\begin{markdown}${paper.rawInput}\\end{markdown}
           `;
         })
         .join("\n\n");
@@ -214,34 +214,7 @@ class texCV {
     // 4. Generate the tex file (single string template)
     ///////////////////////////////////////////////////////////////////////////
 
-    const texBody = `%%% Make a header for CV with personal data
-\\begin{center}
-  \\headernamestyle{
-    ${data.site.title}
-  }
-  \\\\
-  \\vspace{0.6mm}
-  \\headerpositionstyle{
-    ${data.site.bio}
-  }
-  \\\\
-  \\vspace{0.4mm}
-  \\headeraddressstyle{
-    ${texAddressLine}
-  }
-  \\\\
-  \\vspace{-1mm}
-\\end{center}
-
-%%% Employment
-\\cvsection{Employment}
-
-${texEmployment(data.cv.employment)}
-
-%%% Education
-\\cvsection{Education}
-
-${texEducation(data.cv.education)}
+    const texBody = `
 
 %%% Publications
 \\cvsection{Publications}

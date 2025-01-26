@@ -1,23 +1,28 @@
+@use "sass:color"
+
+@use "sass:math"
+@use "variables"
+
 body, html
     font-size: 100%
 
 body
     line-height: 1
-    font: 1em $fontP
-    color: $alpha
-    @media #{$notmd}
+    font: 1em variables.$fontP
+    color: variables.$alpha
+    @media #{variables.$notmd}
         font-size: math.div(20em,16)
 
 h1, h2, h3, h4
-    font-family: $fontH
-    color: $beta
+    font-family: variables.$fontH
+    color: variables.$beta
     -webkit-font-smoothing: antialiased
     text-rendering: optimizeLegibility
     font-weight: 500
 
 h1
     font-size: 2.5em
-    color: $beta
+    color: variables.$beta
 
 h2
     font-size: 1.7em
@@ -32,12 +37,12 @@ h5
     font-size: 1em
 
 a
-    color: $delta
+    color: variables.$delta
     text-decoration: underline
 
 p, form
     line-height: 1.6em
-    color: $alpha
+    color: variables.$alpha
     font-weight: 400
     margin-bottom: math.div(20em,16)
 
@@ -49,13 +54,13 @@ ul,
 ol
     li
         line-height: 1.5em
-        color: $alpha
+        color: variables.$alpha
 
 img,
 pre,
 iframe
     max-width: 100%
-    border: 1px solid transparentize($alpha,0.6)
+    border: 1px solid color.adjust(variables.$alpha,$alpha: -0.6)
     border-radius: 0.4%
 
 img,
@@ -71,10 +76,10 @@ figcaption
     width: 100%
     text-align: center
     font-size: 0.75em
-    color: $gama
+    color: variables.$gama
     font-weight: 300
 
-    @media #{$notmd}
+    @media #{variables.$notmd}
         font-size: 0.8em
 
 blockquote
@@ -95,7 +100,7 @@ figure.highlight
 code,
 tt
     padding: 1px 0
-    font-family: $fontMonospace
+    font-family: variables.$fontMonospace
     line-height: math.div(20em,12)
     background: #fff
     border-radius: 2px
@@ -108,11 +113,11 @@ pre
     margin: 0 0 1.75em 0
     width: 100%
     padding: 5px 10px
-    font-family: $fontMonospace
+    font-family: variables.$fontMonospace
     line-height: math.div(20em,12)
     overflow: auto
     background: #fff
-    border: 1px solid $epsilon
+    border: 1px solid variables.$epsilon
     border-radius: 2px
 
 .wrapper-normal,
@@ -128,14 +133,14 @@ pre
     max-width: 810px
 
 .content
-    font-family: $fontC
+    font-family: variables.$fontC
     font-variant-numeric: lining-nums
 
 .description
     font:
         weight: 400
         style: italic
-    color: $gama
+    color: variables.$gama
 
 .btn
     border: 1px solid currentColor
@@ -145,5 +150,5 @@ pre
     white-space: nowrap
 
     &:hover
-        color: $yellow
-        background-color: $delta
+        color: variables.$yellow
+        background-color: variables.$delta

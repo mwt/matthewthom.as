@@ -1,3 +1,7 @@
+@use "sass:color"
+
+@use "variables"
+
 .table-wrapper
     display: block
     overflow: auto
@@ -10,11 +14,11 @@ table
     width: 100%
     td, th
         padding: 6px 13px
-        border: 1px solid $epsilon
+        border: 1px solid variables.$epsilon
     th
         font-weight: 600
     tr
         background-color: #fff
-        border-top: 1px solid $gama
+        border-top: 1px solid variables.$gama
         &:nth-child(2n)
-            background-color: lighten($epsilon, 4%)
+            background-color: color.adjust(variables.$epsilon, $lightness: 4%, $space: hsl)

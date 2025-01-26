@@ -1,9 +1,12 @@
+@use "sass:math"
+@use "variables"
+
 .footer-main
-    border-top: 1px solid $epsilon
+    border-top: 1px solid variables.$epsilon
     padding: 40px 0
     margin: 40px 0 0
     font-size: math.div(13em,16)
-    color: $gama
+    color: variables.$gama
     font-weight: 300
     text-align: center
     position: relative
@@ -13,7 +16,7 @@
         content: " "
         width: 7px
         height: 7px
-        border: $epsilon 1px solid
+        border: variables.$epsilon 1px solid
         position: absolute
         top: -5px
         left: 50%
@@ -26,5 +29,5 @@
         padding-left: 10px
 
     > .icon-link
-        color: $gama
+        color: variables.$gama
         margin-left: 0.4em

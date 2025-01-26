@@ -1,3 +1,8 @@
+@use "sass:color"
+
+@use "sass:math"
+@use "variables"
+
 .nav,
 .nav-home
     > .list
@@ -16,17 +21,17 @@
             font-weight: bold
 
             &:hover
-                color: $yellow
+                color: variables.$yellow
 
 .nav
     position: fixed
     right: 0
     top: 0
-    background-color: $delta
+    background-color: variables.$delta
     width: 100%
     z-index: 101
     text-align: right
-    box-shadow: 0 2px 4px transparentize($delta, 0.8)
+    box-shadow: 0 2px 4px color.adjust(variables.$delta, $alpha: -0.8)
 
     > .list
         padding: 0 13px 0

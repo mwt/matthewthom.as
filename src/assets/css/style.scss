@@ -1,31 +1,28 @@
-@use "sass:math";
+//@use "fonts/playfair-display";
+@use "fonts/financier-display";
+//@use "fonts/prospectus-pro";
 
-//@import "fonts/playfair-display";
-@import "fonts/financier-display";
-//@import "fonts/prospectus-pro";
+@use "base/normalize";
+@use "base/syntax";
+@use "base/general";
+@use "base/tables";
+@use "base/helpers";
 
-@import "base/variables";
-@import "base/normalize";
-@import "base/syntax";
-@import "base/general";
-@import "base/tables";
-@import "base/helpers";
+@use "pages/page";
+@use "pages/post";
+//@use "pages/tags";
+@use "pages/resume";
 
-@import "pages/page";
-@import "pages/post";
-//@import "pages/tags";
-@import "pages/resume";
+@use "components/footer";
+@use "components/header";
+@use "components/nav";
+@use "components/list";
+@use "components/icons";
+@use "components/others";
+@use "components/pagination";
+@use "components/social-links";
+@use "components/katex";
+//@use "components/mathjax";
+@use "components/mailchimp";
 
-@import "components/footer";
-@import "components/header";
-@import "components/nav";
-@import "components/list";
-@import "components/icons";
-@import "components/others";
-@import "components/pagination";
-@import "components/social-links";
-@import "components/katex";
-//@import "components/mathjax";
-@import "components/mailchimp";
-
-@import "base/print";
+@use "base/print";

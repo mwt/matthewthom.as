@@ -1,6 +1,10 @@
+@use "sass:color"
+
+@use "variables"
+    
 .resume
     > h2
-        border-bottom: 1px solid $beta
+        border-bottom: 1px solid variables.$beta
         padding-bottom: .3em
 
     > h3
@@ -10,17 +14,17 @@
     #resume-presentations
         p
             display: inline
-            @media #{$notmd}
+            @media #{variables.$notmd}
                 display: block
 
             > em
                 display: none
-                @media #{$notmd}
+                @media #{variables.$notmd}
                     display: inline
 
             > span::after
                 content: ', '
-                @media #{$notmd}
+                @media #{variables.$notmd}
                     content: ''
 
         > p:last-child
@@ -36,11 +40,11 @@
 
             > em
                 display: block
-                color: $alpha
+                color: variables.$alpha
                 font:
                     size: 1rem
-                    family: $fontP
-                @media #{$notmd}
+                    family: variables.$fontP
+                @media #{variables.$notmd}
                     float: right
 
     a.hover-download
@@ -51,7 +55,7 @@
         height: 80px
         padding: 3px 18px
         bottom: 25px
-        background-color: transparentize($delta,0.5)
+        background-color: color.adjust(variables.$delta,$alpha: -0.5)
         border-radius: 5%
         margin-top: -86px
         margin-bottom: -1em
@@ -63,5 +67,5 @@
             width: 100%
 
     &:hover > a.hover-download
-        @media #{$notmd}
+        @media #{variables.$notmd}
             display: block
