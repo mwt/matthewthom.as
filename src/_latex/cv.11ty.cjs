@@ -214,7 +214,34 @@ class texCV {
     // 4. Generate the tex file (single string template)
     ///////////////////////////////////////////////////////////////////////////
 
-    const texBody = `
+    const texBody = `%%% Make a header for CV with personal data
+\\begin{center}
+  \\headernamestyle{
+    ${data.site.title}
+  }
+  \\\\
+  \\vspace{0.6mm}
+  \\headerpositionstyle{
+    ${data.site.bio}
+  }
+  \\\\
+  \\vspace{0.4mm}
+  \\headeraddressstyle{
+    ${texAddressLine}
+  }
+  \\\\
+  \\vspace{-1mm}
+\\end{center}
+
+%%% Employment
+\\cvsection{Employment}
+
+${texEmployment(data.cv.employment)}
+
+%%% Education
+\\cvsection{Education}
+
+${texEducation(data.cv.education)}
 
 %%% Publications
 \\cvsection{Publications}
