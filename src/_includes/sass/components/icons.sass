@@ -1,3 +1,6 @@
+@use "sass:math"
+@use "variables"
+
 .icon
     display: inline-block
     width: math.div(19em,16)
@@ -9,7 +12,7 @@
 
 .icon-link
     text-decoration: none
-    color: $alpha
+    color: variables.$alpha
     display: inline-block
     position: relative
     margin:
@@ -18,7 +21,7 @@
     z-index: 1
     transition: ease-in-out all .1s
     &:hover
-        color: $delta !important
+        color: variables.$delta !important
 
     > .icon
         margin: 0

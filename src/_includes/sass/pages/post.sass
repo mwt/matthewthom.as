@@ -1,3 +1,6 @@
+@use "sass:math"
+@use "variables"
+
 .post,
 .paper
     margin-top: 125px
@@ -24,8 +27,8 @@
         padding: 2px 8px
         border-radius: 3px
         font-size: math.div(11em,16)
-        background: $epsilon
-        color: $alpha
+        background: variables.$epsilon
+        color: variables.$alpha
         letter-spacing: math.div(1em,11)
         margin: 3px 1px
         text-decoration: none

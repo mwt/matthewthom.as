@@ -1,3 +1,6 @@
+@use "sass:math"
+@use "variables"
+
 #mc_embed_signup
 
     form
@@ -13,7 +16,7 @@
     /* positions input field horizontally */
     input.email
         font-size: math.div(15em,16)
-        border: 1px solid $gama
+        border: 1px solid variables.$gama
         border-radius: 3px
         background-color: #fff
         box-sizing: border-box
@@ -28,7 +31,7 @@
         width: 100%
         vertical-align: top
 
-        @media #{$notxs}
+        @media #{variables.$notxs}
             width: 350px
             margin-bottom: 0
 
@@ -36,7 +39,7 @@
         display: block
         width: 100%
 
-        @media #{$notxs}
+        @media #{variables.$notxs}
             display: inline-block
             width: unset
 
@@ -50,7 +53,7 @@
         border-radius: 3px
         color: #fff
         font-weight: 700
-        background-color: $beta
+        background-color: variables.$beta
         box-sizing: border-box
         height: 32px
         line-height: 32px
@@ -60,9 +63,9 @@
         transition: all 0.23s ease-in-out 0s
 
         &:hover
-            background-color: $delta
-            color: $yellow
+            background-color: variables.$delta
+            color: variables.$yellow
             cursor: pointer
 
-        @media #{$notxs}
+        @media #{variables.$notxs}
             width: unset

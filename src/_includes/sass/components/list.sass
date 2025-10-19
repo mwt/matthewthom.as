@@ -1,3 +1,5 @@
+@use "variables"
+
 .projects, .blog, .papers
     > .list .item  
         display: block
@@ -9,13 +11,13 @@
         h3
             margin: 0
             font:
-                family: $fontP
+                family: variables.$fontP
                 weight: 400
                 size: 1.2em
             .title
                 font-weight: 600
             .title, .coauthor
-                color: $alpha
+                color: variables.$alpha
                 text-decoration: none
                 &:hover
                     text-decoration: underline
@@ -50,7 +52,7 @@
                 margin: 0
                 z-index: 1
                 &:hover ~ label
-                    color: $delta
+                    color: variables.$delta
                 &:checked ~ label
                     &::before
                         content: "▲" 

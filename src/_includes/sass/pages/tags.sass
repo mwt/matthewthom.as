@@ -1,8 +1,10 @@
+@use "variables"
+
 .tags
     margin-top: 125px
 
     > .list
-        border-top: 1px solid $epsilon
+        border-top: 1px solid variables.$epsilon
         margin-top: 30px
         padding-top: 40px
         position: relative
@@ -18,8 +20,8 @@
         padding: 3px 9px
         border-radius: 3px
         font-size: math.div(13em,16)
-        background: $epsilon
-        color: $alpha
+        background: variables.$epsilon
+        color: variables.$alpha
         letter-spacing: math.div(1rem,13)
         margin: 0 math.div(5em,16) math.div(10em,16)
         text-decoration: none
@@ -48,7 +50,7 @@
         font-size: 1em
 
     > .item:hover > .url > .title
-        color: $delta
+        color: variables.$delta
 
     // maybe we can't nest html5 elements
     // can you help me?
@@ -59,10 +61,10 @@
         width: 75%
         float: right
         font-weight: 300
-        color: $gama
+        color: variables.$gama
         text-align: right
         transition: all ease-in-out .2s
         font-size: 1em
 
     .item:hover .url aside
-        color: $alpha
+        color: variables.$alpha
