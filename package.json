@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx --node-options='--experimental-require-module' @11ty/eleventy",
-    "start": "NODE_ENV=development npx --node-options='--experimental-require-module' @11ty/eleventy --serve --quiet --incremental"
+    "build": "npx @11ty/eleventy",
+    "start": "NODE_ENV=development npx @11ty/eleventy --serve --quiet --incremental"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mwt/matthewthomas-11ty.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Matthew W. Thomas",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/mwt/matthewthomas-11ty/issues"
   },

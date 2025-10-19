@@ -16,10 +16,10 @@ jobs:
     steps:
       - name: Setup lftp
         run: sudo apt-get install -y lftp
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: 24
           cache: "npm"
       - name: Install dependencies
         run: .github/scripts/01-install.sh
