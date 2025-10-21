@@ -6,7 +6,7 @@
 ###############################################################################
 
 # Copy the fonts to the dist folder and build the website
-curl -sS "https://docs.matthewthom.as/website-fonts.tar.gz" | tar -xzC "./" &&
+curl -sS "https://docs.matthewthom.as/website-fonts.tar.xz" | tar -xJC "./" &&
     npx @11ty/eleventy
 
 # Generate the cv.pdf
