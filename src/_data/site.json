@@ -25,8 +25,11 @@
   "linkedin": "MattWThomas",
   "github": "mwt",
   "email": "matthew..mwt.me",
-  "phone": "+12023418592",
   "xmpp": "matthew@xmpp.mwt.me",
+  "signal": {
+    "username": "matthewthomas.01",
+    "link": "https://signal.me/#eu/TOcdnzAz7uvTF9H-yFCUkJX_VU3hZOKwRVf42A1R93Qak1Yj3gxEGbEoktWJDSeT"
+  },
   "mastodon": [
     {
       "username": "mwt",

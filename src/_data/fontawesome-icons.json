@@ -12,6 +12,10 @@
         "iconName": "github"
     },
     {
+        "prefix": "fab",
+        "iconName": "signal-messenger"
+    },
+    {
         "prefix": "fas",
         "iconName": "envelope"
     },

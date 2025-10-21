@@ -301,6 +301,20 @@
     </a>
   {% endif %}
 
+  {% if site.signal %}
+    <a
+      id="xlink"
+      aria-label="signal-messenger"
+      class="social-link"
+      data-title="{{ site.signal.username }}"
+      href="{{ site.signal.link }}">
+      <svg class="icon icon-signal-messenger">
+        <title>signal-messenger</title>
+        <use xlink:href="#icon-signal-messenger"></use>
+      </svg>
+    </a>
+  {% endif %}
+
   {% if site.email %}
     <a
       id="mlink"
