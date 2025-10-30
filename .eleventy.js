@@ -226,12 +226,13 @@ async function jpegWidth(src, width = "auto") {
   const widths = width.length > 1 ? width : [width];
   let metadata = await eleventyImage(src, {
     widths: widths,
-    formats: ["jpeg"],
+    formats: ["avif", "jpeg"],
     urlPath: "/assets/images/",
     outputDir: "./dist/assets/images/",
   });
   // relevant metadata is url, srcset
-  return metadata.jpeg.length > 1 ? metadata.jpeg : metadata.jpeg[0];
+  const result = [...metadata.avif, ...metadata.jpeg];
+  return result.length > 1 ? result : result[0];
 }
 
 function numberOfWords(content) {
@@ -271,8 +272,8 @@ function sortBy(array, key) {
       a[key].toLowerCase() < b[key].toLowerCase()
         ? -1
         : a[key].toLowerCase() > b[key].toLowerCase()
-        ? 1
-        : 0
+          ? 1
+          : 0
     );
 }
 
@@ -358,11 +359,10 @@ function bibTeX(collectionItem) {
     bibTeXArray.push(`publisher = "${paperData.pub}"`);
   }
 
-  return `@article{mwt${paperYear}${
-    paperData.id_key
+  return `@article{mwt${paperYear}${paperData.id_key
       ? paperData.id_key
       : collectionItem.fileSlug.split("-").pop()
-  },
+    },
   ${bibTeXArray.join(",\n  ")}
 }`;
 }
