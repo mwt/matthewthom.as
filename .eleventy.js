@@ -197,7 +197,7 @@ async function imageShortcode(src, alt, width = "auto") {
   const outputFormats = (() => {
     switch (extension) {
       case "svg":
-        return ["svg", "jpeg"];
+        return ["svg", "png"];
       case "png":
         return ["png", "jpeg"];
       default:
@@ -208,6 +208,8 @@ async function imageShortcode(src, alt, width = "auto") {
   let metadata = await eleventyImage(src, {
     widths: [width],
     formats: outputFormats,
+    svgAllowUpscale: true,
+    svgShortCircuit: false,
     urlPath: "/assets/images/",
     outputDir: "./dist/assets/images/",
   });

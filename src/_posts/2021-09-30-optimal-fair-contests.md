@@ -11,8 +11,7 @@ description: "Thoughts on efficient revenue maximizing symmetric contests"
 
 I show that any efficient two player symmetric allocation rule between risk neutral, heterogenous players generates weakly less revenue than one of two contests. The revenue maximizing efficient symmetric contest is an all-pay auction with bid caps [(Che and Gale 1998)](https://econpapers.repec.org/RePEc:aea:aecrev:v:88:y:1998:i:3:p:643-51) when heterogeneity is low and a difference form contest [(Che and Gale 2000)](https://econpapers.repec.org/RePEc:eee:gamebe:v:30:y:2000:i:1:p:22-43) when heterogeneity is high.
 
-{% image "./src/assets/images/posts/2021/pure-covert-discrimination.svg", "plot of optimal revenue vs Tullock contests", 600 %}
-{.text-center}
+{% image "./src/assets/images/posts/2021/pure-covert-discrimination.svg", "plot of optimal revenue vs Tullock contests", 600 %}{.text-center}
 
 ## Introduction
 
