@@ -27,7 +27,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@traptitech/markdown-it-katex": "^3.6.0",
-    "cssnano": "^7.1.1",
+    "cssnano": "^7.1.2",
     "eleventy-sass": "^3.0.0-beta.0",
     "fast-glob": "^3.3.3",
     "html-minifier": "^4.0.0",
