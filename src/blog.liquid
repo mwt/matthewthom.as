@@ -1,6 +1,8 @@
 ---
 layout: banner-page
 title: Blog
+eleventyImport:
+  collections: ["posts"]
 ---
 
 {%- assign EconPosts = collections.economics | flatten_pages | reverse -%}
