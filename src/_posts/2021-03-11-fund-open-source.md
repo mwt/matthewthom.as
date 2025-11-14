@@ -33,16 +33,16 @@ This is a classic Economic problem that was technically solved by Vickrey, Clark
 The idea behind VCG is pretty simple. Suppose we are looking at [funding webpack](https://opencollective.com/webpack), a popular open source project. Suppose the value for person $i$ of webpack having an annual budget of $x$ is $v_i(x)$ where $v_i$ is a concave, differentiable, and increasing function[^1] with $v_i(0) \equiv 0$. The efficient level of funding for webpack is the $x^\star$ that maximizes society's payoff:
 
 $$
-\left[ \sum_{i} v_i(x) \right] - x. \tag{1}
+\left[ \sum_{i} v_i(x) \right] - x. \eqnum{1}
 $$
 
 However, people only care about their own value -- not the value of others. So, they would not be willing to give as much. To fix this, we conduct a three step process.
 
 1. Ask everyone for their $v_i(x)$.
-2. Find the $x^\star$ that maximizes equation 1.
+2. Find the $x^\star$ that maximizes equation [(1)](#eqn-1).
 3. Give each agent a (possibly negative) transfer of $\left[ \sum_{j \neq i} v_j( x^\star ) \right] - x^\star$.
 
-When they add their own $v_i(x)$ to the transfer, their personal payoff is exactly the same as society's (Equation 1). Because of this, they want $x^\star$ to be calculated correctly. So, they have no reason to lie about their value, $v_i$.
+When they add their own $v_i(x)$ to the transfer, their personal payoff is exactly the same as society's ([Equation 1](#eqn-1)). Because of this, they want $x^\star$ to be calculated correctly. So, they have no reason to lie about their value, $v_i$.
 
 The transfers noted above are very expensive. However, they can be made much cheaper because you can subtract any constant from these transfers. In fact, you can subtract any function that does not depend on $v_i$.[^2] When the ideal function is chosen,[^3] the assumptions we made ensure the VCG mechanism raises funds from each person. The amount raised from person $i$ is.
 
@@ -71,7 +71,7 @@ The aforementioned paper considers QF, a different allocation mechanism which so
 The QF mechanism allocates resources according to
 
 $$
-x^\star = \left( \sum_i \sqrt{c_i} \right)^2 \tag{2}
+x^\star = \left( \sum_i \sqrt{c_i} \right)^2 \eqnum{2}
 $$
 
 where $c_i$ is an individual contribution made by each participant. So, participants no longer need to send their value for every level of funding. They just need to choose a contribution. This requires less information on the part of the contributors. It is also more private because less information is surrendered. The main point of the paper is that, in equilibrium, this $x^\star$ is the same as the one we considered in the VCG section.

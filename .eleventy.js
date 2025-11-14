@@ -171,7 +171,13 @@ module.exports = function (eleventyConfig) {
   // Enable markdown KaTeX plugin and set options
   eleventyConfig.amendLibrary("md", (mdLib) => {
     mdLib.set(mdOptions);
-    mdLib.use(markdownItKaTeX);
+    mdLib.use(markdownItKaTeX, {
+      trust: true,
+      strict: false,
+      macros: {
+        "\\eqnum": "\\htmlId{eqn-#1}{\\rule{0pt}{1em}} \\tag{#1}",
+      },
+    });
     mdLib.use(markdownItAttrs);
     mdLib.use(markdownItFootnote);
   });
@@ -362,8 +368,8 @@ function bibTeX(collectionItem) {
   }
 
   return `@article{mwt${paperYear}${paperData.id_key
-      ? paperData.id_key
-      : collectionItem.fileSlug.split("-").pop()
+    ? paperData.id_key
+    : collectionItem.fileSlug.split("-").pop()
     },
   ${bibTeXArray.join(",\n  ")}
 }`;
