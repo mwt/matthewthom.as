@@ -7,41 +7,57 @@
       href="{{ '/assets/css/style.css' | url }}"
       type="text/css">
 
-    {%- if use_math -%}
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
-        crossorigin="anonymous">
+    {%- if layout == 'post' -%}
+      <!-- Tippy.js for footnote/equation tooltips -->
       <script src="https://unpkg.com/@popperjs/core@2" defer></script>
       <script src="https://unpkg.com/tippy.js@6" defer></script>
+      <!-- Footnote tooltips -->
       <script>
         document.addEventListener("DOMContentLoaded", function() {
-          /* Label equations with tags */
-          const equations = document.querySelectorAll('.katex:has(.tag > .mord.text > .mord > .mord)');
-          for (let equation of equations) {
-            // get the equation label
-            equationNumber = equation.querySelector('.tag > .mord.text > .mord > .mord').innerText
-            // if the content of the label is a number, 
-            equation.id = `eqn-${equationNumber}`
-            equation.classList.add('anchor')
-          }
-
-          tippy('p a[href^="#eqn-"]', {
-            content(reference) {
-              const id = reference.getAttribute('href').substring(1);
-              const equation = document.querySelector(`p:has(#${id})`);
-              return equation ? equation.innerHTML : 'Equation not found';
-            },
-            allowHTML: true,
-          });
+            tippy('p a[href^="#fn"]', {
+              content(reference) {
+                const id = reference.getAttribute('href').substring(1);
+                const footnote = document.getElementById(id);
+                return footnote ? footnote.innerText : 'Footnote not found';
+              },
+              allowHTML: false,
+            });
         });
       </script>
-    {%- endif -%}
+      {%- if use_math -%}
+        <!-- Equation anchors and tooltips -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            /* Label equations with tags */
+            const equations = document.querySelectorAll('.katex:has(.tag > .mord.text > .mord > .mord)');
+            for (let equation of equations) {
+              // get the equation label
+              equationNumber = equation.querySelector('.tag > .mord.text > .mord > .mord').innerText
+              // if the content of the label is a number, 
+              equation.id = `eqn-${equationNumber}`
+              equation.classList.add('anchor')
+            }
 
-    {%- if layout == 'post' -%}
+            tippy('p a[href^="#eqn-"]', {
+              content(reference) {
+                const id = reference.getAttribute('href').substring(1);
+                const equation = document.querySelector(`p:has(#${id})`);
+                return equation ? equation.innerHTML : 'Equation not found';
+              },
+              allowHTML: true,
+            });
+          });
+        </script>
+        <!-- KaTeX CSS -->
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/katex@0.16.25/dist/katex.min.css"
+          crossorigin="anonymous">
+      {%- endif -%}
+      <!-- Prism.js for code syntax highlighting -->
       <link
         rel="stylesheet"
-			  href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-twilight.css"
+			  href="https://unpkg.com/prismjs@1.30.0/themes/prism-twilight.min.css"
 			  crossorigin="anonymous">
     {%- endif -%}
 
