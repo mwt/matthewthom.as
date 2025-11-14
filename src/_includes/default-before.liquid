@@ -12,6 +12,30 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
         crossorigin="anonymous">
+      <script src="https://unpkg.com/@popperjs/core@2" defer></script>
+      <script src="https://unpkg.com/tippy.js@6" defer></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          /* Label equations with tags */
+          const equations = document.querySelectorAll('.katex:has(.tag > .mord.text > .mord > .mord)');
+          for (let equation of equations) {
+            // get the equation label
+            equationNumber = equation.querySelector('.tag > .mord.text > .mord > .mord').innerText
+            // if the content of the label is a number, 
+            equation.id = `eqn-${equationNumber}`
+            equation.classList.add('anchor')
+          }
+
+          tippy('p a[href^="#eqn-"]', {
+            content(reference) {
+              const id = reference.getAttribute('href').substring(1);
+              const equation = document.querySelector(`p:has(#${id})`);
+              return equation ? equation.innerHTML : 'Equation not found';
+            },
+            allowHTML: true,
+          });
+        });
+      </script>
     {%- endif -%}
 
     {%- if layout == 'post' -%}
