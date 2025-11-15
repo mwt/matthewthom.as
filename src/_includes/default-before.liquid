@@ -14,7 +14,7 @@
       <!-- Footnote tooltips -->
       <script>
         document.addEventListener("DOMContentLoaded", function() {
-            tippy('p a[href^="#fn"]', {
+            tippy('a[href^="#fn"]', {
               content(reference) {
                 const id = reference.getAttribute('href').substring(1);
                 const footnote = document.getElementById(id);
@@ -41,7 +41,7 @@
         <!-- KaTeX CSS -->
         <link
           rel="stylesheet"
-          href="https://unpkg.com/katex@0.16.25/dist/katex.min.css"
+          href="https://unpkg.com/katex@0.16.25/dist/katex-swap.min.css"
           crossorigin="anonymous">
       {%- endif -%}
       <!-- Prism.js for code syntax highlighting -->
