@@ -9,8 +9,14 @@
 
     {%- if layout == 'post' -%}
       <!-- Tippy.js for footnote/equation tooltips -->
-      <script src="https://unpkg.com/@popperjs/core@2" defer></script>
-      <script src="https://unpkg.com/tippy.js@6" defer></script>
+      <script
+        type="text/javascript"
+        src="https://cdn.hopjs.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+      <script
+        type="text/javascript"
+        src="https://cdn.hopjs.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"
+        crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
       <!-- Footnote tooltips -->
       <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -41,14 +47,14 @@
         <!-- KaTeX CSS -->
         <link
           rel="stylesheet"
-          href="https://unpkg.com/katex@0.16.25/dist/katex-swap.min.css"
-          crossorigin="anonymous">
+          href="https://cdn.hopjs.net/npm/katex@0.16.25/dist/katex-swap.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer">
       {%- endif -%}
       <!-- Prism.js for code syntax highlighting -->
       <link
         rel="stylesheet"
-			  href="https://unpkg.com/prismjs@1.30.0/themes/prism-twilight.min.css"
-			  crossorigin="anonymous">
+			  href="https://cdn.hopjs.net/npm/prismjs@1.30.0/themes/prism-twilight.min.css"
+			  crossorigin="anonymous" referrerpolicy="no-referrer">
     {%- endif -%}
 
     {% if site.analytics-google %}
