@@ -15,10 +15,10 @@
 
 <meta property="og:locale" content="{{ site.page_locale }}">
 
-{% if site.description %}
-  <meta name="description" content="{{ site.description }}" />
-  <meta property="og:description" content="{{ site.description }}" />
-  <meta property="twitter:description" content="{{ site.description }}" />
+{% if site.description or description %}
+  <meta name="description" content="{{ description | default: site.description }}" />
+  <meta property="og:description" content="{{ description | default: site.description }}" />
+  <meta property="twitter:description" content="{{ description | default: site.description }}" />
 {% endif %}
 
 {% if page.url and site.url %}
