@@ -6,7 +6,7 @@ id_key: "anocon"
 authors:
  - name: "Matthew W. Thomas"
 year: 2024
-description: "What is the revenue maximizing contest with heterogenous agents?"
+description: "What is the revenue maximizing contest with heterogeneous agents?"
 shortlink: "https://mwt.me/anocon"
 pdf: "/assets/pdfs/papers/contest-design-interim-types.pdf"
 slides: "/assets/pdfs/slides/contest-design-interim-types-slides.pdf"
