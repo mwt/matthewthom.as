@@ -18,7 +18,6 @@
     &:hover:before
         opacity: 1
         display: inline-block
-        transform: translate3d(0,0,0)
         white-space: nowrap
 
     &:before
@@ -26,7 +25,8 @@
         display: none
         position: absolute
         bottom: -34px
-        left: -6px
+        left: 50%
+        transform: translateX(-50%)
         margin: 0 auto
         font-size: 13px
         padding: 3px 10px
@@ -36,9 +36,18 @@
         height: 22px
         line-height: 22px
         opacity: 0
-        transition: opacity 150ms linear, transform 150ms linear, -webkit-transform 150ms linear
-        transform: translate3d(0,-8px,0)
+        transition: opacity 150ms linear
         z-index: 99
+
+    &:first-of-type::before
+        transform: none
+        left: -6px
+        right: auto
+
+    &:last-of-type::before
+        transform: none
+        left: auto
+        right: -6px
 
     &:after
         content: ""
