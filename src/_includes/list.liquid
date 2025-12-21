@@ -18,7 +18,7 @@
               {{ project.url }}
             {%- endif -%}">
             {{ project.title }}</a>
-          {% if project.authors.size > 1 -%}
+          {%- if project.authors.size > 1 -%}
             {%- assign coauthors = project.authors | where_not: "name", site.title -%}
             (with
             {%- for coauthor in coauthors -%}
@@ -50,7 +50,7 @@
         {%- if project.description -%}
           <p class="description">{{ project.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
         {%- endif -%}
-
+        {%- capture links_row -%}
         {%- if project.github -%}
           <a
             class="icon-link"
@@ -109,19 +109,27 @@
             Slides
           </a>
         {%- endif -%}
-        {% if list-class == "papers" and project.content %}
-          {% capture abstract_id -%}
-            {% increment paper_section_number %}{%- endcapture %}
+        {%- if list-class == "papers" and project.content -%}
+          {%- capture abstract_id -%}
+            {%- increment paper_section_number -%}{%- endcapture -%}
           <div class="atoggle">
             <input
               type="checkbox"
               id="toggle-{{ abstract_id }}"
               name="abstract-toggle" />
             <label for="toggle-{{ abstract_id }}">Abstract</label>
-            <div class="abstract content">
-              {{ project.content | markdownify }}
-            </div>
           </div>
+        {%- endif -%}
+        {%- endcapture -%}
+        {%- if links_row -%}
+          <div class="links-row">
+            {{ links_row }}
+          </div>
+          {%- if list-class == "papers" and project.content -%}
+            <div class="abstract content"><div class="inner">
+              {{ project.content | markdownify }}
+            </div></div>
+          {%- endif -%}
         {%- endif -%}
       </div>
     {%- endfor -%}
