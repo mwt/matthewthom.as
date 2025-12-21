@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@traptitech/markdown-it-katex": "^3.6.0",
     "cssnano": "^7.1.2",
+    "eleventy-plugin-rev": "^2.0.0",
     "eleventy-sass": "^3.0.0-beta.0",
     "fast-glob": "^3.3.3",
     "html-minifier": "^4.0.0",

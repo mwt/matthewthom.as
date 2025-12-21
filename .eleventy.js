@@ -12,6 +12,7 @@ const markdownItFootnote = require("markdown-it-footnote");
 
 // 11ty plugins
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginRev = require("eleventy-plugin-rev");
 const eleventyImage = require("@11ty/eleventy-img");
 const eleventySass = require("eleventy-sass");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -49,6 +50,9 @@ module.exports = function (eleventyConfig) {
   // Enable RSS plugin
   eleventyConfig.addPlugin(pluginRss);
 
+  // Enable asset revisioning plugin
+  eleventyConfig.addPlugin(pluginRev);
+
   // Compile SASS
   eleventyConfig.addPlugin(eleventySass, {
     sass: {
@@ -57,6 +61,7 @@ module.exports = function (eleventyConfig) {
       includes: "_includes/sass",
     },
     postcss: postcss([cssnano]),
+    rev: true,
   });
 
   // Syntax highlighting
