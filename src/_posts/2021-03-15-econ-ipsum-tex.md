@@ -4,6 +4,7 @@ author: "Matthew W. Thomas"
 layout: "post"
 override:tags: ["tech", "webdev"]
 date: "2021-03-15"
+last_modified_at: "2025-12-21"
 use_math: false
 description: "Someone made a TeX version of my Econ Ipsum website"
 ---
@@ -15,7 +16,5 @@ One long running joke on the page is that the randomized articles have zero cita
 Naturally, I was ecstatic that someone liked Econ Ipsum enough to make a spinoff. So, I'm happy to announce that you can now use Econ Ipsum paragraphs in TeX via the [econlipsum](https://ctan.org/pkg/econlipsum) package by Jack Coleman. So, Econ Ipsum's citation counter -- intended to remain forever at zero -- has now advanced to one.
 
 {% image "./src/assets/images/posts/2021/econ-ipsum-citations1.png", "Econ Ipsum with one citation" %}{.text-center}
-
----
 
 [^1]: The number of api executions is the maximum number of paragraphs requested by a single person divided by 100 (and rounded up). Each day (typically) has between 3 and 30 executions. On one day, there were 184 executions -- which means that one person generated 18,400 paragraphs.

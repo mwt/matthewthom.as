@@ -6,15 +6,16 @@ override:tags: ["tech", "webdev"]
 date: "2021-03-10"
 use_math: false
 description: "Tricks to stop email scraping without affecting human users"
+last_modified_at: "2025-12-21"
 ---
 
 If put your email in plaintext on your website, you will get spam from people trying to sell you SEO, development services, ghostwriting, etc. Emails get on spam lists through website scraping. The way that this works is simple. Scrapers typically look for strings like `user@host.tld` or `mailto:user@host.tld` in your HTML.
 
 I used to use the Scrape Shield provided by Cloudflare. However, when I switched away from using Cloudflare a few months ago, I started to receive a lot of spam that could not be easily blocked. There are many solutions that you can find on the internet to stop people from scraping your email. The most common is to write your email as:
 
-~~~
+```
 user [at] host [dot] tld
-~~~
+```
 
 This is not ideal for three reasons:
 
@@ -24,11 +25,11 @@ This is not ideal for three reasons:
 
 This third issue is the most difficult to fix as there are many solutions that work for displaying an email if you don't care about functional `mailto:` links. For example
 
-~~~ html
+```html
 <span>user@</span>
 <span style="display:none;">HIDDEN JUNK</span>
 <span>host.tld</span>
-~~~
+```
 
 or the equivalent with CSS.
 
@@ -38,9 +39,12 @@ There are two solutions that I know of that fix the problem and allow `mailto:` 
 
 One simple and very common solution is to replace all characters in the `mailto:` links with HTML entities. For example `user@host.tld` becomes `&#x75;&#x73;&#x65;&#x72;&#x40;&#x68;&#x6F;&#x73;&#x74;&#x2E;&#x74;&#x6C;&#x64;`. You can then make an email link like so
 
-~~~ html
-<a href="mailto:&#x75;&#x73;&#x65;&#x72;&#x40;&#x68;&#x6F;&#x73;&#x74;&#x2E;&#x74;&#x6C;&#x64;">email me</a>
-~~~
+```html
+<a
+  href="mailto:&#x75;&#x73;&#x65;&#x72;&#x40;&#x68;&#x6F;&#x73;&#x74;&#x2E;&#x74;&#x6C;&#x64;"
+  >email me</a
+>
+```
 
 which renders as <a href="mailto:&#x75;&#x73;&#x65;&#x72;&#x40;&#x68;&#x6F;&#x73;&#x74;&#x2E;&#x74;&#x6C;&#x64;">email me</a>. As you can see, the browser translates these HTML entities completely for the end user. So this obfuscation does not create any issues for human visitors. However, it is very easy to transform all HTML entities before scraping. So, this offers only minimal protection.
 
@@ -48,21 +52,21 @@ which renders as <a href="mailto:&#x75;&#x73;&#x65;&#x72;&#x40;&#x68;&#x6F;&#x73
 
 I have tested a very simple method in javascript for the last few months. The idea is to replace your email with the correct string using javascript. A simplified version of my implementation follows.
 
-~~~ html
+```html
 <script>
-/* 1. define variables */
-var me = "name";
-var place = "host.tld";
+  /* 1. define variables */
+  var me = "name";
+  var place = "host.tld";
 
-/* 2. find email link to replace */
-var elink = document.getElementById("mlink");
+  /* 2. find email link to replace */
+  var elink = document.getElementById("mlink");
 
-/* 3. replace link href with variables  */
-elink.href = `mailto:${me}@${place}`;
+  /* 3. replace link href with variables  */
+  elink.href = `mailto:${me}@${place}`;
 </script>
 
 <a id="mlink" href="#">email me</a>
-~~~
+```
 
 So, we define the email in two parts, `name` and `host.tld`. We then combine these parts and put them into the email link. This solution is simple and resistant to scraping. The easiest way to scrape this document would be to execute the above javascript. However, scrapers do not execute javascript on arbitrary pages for several reasons. First, it is not performant to execute javascript on the thousands of websites that you scrape. Second, it opens scrapers up to various types of attacks and tracking that they would prefer to avoid.
 

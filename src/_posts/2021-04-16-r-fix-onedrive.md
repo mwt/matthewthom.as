@@ -4,6 +4,7 @@ author: "Matthew W. Thomas"
 layout: "post"
 override:tags: ["tech", "R"]
 date: "2021-04-16"
+last_modified_at: "2025-12-21"
 use_math: false
 description: "If you sync your Documents folder with OneDrive, R can have issues"
 pdf: "/assets/pdfs/blog/r-fix-onedrive.pdf"
@@ -19,6 +20,6 @@ The solution is to set the `R_LIBS_USER` environment variable to a folder that i
 4. Paste variable name `R_LIBS_USER`
 5. You can use Browse Directory... to choose any folder that is not synced with OneDrive (eg. `C:\Users\username\R`)
 
-Now that you changed your library directory, you'll need to reinstall your libraries. You could copy them from OneDrive, but some may be damaged. 
+Now that you changed your library directory, you'll need to reinstall your libraries. You could copy them from OneDrive, but some may be damaged.
 
 Steps 1 and 2 can be replaced by searching for some part of "Edit environment variables for the current user" in the start menu. This is easier to remember, but this guide provides the shortest path.

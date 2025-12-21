@@ -6,6 +6,7 @@ override:tags: ["tech", "webdev", "mastodon"]
 date: "2024-06-02"
 use_math: false
 description: "Guide for KaTeX math formatting in Mastodon"
+last_modified_at: "2025-12-21"
 ---
 
 This is a short guide to document my experience in enabling TeX support in Mastodon by injecting KaTeX into the interface. I use this setup on <https://econtwitter.net>. This differs from the [Mathsodon fork](/blog/mathstodon-instructions/) I used previously in that it does not require direct modification of the Mastodon code. I instead inject KaTeX into the interface using nginx at the proxy level. As a result, we can install Mastodon updates without breaking this feature. I do not cover the installation of Mastodon itself in this guide.
@@ -23,7 +24,7 @@ mkdir -p ~/overrides/katex && cd ~/overrides
 Then, download and extract the files (feel free to replace the URL with the latest version of KaTeX):
 
 ```sh
-wget -qO- https://github.com/KaTeX/KaTeX/releases/download/v0.16.10/katex.tar.gz | tar xzC ./katex
+wget -qO- https://github.com/KaTeX/KaTeX/releases/download/v0.16.27/katex.tar.gz | tar xzC ./katex
 ```
 
 Then, make a file called `custom.js` in the `~/overrides` directory with the following content:
@@ -125,15 +126,12 @@ I added the following CSS in the Mastodon admin interface (Administration > Serv
    ===================================== */
 .status__content__text .katex-display {
   overflow: auto hidden;
+  scrollbar-width: thin;
   /* Make space for the scrollbar */
   padding-bottom: 1em;
   padding-top: 1em;
   margin-bottom: 0;
   margin-top: 0;
-}
-
-.status__content__text .katex-display::-webkit-scrollbar {
-  height: 6px;
 }
 ```
 

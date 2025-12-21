@@ -6,7 +6,7 @@ override:tags: ["math", "economics", "game theory", "notes"]
 date: "2021-03-22"
 use_math: true
 description: "Simple derivation of equilibria in a general two player war of attrition"
-last_modified_at: "2021-04-18"
+last_modified_at: "2025-12-21"
 pdf: "/assets/pdfs/blog/war-of-attrition-complete-information.pdf"
 ---
 
@@ -20,10 +20,10 @@ Because the last player wins as soon his opponent exits, the winner only fights 
 
 ## Model
 
-There are two players, Player 1 and Player 2. Suppose player *i* exits at $t_i$ and the other player exits at $t_{-i}$. Then, the payoff of player *i* is defined by:
+There are two players, Player 1 and Player 2. Suppose player _i_ exits at $t_i$ and the other player exits at $t_{-i}$. Then, the payoff of player _i_ is defined by:
 
 $$
-U_i( t_i ; t_{-i} ) = 
+U_i( t_i ; t_{-i} ) =
 \begin{cases}
 \ell_i(t_i) &\text{ if } t_i < t_{-i} \\
 s_i(t_i)    &\text{ if } t_i = t_{-i} \\
@@ -39,25 +39,25 @@ We make one regularity assumption and another assumption which characterizes the
 
 **Assumption 2:** Players like to win and war is costly. Specifically,
 
-1. *Winning is better than losing:* $f_i(t) > \ell_i(t)$ for all *t*.
-2. *Winning is better than tieing:* $f_i(t) > s_i(t)$ for all *t*.
-3. *War is costly when losing:* $\ell'_i(t) < 0$.
-4. *Costs are relevant:* $\int_0^\infty \frac{-\ell'_i(z)}{f_i(z) - \ell_i(z)} dz = \infty$.
+1. _Winning is better than losing:_ $f_i(t) > \ell_i(t)$ for all _t_.
+2. _Winning is better than tieing:_ $f_i(t) > s_i(t)$ for all _t_.
+3. _War is costly when losing:_ $\ell'_i(t) < 0$.
+4. _Costs are relevant:_ $\int_0^\infty \frac{-\ell'_i(z)}{f_i(z) - \ell_i(z)} dz = \infty$.
 
 Without loss of generality, we will say that $\ell_i(0) = 0$. The second assumption guarantees that ties occur with probability zero in equilibrium. So, I will not mention them again. The last point of Assumption 2 prevents pathological behavior around infinity. Without this, it is possible that the players would never exit. It can be interpreted as a guarantee that the benefit of winning is not so large relative to the cost of the war.
 
 ## Pure strategy Equilibria
 
-If $\lim_{t \to \infty} f_i(t) < \ell_i(0)$, there are asymmetric pure strategy Nash equilibria where one player, *i*, chooses a very large exit time *t* such that $w_{-i}(t) < 0$. The other player best responds by playing zero because fighting enough to win is not worthwhile. Because the winner's payoff does not depend on her own score, she is indifferent between all actions except zero. So, this is a Nash equilibrium.
+If $\lim_{t \to \infty} f_i(t) < \ell_i(0)$, there are asymmetric pure strategy Nash equilibria where one player, _i_, chooses a very large exit time _t_ such that $w_{-i}(t) < 0$. The other player best responds by playing zero because fighting enough to win is not worthwhile. Because the winner's payoff does not depend on her own score, she is indifferent between all actions except zero. So, this is a Nash equilibrium.
 
 ## Mixed strategy equilibria
 
 In addition to the pure strategy equilibria, there is one Nash equilibrium in mixed strategies. The equilibrium will have full support over the real line. This is established in several steps.
 
-1. *If one player has a gap in their support, their opponent must have the same gap.* Otherwise, the opponent would move density from the gap to just before it.
-2. *There are no gaps in either support.* Otherwise, each player could do better by moving mass from the end of the gap to the beginning.
-3. *There are no atoms except at zero.* Otherwise, the opponent would move mass from slightly below the atom to slightly above the atom. This would create a gap.
-4. *At most one player has an atom at zero.* Otherwise, one player would prefer to move their atom slightly up.
+1. _If one player has a gap in their support, their opponent must have the same gap._ Otherwise, the opponent would move density from the gap to just before it.
+2. _There are no gaps in either support._ Otherwise, each player could do better by moving mass from the end of the gap to the beginning.
+3. _There are no atoms except at zero._ Otherwise, the opponent would move mass from slightly below the atom to slightly above the atom. This would create a gap.
+4. _At most one player has an atom at zero._ Otherwise, one player would prefer to move their atom slightly up.
 
 We will see from the construction of the equilibrium that no player can have an atom and that the support cannot be bounded. However, these four points are enough to get us started.
 
@@ -99,13 +99,14 @@ $$
 S_{-i}(t) = \exp \left( \int _0^t \frac{ \ell'_i(z) }{ f_i(z) - \ell_i(z) } dz \right) > 0.
 $$
 
-The solution is somewhat difficult to work with. So, in most applications, the prize is taken to be fixed. 
+The solution is somewhat difficult to work with. So, in most applications, the prize is taken to be fixed.
 
 ### Assuming fixed prizes
 
-If we assume $f_i(z) = V_i + \ell_i(y)$, where $V_i$ is a constant prize, then 
+If we assume $f_i(z) = V_i + \ell_i(y)$, where $V_i$ is a constant prize, then
 
 So, the strategy reduces to
+
 $$
 \begin{aligned}
 G_{-i}(t) &= 1 - \exp \left( \int _0^t \frac{ \ell'_i(z) }{ f_i(z) - \ell_i(z) } dz \right) \\
@@ -115,4 +116,3 @@ G_{-i}(t) &= 1 - \exp \left( \int _0^t \frac{ \ell'_i(z) }{ f_i(z) - \ell_i(z) }
 $$
 
 This equation is about as simple as the equilibrium of the linear war of attrition (where $\ell_i(x) = -x$). So, it is pretty popular. You can try other assumptions in the general equation to to get other expressions. For example, the equilibrium where players only pay a fraction of $\ell_i$ when they win is also relatively simple.
-

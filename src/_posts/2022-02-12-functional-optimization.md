@@ -5,7 +5,7 @@ layout: "post"
 override:tags: ["math", "notes"]
 date: "2022-02-12"
 use_math: true
-last_modified_at: "2022-10-19"
+last_modified_at: "2022-12-21"
 description: "Notes about how to optimize over a space of functions instead of numbers"
 ---
 
@@ -19,7 +19,7 @@ $$
 R[p] = \int_0^1 p(v) (2 v - 1)\, dv
 $$
 
-where $p(v)$ is a function that determines the probability of selling the good to the agent when her value is $v$ and $2 v - 1$ is the *virtual surplus*. The above equation, $R[p]$, is a *functional* of $p$. That is, it maps the function $p$ to a real number. Suppose that you wanted to find the revenue maximizing mechanism $p$. Then, the problem you want to solve is
+where $p(v)$ is a function that determines the probability of selling the good to the agent when her value is $v$ and $2 v - 1$ is the _virtual surplus_. The above equation, $R[p]$, is a _functional_ of $p$. That is, it maps the function $p$ to a real number. Suppose that you wanted to find the revenue maximizing mechanism $p$. Then, the problem you want to solve is
 
 $$
 \max_p \int_0^1 p(v) (2 v - 1)\, dv
@@ -28,14 +28,14 @@ $$
 subject to $0 \leq p(v) \leq 1$. If you look at this problem closely, you will note that the optimal function must be
 
 $$
-p(v) = 
+p(v) =
 \begin{cases}
 0 &\text{ if } v < 0.5 \\
 1 &\text{ if } v > 0.5
 \end{cases}
 $$
 
-where the value at one half does not matter. This is because $p$ is multiplied by some "slope". When the slope is positive, we want $p$ to be as large as possible. When the slope is negative, we want $p$ to be as small as possible. Indeed, the *functional derivative* of $R[p]$ is
+where the value at one half does not matter. This is because $p$ is multiplied by some "slope". When the slope is positive, we want $p$ to be as large as possible. When the slope is negative, we want $p$ to be as small as possible. Indeed, the _functional derivative_ of $R[p]$ is
 
 $$
 \frac{\delta R}{\delta p}(v) = 2v - 1
@@ -57,7 +57,7 @@ $$
 \begin{align*}
     dg_V(X) &= \lim_{\epsilon \to 0} \left[ \frac{g(X + \epsilon V) - g(X)}{\epsilon} \right] \\
             &= \nabla g(X) \cdot V \\
-            &= 
+            &=
             \begin{bmatrix}
                 2 x_1 \\
                 2 x_2
@@ -96,7 +96,7 @@ $$
 \end{align*}
 $$
 
-which is the inner product of the *functional derivative*,
+which is the inner product of the _functional derivative_,
 
 $$
     \frac{\delta L}{\delta f}(x) = 2 (f(x) - \phi(x)),
@@ -104,12 +104,12 @@ $$
 
 and the direction, $\psi$. Like in calculus on the reals, we need this to be zero for all directions. It turns out that, just like before, we only need to set the directional derivative to zero. This is due to the following lemma.
 
-**Fundamental lemma of calculus of variations** *If* $g$ *is continuous on* $[a,b]$ *and satisfies the equality*
+**Fundamental lemma of calculus of variations** _If_ $g$ _is continuous on_ $[a,b]$ _and satisfies the equality_
 
 $$
     \int_a^b g(x) \psi(x) \, dx = 0
 $$
 
-*for all continuous functions* $\psi$ *such that* $\psi(a)=\psi(b)=0$*, then* $g(x) = 0$ *for all* $x \in [a,b]$.
+_for all continuous functions_ $\psi$ _such that_ $\psi(a)=\psi(b)=0$_, then_ $g(x) = 0$ _for all_ $x \in [a,b]$.
 
 This means that $dL_{\psi}[f]=0$ if and only if $2 (f(x) - \phi(x)) = 0$ for all $x \in [0,1]$. So, $f = \phi$ as anticipated.

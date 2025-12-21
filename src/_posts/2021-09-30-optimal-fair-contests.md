@@ -5,7 +5,7 @@ layout: "post"
 override:tags: ["math", "economics", "notes"]
 date: "2021-09-30"
 use_math: true
-last_modified_at: "2021-09-30"
+last_modified_at: "2025-12-21"
 description: "Thoughts on efficient revenue maximizing symmetric contests"
 ---
 
@@ -199,7 +199,5 @@ $$
 $$
 
 The above contest has an equilibrium at $s_1 = \frac{1}{2}$ and $s_2 = 0$ which achieves the upper bound for $k \geq 2$.
-
----
 
 [^fbns]: Note that these strategies must be pure because no mixed strategy can have expectation zero and no individually rational mixed strategy can have expectation one.

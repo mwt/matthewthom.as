@@ -6,7 +6,7 @@ override:tags: ["math", "induction"]
 date: "2021-03-08"
 use_math: true
 description: "A research example of induction on the real numbers"
-last_modified_at: "2021-06-30"
+last_modified_at: "2025-12-21"
 ---
 
 Conventional proof by induction allows you to prove that a statement applies to an infinite sequence. The argument is that if a property holds on the first element, and always holds on the next element, then it must hold on all elements.
@@ -15,11 +15,11 @@ Conventional proof by induction allows you to prove that a statement applies to 
 
 [Some notes on the arXiv](https://arxiv.org/abs/1208.0973) show that there is an analogous version to proof by induction that can apply to uncountable sets like the Real numbers. Conventional induction cannot work on uncountable set because, by definition, you cannot reach all elements by iteratively stepping through them.
 
-In the real induction, we get around this issue by breaking the space into countably many intervals. Formally, let $a < b$ be real numbers. We want to show that $[a, b] = S$. That is, we want all elements of the interval to "satisfy" property $S$. We define the subset $S \subseteq [a,b]$ to be *inductive* if:
+In the real induction, we get around this issue by breaking the space into countably many intervals. Formally, let $a < b$ be real numbers. We want to show that $[a, b] = S$. That is, we want all elements of the interval to "satisfy" property $S$. We define the subset $S \subseteq [a,b]$ to be _inductive_ if:
 
 1. $a \in S$.
-2. If $a \leq x < b$, then $x \in S \implies [x,y] \subset S$ for some $y > x$. 
-3. If $a < x \leq b$ and $[a,x) \subset S$, then $x \in S$.  
+2. If $a \leq x < b$, then $x \in S \implies [x,y] \subset S$ for some $y > x$.
+3. If $a < x \leq b$ and $[a,x) \subset S$, then $x \in S$.
 
 The result is that a subset $S \subset [a,b]$ is inductive if and only if $S = [a,b]$. So, if conditions 1-3 hold, then property $S$ is satisfied on $[a,b]$.
 
@@ -29,11 +29,11 @@ Most people do not know what real induction is. However, the logic behind it is 
 
 <div class="proof">
 
-Suppose, by way of contradiction, that there exists an element in $[a,b]$ that is not in $S$. Then, there must be a *first switching point*. That is, there must be a minimal $x$ such that either $x \notin S$ or $(x,z] \notin S$ for some $z > x$. Then, we need to prove
+Suppose, by way of contradiction, that there exists an element in $[a,b]$ that is not in $S$. Then, there must be a _first switching point_. That is, there must be a minimal $x$ such that either $x \notin S$ or $(x,z] \notin S$ for some $z > x$. Then, we need to prove
 
 1. $x > a$ (using 1 and 2 from real induction). Therefore, $[a, x) \in S$ because $x$ is the first switching point.
 2. If $[a, x) \in S$ then, $x \in S$ (using 3 from real induction). Therefore, $(x,z] \notin S$ for some $z > x$.
-3. There exists a $y > x$ such that $[x,y] \in S$ (using 2 from real induction). 
+3. There exists a $y > x$ such that $[x,y] \in S$ (using 2 from real induction).
 
 Therefore, any point $w$ such that $w > x$, $w \leq z$, and $w \leq y$ is both in $S$ and not in $S$. This is a contradiction.
 
@@ -65,23 +65,22 @@ holds a.e., where we define $v'(s; {y}) := \frac{\partial v(s; {y})}{\partial s}
 
 $v(0, 0) > c(0) = 0$ and $\lim_{s \to \infty} \sup_{y \leq s} v(s; {y}) < \lim_{s \to \infty} c(s).$
 
-
 **Assumption 4** (A4, Positive value on the margin)
 
 $$v(s; s) > 0$$
 
 ### Statement of the lemma
 
-**Lemma (Probability density)** *The solution, $g(s)$, to*
+**Lemma (Probability density)** _The solution, $g(s)$, to_
 
 $$g(s) = \frac{1}{v(s; s)} \left( c'(s) - \int_0^{s} v'(s , y) g(y) dy \right)$$
 
-*is a probability density on some interval $[0, \bar{s}]$.*
+_is a probability density on some interval $[0, \bar{s}]$._
 
 ### Proof
 
 The finite definite integral cannot diverge because the function is continuous and $g(0) = \frac{c'(0)}{v(0; 0)} > 0$.
-    
+
 We still need to confirm that $g(s) > 0$ on the relevant interval $\{ s : \int_0^s \lvert g(y) \rvert dy \leq 1 \}$. We will define the probability density to be zero outside this interval so that it integrates to one.
 
 We show this by real induction on the interval $[0,T]$ where $T$ can be any value such that $\int_0^T \lvert g(y) \rvert dy \leq 1$. We must prove the following statements:
@@ -98,7 +97,7 @@ $$g(s) \geq \frac{1}{v(s; s)} \bigg[ c'(s) - \lvert \max_{y\in[0,s]} v'(s; y) \r
 
 $$g(s) \geq \frac{1}{v(s; s)} \underbrace{\left[c'(s) - \lvert \max_y v'(s; y) \rvert  \right]}_{>0 \text{(A2)}} > 0.$$
 
-Therefore, $g(s) > 0$ for any $s$ such that $\int_0^s \lvert g(y) \rvert dy \leq 1$. 
+Therefore, $g(s) > 0$ for any $s$ such that $\int_0^s \lvert g(y) \rvert dy \leq 1$.
 
 To complete the lemma, we must show that it is not possible for $\int_0^\infty \lvert g(y) \rvert dy \leq 1$. We can do this in one step with Holder's inequality.
 
