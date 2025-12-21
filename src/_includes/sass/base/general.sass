@@ -17,7 +17,6 @@ body
 h1, h2, h3, h4
     font-family: variables.$fontH
     color: variables.$beta
-    -webkit-font-smoothing: antialiased
     text-rendering: optimizeLegibility
     font-weight: 500
 
@@ -72,6 +71,10 @@ iframe
 img,
 pre
     border-radius: 4px
+
+img
+    height: auto
+    object-fit: scale-down
 
 figcaption
     position: relative
