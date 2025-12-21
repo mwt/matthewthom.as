@@ -6,9 +6,10 @@ override:tags: ["tech", "webdev", "mastodon"]
 date: "2023-12-30"
 use_math: false
 description: "Unofficial documentation for getting TeX support in Mastodon"
+last_modified_at: "2025-12-21"
 ---
 
-This is a short guide to document my experience in enabling TeX support in Mastodon by installing Christian Lawson-Perfect's [Mathstodon fork](https://github.com/christianp/mastodon/tree/mathstodon-4.2). As of the time of writing, this fork is based on Mastodon 4.2.3 and there are no official installation instructions. This guide assumes that you already have a functional installation of Mastodon 4.2.3. If you do not, you should follow the [Mastodon installation instructions](https://docs.joinmastodon.org/admin/install/). The instructions can likely be adapted for a fresh install.
+This is a short guide to document my experience in enabling TeX support in Mastodon by installing Christian Lawson-Perfect's [Mathstodon fork](https://github.com/christianp/mastodon/tree/mathstodon-4.5). As of the time of writing, this fork is based on Mastodon 4.5.3 and there are no official installation instructions. This guide assumes that you already have a functional installation of Mastodon 4.5.3. If you do not, you should follow the [Mastodon installation instructions](https://docs.joinmastodon.org/admin/install/). The instructions can likely be adapted for a fresh install.
 
 All steps of this guide should be run as the mastodon user. If you are not logged in as the mastodon user, you can switch with `sudo -su mastodon`.
 
@@ -23,7 +24,7 @@ mkdir -p ~/overrides/MathJax && cd ~/overrides
 Then, download and extract the files:
 
 ```sh
-wget -qO- https://www.matthewthom.as/gh/bin/mathjax-custom.tar.gz | tar xzC ./MathJax
+wget -qO- https://www.matthewthom.as/gh/bin/mathjax-3.1.2-mathstodon.tar.gz | tar xzC ./MathJax
 ```
 
 Finally, to make the files accessible, add the following to the https server block in your nginx config:
@@ -51,8 +52,8 @@ git remote add mathstodon https://github.com/christianp/mastodon.git
 # fetch the branches from the fork
 git fetch mathstodon
 
-# switch to the mathstodon-4.2 branch
-git checkout mathstodon/mathstodon-4.2
+# switch to the mathstodon-4.5 branch
+git checkout mathstodon/mathstodon-4.5
 ```
 
 The dependencies between the fork and main repo are the same at the time of writing, but I'd gave it a try anyway just to make sure.
