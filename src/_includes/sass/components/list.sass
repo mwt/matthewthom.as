@@ -42,16 +42,17 @@
                     cursor: pointer
 
                     &::before
-                        content: "▼"
-                        height: 1.2em
-                        width: 1.2em
+                        content: "\FF0B" //plus sign
+                        font: 
+                            family: ui-monospace, monospace
+                            weight: 900
                         text-align: center
 
                 &:hover label
                     color: variables.$delta
 
                 &:has(:checked) label::before
-                    content: "▲"
+                    content: "\FF0D" //minus sign
 
                 input[type="checkbox"]
                     display: none
