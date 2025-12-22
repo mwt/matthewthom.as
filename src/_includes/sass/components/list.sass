@@ -1,3 +1,4 @@
+@use "sass:math"
 @use "variables"
 
 .projects, .blog, .papers
@@ -28,7 +29,8 @@
         .links-row
             display: flex
             flex-wrap: wrap
-            gap: 0.125em
+            margin-top: 0.4em
+            gap: 0.625em
             align-items: baseline
 
             .atoggle
@@ -36,11 +38,13 @@
                     display: inline-flex
                     align-items: baseline
                     flex-wrap: nowrap
-                    gap: 0.2em
+                    gap: 0.25em
                     cursor: pointer
 
                     &::before
                         content: "▼"
+                        min-height: math.div(19em,16)
+                        text-align: center
 
                 &:hover label
                     color: variables.$delta
