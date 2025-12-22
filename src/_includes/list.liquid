@@ -20,7 +20,7 @@
             {{ project.title }}</a>
           {%- if project.authors.size > 1 -%}
             {%- assign coauthors = project.authors | where_not: "name", site.title -%}
-            (with
+            {{ ' ' }}(with
             {%- for coauthor in coauthors -%}
               {%- if coauthor.url -%}
                 {{ ' ' }}<a href="{{ coauthor.url }}" class="coauthor">{{ coauthor.name }}</a>
