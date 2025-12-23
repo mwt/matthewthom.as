@@ -51,21 +51,15 @@
           <p class="description">{{ project.description | markdownify | remove: '<p>' | remove: '</p>' }}</p>
         {%- endif -%}
         {%- capture links_row -%}
-        {%- if project.github -%}
-          <a
-            class="icon-link"
-            aria-label="github, opens in new tab"
-            href="{{ project.github }}"
-            target="_blank">
-            <svg
-              class="icon icon-github"
-              width="1.2em"
-              height="1.2em"
-              aria-hidden="true">
-              <use xlink:href="#icon-github"></use>
-            </svg>
-            Source
-          </a>
+        {%- if list-class == "papers" and project.content -%}
+          {%- capture abstract_id -%}{%- increment paper_section_number -%}{%- endcapture -%}
+          <div class="atoggle">
+            <input
+              type="checkbox"
+              id="toggle-{{ abstract_id }}"
+              name="abstract-toggle" />
+            <label for="toggle-{{ abstract_id }}">Abstract</label>
+          </div>
         {%- endif -%}
         {%- if project.email -%}
           <a
@@ -109,16 +103,21 @@
             Slides
           </a>
         {%- endif -%}
-        {%- if list-class == "papers" and project.content -%}
-          {%- capture abstract_id -%}
-            {%- increment paper_section_number -%}{%- endcapture -%}
-          <div class="atoggle">
-            <input
-              type="checkbox"
-              id="toggle-{{ abstract_id }}"
-              name="abstract-toggle" />
-            <label for="toggle-{{ abstract_id }}">Abstract</label>
-          </div>
+        {%- if project.github -%}
+          <a
+            class="icon-link"
+            aria-label="github, opens in new tab"
+            href="{{ project.github }}"
+            target="_blank">
+            <svg
+              class="icon icon-github"
+              width="1.2em"
+              height="1.2em"
+              aria-hidden="true">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+            Source
+          </a>
         {%- endif -%}
         {%- endcapture -%}
         {%- if links_row -%}
