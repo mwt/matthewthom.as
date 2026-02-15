@@ -6,11 +6,11 @@ override:tags: ["math", "economics", "game theory", "notes"]
 date: "2021-03-22"
 use_math: true
 description: "Simple derivation of equilibria in a general two player war of attrition"
-last_modified_at: "2025-12-21"
+last_modified_at: "2026-02-15"
 pdf: "/assets/pdfs/blog/war-of-attrition-complete-information.pdf"
 ---
 
-These notes are about nonlinear war of attrition models with two players. The formulation we consider is a simplified version of [Hendricks, Weiss, and Wilson (1988)](https://EconPapers.repec.org/RePEc:ier:iecrev:v:29:y:1988:i:4:p:663-80). These models are popular for modeling conflict that occurs in continuous time including wars, filibusters, bribes, and competition for standards and monopolies.
+These notes are about nonlinear war of attrition models with two players. The formulation we consider is a simplified version of [Hendricks, Weiss, and Wilson (1988)](https://ideas.repec.org/a/ier/iecrev/v29y1988i4p663-80.html). These models are popular for modeling conflict that occurs in continuous time including wars, filibusters, bribes, and competition for standards and monopolies.
 
 ## Basics
 
