@@ -5,7 +5,7 @@ layout: "post"
 override:tags: ["economics", "notes"]
 date: "2025-12-02"
 use_math: true
-last_modified_at: "2025-12-02"
+last_modified_at: "2026-02-18"
 description: "Simple model of how markets fail to accommodate those with disabilities"
 ---
 
