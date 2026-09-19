@@ -7,7 +7,7 @@ nocomments: true
 
 I maintain a few public repository mirrors for free software projects that I make frequent use of. This mirror was previously sponsored by Fastly CDN. However, due to its unanticipated popularity, the mirror is now hosted behind a Cloudflare pro plan. All of the files are hosted on a pair of servers near Newark. The mirror supports both IPv4 and IPv6 as well as http and https. Each of the four servers has a 10Gb/s connection.
 
-Contact me if you have other projects that you'd like to see mirrored. You can help maintain the financial sustainability of the project by [making a tax deductible donation](https://hcb.hackclub.com/donations/start/econ). Anything you can pitch in helps keep the service up and running. Public contributors will get a shout out on this page.
+Contact me if you have other projects that you'd like to see mirrored. You can help maintain the financial sustainability of the project by [making a tax deductible donation](https://econresearch.org/support/). Anything you can pitch in helps keep the service up and running. Public contributors will get a shout out on this page.
 
 The following software is hosted here:
 
