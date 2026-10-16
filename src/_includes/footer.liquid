@@ -1,14 +1,20 @@
 <footer class="footer-main">
-  <span class="copyright">
-    {{ site.title }} © {{ "today" | date: '%Y' }}
-  </span>
-  <a
-    class="icon-link"
-    aria-label="atom feed"
-    href="{{ '/feed.xml' | url }}">
-    <svg class="icon icon-rss">
-      <title>Atom Feed</title>
-      <use xlink:href="#icon-rss"></use>
-    </svg>
-  </a>
+  <div class="footer-copyright">
+    <span class="copyright">
+      {{ site.title }} © {{ "today" | date: '%Y' }}
+    </span>
+    <a
+      class="icon-link"
+      aria-label="atom feed"
+      href="{{ '/feed.xml' | url }}">
+      <svg class="icon icon-rss">
+        <title>Atom Feed</title>
+        <use xlink:href="#icon-rss"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="other-links" aria-label="Other Matthews and Thomases">
+    <a href="{{ '/other/matthew/' | url }}">Other Matthews</a>
+    <a href="{{ '/other/thomas/' | url }}">Other Thomases</a>
+  </div>
 </footer>

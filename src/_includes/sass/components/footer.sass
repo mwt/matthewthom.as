@@ -2,6 +2,10 @@
 @use "variables"
 
 .footer-main
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+    align-items: center
     border-top: 1px solid variables.$epsilon
     padding: 40px 0
     margin: 40px 0 0
@@ -10,6 +14,11 @@
     font-weight: 300
     text-align: center
     position: relative
+
+    @media #{variables.$notxs}
+        flex-direction: row
+        justify-content: space-between
+        text-align: left
 
     &:before
         display: block
@@ -24,10 +33,26 @@
         background: #FFF
         box-shadow: #FFF 0 0 0 5px
         border-radius: 3px
-    
-    > .copyright
-        padding-left: 10px
 
-    > .icon-link
-        color: variables.$gama
-        margin-left: 0.4em
+    a
+        color: inherit
+    
+    .footer-copyright
+        .copyright
+            padding-left: 10px
+
+        .icon-link
+            color: variables.$gama
+            margin-left: 0.4em
+
+    .other-links
+        font-size: 0.8em
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        gap: 0 1rem
+
+        @media #{variables.$notxs}
+            justify-content: flex-end
+
+
