@@ -1,12 +1,8 @@
 <!-- Begin Matthew's SEO tag -->
-{% if site.title? %}
-  <title>{{ site.title }}</title>
-{% endif %}
-
 <meta name="generator" content="Eleventy" />
 
-{% if site.page_title %}
-  <meta property="og:title" content="{{ site.page_title }}" />
+{% if title %}
+  <meta property="og:title" content="{{ title }} | {{ site.title }}" />
 {% endif %}
 
 {% if site.author.name %}
@@ -26,8 +22,8 @@
   <meta property="og:url" content="{{ page.url | absolute_url: site.url }}" />
 {% endif %}
 
-{% if site.site_title %}
-  <meta property="og:site_name" content="{{ site.site_title }}" />
+{% if site.title %}
+  <meta property="og:site_name" content="{{ site.title }}" />
 {% endif %}
 
 {% if site.image %}
@@ -68,8 +64,8 @@
   <meta name="twitter:image:alt" content="{{ site.image.alt }}" />
 {% endif %}
 
-{% if site.page_title %}
-  <meta property="twitter:title" content="{{ site.page_title }}" />
+{% if title %}
+  <meta property="twitter:title" content="{{ title }} | {{ site.title }}" />
 {% endif %}
 
 {% if site.twitter %}
