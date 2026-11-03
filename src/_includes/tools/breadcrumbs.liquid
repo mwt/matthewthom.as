@@ -1,0 +1,27 @@
+{%- assign crumbs = page.url | append: " " | split: '/' -%}
+{%- assign crumb_url = "/" -%}
+{%- assign crumb_counter = 1 -%}
+<script type="application/ld+json">{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [{"@type": "ListItem", "position": {{ crumb_counter }},
+"name": "{{ site.title | default: "Home" }}",
+"item": "{{ site.url }}"
+{%- for crumb in crumbs offset: 1 -%}
+    {%- if crumb and crumb != " " -%}
+      {%- assign crumb_url = crumb_url | append: crumb |  rstrip -%}
+      {%-  unless forloop.last -%}
+        {%- assign crumb_url = crumb_url | append: '/' -%}
+      {%- endunless -%}
+      {%- if crumb_url == page.url -%}
+        {%- assign crumb_title = title -%}
+      {%- else -%}
+        {%- assign crumb_title = collections.all | where: 'url', crumb_url | map: 'data' | map: 'title' | first -%}
+      {%- endif -%}
+      {%- if crumb_title -%}
+        {%- assign crumb_counter = crumb_counter | plus: 1 -%}
+        },{"@type": "ListItem", "position": {{ crumb_counter }}, "name": "{{ crumb_title  }}", "item": "{{ site.url }}{{ crumb_url }}"
+      {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+  }]}</script>

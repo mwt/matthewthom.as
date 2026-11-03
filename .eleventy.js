@@ -264,7 +264,7 @@ function flattenPages(array) {
 
 // Define a function to use for filtering and reverse filtering
 function filterWhere(item, key, value) {
-  const data = item && item.data ? item.data : item;
+  const data = item && item.data && key !== 'url' ? item.data : item;
   return typeof value === "undefined" ? key in data : data[key] === value;
 }
 function where(array, key, value) {
