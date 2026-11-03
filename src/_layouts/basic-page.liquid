@@ -1,6 +1,6 @@
 {%- include "default-before" -%}
 
-<div
+<main
   class="basic-page
   {%- if layout == "basic-page" -%}
     {{ title | slugify | downcase | prepend: " " }}
@@ -8,6 +8,6 @@
     {{ layout | slugify | downcase | prepend: " " }}
   {%- endif -%}">
   {{ content }}
-</div>
+</main>
 
 {%- include "default-after" -%}

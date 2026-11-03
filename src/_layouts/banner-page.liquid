@@ -2,7 +2,7 @@
 
 {%- include "header" -%}
 
-<div
+<main
   class="banner-page
   {%- if layout == "banner-page" -%}
     {{ title | slugify | downcase | prepend: " " }}
@@ -10,6 +10,6 @@
     {{ layout | slugify | downcase | prepend: " " }}
   {%- endif -%}">
   {{ content }}
-</div>
+</main>
 
 {%- include "default-after" -%}
